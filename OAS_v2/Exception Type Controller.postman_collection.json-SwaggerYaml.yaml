@@ -1,0 +1,2304 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Exception Type Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/exception-type
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: AddExceptionType
+      tags:
+      - Misc
+      operationId: AddExceptionType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AddExceptionTypeRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/AddExceptionType'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888635'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:21:20 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '29'
+  /AnRkr/1888635:
+    get:
+      summary: GetExceptionTypeById
+      tags:
+      - Misc
+      operationId: GetExceptionTypeById
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888635
+              syncTs: 2023-07-20T15:21:20.296+0000
+              version: 0
+              tenantId: AnRkr
+              code: MKJU
+              name: Exception T9
+              description: Test exception group 1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:21:20.296+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:22:18 GMT
+            Content-Length:
+              type: string
+              default: '297'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0c974fda547bb24827ca45a836d16bf01"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+  /AnRkr/all:
+    get:
+      summary: GetAllExceptionType
+      tags:
+      - Misc
+      operationId: GetAllExceptionType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest1'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20724
+              syncTs: 2022-12-23T03:39:07.174+0000
+              version: 15
+              tenantId: AnRkr
+              code: YUIP
+              name: Exception Type20
+              description: Exception Type20dsdvvvas
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:38.920+0000
+              modifiedUser: shanpragee
+              modifiedDate: 2022-12-23T03:39:07.174+0000
+            - id: 20726
+              syncTs: 2022-03-08T02:57:43.961+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET23
+              name: Exception Type20
+              description: Exception Type999
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:46.491+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-08T02:57:43.961+0000
+            - id: 20728
+              syncTs: 2022-03-21T10:48:20.487+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET2D
+              name: Exception Type204
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:58.227+0000
+              modifiedUser: sashika.jayalath
+              modifiedDate: 2022-03-21T10:48:20.487+0000
+            - id: 20730
+              syncTs: 2022-03-22T05:40:47.014+0000
+              version: 2
+              tenantId: AnRkr
+              code: ET27
+              name: Exception Type2aaaaa0
+              description: Exception Type2020
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:27:06.401+0000
+              modifiedUser: sashika
+              modifiedDate: 2022-03-22T05:40:47.014+0000
+            - id: 166055
+              syncTs: 2022-03-07T10:26:12.270+0000
+              version: 0
+              tenantId: AnRkr
+              code: RTYU
+              name: 'test 1 '
+              description: test des
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:26:12.270+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 166071
+              syncTs: 2022-03-07T10:53:01.972+0000
+              version: 1
+              tenantId: AnRkr
+              code: UPOI
+              name: UP2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:27:09.983+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-07T10:53:01.973+0000
+            - id: 166072
+              syncTs: 2022-03-07T10:51:33.326+0000
+              version: 1
+              tenantId: AnRkr
+              code: UOUO
+              name: Updated
+              description: UP
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:27:50.243+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-07T10:51:33.326+0000
+            - id: 166073
+              syncTs: 2022-07-27T16:12:20.943+0000
+              version: 5
+              tenantId: AnRkr
+              code: WWWW
+              name: 'test '
+              description: test description 1
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:28:33.216+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:12:20.943+0000
+            - id: 166110
+              syncTs: 2022-03-07T10:36:03.963+0000
+              version: 0
+              tenantId: AnRkr
+              code: uiui
+              name: ss
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:36:03.963+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 255040
+              syncTs: 2022-08-04T11:14:21.163+0000
+              version: 0
+              tenantId: AnRkr
+              code: DAS1
+              name: DasType
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-04T11:14:21.163+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20681
+              syncTs: 2021-10-15T05:26:08.864+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET01
+              name: Exception Type1-UD
+              description: Exception Type1-UD
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T05:26:08.864+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 22463
+              syncTs: 2021-10-25T04:27:22.288+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET31
+              name: Exception Type31
+              description: Exception Type31
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-25T04:27:22.288+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 22464
+              syncTs: 2021-10-25T04:37:40.256+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET32
+              name: INACTIVE ET32
+              description: INACTIVE Status
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-25T04:37:06.912+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-25T04:37:40.256+0000
+            - id: 22770
+              syncTs: 2021-10-26T10:23:19.223+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET29
+              name: Exception Type29
+              description: INACTIVE Status
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-26T10:16:29.990+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-26T10:23:19.223+0000
+            - id: 149073
+              syncTs: 2022-02-22T06:28:30.044+0000
+              version: 1
+              tenantId: AnRkr
+              code: ZZZP
+              name: zzzz
+              description: zzzz
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-22T06:27:49.151+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-22T06:28:30.044+0000
+            - id: 251391
+              syncTs: 2022-07-27T16:16:42.451+0000
+              version: 1
+              tenantId: AnRkr
+              code: SPIN
+              name: Interest Rate
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T05:10:11.934+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:16:42.451+0000
+            - id: 20692
+              syncTs: 2021-10-15T06:02:43.782+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET05
+              name: Exception Type5
+              description: Exception Type5
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:02:43.782+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20694
+              syncTs: 2021-10-15T06:03:04.816+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET07
+              name: Exception Type7
+              description: Exception Type7
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:04.816+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20696
+              syncTs: 2021-10-15T06:03:32.227+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET09
+              name: Exception Type9
+              description: Exception Type9
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:32.227+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20697
+              syncTs: 2021-10-15T06:03:51.337+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET10
+              name: Exception Type10
+              description: Exception Type10
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:51.337+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179710
+              syncTs: 2022-03-16T10:57:49.901+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDF
+              name: Exception type UD5
+              description: sashika
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-16T10:57:49.901+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179711
+              syncTs: 2022-03-16T11:00:02.067+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWWE
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-16T11:00:02.067+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180438
+              syncTs: 2022-03-17T15:31:06.722+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWER
+              name: TEST
+              description: sashika
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-17T15:31:06.722+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180439
+              syncTs: 2022-03-17T15:39:02.529+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDU
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-17T15:39:02.529+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180535
+              syncTs: 2022-03-18T02:14:31.799+0000
+              version: 0
+              tenantId: AnRkr
+              code: FGHJ
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-18T02:14:31.799+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274240
+              syncTs: 2022-08-25T11:19:12.865+0000
+              version: 0
+              tenantId: AnRkr
+              code: SSSS
+              name: '12345678901234567890'
+              description: null
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T11:19:12.865+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274241
+              syncTs: 2022-08-25T11:21:24.729+0000
+              version: 0
+              tenantId: AnRkr
+              code: THAW
+              name: thawwa
+              description: null
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T11:21:24.729+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 549291
+              syncTs: 2022-11-23T03:25:14.476+0000
+              version: 1
+              tenantId: AnRkr
+              code: SP09
+              name: Sahan asjhfvsajh
+              description: ddsdadasdasdasdasdasdasdsad
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-11-23T03:24:59.442+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:25:14.476+0000
+            - id: 1318066
+              syncTs: 2023-02-13T06:21:27.598+0000
+              version: 2
+              tenantId: AnRkr
+              code: TELE
+              name: Sashika
+              description: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+              status: ACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-02-13T06:20:44.761+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-02-13T06:21:27.598+0000
+            - id: 1530222
+              syncTs: 2023-03-10T04:17:21.643+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDE
+              name: Exception 2v
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:17:21.643+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1530244
+              syncTs: 2023-03-10T04:26:48.426+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDP
+              name: Exception 3v
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:26:48.426+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1554178
+              syncTs: 2023-03-16T18:09:39.050+0000
+              version: 0
+              tenantId: AnRkr
+              code: '6790'
+              name: lending
+              description: type
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-16T18:09:39.050+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 251587
+              syncTs: 2022-07-27T16:11:45.746+0000
+              version: 0
+              tenantId: AnRkr
+              code: INTS
+              name: Special Interest Rate
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:11:45.746+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274259
+              syncTs: 2022-08-25T12:09:02.168+0000
+              version: 0
+              tenantId: AnRkr
+              code: TTTT
+              name: 'test '
+              description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T12:09:02.169+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1317524
+              syncTs: 2023-02-10T08:25:07.697+0000
+              version: 0
+              tenantId: AnRkr
+              code: QADF
+              name: income type 01
+              description: TEST
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T08:25:07.697+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1531342
+              syncTs: 2023-03-16T18:08:59.644+0000
+              version: 4
+              tenantId: AnRkr
+              code: TTTA
+              name: test name
+              description: test 12u
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-10T08:44:36.188+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-16T18:08:59.644+0000
+            - id: 1888635
+              syncTs: 2023-07-20T15:21:20.296+0000
+              version: 0
+              tenantId: AnRkr
+              code: MKJU
+              name: Exception T9
+              description: Test exception group 1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:21:20.296+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20686
+              syncTs: 2021-10-15T06:07:49.157+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET02
+              name: Exception Type2
+              description: change name
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T05:55:10.931+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-15T06:07:49.157+0000
+            - id: 20691
+              syncTs: 2021-10-15T06:02:32.715+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET04
+              name: Exception Type4
+              description: Exception Type4
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:02:32.715+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20693
+              syncTs: 2021-10-15T06:58:04.065+0000
+              version: 2
+              tenantId: AnRkr
+              code: E446
+              name: Exception Type6
+              description: INACTIVE Status
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:02:56.704+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-15T06:58:04.065+0000
+            - id: 20695
+              syncTs: 2021-10-15T06:03:17.712+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET08
+              name: Exception Type8
+              description: Exception Type8
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:17.712+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20698
+              syncTs: 2021-10-15T07:57:47.739+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET11
+              name: Exception Type11
+              description: INACTIVE Status
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:04:00.529+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-15T07:57:47.739+0000
+            - id: 20725
+              syncTs: 2021-10-15T08:26:42.586+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET21
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:42.586+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20727
+              syncTs: 2021-10-15T08:26:54.390+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET24
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:54.390+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20729
+              syncTs: 2022-07-25T05:10:48.289+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET26
+              name: Exception Type20
+              description: Exception Type20
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:27:02.371+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-25T05:10:48.289+0000
+            - id: 145805
+              syncTs: 2022-02-11T06:04:38.119+0000
+              version: 1
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T06:04:15.403+0000
+              modifiedUser: SewwandiH
+              modifiedDate: 2022-02-11T06:04:38.119+0000
+            - id: 198490
+              syncTs: 2022-04-28T05:05:49.818+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX11
+              name: EX11
+              description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis est nisl, tempus a rhoncus eu, vulputate sit amet nunc. Praesent sed lacinia erat. Integer nisi elit, condimentum vitae nunc non, fermentum aliquet justo. Etiam viverra tellus ac odio volutpat faucibus. Morbi vehicula vulputate odio, nec finibus dui pulvinar et.
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T05:05:49.818+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 213758
+              syncTs: 2022-05-13T02:43:35.727+0000
+              version: 0
+              tenantId: AnRkr
+              code: 234D
+              name: dsfdsfwef
+              description: dsfsdfsdvdvd
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-13T02:43:35.727+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 234959
+              syncTs: 2022-07-27T16:17:01.437+0000
+              version: 1
+              tenantId: AnRkr
+              code: OLDV
+              name: Old Vehicle
+              description: null
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T08:16:24.804+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:17:01.437+0000
+            - id: 1530245
+              syncTs: 2023-03-10T08:45:25.252+0000
+              version: 1
+              tenantId: AnRkr
+              code: ASDO
+              name: Exception
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:27:07.025+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-10T08:45:25.252+0000
+            - id: 1660268
+              syncTs: 2023-05-04T03:41:38.993+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXU1
+              name: Credit Appraisal EX1
+              description: null
+              status: ACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-05-04T03:41:38.993+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:22:51 GMT
+            Content-Length:
+              type: string
+              default: '15717'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"05a546a0cc4a980a847d2d8d3b69870ac"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '24'
+  /AnRkr/code/ET23:
+    get:
+      summary: GetExceptionTypeByCode
+      tags:
+      - Misc
+      operationId: GetExceptionTypeByCode
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+              id: 20726
+              syncTs: 2022-03-08T02:57:43.961+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET23
+              name: Exception Type20
+              description: Exception Type999
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:46.491+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-08T02:57:43.961+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:23:38 GMT
+            Content-Length:
+              type: string
+              default: '314'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"01030a5839b36681f780234326e866ac6"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '12'
+  /AnRkr/name/Exception Type20:
+    get:
+      summary: GetExceptionTypeByName
+      tags:
+      - Misc
+      operationId: GetExceptionTypeByName
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20724
+              syncTs: 2022-12-23T03:39:07.174+0000
+              version: 15
+              tenantId: AnRkr
+              code: YUIP
+              name: Exception Type20
+              description: Exception Type20dsdvvvas
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:38.920+0000
+              modifiedUser: shanpragee
+              modifiedDate: 2022-12-23T03:39:07.174+0000
+            - id: 20726
+              syncTs: 2022-03-08T02:57:43.961+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET23
+              name: Exception Type20
+              description: Exception Type999
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:46.491+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-08T02:57:43.961+0000
+            - id: 20728
+              syncTs: 2022-03-21T10:48:20.487+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET2D
+              name: Exception Type204
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:58.227+0000
+              modifiedUser: sashika.jayalath
+              modifiedDate: 2022-03-21T10:48:20.487+0000
+            - id: 20725
+              syncTs: 2021-10-15T08:26:42.586+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET21
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:42.586+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20727
+              syncTs: 2021-10-15T08:26:54.390+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET24
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:54.390+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20729
+              syncTs: 2022-07-25T05:10:48.289+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET26
+              name: Exception Type20
+              description: Exception Type20
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:27:02.371+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-25T05:10:48.289+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:24:40 GMT
+            Content-Length:
+              type: string
+              default: '1855'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0f80e650cf156cbb9163f0f9b0981d0a0"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '14'
+  /AnRkr/search:
+    get:
+      summary: SearchExceptionType
+      tags:
+      - Misc
+      operationId: SearchExceptionType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: code
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchExceptionType'
+          examples:
+            application/json;charset=UTF-8:
+              content:
+              - id: 20724
+                syncTs: 2022-12-23T03:39:07.174+0000
+                version: 15
+                tenantId: AnRkr
+                code: YUIP
+                name: Exception Type20
+                description: Exception Type20dsdvvvas
+                status: INACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:26:38.920+0000
+                modifiedUser: shanpragee
+                modifiedDate: 2022-12-23T03:39:07.174+0000
+              - id: 20726
+                syncTs: 2022-03-08T02:57:43.961+0000
+                version: 1
+                tenantId: AnRkr
+                code: ET23
+                name: Exception Type20
+                description: Exception Type999
+                status: ACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:26:46.491+0000
+                modifiedUser: lahiru
+                modifiedDate: 2022-03-08T02:57:43.961+0000
+              - id: 20728
+                syncTs: 2022-03-21T10:48:20.487+0000
+                version: 1
+                tenantId: AnRkr
+                code: ET2D
+                name: Exception Type204
+                description: Exception Type20
+                status: ACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:26:58.227+0000
+                modifiedUser: sashika.jayalath
+                modifiedDate: 2022-03-21T10:48:20.487+0000
+              - id: 20725
+                syncTs: 2021-10-15T08:26:42.586+0000
+                version: 0
+                tenantId: AnRkr
+                code: ET21
+                name: Exception Type20
+                description: Exception Type20
+                status: ACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:26:42.586+0000
+                modifiedUser: null
+                modifiedDate: null
+              - id: 20727
+                syncTs: 2021-10-15T08:26:54.390+0000
+                version: 0
+                tenantId: AnRkr
+                code: ET24
+                name: Exception Type20
+                description: Exception Type20
+                status: ACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:26:54.390+0000
+                modifiedUser: null
+                modifiedDate: null
+              - id: 20729
+                syncTs: 2022-07-25T05:10:48.289+0000
+                version: 1
+                tenantId: AnRkr
+                code: ET26
+                name: Exception Type20
+                description: Exception Type20
+                status: INACTIVE
+                createdUser: Rukshan
+                createdDate: 2021-10-15T08:27:02.371+0000
+                modifiedUser: NelkaSi
+                modifiedDate: 2022-07-25T05:10:48.289+0000
+              pageable:
+                sort:
+                  sorted: false
+                  unsorted: true
+                  empty: true
+                pageSize: 10
+                pageNumber: 0
+                offset: 0
+                paged: true
+                unpaged: false
+              last: true
+              totalPages: 1
+              totalElements: 6
+              sort:
+                sorted: false
+                unsorted: true
+                empty: true
+              numberOfElements: 6
+              first: true
+              size: 10
+              number: 0
+              empty: false
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:26:02 GMT
+            Content-Length:
+              type: string
+              default: '2169'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"05998cdc34aea6178b47750445162551f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '20'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: GetExceptionTypeByStatus
+      tags:
+      - Misc
+      operationId: GetExceptionTypeByStatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest1'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20726
+              syncTs: 2022-03-08T02:57:43.961+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET23
+              name: Exception Type20
+              description: Exception Type999
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:46.491+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-08T02:57:43.961+0000
+            - id: 20728
+              syncTs: 2022-03-21T10:48:20.487+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET2D
+              name: Exception Type204
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:58.227+0000
+              modifiedUser: sashika.jayalath
+              modifiedDate: 2022-03-21T10:48:20.487+0000
+            - id: 20730
+              syncTs: 2022-03-22T05:40:47.014+0000
+              version: 2
+              tenantId: AnRkr
+              code: ET27
+              name: Exception Type2aaaaa0
+              description: Exception Type2020
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:27:06.401+0000
+              modifiedUser: sashika
+              modifiedDate: 2022-03-22T05:40:47.014+0000
+            - id: 166055
+              syncTs: 2022-03-07T10:26:12.270+0000
+              version: 0
+              tenantId: AnRkr
+              code: RTYU
+              name: 'test 1 '
+              description: test des
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:26:12.270+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 166071
+              syncTs: 2022-03-07T10:53:01.972+0000
+              version: 1
+              tenantId: AnRkr
+              code: UPOI
+              name: UP2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:27:09.983+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-07T10:53:01.973+0000
+            - id: 166072
+              syncTs: 2022-03-07T10:51:33.326+0000
+              version: 1
+              tenantId: AnRkr
+              code: UOUO
+              name: Updated
+              description: UP
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:27:50.243+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-07T10:51:33.326+0000
+            - id: 166073
+              syncTs: 2022-07-27T16:12:20.943+0000
+              version: 5
+              tenantId: AnRkr
+              code: WWWW
+              name: 'test '
+              description: test description 1
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:28:33.216+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:12:20.943+0000
+            - id: 166110
+              syncTs: 2022-03-07T10:36:03.963+0000
+              version: 0
+              tenantId: AnRkr
+              code: uiui
+              name: ss
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-07T10:36:03.963+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 255040
+              syncTs: 2022-08-04T11:14:21.163+0000
+              version: 0
+              tenantId: AnRkr
+              code: DAS1
+              name: DasType
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-04T11:14:21.163+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20681
+              syncTs: 2021-10-15T05:26:08.864+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET01
+              name: Exception Type1-UD
+              description: Exception Type1-UD
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T05:26:08.864+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 22463
+              syncTs: 2021-10-25T04:27:22.288+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET31
+              name: Exception Type31
+              description: Exception Type31
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-25T04:27:22.288+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 251391
+              syncTs: 2022-07-27T16:16:42.451+0000
+              version: 1
+              tenantId: AnRkr
+              code: SPIN
+              name: Interest Rate
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T05:10:11.934+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:16:42.451+0000
+            - id: 20692
+              syncTs: 2021-10-15T06:02:43.782+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET05
+              name: Exception Type5
+              description: Exception Type5
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:02:43.782+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20694
+              syncTs: 2021-10-15T06:03:04.816+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET07
+              name: Exception Type7
+              description: Exception Type7
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:04.816+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20696
+              syncTs: 2021-10-15T06:03:32.227+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET09
+              name: Exception Type9
+              description: Exception Type9
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:32.227+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20697
+              syncTs: 2021-10-15T06:03:51.337+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET10
+              name: Exception Type10
+              description: Exception Type10
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:51.337+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179710
+              syncTs: 2022-03-16T10:57:49.901+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDF
+              name: Exception type UD5
+              description: sashika
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-16T10:57:49.901+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179711
+              syncTs: 2022-03-16T11:00:02.067+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWWE
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-16T11:00:02.067+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180438
+              syncTs: 2022-03-17T15:31:06.722+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWER
+              name: TEST
+              description: sashika
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-17T15:31:06.722+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180439
+              syncTs: 2022-03-17T15:39:02.529+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDU
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-17T15:39:02.529+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 180535
+              syncTs: 2022-03-18T02:14:31.799+0000
+              version: 0
+              tenantId: AnRkr
+              code: FGHJ
+              name: TEST
+              description: null
+              status: ACTIVE
+              createdUser: sashika.jayalath
+              createdDate: 2022-03-18T02:14:31.799+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274240
+              syncTs: 2022-08-25T11:19:12.865+0000
+              version: 0
+              tenantId: AnRkr
+              code: SSSS
+              name: '12345678901234567890'
+              description: null
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T11:19:12.865+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274241
+              syncTs: 2022-08-25T11:21:24.729+0000
+              version: 0
+              tenantId: AnRkr
+              code: THAW
+              name: thawwa
+              description: null
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T11:21:24.729+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 549291
+              syncTs: 2022-11-23T03:25:14.476+0000
+              version: 1
+              tenantId: AnRkr
+              code: SP09
+              name: Sahan asjhfvsajh
+              description: ddsdadasdasdasdasdasdasdsad
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-11-23T03:24:59.442+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:25:14.476+0000
+            - id: 1318066
+              syncTs: 2023-02-13T06:21:27.598+0000
+              version: 2
+              tenantId: AnRkr
+              code: TELE
+              name: Sashika
+              description: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+              status: ACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-02-13T06:20:44.761+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-02-13T06:21:27.598+0000
+            - id: 1530222
+              syncTs: 2023-03-10T04:17:21.643+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDE
+              name: Exception 2v
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:17:21.643+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1530244
+              syncTs: 2023-03-10T04:26:48.426+0000
+              version: 0
+              tenantId: AnRkr
+              code: ASDP
+              name: Exception 3v
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:26:48.426+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1554178
+              syncTs: 2023-03-16T18:09:39.050+0000
+              version: 0
+              tenantId: AnRkr
+              code: '6790'
+              name: lending
+              description: type
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-16T18:09:39.050+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 251587
+              syncTs: 2022-07-27T16:11:45.746+0000
+              version: 0
+              tenantId: AnRkr
+              code: INTS
+              name: Special Interest Rate
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:11:45.746+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 274259
+              syncTs: 2022-08-25T12:09:02.168+0000
+              version: 0
+              tenantId: AnRkr
+              code: TTTT
+              name: 'test '
+              description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              status: ACTIVE
+              createdUser: TharushaP
+              createdDate: 2022-08-25T12:09:02.169+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1317524
+              syncTs: 2023-02-10T08:25:07.697+0000
+              version: 0
+              tenantId: AnRkr
+              code: QADF
+              name: income type 01
+              description: TEST
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T08:25:07.697+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888635
+              syncTs: 2023-07-20T15:21:20.296+0000
+              version: 0
+              tenantId: AnRkr
+              code: MKJU
+              name: Exception T9
+              description: Test exception group 1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:21:20.296+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20686
+              syncTs: 2021-10-15T06:07:49.157+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET02
+              name: Exception Type2
+              description: change name
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T05:55:10.931+0000
+              modifiedUser: Rukshan
+              modifiedDate: 2021-10-15T06:07:49.157+0000
+            - id: 20691
+              syncTs: 2021-10-15T06:02:32.715+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET04
+              name: Exception Type4
+              description: Exception Type4
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:02:32.715+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20695
+              syncTs: 2021-10-15T06:03:17.712+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET08
+              name: Exception Type8
+              description: Exception Type8
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T06:03:17.712+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20725
+              syncTs: 2021-10-15T08:26:42.586+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET21
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:42.586+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20727
+              syncTs: 2021-10-15T08:26:54.390+0000
+              version: 0
+              tenantId: AnRkr
+              code: ET24
+              name: Exception Type20
+              description: Exception Type20
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-15T08:26:54.390+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 145805
+              syncTs: 2022-02-11T06:04:38.119+0000
+              version: 1
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T06:04:15.403+0000
+              modifiedUser: SewwandiH
+              modifiedDate: 2022-02-11T06:04:38.119+0000
+            - id: 198490
+              syncTs: 2022-04-28T05:05:49.818+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX11
+              name: EX11
+              description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis est nisl, tempus a rhoncus eu, vulputate sit amet nunc. Praesent sed lacinia erat. Integer nisi elit, condimentum vitae nunc non, fermentum aliquet justo. Etiam viverra tellus ac odio volutpat faucibus. Morbi vehicula vulputate odio, nec finibus dui pulvinar et.
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T05:05:49.818+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 213758
+              syncTs: 2022-05-13T02:43:35.727+0000
+              version: 0
+              tenantId: AnRkr
+              code: 234D
+              name: dsfdsfwef
+              description: dsfsdfsdvdvd
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-13T02:43:35.727+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1530245
+              syncTs: 2023-03-10T08:45:25.252+0000
+              version: 1
+              tenantId: AnRkr
+              code: ASDO
+              name: Exception
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:27:07.025+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-10T08:45:25.252+0000
+            - id: 1660268
+              syncTs: 2023-05-04T03:41:38.993+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXU1
+              name: Credit Appraisal EX1
+              description: null
+              status: ACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-05-04T03:41:38.993+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:28:20 GMT
+            Content-Length:
+              type: string
+              default: '12911'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0e44740f6484121819052f336ca7452ea"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '20'
+definitions:
+  AddExceptionTypeRequest:
+    title: AddExceptionTypeRequest
+    example:
+      code: MKJU
+      description: Test exception group 1
+      name: Exception T9
+      status: ACTIVE
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+    required:
+    - code
+    - description
+    - name
+    - status
+  AddExceptionType:
+    title: AddExceptionType
+    example:
+      messages: CREATED.
+      value: '1888635'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  NewRequest:
+    title: NewRequest
+    example:
+      id: 1888635
+      syncTs: 2023-07-20T15:21:20.296+0000
+      version: 0
+      tenantId: AnRkr
+      code: MKJU
+      name: Exception T9
+      description: Test exception group 1
+      status: ACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2023-07-20T15:21:20.296+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest1:
+    title: NewRequest1
+    example:
+      id: 20724
+      syncTs: 2022-12-23T03:39:07.174+0000
+      version: 15
+      tenantId: AnRkr
+      code: YUIP
+      name: Exception Type20
+      description: Exception Type20dsdvvvas
+      status: INACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-15T08:26:38.920+0000
+      modifiedUser: shanpragee
+      modifiedDate: 2022-12-23T03:39:07.174+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest2:
+    title: NewRequest2
+    example:
+      id: 20726
+      syncTs: 2022-03-08T02:57:43.961+0000
+      version: 1
+      tenantId: AnRkr
+      code: ET23
+      name: Exception Type20
+      description: Exception Type999
+      status: ACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-15T08:26:46.491+0000
+      modifiedUser: lahiru
+      modifiedDate: 2022-03-08T02:57:43.961+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  SearchExceptionType:
+    title: SearchExceptionType
+    example:
+      content:
+      - id: 20724
+        syncTs: 2022-12-23T03:39:07.174+0000
+        version: 15
+        tenantId: AnRkr
+        code: YUIP
+        name: Exception Type20
+        description: Exception Type20dsdvvvas
+        status: INACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:38.920+0000
+        modifiedUser: shanpragee
+        modifiedDate: 2022-12-23T03:39:07.174+0000
+      - id: 20726
+        syncTs: 2022-03-08T02:57:43.961+0000
+        version: 1
+        tenantId: AnRkr
+        code: ET23
+        name: Exception Type20
+        description: Exception Type999
+        status: ACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:46.491+0000
+        modifiedUser: lahiru
+        modifiedDate: 2022-03-08T02:57:43.961+0000
+      - id: 20728
+        syncTs: 2022-03-21T10:48:20.487+0000
+        version: 1
+        tenantId: AnRkr
+        code: ET2D
+        name: Exception Type204
+        description: Exception Type20
+        status: ACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:58.227+0000
+        modifiedUser: sashika.jayalath
+        modifiedDate: 2022-03-21T10:48:20.487+0000
+      - id: 20725
+        syncTs: 2021-10-15T08:26:42.586+0000
+        version: 0
+        tenantId: AnRkr
+        code: ET21
+        name: Exception Type20
+        description: Exception Type20
+        status: ACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:42.586+0000
+        modifiedUser: null
+        modifiedDate: null
+      - id: 20727
+        syncTs: 2021-10-15T08:26:54.390+0000
+        version: 0
+        tenantId: AnRkr
+        code: ET24
+        name: Exception Type20
+        description: Exception Type20
+        status: ACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:54.390+0000
+        modifiedUser: null
+        modifiedDate: null
+      - id: 20729
+        syncTs: 2022-07-25T05:10:48.289+0000
+        version: 1
+        tenantId: AnRkr
+        code: ET26
+        name: Exception Type20
+        description: Exception Type20
+        status: INACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:27:02.371+0000
+        modifiedUser: NelkaSi
+        modifiedDate: 2022-07-25T05:10:48.289+0000
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        paged: true
+        unpaged: false
+      last: true
+      totalPages: 1
+      totalElements: 6
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 6
+      first: true
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      last:
+        type: boolean
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      first:
+        type: boolean
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - last
+    - totalPages
+    - totalElements
+    - sort
+    - numberOfElements
+    - first
+    - size
+    - number
+    - empty
+  Content:
+    title: Content
+    example:
+      id: 20724
+      syncTs: 2022-12-23T03:39:07.174+0000
+      version: 15
+      tenantId: AnRkr
+      code: YUIP
+      name: Exception Type20
+      description: Exception Type20dsdvvvas
+      status: INACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-15T08:26:38.920+0000
+      modifiedUser: shanpragee
+      modifiedDate: 2022-12-23T03:39:07.174+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  Pageable:
+    title: Pageable
+    example:
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      pageSize: 10
+      pageNumber: 0
+      offset: 0
+      paged: true
+      unpaged: false
+    type: object
+    properties:
+      sort:
+        $ref: '#/definitions/Sort'
+      pageSize:
+        type: integer
+        format: int32
+      pageNumber:
+        type: integer
+        format: int32
+      offset:
+        type: integer
+        format: int32
+      paged:
+        type: boolean
+      unpaged:
+        type: boolean
+    required:
+    - sort
+    - pageSize
+    - pageNumber
+    - offset
+    - paged
+    - unpaged
+  Sort:
+    title: Sort
+    example:
+      sorted: false
+      unsorted: true
+      empty: true
+    type: object
+    properties:
+      sorted:
+        type: boolean
+      unsorted:
+        type: boolean
+      empty:
+        type: boolean
+    required:
+    - sorted
+    - unsorted
+    - empty
+  SearchExceptionType1:
+    title: SearchExceptionType1
+    example:
+      content:
+      - id: 20728
+        syncTs: 2022-03-21T10:48:20.487+0000
+        version: 1
+        tenantId: AnRkr
+        code: ET2D
+        name: Exception Type204
+        description: Exception Type20
+        status: ACTIVE
+        createdUser: Rukshan
+        createdDate: 2021-10-15T08:26:58.227+0000
+        modifiedUser: sashika.jayalath
+        modifiedDate: 2022-03-21T10:48:20.487+0000
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        unpaged: false
+        paged: true
+      totalPages: 1
+      totalElements: 1
+      last: true
+      first: true
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content1'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      last:
+        type: boolean
+      first:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - totalPages
+    - totalElements
+    - last
+    - first
+    - sort
+    - numberOfElements
+    - size
+    - number
+    - empty
+  Content1:
+    title: Content1
+    example:
+      id: 20728
+      syncTs: 2022-03-21T10:48:20.487+0000
+      version: 1
+      tenantId: AnRkr
+      code: ET2D
+      name: Exception Type204
+      description: Exception Type20
+      status: ACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-15T08:26:58.227+0000
+      modifiedUser: sashika.jayalath
+      modifiedDate: 2022-03-21T10:48:20.487+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+tags:
+- name: Misc
+  description: ''

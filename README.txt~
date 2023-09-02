@@ -1,0 +1,260 @@
+--- About codes and detailed explantions
+
+** Background
+
+A modification/simplified version of the Sparc custom rules. Please see
+towards the end for an explanation of the simplication. Older version of
+the rules is described in a PDF in this package called Old-CV-custom-rules.pdf.
+
+
+** Package, Files, and how to run
+
+For simplicity, just run in a venv like the old Sparc. New package is very simple.
+It may not need that many other py packages. But we can optimize later.
+
+There are 2 .py files borrowed:
+json_line.py
+yaml_line.py
+
+They are used by the original package to assign line numbers. (Note, the
+proof concept handling of lines is not complete, one major TODO is to complete
+the line num handling.
+
+There are 2 folders:
+rules/ containing rules to test, two modified rules
+  cv_rules_oasv2_02.json   is the SWagger v2 compliant rule file
+  cv_rules_03_oasv3.json   is the OAS v3 compliant rule file 
+  *** DO NOT use other rules, they are not compatible w the latest tool ***
+testspecs/ containing test spec files, in particular:
+  custom_credit.json    is the v3 test file
+  p2.yaml               is the v2 test file, it is the only v2 file, it is the big file from prudential 
+
+There are 3 main .py files in this package. Each can be run by itself
+
+1. spec_parse.py:
+This contains definition of SpecTree, which is a tree of SpecNode(s).
+When you run:
+ > python3 spec_parse.py testspecs/customer_credit.json
+
+Will parse the spec file and print all the "rule paths". More explaination later. E.g.
+
+api='/api/creditcontrol/storeconfig' 154 rules--> 
+     r='#->paths->/api/creditcontrol/storeconfig->get'
+
+The rule path "r" starts with root #. It is key for us to later match a rule agianst. 
+
+2. rules_util.py
+
+This is a key utility file. It contains rules which are parsed from a rule file. It contains
+all the code that converts rule file into a number of RuleSet which matches one "rule" with
+a ruleid, and one or more Rule which maps to a single rule in a rule file.
+
+
+For example, the following rule is converted to one RuleSet with two Rule objects:
+
+	{"ruleid": "0002a",
+	 "description": "The additionalProperties element is not defined as \"array\" type. As it is not an array, it should not have \"items\" defined. To fix: please consider changing type to array, or remove items definition.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["nonarray-def-items"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "ne",
+			 	 "value": "array"},
+	   			{"identifier": "additionalProperties->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "False"}
+   	      	 ]
+	}
+
+The rules_util.py also contains MatchSet and Match. These are used to perfom matching of rules.
+As you can see, if we go through 2 set of SpecNodes, we will need to create different MatchSet and
+Match to hold the results. MatchSet maps to RuleSet, which contains Match that maps to Rule. 
+
+Running rules_util.py by itself will print all the converted rules.
+
+> python3 rules_util.py rules/cv_rules_03_oasv3.json
+
+For example, the output of the above rule example is as following:
+
+ Id='0002a', Ignore=False
+    Iden search regEx='re.compile('additionalProperties$')', matching key='type', extract from ExtractValueFrom.VALUE, looking for ValType ExpectValueType.STR, CondType ConditionType.VALCOMPARE <--- original rule info: ['additionalProperties->type' (iden) 'ne'(condition) 'array'(val)]
+
+    Iden search regEx='re.compile('additionalProperties$')', matching key='items', extract from ExtractValueFrom.KEY, looking for ValType None, CondType ConditionType.KEYISMISSING <--- original rule info: ['additionalProperties->items' (iden) 'is-missing'(condition) 'False'(val)]
+
+
+3. s2test_main.py
+This is a test main file. It takes 3 parameters: input-spec-file, rule-file, outputfile
+E.g. running it like this:
+
+> python3 s2test_main.py testspecs/customer_credit.json rules/cv_rules_03_oasv3.json cc_report.json
+
+Will generates a json cc_report.json report.
+
+
+
+*** Explanation of rule changes:
+
+1. And relationship only, no more "or"
+As you can see from the new rules, each rule is listed inside a list. No more "and", "or". Reason is that it is much better for a customer to know what's wrong if we get differnet rules to tell exactly what's wrong at which line. Also, much simpler to parse and determine matches.
+
+2. No more nested rules
+To make it much easier to parse and execute, no more rule referring to another rules.
+
+3. No internal rules
+Internal rules should not occur. We just get rid of them.
+
+4. Special key word "operation"
+It should only be used to refer to the methods under #->paths->[api-name]->[method].
+It is converted to a regex by the rule processing.
+
+5. Use of * as a special "key"
+Its main use is to ask the match to check all elements in a list. A list does not have
+key. One can do "->*->*" for a list w/in a list.
+
+6. Key word "__key__" at the end of the Identity string
+It is used to ask the match to be done against not the *value* but the *key*. It can
+only be used if the last element is a dict. Two examples:
+ operation__key__  means matching all the operation such as "put", "get"
+ <keyname>*__key__ means finding an element <keyname> which itself is a dict then match against all its key to find a match
+
+7. Two kinds of "Identity" matches
+
+One is "global", its identifier string starts with "#". It is easy. It matches against a SpecNode.
+One is "relative". There is only one kind of local match, which is under "#->paths-><api path>".
+There is no need to map relative identfier to other part of a spec, we are assessing API spec
+afterall.
+
+For example, the following rule contains one match against global and one match against local. Local
+match must be checked for *every* api whereas global match is done only once against all non-api
+nodes.
+
+	{"ruleid": "0014c",
+	 "description": "Local security field is missing. Also, the global security element contains an empty definition. To fix: please add a security definition to this element or ensure global security element does not contain empty {} definition.",
+	 "score": 9,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+		 		{"identifier": "operation->security",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+		 		{"identifier": "#->security->*",
+	   		 	 "condition": "is-empty",
+			 	 "value": "True"}	     
+   	      	 ]
+	
+
+
+*** Explaining SpecNode design
+
+SpecNode contains a "specele" which points to the original element.
+A SpecNode mapped to a dict or a list ONLY.
+
+the SpecTree always starts with a "#" SpecNode. If the specele it maps to is a dict, some of
+its children element itself is a dict, it then will have children which are dict SpecNodes,
+it is a dict mapping a full "path" to its children. It can also have a childrenlist, which is
+a list of children if the specele itself is a list.
+
+*** Note that a leaf SpecNode itself can have a specele that is a dict or a list.
+
+-- About $ref
+It may not be a good idea to have a parser that will resolve all $ref, esp if p2.yaml kind of
+spec has a "nested", looping $ref.
+
+Instead, SpecTree itself maintains a $ref in the first pass of parsing. Then it will resolve $ref.
+It will detect loop. All children as a result of a $ref will be added.
+
+-- Two list of names
+The rule has two kinds of matches as described above.
+
+Therefore, we maintain a Global list inside SpecTree called "nonapinodes", a dict mapping
+global names to a list of SpecNode. It normally contains only a single SpecNode. We use
+a list to keep it consistent with the perapinodes structure.
+
+The SpecTree.perapinodes mains a dict, mapping api (its full path name) to a list of
+subapi nodes, each path is a fullpath. The entries in the list is a tuple containing
+(<rule-path>, <the node itself SpecNode>, <api Node>) The apiNode should point to the
+API SpecNode. We keep it there just in case when we need it for reporting.
+
+
+*** Explaining Rule and Match
+
+Key thing about rule is to determine the following:
+1. Identifier, how to map to either a global or a local identifier to find the SpecNode.
+   We chopped off the last key so that we can use it to look-up a value or to check
+   against "is-missing", "is-empty". We have to do this because <node1>-><key1> is-missing
+   is true only if <node1> is there and <key1> is missing. If just lookup <node1>-><key1> but
+   if <node1> is missing itself, the "is-missing" will be "true", which is incorrect.
+   
+2. Convert the operations into something that can be run by Python. Three kinds of rules:
+     numerical "==", "/=" etc
+     string, "ne", "eq", and "pattern-match", pattern-match means we treat the rule value
+        as regex
+     is-empty, is-missing, this is check if a key is there. Is empty means something pointed to
+       by a key is empty itself.
+
+3. MatchSet and Match:
+   Once rules are created. We create one set of MatchSets, then run it against the global list.
+   We "remember" the global check result in these MatchSets. Then, we remove any MatchSets that
+   are containing global matches only (they are done).
+
+   Then we copy the Match using the MatchSets as "templates". Then one by one match against list
+   of API specific nodes.
+
+4. Violations
+   The global list of "Violations" are there to collect Violations. Currently, it is very simple.
+   A lot more work needs to be done to add more logics to allow us to report the full violation and
+   statistics.
+
+
+*** To Be Done:
+
+1. Line number handling:
+   It is incomplete. If you look under SpecNode.parseChildrenNodes, you will see it tries to
+   read and take out the special 'cvlrange26uel7Ao' elements added to dict or list. Then in
+   Rule.getValFromTuple method, you will see an attempt to reverse a value object from the
+   tuple (<original-value>, {'cvlrange26uel7Ao':<tuple-of-line numbers>})
+
+   It is not complete. It only works for JSON spec files. Yaml line numbers are different.
+   That's why hacks like this are added to say doValsMatch,
+     
+    def doValsMatch(self, leftval):
+        #
+        # a hack, TODO: to properly handle with linenum extraction
+        #
+        if type(leftval) == str and leftval.startswith("__line__") :
+            leftval = leftval.lstrip("__line__")
+        #
+
+
+   It is much better if we can add a line number processing method inside SpecNode parsing
+   to record the SpecNode and its specele and then retrieve those numbers when we are performing
+   Match.
+
+2. Exception handling
+
+   A lot of "print" is done to just print and exit().
+
+   Good to add Exception. We can wrap today's spec_parse.py and rules_util.py and run their
+   main as "validators". We can raise Exceptions and tell people something wrong with their spec or
+   rules. In particular, spec_parse.py can also be added to pre_run.py. Pre_run.py can be changed
+   to use this new efficient parser.
+
+3. Report
+
+   This is a major task. Once the above 2 are done, we need to enhance s2_reporting.py, add other
+   files if needed. In particular, try to take whatever created for existing Sparc1 to see if we
+   can generate a similar .json then html.
+
+   Let's make sure we simplify and optimize too. For example, we can potentially report on $ref
+   object much better. I see repeated violation due to a single problem with a $ref element.
+   Better we add to v_entity report. Today, html report does not interpret the v_entity. Instead
+   of the very cryptic string, we can replace it. In particular, if we can report where the element is
+   and the $ref element, customer can fix 1000s of violatons with just one change.
+
+
+     
+

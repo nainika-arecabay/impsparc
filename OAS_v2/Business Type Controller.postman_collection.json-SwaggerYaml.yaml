@@ -1,0 +1,2409 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Business Type Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/business-type
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: AddBusinessType
+      tags:
+      - Misc
+      operationId: AddBusinessType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AddBusinessTypeRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/AddBusinessType'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888670'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:12:52 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '62'
+  /AnRkr/1888670:
+    get:
+      summary: GetBusinessTypeById
+      tags:
+      - Misc
+      operationId: GetBusinessTypeById
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetBusinessTypeById'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888670
+              syncTs: 2023-07-20T16:12:52.748+0000
+              version: 0
+              tenantId: AnRkr
+              code: POUI
+              name: Test ts14
+              description: semina t1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T16:12:52.748+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:14:12 GMT
+            Content-Length:
+              type: string
+              default: '281'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0af9a17c0930fab2a81d9003127f6e94e"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '9'
+    put:
+      summary: New Request
+      tags:
+      - Misc
+      operationId: NewRequest
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/NewRequestRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest4'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:25:01 GMT
+            Content-Length:
+              type: string
+              default: '18'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '70'
+  /AnRkr/all:
+    get:
+      summary: GetAllBusinessTypes
+      tags:
+      - Misc
+      operationId: GetAllBusinessTypes
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20583
+              syncTs: 2022-12-14T17:42:45.920+0000
+              version: 10
+              tenantId: AnRkr
+              code: BT56
+              name: business type 6
+              description: BT06 Dess
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:33:37.934+0000
+              modifiedUser: DilanthaM
+              modifiedDate: 2022-12-14T17:42:45.920+0000
+            - id: 147360
+              syncTs: 2022-07-28T12:05:35.707+0000
+              version: 4
+              tenantId: AnRkr
+              code: BT34
+              name: type 34
+              description: fd
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T06:38:06.450+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-07-28T12:05:35.707+0000
+            - id: 147361
+              syncTs: 2022-05-18T09:15:03.567+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT46
+              name: type 34
+              description: testing
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T06:38:29.077+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-05-18T09:15:03.567+0000
+            - id: 147779
+              syncTs: 2022-02-18T06:43:46.613+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABST
+              name: string
+              description: string
+              status: ACTIVE
+              createdUser: dulan
+              createdDate: 2022-02-18T06:43:46.613+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165957
+              syncTs: 2022-03-07T09:21:28.434+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT20
+              name: name for BT20
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T09:19:11.010+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T09:21:28.434+0000
+            - id: 179560
+              syncTs: 2022-03-16T10:39:47.730+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ1
+              name: test1
+              description: des1
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:39:47.730+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179561
+              syncTs: 2022-03-16T10:40:26.771+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ2
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:40:26.771+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1011237
+              syncTs: 2023-01-13T09:30:19.947+0000
+              version: 0
+              tenantId: AnRkr
+              code: 13JN
+              name: Nipuni Witharanage 3
+              description: testing
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-13T09:30:19.946+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 222222
+              syncTs: 2023-03-16T17:54:46.323+0000
+              version: 2
+              tenantId: AnRkr
+              code: NV01
+              name: Test NV01
+              description: Test NV01 Des test
+              status: ACTIVE
+              createdUser: Naveesha
+              createdDate: 2023-03-14T08:32:16.195+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-16T17:54:46.323+0000
+            - id: 20153
+              syncTs: 2021-10-06T14:35:36.523+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT01
+              name: BT01_Name
+              description: BT01_Desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T14:35:36.523+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20155
+              syncTs: 2022-07-26T10:09:08.400+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT03
+              name: BT01_Name
+              description: BT01_Desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T15:52:32.242+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-26T10:09:08.400+0000
+            - id: 20156
+              syncTs: 2021-10-06T16:02:59.392+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT11
+              name: BT01_Name
+              description: null
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T16:02:59.392+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165729
+              syncTs: 2022-03-07T08:06:29.881+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT58
+              name: name for BT58
+              description: Update BT record 58
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T07:03:53.187+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:06:29.881+0000
+            - id: 167362
+              syncTs: 2022-03-08T03:46:01.295+0000
+              version: 0
+              tenantId: AnRkr
+              code: QW79
+              name: QQQQqqq
+              description: test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-03-08T03:46:01.295+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 199490
+              syncTs: 2022-04-29T07:09:34.530+0000
+              version: 1
+              tenantId: AnRkr
+              code: CCC1
+              name: Test@12322222
+              description: '2222222'
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-04-29T06:56:35.804+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-04-29T07:09:34.530+0000
+            - id: 236772
+              syncTs: 2023-02-02T10:19:57.933+0000
+              version: 2
+              tenantId: AnRkr
+              code: DAS4
+              name: DAStest-up
+              description: Test
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-16T03:30:48.989+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-02T10:19:57.933+0000
+            - id: 299028
+              syncTs: 2022-09-20T14:14:46.816+0000
+              version: 0
+              tenantId: AnRkr
+              code: '4512'
+              name: test0
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-09-20T14:14:46.816+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 548189
+              syncTs: 2022-11-23T03:39:34.455+0000
+              version: 9
+              tenantId: AnRkr
+              code: UT5R
+              name: Sahan BTD
+              description: nb gvj gjhbjhbjhbjhgjhbjhjhhjhh  hhhhkjkhhkhh kh khkh  hk hkh kh khk hkhkj
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-11-22T15:49:35.024+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:39:34.455+0000
+            - id: 1312726
+              syncTs: 2023-02-07T20:07:25.479+0000
+              version: 1
+              tenantId: AnRkr
+              code: DA11
+              name: DAStest 11
+              description: Test-up
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-07T20:06:38.797+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-07T20:07:25.479+0000
+            - id: 1559042
+              syncTs: 2023-03-21T03:23:35.190+0000
+              version: 0
+              tenantId: AnRkr
+              code: '4560'
+              name: bhagya
+              description: test
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-21T03:23:35.190+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20580
+              syncTs: 2021-10-13T11:19:57.152+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT05
+              name: business type 5
+              description: BT05 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:19:57.152+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 147117
+              syncTs: 2022-02-17T03:22:52.970+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT35
+              name: type 34 edited
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T03:22:30.551+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-17T03:22:52.970+0000
+            - id: 148187
+              syncTs: 2022-02-21T05:25:08.525+0000
+              version: 0
+              tenantId: AnRkr
+              code: AQAQ
+              name: aqaq
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-21T05:25:08.525+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 156806
+              syncTs: 2022-02-28T11:18:47.304+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT99
+              name: Manufacturing
+              description: Test Description
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-02-28T11:12:51.405+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-02-28T11:18:47.304+0000
+            - id: 167367
+              syncTs: 2022-03-08T03:46:45.768+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWAA
+              name: QQQQqqq
+              description: test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-03-08T03:46:45.768+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179562
+              syncTs: 2022-03-16T10:41:15.692+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ3
+              name: test3
+              description: des3
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:41:15.692+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 196853
+              syncTs: 2022-04-27T08:06:45.391+0000
+              version: 0
+              tenantId: AnRkr
+              code: '1234'
+              name: Husnul Aman
+              description: lorem ipsum
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-27T08:06:45.391+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 214753
+              syncTs: 2022-05-19T03:54:58.329+0000
+              version: 1
+              tenantId: AnRkr
+              code: DAS2
+              name: DAStestttt
+              description: descccc
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-05-19T03:48:54.893+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-05-19T03:54:58.329+0000
+            - id: 235683
+              syncTs: 2022-06-22T12:35:35.934+0000
+              version: 1
+              tenantId: AnRkr
+              code: DAS3
+              name: DAStestttt
+              description: Test-Descccc
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-15T07:21:31.025+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-22T12:35:35.934+0000
+            - id: 251156
+              syncTs: 2022-07-26T09:13:04.525+0000
+              version: 2
+              tenantId: AnRkr
+              code: MANU
+              name: Manufacturing
+              description: Manufacturing business type
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-26T05:28:19.281+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-26T09:13:04.525+0000
+            - id: 1554174
+              syncTs: 2023-03-21T03:22:54.716+0000
+              version: 2
+              tenantId: AnRkr
+              code: '4567'
+              name: bhagya
+              description: UII
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-16T17:55:22.879+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-21T03:22:54.716+0000
+            - id: 1581082
+              syncTs: 2023-03-29T09:13:08.386+0000
+              version: 1
+              tenantId: AnRkr
+              code: DAD1
+              name: Test DAD1 - uPdate
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-29T09:12:38.687+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-29T09:13:08.386+0000
+            - id: 1888670
+              syncTs: 2023-07-20T16:12:52.748+0000
+              version: 0
+              tenantId: AnRkr
+              code: POUI
+              name: Test ts14
+              description: semina t1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T16:12:52.748+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 35621
+              syncTs: 2021-10-06T13:40:48.756+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT01
+              name: BT01_Test
+              description: BT01_Description
+              status: INACTIVE
+              createdUser: >
+                Sahan
+              createdDate: 2021-10-06T13:40:23.710+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20848
+              syncTs: 2021-10-21T05:17:14.432+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT09
+              name: business type 9
+              description: BT09 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T05:17:14.432+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 145750
+              syncTs: 2022-02-11T04:15:58.966+0000
+              version: 1
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T04:15:00.464+0000
+              modifiedUser: SewwandiH
+              modifiedDate: 2022-02-11T04:15:58.966+0000
+            - id: 147778
+              syncTs: 2022-02-18T06:38:52.818+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABSC
+              name: string
+              description: string
+              status: ACTIVE
+              createdUser: dulan
+              createdDate: 2022-02-18T06:38:52.818+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165730
+              syncTs: 2022-03-07T08:43:49.829+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT60
+              name: name for BT60
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T07:06:21.944+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:43:49.829+0000
+            - id: 165891
+              syncTs: 2022-03-07T08:46:13.375+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT30
+              name: Name for BT30
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:17:08.882+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:46:13.375+0000
+            - id: 165923
+              syncTs: 2022-03-07T08:56:41.877+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT10
+              name: Name for business type 10
+              description: Update status
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:26:56.069+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:56:41.877+0000
+            - id: 165924
+              syncTs: 2023-03-29T16:50:43.531+0000
+              version: 4
+              tenantId: AnRkr
+              code: BT12
+              name: Name for BT12
+              description: Update description
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:27:37.297+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:50:43.531+0000
+            - id: 166126
+              syncTs: 2022-03-07T10:43:41.813+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT21
+              name: name for BT 21
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T10:43:41.813+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179564
+              syncTs: 2022-03-16T10:41:58.188+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ4
+              name: test4
+              description: null
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:41:58.188+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 214752
+              syncTs: 2023-03-29T16:51:07.218+0000
+              version: 5
+              tenantId: AnRkr
+              code: DAS1
+              name: DAStestttt
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-05-19T03:48:21.271+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:51:07.218+0000
+            - id: 214776
+              syncTs: 2022-05-19T05:10:58.348+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT61
+              name: Statement Type - T3
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-05-19T05:10:58.348+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 228373
+              syncTs: 2022-06-08T08:02:10.036+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT62
+              name: Business Type - T
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-06-08T08:02:10.036+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 234346
+              syncTs: 2022-06-14T03:09:44.937+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWQE
+              name: QWERT
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T03:09:44.937+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 239792
+              syncTs: 2022-06-22T12:30:24.759+0000
+              version: 0
+              tenantId: AnRkr
+              code: DA88
+              name: DAStest
+              description: test
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-22T12:30:24.759+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1151014
+              syncTs: 2023-01-24T09:18:11.093+0000
+              version: 1
+              tenantId: AnRkr
+              code: DA10
+              name: Da test-up
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-24T09:16:37.146+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-24T09:18:11.093+0000
+            - id: 1296952
+              syncTs: 2023-03-10T08:11:56.470+0000
+              version: 2
+              tenantId: AnRkr
+              code: DA00
+              name: DAStest
+              description: test
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-02T10:16:40.620+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-10T08:11:56.470+0000
+            - id: 20154
+              syncTs: 2023-03-29T16:50:18.060+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT04
+              name: new name
+              description: new desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T14:41:37.649+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:50:18.060+0000
+            - id: 20585
+              syncTs: 2021-10-13T11:34:44.921+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT07
+              name: business type 7
+              description: BT07 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:34:44.921+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20842
+              syncTs: 2021-10-21T04:30:31.293+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT08
+              name: business type 8
+              description: BT08 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T04:30:31.293+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165596
+              syncTs: 2022-03-07T06:21:52.606+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT57
+              name: BT57 name
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T06:21:52.606+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 199479
+              syncTs: 2022-04-29T07:10:53.909+0000
+              version: 1
+              tenantId: AnRkr
+              code: CCCC
+              name: Test@123
+              description: null
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-04-29T06:51:54.672+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-04-29T07:10:53.909+0000
+            - id: 251238
+              syncTs: 2022-07-26T11:01:47.130+0000
+              version: 2
+              tenantId: AnRkr
+              code: PART
+              name: Partnership Type
+              description: Partnership Business Type
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-26T09:12:28.722+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-26T11:01:47.130+0000
+            - id: 1150666
+              syncTs: 2023-01-24T08:32:39.323+0000
+              version: 2
+              tenantId: AnRkr
+              code: DAS9
+              name: DAStest
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-24T08:32:16.195+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-24T08:32:39.323+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:16:11 GMT
+            Content-Length:
+              type: string
+              default: '16679'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0a5d14a8209062c9f01c7b9cb6f03133f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '24'
+  /AnRkr/code/BT46:
+    get:
+      summary: GetBusinessTypesByCode
+      tags:
+      - Misc
+      operationId: GetBusinessTypesByCode
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest1'
+          examples:
+            application/json;charset=UTF-8:
+              id: 147361
+              syncTs: 2022-05-18T09:15:03.567+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT46
+              name: type 34
+              description: testing
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T06:38:29.077+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-05-18T09:15:03.567+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:17:48 GMT
+            Content-Length:
+              type: string
+              default: '306'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0cd937070441bf9c978227c0e5cf74721"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+  /AnRkr/name/name for BT20:
+    get:
+      summary: GetBusinessTypesByName
+      tags:
+      - Misc
+      operationId: GetBusinessTypesByName
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 165957
+              syncTs: 2022-03-07T09:21:28.434+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT20
+              name: name for BT20
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T09:19:11.010+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T09:21:28.434+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:19:04 GMT
+            Content-Length:
+              type: string
+              default: '320'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0fa2f63292697f8d1200f94e7f965e915"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '23'
+  /AnRkr/search:
+    get:
+      summary: searchBusinessType
+      tags:
+      - Misc
+      operationId: searchBusinessType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: code
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/searchBusinessType'
+          examples:
+            application/json;charset=UTF-8:
+              content:
+              - id: 147361
+                syncTs: 2022-05-18T09:15:03.567+0000
+                version: 1
+                tenantId: AnRkr
+                code: BT46
+                name: type 34
+                description: testing
+                status: ACTIVE
+                createdUser: lahiru
+                createdDate: 2022-02-17T06:38:29.077+0000
+                modifiedUser: tharuki.ariyapala
+                modifiedDate: 2022-05-18T09:15:03.567+0000
+              pageable:
+                sort:
+                  sorted: false
+                  unsorted: true
+                  empty: true
+                pageSize: 10
+                pageNumber: 0
+                offset: 0
+                unpaged: false
+                paged: true
+              totalPages: 1
+              totalElements: 1
+              last: true
+              first: true
+              sort:
+                sorted: false
+                unsorted: true
+                empty: true
+              numberOfElements: 1
+              size: 10
+              number: 0
+              empty: false
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:20:39 GMT
+            Content-Length:
+              type: string
+              default: '622'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"09042e19bdafccd4fad816772a577d6b3"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '28'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: GetBusinessTypesByStatus
+      tags:
+      - Misc
+      operationId: GetBusinessTypesByStatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20583
+              syncTs: 2022-12-14T17:42:45.920+0000
+              version: 10
+              tenantId: AnRkr
+              code: BT56
+              name: business type 6
+              description: BT06 Dess
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:33:37.934+0000
+              modifiedUser: DilanthaM
+              modifiedDate: 2022-12-14T17:42:45.920+0000
+            - id: 147360
+              syncTs: 2022-07-28T12:05:35.707+0000
+              version: 4
+              tenantId: AnRkr
+              code: BT34
+              name: type 34
+              description: fd
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T06:38:06.450+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-07-28T12:05:35.707+0000
+            - id: 147361
+              syncTs: 2022-05-18T09:15:03.567+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT46
+              name: type 34
+              description: testing
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T06:38:29.077+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-05-18T09:15:03.567+0000
+            - id: 147779
+              syncTs: 2022-02-18T06:43:46.613+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABST
+              name: string
+              description: string
+              status: ACTIVE
+              createdUser: dulan
+              createdDate: 2022-02-18T06:43:46.613+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165957
+              syncTs: 2022-03-07T09:21:28.434+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT20
+              name: name for BT20
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T09:19:11.010+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T09:21:28.434+0000
+            - id: 179560
+              syncTs: 2022-03-16T10:39:47.730+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ1
+              name: test1
+              description: des1
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:39:47.730+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 179561
+              syncTs: 2022-03-16T10:40:26.771+0000
+              version: 0
+              tenantId: AnRkr
+              code: QAQ2
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-16T10:40:26.771+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1011237
+              syncTs: 2023-01-13T09:30:19.947+0000
+              version: 0
+              tenantId: AnRkr
+              code: 13JN
+              name: Nipuni Witharanage 3
+              description: testing
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-13T09:30:19.946+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 222222
+              syncTs: 2023-03-16T17:54:46.323+0000
+              version: 2
+              tenantId: AnRkr
+              code: NV01
+              name: Test NV01
+              description: Test NV01 Des test
+              status: ACTIVE
+              createdUser: Naveesha
+              createdDate: 2023-03-14T08:32:16.195+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-16T17:54:46.323+0000
+            - id: 20153
+              syncTs: 2021-10-06T14:35:36.523+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT01
+              name: BT01_Name
+              description: BT01_Desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T14:35:36.523+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20155
+              syncTs: 2022-07-26T10:09:08.400+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT03
+              name: BT01_Name
+              description: BT01_Desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T15:52:32.242+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-26T10:09:08.400+0000
+            - id: 20156
+              syncTs: 2021-10-06T16:02:59.392+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT11
+              name: BT01_Name
+              description: null
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T16:02:59.392+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165729
+              syncTs: 2022-03-07T08:06:29.881+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT58
+              name: name for BT58
+              description: Update BT record 58
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T07:03:53.187+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:06:29.881+0000
+            - id: 167362
+              syncTs: 2022-03-08T03:46:01.295+0000
+              version: 0
+              tenantId: AnRkr
+              code: QW79
+              name: QQQQqqq
+              description: test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-03-08T03:46:01.295+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 199490
+              syncTs: 2022-04-29T07:09:34.530+0000
+              version: 1
+              tenantId: AnRkr
+              code: CCC1
+              name: Test@12322222
+              description: '2222222'
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-04-29T06:56:35.804+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-04-29T07:09:34.530+0000
+            - id: 299028
+              syncTs: 2022-09-20T14:14:46.816+0000
+              version: 0
+              tenantId: AnRkr
+              code: '4512'
+              name: test0
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-09-20T14:14:46.816+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 548189
+              syncTs: 2022-11-23T03:39:34.455+0000
+              version: 9
+              tenantId: AnRkr
+              code: UT5R
+              name: Sahan BTD
+              description: nb gvj gjhbjhbjhbjhgjhbjhjhhjhh  hhhhkjkhhkhh kh khkh  hk hkh kh khk hkhkj
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-11-22T15:49:35.024+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:39:34.455+0000
+            - id: 1559042
+              syncTs: 2023-03-21T03:23:35.190+0000
+              version: 0
+              tenantId: AnRkr
+              code: '4560'
+              name: bhagya
+              description: test
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-21T03:23:35.190+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20580
+              syncTs: 2021-10-13T11:19:57.152+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT05
+              name: business type 5
+              description: BT05 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:19:57.152+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 147117
+              syncTs: 2022-02-17T03:22:52.970+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT35
+              name: type 34 edited
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-17T03:22:30.551+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-17T03:22:52.970+0000
+            - id: 148187
+              syncTs: 2022-02-21T05:25:08.525+0000
+              version: 0
+              tenantId: AnRkr
+              code: AQAQ
+              name: aqaq
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-21T05:25:08.525+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 156806
+              syncTs: 2022-02-28T11:18:47.304+0000
+              version: 1
+              tenantId: AnRkr
+              code: BT99
+              name: Manufacturing
+              description: Test Description
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-02-28T11:12:51.405+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-02-28T11:18:47.304+0000
+            - id: 167367
+              syncTs: 2022-03-08T03:46:45.768+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWAA
+              name: QQQQqqq
+              description: test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-03-08T03:46:45.768+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 196853
+              syncTs: 2022-04-27T08:06:45.391+0000
+              version: 0
+              tenantId: AnRkr
+              code: '1234'
+              name: Husnul Aman
+              description: lorem ipsum
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-27T08:06:45.391+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 214753
+              syncTs: 2022-05-19T03:54:58.329+0000
+              version: 1
+              tenantId: AnRkr
+              code: DAS2
+              name: DAStestttt
+              description: descccc
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-05-19T03:48:54.893+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-05-19T03:54:58.329+0000
+            - id: 251156
+              syncTs: 2022-07-26T09:13:04.525+0000
+              version: 2
+              tenantId: AnRkr
+              code: MANU
+              name: Manufacturing
+              description: Manufacturing business type
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-26T05:28:19.281+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-26T09:13:04.525+0000
+            - id: 1554174
+              syncTs: 2023-03-21T03:22:54.716+0000
+              version: 2
+              tenantId: AnRkr
+              code: '4567'
+              name: bhagya
+              description: UII
+              status: ACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-03-16T17:55:22.879+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-21T03:22:54.716+0000
+            - id: 1888670
+              syncTs: 2023-07-20T16:12:52.748+0000
+              version: 0
+              tenantId: AnRkr
+              code: POUI
+              name: Test ts14
+              description: semina t1
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T16:12:52.748+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20848
+              syncTs: 2021-10-21T05:17:14.432+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT09
+              name: business type 9
+              description: BT09 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T05:17:14.432+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 145750
+              syncTs: 2022-02-11T04:15:58.966+0000
+              version: 1
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T04:15:00.464+0000
+              modifiedUser: SewwandiH
+              modifiedDate: 2022-02-11T04:15:58.966+0000
+            - id: 147778
+              syncTs: 2022-02-18T06:38:52.818+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABSC
+              name: string
+              description: string
+              status: ACTIVE
+              createdUser: dulan
+              createdDate: 2022-02-18T06:38:52.818+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165730
+              syncTs: 2022-03-07T08:43:49.829+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT60
+              name: name for BT60
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T07:06:21.944+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:43:49.829+0000
+            - id: 165891
+              syncTs: 2022-03-07T08:46:13.375+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT30
+              name: Name for BT30
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:17:08.882+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:46:13.375+0000
+            - id: 165923
+              syncTs: 2022-03-07T08:56:41.877+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT10
+              name: Name for business type 10
+              description: Update status
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:26:56.069+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-07T08:56:41.877+0000
+            - id: 165924
+              syncTs: 2023-03-29T16:50:43.531+0000
+              version: 4
+              tenantId: AnRkr
+              code: BT12
+              name: Name for BT12
+              description: Update description
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T08:27:37.297+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:50:43.531+0000
+            - id: 166126
+              syncTs: 2022-03-07T10:43:41.813+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT21
+              name: name for BT 21
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T10:43:41.813+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 214752
+              syncTs: 2023-03-29T16:51:07.218+0000
+              version: 5
+              tenantId: AnRkr
+              code: DAS1
+              name: DAStestttt
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-05-19T03:48:21.271+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:51:07.218+0000
+            - id: 214776
+              syncTs: 2022-05-19T05:10:58.348+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT61
+              name: Statement Type - T3
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-05-19T05:10:58.348+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 228373
+              syncTs: 2022-06-08T08:02:10.036+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT62
+              name: Business Type - T
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-06-08T08:02:10.036+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 234346
+              syncTs: 2022-06-14T03:09:44.937+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWQE
+              name: QWERT
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T03:09:44.937+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 239792
+              syncTs: 2022-06-22T12:30:24.759+0000
+              version: 0
+              tenantId: AnRkr
+              code: DA88
+              name: DAStest
+              description: test
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-22T12:30:24.759+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1296952
+              syncTs: 2023-03-10T08:11:56.470+0000
+              version: 2
+              tenantId: AnRkr
+              code: DA00
+              name: DAStest
+              description: test
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-02T10:16:40.620+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-10T08:11:56.470+0000
+            - id: 20154
+              syncTs: 2023-03-29T16:50:18.060+0000
+              version: 2
+              tenantId: AnRkr
+              code: BT04
+              name: new name
+              description: new desc
+              status: ACTIVE
+              createdUser: Sahan
+              createdDate: 2021-10-06T14:41:37.649+0000
+              modifiedUser: acentura.testing
+              modifiedDate: 2023-03-29T16:50:18.060+0000
+            - id: 20585
+              syncTs: 2021-10-13T11:34:44.921+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT07
+              name: business type 7
+              description: BT07 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-13T11:34:44.921+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20842
+              syncTs: 2021-10-21T04:30:31.293+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT08
+              name: business type 8
+              description: BT08 Des
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T04:30:31.293+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 165596
+              syncTs: 2022-03-07T06:21:52.606+0000
+              version: 0
+              tenantId: AnRkr
+              code: BT57
+              name: BT57 name
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-07T06:21:52.606+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1150666
+              syncTs: 2023-01-24T08:32:39.323+0000
+              version: 2
+              tenantId: AnRkr
+              code: DAS9
+              name: DAStest
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-24T08:32:16.195+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-24T08:32:39.323+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:22:41 GMT
+            Content-Length:
+              type: string
+              default: '13705'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"02f26c0656502c7ebbfd491d0579815f0"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '20'
+definitions:
+  AddBusinessTypeRequest:
+    title: AddBusinessTypeRequest
+    example:
+      code: POUI
+      description: semina t1
+      name: Test ts14
+      status: ACTIVE
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+    required:
+    - code
+    - description
+    - name
+    - status
+  AddBusinessType:
+    title: AddBusinessType
+    example:
+      messages: CREATED.
+      value: '1888670'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  GetBusinessTypeById:
+    title: GetBusinessTypeById
+    example:
+      id: 1888670
+      syncTs: 2023-07-20T16:12:52.748+0000
+      version: 0
+      tenantId: AnRkr
+      code: POUI
+      name: Test ts14
+      description: semina t1
+      status: ACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2023-07-20T16:12:52.748+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest:
+    title: NewRequest
+    example:
+      id: 20583
+      syncTs: 2022-12-14T17:42:45.920+0000
+      version: 10
+      tenantId: AnRkr
+      code: BT56
+      name: business type 6
+      description: BT06 Dess
+      status: ACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-13T11:33:37.934+0000
+      modifiedUser: DilanthaM
+      modifiedDate: 2022-12-14T17:42:45.920+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest1:
+    title: NewRequest1
+    example:
+      id: 147361
+      syncTs: 2022-05-18T09:15:03.567+0000
+      version: 1
+      tenantId: AnRkr
+      code: BT46
+      name: type 34
+      description: testing
+      status: ACTIVE
+      createdUser: lahiru
+      createdDate: 2022-02-17T06:38:29.077+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2022-05-18T09:15:03.567+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest2:
+    title: NewRequest2
+    example:
+      id: 165957
+      syncTs: 2022-03-07T09:21:28.434+0000
+      version: 1
+      tenantId: AnRkr
+      code: BT20
+      name: name for BT20
+      description: null
+      status: ACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2022-03-07T09:19:11.010+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2022-03-07T09:21:28.434+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  searchBusinessType:
+    title: searchBusinessType
+    example:
+      content:
+      - id: 147361
+        syncTs: 2022-05-18T09:15:03.567+0000
+        version: 1
+        tenantId: AnRkr
+        code: BT46
+        name: type 34
+        description: testing
+        status: ACTIVE
+        createdUser: lahiru
+        createdDate: 2022-02-17T06:38:29.077+0000
+        modifiedUser: tharuki.ariyapala
+        modifiedDate: 2022-05-18T09:15:03.567+0000
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        unpaged: false
+        paged: true
+      totalPages: 1
+      totalElements: 1
+      last: true
+      first: true
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      last:
+        type: boolean
+      first:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - totalPages
+    - totalElements
+    - last
+    - first
+    - sort
+    - numberOfElements
+    - size
+    - number
+    - empty
+  Content:
+    title: Content
+    example:
+      id: 147361
+      syncTs: 2022-05-18T09:15:03.567+0000
+      version: 1
+      tenantId: AnRkr
+      code: BT46
+      name: type 34
+      description: testing
+      status: ACTIVE
+      createdUser: lahiru
+      createdDate: 2022-02-17T06:38:29.077+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2022-05-18T09:15:03.567+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  Pageable:
+    title: Pageable
+    example:
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      pageSize: 10
+      pageNumber: 0
+      offset: 0
+      unpaged: false
+      paged: true
+    type: object
+    properties:
+      sort:
+        $ref: '#/definitions/Sort'
+      pageSize:
+        type: integer
+        format: int32
+      pageNumber:
+        type: integer
+        format: int32
+      offset:
+        type: integer
+        format: int32
+      unpaged:
+        type: boolean
+      paged:
+        type: boolean
+    required:
+    - sort
+    - pageSize
+    - pageNumber
+    - offset
+    - unpaged
+    - paged
+  Sort:
+    title: Sort
+    example:
+      sorted: false
+      unsorted: true
+      empty: true
+    type: object
+    properties:
+      sorted:
+        type: boolean
+      unsorted:
+        type: boolean
+      empty:
+        type: boolean
+    required:
+    - sorted
+    - unsorted
+    - empty
+  searchBusinessType1:
+    title: searchBusinessType1
+    example:
+      content:
+      - id: 165957
+        syncTs: 2022-03-07T09:21:28.434+0000
+        version: 1
+        tenantId: AnRkr
+        code: BT20
+        name: name for BT20
+        description: null
+        status: ACTIVE
+        createdUser: tharuki.ariyapala
+        createdDate: 2022-03-07T09:19:11.010+0000
+        modifiedUser: tharuki.ariyapala
+        modifiedDate: 2022-03-07T09:21:28.434+0000
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        unpaged: false
+        paged: true
+      totalPages: 1
+      totalElements: 1
+      last: true
+      first: true
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content1'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      last:
+        type: boolean
+      first:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - totalPages
+    - totalElements
+    - last
+    - first
+    - sort
+    - numberOfElements
+    - size
+    - number
+    - empty
+  Content1:
+    title: Content1
+    example:
+      id: 165957
+      syncTs: 2022-03-07T09:21:28.434+0000
+      version: 1
+      tenantId: AnRkr
+      code: BT20
+      name: name for BT20
+      description: null
+      status: ACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2022-03-07T09:19:11.010+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2022-03-07T09:21:28.434+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequestRequest:
+    title: NewRequestRequest
+    example:
+      code: POUI
+      description: semina t1
+      name: Test ts14
+      status: INACTIVE
+      version: 0
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      version:
+        type: integer
+        format: int32
+    required:
+    - code
+    - description
+    - name
+    - status
+    - version
+  NewRequest4:
+    title: NewRequest4
+    example:
+      messages: OK.
+    type: object
+    properties:
+      messages:
+        type: string
+    required:
+    - messages
+tags:
+- name: Misc
+  description: ''

@@ -1,0 +1,1996 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Expense type controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/expense-type
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: AddExpenseType
+      tags:
+      - Misc
+      operationId: AddExpenseType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AddExpenseTypeRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888629'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:44:41 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '46'
+  /AnRkr/1888629:
+    put:
+      summary: New Request Copy
+      tags:
+      - Misc
+      operationId: NewRequestCopy
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/NewRequestCopyRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequestCopy'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:48:48 GMT
+            Content-Length:
+              type: string
+              default: '18'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '29'
+    get:
+      summary: GetexpensebyID
+      tags:
+      - Misc
+      operationId: GetexpensebyID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest1'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888629
+              syncTs: 2023-07-20T14:48:48.066+0000
+              version: 1
+              tenantId: AnRkr
+              code: LKI4
+              name: Expense T-77
+              description: Test 44
+              status: INACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T14:44:41.455+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2023-07-20T14:48:48.066+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:51:15 GMT
+            Content-Length:
+              type: string
+              default: '325'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0f0249bd4112a27f6123350a0f2abe56c"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '13'
+  /AnRkr/all:
+    get:
+      summary: GetAll
+      tags:
+      - Misc
+      operationId: GetAll
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20858
+              syncTs: 2023-02-07T20:22:10.471+0000
+              version: 11
+              tenantId: AnRkr
+              code: EX13
+              name: updated name-up
+              description: null
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T06:00:14.560+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-07T20:22:10.471+0000
+            - id: 20866
+              syncTs: 2023-02-07T20:35:27.950+0000
+              version: 3
+              tenantId: AnRkr
+              code: EX14
+              name: Expense Type 14
+              description: Test 14
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T06:38:20.907+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-07T20:35:27.950+0000
+            - id: 164490
+              syncTs: 2022-03-03T10:44:23.108+0000
+              version: 0
+              tenantId: AnRkr
+              code: aaaa
+              name: aa
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T10:44:23.108+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164512
+              syncTs: 2022-06-24T09:43:41.575+0000
+              version: 1
+              tenantId: AnRkr
+              code: aaa9
+              name: aa
+              description: test
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:04:40.755+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-24T09:43:41.575+0000
+            - id: 164513
+              syncTs: 2022-03-03T11:08:42.081+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABCI
+              name: test1
+              description: test decription
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:08:42.081+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164514
+              syncTs: 2022-03-03T11:09:43.347+0000
+              version: 0
+              tenantId: AnRkr
+              code: ZXZX
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:09:43.347+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164515
+              syncTs: 2022-03-03T11:10:51.144+0000
+              version: 0
+              tenantId: AnRkr
+              code: YUYU
+              name: test3
+              description: testdes
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:10:51.144+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164516
+              syncTs: 2022-03-03T11:11:40.456+0000
+              version: 0
+              tenantId: AnRkr
+              code: OPOP
+              name: test3
+              description: null
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:11:40.456+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171713
+              syncTs: 2022-03-11T07:44:52.410+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX04
+              name: Expense Type - T4
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-11T07:44:52.410+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 234654
+              syncTs: 2022-06-14T05:53:31.786+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWTR
+              name: Transportation
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T05:53:31.786+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 250842
+              syncTs: 2022-07-25T05:10:07.206+0000
+              version: 0
+              tenantId: AnRkr
+              code: WERT
+              name: A Name
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-25T05:10:07.206+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1198721
+              syncTs: 2023-01-30T11:41:20.973+0000
+              version: 0
+              tenantId: AnRkr
+              code: DA10
+              name: DAS test
+              description: test
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-30T11:41:20.973+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1295431
+              syncTs: 2023-02-23T09:30:52.633+0000
+              version: 1
+              tenantId: AnRkr
+              code: EXP0
+              name: expense 0
+              description: d
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-02T03:54:21.090+0000
+              modifiedUser: PramudithaN
+              modifiedDate: 2023-02-23T09:30:52.633+0000
+            - id: 1313659
+              syncTs: 2023-02-28T11:28:56.314+0000
+              version: 5
+              tenantId: AnRkr
+              code: EXPP
+              name: expend 2 - 02
+              description: Test t2\5
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T09:59:28.527+0000
+              modifiedUser: PramudithaN
+              modifiedDate: 2023-02-28T11:28:56.314+0000
+            - id: 148286
+              syncTs: 2022-02-21T08:04:32.677+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABCD
+              name: Exception Type20
+              description: New
+              status: ACTIVE
+              createdUser: sewwandiH
+              createdDate: 2022-02-21T08:04:32.677+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 167930
+              syncTs: 2022-03-08T06:37:04.873+0000
+              version: 1
+              tenantId: AnRkr
+              code: CVCV
+              name: test567
+              description: null
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-08T06:34:03.607+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-08T06:37:04.873+0000
+            - id: 171214
+              syncTs: 2022-03-10T10:43:34.890+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP1
+              name: Grocery
+              description: Sales of grocery items
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:43:34.890+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171215
+              syncTs: 2022-03-10T10:49:19.944+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP2
+              name: Expense Type T
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:49:19.944+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171216
+              syncTs: 2022-03-11T03:55:20.257+0000
+              version: 2
+              tenantId: AnRkr
+              code: EX01
+              name: Expense Type - T2
+              description: 'testing '
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:52:20.707+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-11T03:55:20.257+0000
+            - id: 171238
+              syncTs: 2022-03-11T03:57:29.446+0000
+              version: 2
+              tenantId: AnRkr
+              code: EX02
+              name: Books
+              description: Book Shop
+              status: INACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T11:06:01.410+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-11T03:57:29.446+0000
+            - id: 171586
+              syncTs: 2022-03-11T04:06:54.237+0000
+              version: 2
+              tenantId: AnRkr
+              code: EX03
+              name: Tailoring
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-11T03:27:48.590+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-11T04:06:54.237+0000
+            - id: 240245
+              syncTs: 2022-06-24T09:39:02.608+0000
+              version: 1
+              tenantId: AnRkr
+              code: '1456'
+              name: expense type - t1
+              description: testing 1
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-24T09:38:21.815+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-24T09:39:02.608+0000
+            - id: 240246
+              syncTs: 2022-06-24T09:39:45.888+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX05
+              name: Expense type - T05
+              description: testing 05
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-24T09:39:45.888+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 251290
+              syncTs: 2022-07-27T04:12:44.611+0000
+              version: 4
+              tenantId: AnRkr
+              code: UTLT
+              name: Utility Expense
+              description: Utility Expense
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-26T11:38:28.015+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T04:12:44.611+0000
+            - id: 1315135
+              syncTs: 2023-02-28T11:29:10.896+0000
+              version: 3
+              tenantId: AnRkr
+              code: '4567'
+              name: bhagya
+              description: y
+              status: INACTIVE
+              createdUser: bhagyaa
+              createdDate: 2023-02-09T03:04:45.065+0000
+              modifiedUser: PramudithaN
+              modifiedDate: 2023-02-28T11:29:10.896+0000
+            - id: 1581113
+              syncTs: 2023-03-29T09:24:07.048+0000
+              version: 0
+              tenantId: AnRkr
+              code: DDAA
+              name: Test DDAA
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-29T09:24:07.048+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 2
+              syncTs: 2022-02-21T07:44:31.080+0000
+              version: 1
+              tenantId: AnRkr
+              code: EX18
+              name: Expense Type 2
+              description: Test 2
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T16:26:11.024+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-21T07:44:31.080+0000
+            - id: 10
+              syncTs: 2021-10-11T14:53:34.303+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX10
+              name: Expense Type 10
+              description: Test 10
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T14:53:20.144+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 11
+              syncTs: 2021-10-11T15:51:23.578+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX11
+              name: Expense Type 11
+              description: Test 11
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T15:51:14.865+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 146815
+              syncTs: 2022-02-15T08:52:34.733+0000
+              version: 1
+              tenantId: AnRkr
+              code: EX15
+              name: expense 15s
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-15T08:25:31.707+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-15T08:52:34.733+0000
+            - id: 148186
+              syncTs: 2022-02-21T05:24:26.189+0000
+              version: 0
+              tenantId: AnRkr
+              code: SDRR
+              name: wwww
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-21T05:24:26.189+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 156915
+              syncTs: 2022-02-28T12:25:58.385+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET99
+              name: Education
+              description: Test
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-02-28T12:23:14.493+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-02-28T12:25:58.385+0000
+            - id: 233819
+              syncTs: 2022-06-13T10:21:22.456+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX09
+              name: Expense type - T9 update
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-06-13T10:21:22.456+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 549240
+              syncTs: 2023-02-02T03:52:32.912+0000
+              version: 3
+              tenantId: AnRkr
+              code: SP66
+              name: Sahan esguyhsds yudhfnj
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint '
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-11-23T03:21:17.854+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-02T03:52:32.912+0000
+            - id: 1278184
+              syncTs: 2023-02-08T07:27:01.486+0000
+              version: 1
+              tenantId: AnRkr
+              code: E001
+              name: Expend T1
+              description: test up 1
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T07:33:53.460+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-08T07:27:01.486+0000
+            - id: 1
+              syncTs: 2022-02-21T08:13:22.367+0000
+              version: 1
+              tenantId: AnRkr
+              code: E111
+              name: Expense Tpe 1
+              description: Test
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T12:39:41.879+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-21T08:13:22.367+0000
+            - id: 6
+              syncTs: 2021-10-11T11:09:31.463+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP6
+              name: Expense TYpe 6
+              description: Test 6
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T11:09:23.274+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 7
+              syncTs: 2021-10-11T12:02:38.635+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP7
+              name: Expense Type 7
+              description: Test 7
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T12:02:30.866+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 8
+              syncTs: 2021-10-11T12:04:47.707+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP8
+              name: Expense Type 8
+              description: Test 8
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T12:04:39.146+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 9
+              syncTs: 2021-10-11T13:29:41.584+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP9
+              name: Expense Type 9
+              description: Test 9
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T13:29:32.896+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 243946
+              syncTs: 2022-07-05T19:35:35.062+0000
+              version: 0
+              tenantId: AnRkr
+              code: DAS1
+              name: DAS test
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-05T19:35:35.062+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 243947
+              syncTs: 2022-07-05T19:36:40.813+0000
+              version: 0
+              tenantId: AnRkr
+              code: DAS2
+              name: DAS test
+              description: null
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-05T19:36:40.813+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 312973
+              syncTs: 2022-10-13T04:14:54.563+0000
+              version: 0
+              tenantId: AnRkr
+              code: ETFE
+              name: 'ETF Deduction '
+              description: 'ETF Deduction '
+              status: ACTIVE
+              createdUser: BandulaR
+              createdDate: 2022-10-13T04:14:54.563+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1296941
+              syncTs: 2023-02-02T10:03:06.682+0000
+              version: 1
+              tenantId: AnRkr
+              code: DA15
+              name: DAS test-up
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-02T10:01:18.090+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-02T10:03:06.682+0000
+            - id: 1296945
+              syncTs: 2023-02-02T10:03:45.973+0000
+              version: 0
+              tenantId: AnRkr
+              code: DA22
+              name: DAS test
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-02T10:03:45.973+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1375863
+              syncTs: 2023-02-28T18:05:09.107+0000
+              version: 0
+              tenantId: AnRkr
+              code: DDD1
+              name: DAS test DDD1
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-28T18:05:09.107+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888629
+              syncTs: 2023-07-20T14:48:48.066+0000
+              version: 1
+              tenantId: AnRkr
+              code: LKI4
+              name: Expense T-77
+              description: Test 44
+              status: INACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T14:44:41.455+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2023-07-20T14:48:48.066+0000
+            - id: 4
+              syncTs: 2021-10-06T17:38:26.310+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP4
+              name: Expense Type 4
+              description: Test 4
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T17:38:19.760+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 3
+              syncTs: 2021-10-06T17:40:35.398+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP3
+              name: Expense Type 3
+              description: Test 3
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T17:40:29.614+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 5
+              syncTs: 2021-10-10T16:25:14.887+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP5
+              name: Expense Type 5
+              description: Test 5
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-10T16:25:05.536+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20843
+              syncTs: 2022-11-23T03:32:54.390+0000
+              version: 1
+              tenantId: AnRkr
+              code: EX12
+              name: Expense Type 122
+              description: Test 12
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T04:35:36.517+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:32:54.390+0000
+            - id: 145752
+              syncTs: 2022-03-04T05:52:31.695+0000
+              version: 2
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Updated description
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T04:24:25.869+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-04T05:52:31.695+0000
+            - id: 148276
+              syncTs: 2023-02-14T14:43:25.864+0000
+              version: 2
+              tenantId: AnRkr
+              code: AAGH
+              name: Exception Type20
+              description: New
+              status: ACTIVE
+              createdUser: sewwandiH
+              createdDate: 2022-02-21T07:17:43.278+0000
+              modifiedUser: Das
+              modifiedDate: 2023-02-14T14:43:25.864+0000
+            - id: 1266779
+              syncTs: 2023-02-23T09:41:32.125+0000
+              version: 1
+              tenantId: AnRkr
+              code: DA11
+              name: DAS test
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T03:49:59.570+0000
+              modifiedUser: PramudithaN
+              modifiedDate: 2023-02-23T09:41:32.125+0000
+            - id: 1295151
+              syncTs: 2023-02-28T11:43:46.178+0000
+              version: 2
+              tenantId: AnRkr
+              code: ACAW
+              name: ACAW Name
+              description: aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintd
+              status: INACTIVE
+              createdUser: DilanthaM
+              createdDate: 2023-02-01T13:56:00.501+0000
+              modifiedUser: PramudithaN
+              modifiedDate: 2023-02-28T11:43:46.178+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:51:57 GMT
+            Content-Length:
+              type: string
+              default: '16404'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"01affc6970e7f19f631f083a8ae4ce229"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '17'
+  /AnRkr/code/ZXZX:
+    get:
+      summary: getExpenseTypesByCode
+      tags:
+      - Misc
+      operationId: getExpenseTypesByCode
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+              id: 164514
+              syncTs: 2022-03-03T11:09:43.347+0000
+              version: 0
+              tenantId: AnRkr
+              code: ZXZX
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:09:43.347+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:54:25 GMT
+            Content-Length:
+              type: string
+              default: '258'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"03fd4c57a01443c3cad89512347dc26a1"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+  /AnRkr/name/test2:
+    get:
+      summary: GetExpenseTypesByName
+      tags:
+      - Misc
+      operationId: GetExpenseTypesByName
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 164514
+              syncTs: 2022-03-03T11:09:43.347+0000
+              version: 0
+              tenantId: AnRkr
+              code: ZXZX
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:09:43.347+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:55:30 GMT
+            Content-Length:
+              type: string
+              default: '260'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"057babb4afdfdd94168e09a5ff557e656"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '14'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: getExpenseTypesByStatus
+      tags:
+      - Misc
+      operationId: getExpenseTypesByStatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest2'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20866
+              syncTs: 2023-02-07T20:35:27.950+0000
+              version: 3
+              tenantId: AnRkr
+              code: EX14
+              name: Expense Type 14
+              description: Test 14
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T06:38:20.907+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-07T20:35:27.950+0000
+            - id: 164490
+              syncTs: 2022-03-03T10:44:23.108+0000
+              version: 0
+              tenantId: AnRkr
+              code: aaaa
+              name: aa
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T10:44:23.108+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164512
+              syncTs: 2022-06-24T09:43:41.575+0000
+              version: 1
+              tenantId: AnRkr
+              code: aaa9
+              name: aa
+              description: test
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:04:40.755+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-24T09:43:41.575+0000
+            - id: 164513
+              syncTs: 2022-03-03T11:08:42.081+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABCI
+              name: test1
+              description: test decription
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:08:42.081+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 164514
+              syncTs: 2022-03-03T11:09:43.347+0000
+              version: 0
+              tenantId: AnRkr
+              code: ZXZX
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-03T11:09:43.347+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171713
+              syncTs: 2022-03-11T07:44:52.410+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX04
+              name: Expense Type - T4
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-11T07:44:52.410+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 234654
+              syncTs: 2022-06-14T05:53:31.786+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWTR
+              name: Transportation
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T05:53:31.786+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 250842
+              syncTs: 2022-07-25T05:10:07.206+0000
+              version: 0
+              tenantId: AnRkr
+              code: WERT
+              name: A Name
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-25T05:10:07.206+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1198721
+              syncTs: 2023-01-30T11:41:20.973+0000
+              version: 0
+              tenantId: AnRkr
+              code: DA10
+              name: DAS test
+              description: test
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-30T11:41:20.973+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 148286
+              syncTs: 2022-02-21T08:04:32.677+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABCD
+              name: Exception Type20
+              description: New
+              status: ACTIVE
+              createdUser: sewwandiH
+              createdDate: 2022-02-21T08:04:32.677+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171214
+              syncTs: 2022-03-10T10:43:34.890+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP1
+              name: Grocery
+              description: Sales of grocery items
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:43:34.890+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171215
+              syncTs: 2022-03-10T10:49:19.944+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP2
+              name: Expense Type T
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:49:19.944+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 171216
+              syncTs: 2022-03-11T03:55:20.257+0000
+              version: 2
+              tenantId: AnRkr
+              code: EX01
+              name: Expense Type - T2
+              description: 'testing '
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T10:52:20.707+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-11T03:55:20.257+0000
+            - id: 171586
+              syncTs: 2022-03-11T04:06:54.237+0000
+              version: 2
+              tenantId: AnRkr
+              code: EX03
+              name: Tailoring
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-11T03:27:48.590+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-11T04:06:54.237+0000
+            - id: 240245
+              syncTs: 2022-06-24T09:39:02.608+0000
+              version: 1
+              tenantId: AnRkr
+              code: '1456'
+              name: expense type - t1
+              description: testing 1
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-24T09:38:21.815+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-24T09:39:02.608+0000
+            - id: 1581113
+              syncTs: 2023-03-29T09:24:07.048+0000
+              version: 0
+              tenantId: AnRkr
+              code: DDAA
+              name: Test DDAA
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-29T09:24:07.048+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 10
+              syncTs: 2021-10-11T14:53:34.303+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX10
+              name: Expense Type 10
+              description: Test 10
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T14:53:20.144+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 11
+              syncTs: 2021-10-11T15:51:23.578+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX11
+              name: Expense Type 11
+              description: Test 11
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T15:51:14.865+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 146815
+              syncTs: 2022-02-15T08:52:34.733+0000
+              version: 1
+              tenantId: AnRkr
+              code: EX15
+              name: expense 15s
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-15T08:25:31.707+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-15T08:52:34.733+0000
+            - id: 148186
+              syncTs: 2022-02-21T05:24:26.189+0000
+              version: 0
+              tenantId: AnRkr
+              code: SDRR
+              name: wwww
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-21T05:24:26.189+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 156915
+              syncTs: 2022-02-28T12:25:58.385+0000
+              version: 1
+              tenantId: AnRkr
+              code: ET99
+              name: Education
+              description: Test
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-02-28T12:23:14.493+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-02-28T12:25:58.385+0000
+            - id: 233819
+              syncTs: 2022-06-13T10:21:22.456+0000
+              version: 0
+              tenantId: AnRkr
+              code: EX09
+              name: Expense type - T9 update
+              description: testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-06-13T10:21:22.456+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1278184
+              syncTs: 2023-02-08T07:27:01.486+0000
+              version: 1
+              tenantId: AnRkr
+              code: E001
+              name: Expend T1
+              description: test up 1
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T07:33:53.460+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-08T07:27:01.486+0000
+            - id: 1
+              syncTs: 2022-02-21T08:13:22.367+0000
+              version: 1
+              tenantId: AnRkr
+              code: E111
+              name: Expense Tpe 1
+              description: Test
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T12:39:41.879+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-21T08:13:22.367+0000
+            - id: 6
+              syncTs: 2021-10-11T11:09:31.463+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP6
+              name: Expense TYpe 6
+              description: Test 6
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T11:09:23.274+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 7
+              syncTs: 2021-10-11T12:02:38.635+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP7
+              name: Expense Type 7
+              description: Test 7
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T12:02:30.866+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 8
+              syncTs: 2021-10-11T12:04:47.707+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP8
+              name: Expense Type 8
+              description: Test 8
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T12:04:39.146+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 243946
+              syncTs: 2022-07-05T19:35:35.062+0000
+              version: 0
+              tenantId: AnRkr
+              code: DAS1
+              name: DAS test
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-05T19:35:35.062+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 312973
+              syncTs: 2022-10-13T04:14:54.563+0000
+              version: 0
+              tenantId: AnRkr
+              code: ETFE
+              name: 'ETF Deduction '
+              description: 'ETF Deduction '
+              status: ACTIVE
+              createdUser: BandulaR
+              createdDate: 2022-10-13T04:14:54.563+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1375863
+              syncTs: 2023-02-28T18:05:09.107+0000
+              version: 0
+              tenantId: AnRkr
+              code: DDD1
+              name: DAS test DDD1
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-28T18:05:09.107+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 3
+              syncTs: 2021-10-06T17:40:35.398+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP3
+              name: Expense Type 3
+              description: Test 3
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-06T17:40:29.614+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 5
+              syncTs: 2021-10-10T16:25:14.887+0000
+              version: 0
+              tenantId: AnRkr
+              code: EXP5
+              name: Expense Type 5
+              description: Test 5
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-10T16:25:05.536+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20843
+              syncTs: 2022-11-23T03:32:54.390+0000
+              version: 1
+              tenantId: AnRkr
+              code: EX12
+              name: Expense Type 122
+              description: Test 12
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-21T04:35:36.517+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-23T03:32:54.390+0000
+            - id: 145752
+              syncTs: 2022-03-04T05:52:31.695+0000
+              version: 2
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Updated description
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T04:24:25.869+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-03-04T05:52:31.695+0000
+            - id: 148276
+              syncTs: 2023-02-14T14:43:25.864+0000
+              version: 2
+              tenantId: AnRkr
+              code: AAGH
+              name: Exception Type20
+              description: New
+              status: ACTIVE
+              createdUser: sewwandiH
+              createdDate: 2022-02-21T07:17:43.278+0000
+              modifiedUser: Das
+              modifiedDate: 2023-02-14T14:43:25.864+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:58:45 GMT
+            Content-Length:
+              type: string
+              default: '9913'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0e9420a4c92ac7fb5fd7bbc7f1fdeb6f8"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+  /AnRkr/search:
+    get:
+      summary: searchExpenseType
+      tags:
+      - Misc
+      operationId: searchExpenseType
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: code
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: searchq
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/searchExpenseType'
+          examples:
+            application/json;charset=UTF-8:
+              content:
+              - id: 164514
+                syncTs: 2022-03-03T11:09:43.347+0000
+                version: 0
+                tenantId: AnRkr
+                code: ZXZX
+                name: test2
+                description: null
+                status: ACTIVE
+                createdUser: lahiru
+                createdDate: 2022-03-03T11:09:43.347+0000
+                modifiedUser: null
+                modifiedDate: null
+              pageable:
+                sort:
+                  sorted: false
+                  unsorted: true
+                  empty: true
+                pageSize: 10
+                pageNumber: 0
+                offset: 0
+                paged: true
+                unpaged: false
+              last: true
+              totalPages: 1
+              totalElements: 1
+              sort:
+                sorted: false
+                unsorted: true
+                empty: true
+              numberOfElements: 1
+              first: true
+              size: 10
+              number: 0
+              empty: false
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:01:59 GMT
+            Content-Length:
+              type: string
+              default: '574'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"08ab8cb324ddeefbaa94af35ca43a30ce"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+definitions:
+  AddExpenseTypeRequest:
+    title: AddExpenseTypeRequest
+    example:
+      code: LKI4
+      description: Test 44
+      name: Expense T-77
+      status: ACTIVE
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+    required:
+    - code
+    - description
+    - name
+    - status
+  NewRequest:
+    title: NewRequest
+    example:
+      messages: CREATED.
+      value: '1888629'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  NewRequestCopyRequest:
+    title: NewRequestCopyRequest
+    example:
+      code: LKI4
+      description: Test 44
+      name: Expense T-77
+      status: INACTIVE
+      version: 0
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      version:
+        type: integer
+        format: int32
+    required:
+    - code
+    - description
+    - name
+    - status
+    - version
+  NewRequestCopy:
+    title: NewRequestCopy
+    example:
+      messages: OK.
+    type: object
+    properties:
+      messages:
+        type: string
+    required:
+    - messages
+  NewRequest1:
+    title: NewRequest1
+    example:
+      id: 1888629
+      syncTs: 2023-07-20T14:48:48.066+0000
+      version: 1
+      tenantId: AnRkr
+      code: LKI4
+      name: Expense T-77
+      description: Test 44
+      status: INACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2023-07-20T14:44:41.455+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2023-07-20T14:48:48.066+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  NewRequest2:
+    title: NewRequest2
+    example:
+      id: 20858
+      syncTs: 2023-02-07T20:22:10.471+0000
+      version: 11
+      tenantId: AnRkr
+      code: EX13
+      name: updated name-up
+      description: null
+      status: INACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-21T06:00:14.560+0000
+      modifiedUser: sahan.peiris
+      modifiedDate: 2023-02-07T20:22:10.471+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  searchExpenseType:
+    title: searchExpenseType
+    example:
+      content:
+      - id: 164514
+        syncTs: 2022-03-03T11:09:43.347+0000
+        version: 0
+        tenantId: AnRkr
+        code: ZXZX
+        name: test2
+        description: null
+        status: ACTIVE
+        createdUser: lahiru
+        createdDate: 2022-03-03T11:09:43.347+0000
+        modifiedUser: null
+        modifiedDate: null
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        paged: true
+        unpaged: false
+      last: true
+      totalPages: 1
+      totalElements: 1
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      first: true
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      last:
+        type: boolean
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      first:
+        type: boolean
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - last
+    - totalPages
+    - totalElements
+    - sort
+    - numberOfElements
+    - first
+    - size
+    - number
+    - empty
+  Content:
+    title: Content
+    example:
+      id: 164514
+      syncTs: 2022-03-03T11:09:43.347+0000
+      version: 0
+      tenantId: AnRkr
+      code: ZXZX
+      name: test2
+      description: null
+      status: ACTIVE
+      createdUser: lahiru
+      createdDate: 2022-03-03T11:09:43.347+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  Pageable:
+    title: Pageable
+    example:
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      pageSize: 10
+      pageNumber: 0
+      offset: 0
+      paged: true
+      unpaged: false
+    type: object
+    properties:
+      sort:
+        $ref: '#/definitions/Sort'
+      pageSize:
+        type: integer
+        format: int32
+      pageNumber:
+        type: integer
+        format: int32
+      offset:
+        type: integer
+        format: int32
+      paged:
+        type: boolean
+      unpaged:
+        type: boolean
+    required:
+    - sort
+    - pageSize
+    - pageNumber
+    - offset
+    - paged
+    - unpaged
+  Sort:
+    title: Sort
+    example:
+      sorted: false
+      unsorted: true
+      empty: true
+    type: object
+    properties:
+      sorted:
+        type: boolean
+      unsorted:
+        type: boolean
+      empty:
+        type: boolean
+    required:
+    - sorted
+    - unsorted
+    - empty
+tags:
+- name: Misc
+  description: ''

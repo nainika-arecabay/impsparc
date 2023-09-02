@@ -1,0 +1,26 @@
+{
+ "description": "Imperva rules for APISpARC",
+ "version": "1.0.1",
+ "rules":
+    [
+
+	{"ruleid": "CVSPF006",
+	 "description": "Contact info not provided or incorrect.",
+	 "score": 2,
+	 "enabled": true,
+	 "rule": [
+	   			{"identifier": "#->info->contact",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"or",
+	   			{"identifier": "#->info->contact->email",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"or",
+	   			{"identifier": "#->info->contact->email",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "^(?![a-z0-9\\.]+@[a-z0-9]+\\.[a-z0-9]+)"}
+   	      	 ]
+	}
+    ]
+}

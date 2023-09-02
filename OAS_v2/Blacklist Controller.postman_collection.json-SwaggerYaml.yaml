@@ -1,0 +1,1552 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Blacklist Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/black-list
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr/all:
+    get:
+      summary: find all
+      tags:
+      - Misc
+      operationId: findall
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/findall'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1810
+              syncTs: 2022-02-09T12:54:42.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T12:54:42.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T12:54:42.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T12:54:42.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1815
+              syncTs: 2022-02-09T15:11:48.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 37070
+              idTypeCode: PRIMARY
+              idTypeDesc: description 1 Updated
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T15:11:48.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T15:11:48.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T15:11:48.000+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            ETag:
+              type: string
+              default: '"0379ab029542d9813350270a1f536a31d"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '1934'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:38:38 GMT
+  /AnRkr/144669:
+    get:
+      summary: find by id
+      tags:
+      - Misc
+      operationId: findbyid
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/findbyid'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+              blacklistReasons: []
+          headers:
+            ETag:
+              type: string
+              default: '"03af3891b1dd79a2c36cd6eb607c956bf"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '666'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:39:10 GMT
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: find by status
+      tags:
+      - Misc
+      operationId: findbystatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/findbystatus'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1810
+              syncTs: 2022-02-09T12:54:42.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T12:54:42.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T12:54:42.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T12:54:42.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1815
+              syncTs: 2022-02-09T15:11:48.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 37070
+              idTypeCode: PRIMARY
+              idTypeDesc: description 1 Updated
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T15:11:48.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T15:11:48.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T15:11:48.000+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            ETag:
+              type: string
+              default: '"0379ab029542d9813350270a1f536a31d"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '1934'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:39:27 GMT
+  /AnRkr/blacklist-status/PENDING:
+    get:
+      summary: find by Blacklist Status
+      tags:
+      - Misc
+      operationId: findbyBlacklistStatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/findbystatus'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1810
+              syncTs: 2022-02-09T12:54:42.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T12:54:42.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T12:54:42.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T12:54:42.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1815
+              syncTs: 2022-02-09T15:11:48.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 37070
+              idTypeCode: PRIMARY
+              idTypeDesc: description 1 Updated
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T15:11:48.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T15:11:48.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T15:11:48.000+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            ETag:
+              type: string
+              default: '"0379ab029542d9813350270a1f536a31d"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '1934'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:39:27 GMT
+  /AnRkr/lead/18659:
+    get:
+      summary: find by lead id
+      tags:
+      - Misc
+      operationId: findbyleadid
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/findbyleadid'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1810
+              syncTs: 2022-02-09T12:54:42.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T12:54:42.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T12:54:42.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T12:54:42.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1815
+              syncTs: 2022-02-09T15:11:48.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 37070
+              idTypeCode: PRIMARY
+              idTypeDesc: description 1 Updated
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T15:11:48.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T15:11:48.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T15:11:48.000+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            ETag:
+              type: string
+              default: '"0379ab029542d9813350270a1f536a31d"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '1934'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:40:36 GMT
+  /AnRkr/customer/18661:
+    get:
+      summary: find by customer
+      tags:
+      - Misc
+      operationId: findbycustomer
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/findbycustomer'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1806
+              syncTs: 2022-02-09T06:07:50.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T06:07:50.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T06:07:50.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1810
+              syncTs: 2022-02-09T12:54:42.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 1
+              idTypeCode: abc
+              idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T12:54:42.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T12:54:42.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T12:54:42.000+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1815
+              syncTs: 2022-02-09T15:11:48.000+0000
+              version: 0
+              tenantId: AnRkr
+              identificationTypeId: 37070
+              idTypeCode: PRIMARY
+              idTypeDesc: description 1 Updated
+              idValue: '1248'
+              fullName: samith patel
+              blackListStatus: ACTIVE
+              blackListedBy: '302'
+              blackListedDate: 2022-02-09T15:11:48.000+0000
+              remarks: ''
+              approvalReason: Mihiri Wijerathne
+              approvalRequestedBy: yaka
+              approvalRequestedOn: 2022-02-09T15:11:48.000+0000
+              appRejBy: null
+              appRejDate: null
+              appRejRemark: null
+              appRejStatus: null
+              status: ACTIVE
+              createdUser: yaka
+              createdDate: 2022-02-09T15:11:48.000+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            ETag:
+              type: string
+              default: '"0379ab029542d9813350270a1f536a31d"'
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '1934'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 04:40:57 GMT
+  /AnRkr:
+    post:
+      summary: save
+      tags:
+      - Misc
+      operationId: save
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/saverequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/save'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1838'
+          headers:
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '38'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 06:05:45 GMT
+  /AnRkr/1234:
+    put:
+      summary: update
+      tags:
+      - Misc
+      operationId: update
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/updaterequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/save'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1838'
+          headers:
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '38'
+            Date:
+              type: string
+              default: Thu, 10 Feb 2022 06:05:45 GMT
+definitions:
+  findall:
+    title: findall
+    example:
+      id: 1806
+      syncTs: 2022-02-09T06:07:50.000+0000
+      version: 0
+      tenantId: AnRkr
+      identificationTypeId: 1
+      idTypeCode: abc
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2022-02-09T06:07:50.000+0000
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      approvalRequestedBy: yaka
+      approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+      appRejBy: null
+      appRejDate: null
+      appRejRemark: null
+      appRejStatus: null
+      status: ACTIVE
+      createdUser: yaka
+      createdDate: 2022-02-09T06:07:50.000+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      identificationTypeId:
+        type: integer
+        format: int32
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      approvalRequestedBy:
+        type: string
+      approvalRequestedOn:
+        type: string
+      appRejBy:
+        type: string
+      appRejDate:
+        type: string
+      appRejRemark:
+        type: string
+      appRejStatus:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - approvalRequestedBy
+    - approvalRequestedOn
+    - appRejBy
+    - appRejDate
+    - appRejRemark
+    - appRejStatus
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  findbyid:
+    title: findbyid
+    example:
+      id: 1806
+      syncTs: 2022-02-09T06:07:50.000+0000
+      version: 0
+      tenantId: AnRkr
+      identificationTypeId: 1
+      idTypeCode: abc
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2022-02-09T06:07:50.000+0000
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      approvalRequestedBy: yaka
+      approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+      appRejBy: null
+      appRejDate: null
+      appRejRemark: null
+      appRejStatus: null
+      status: ACTIVE
+      createdUser: yaka
+      createdDate: 2022-02-09T06:07:50.000+0000
+      modifiedUser: null
+      modifiedDate: null
+      blacklistReasons: []
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      identificationTypeId:
+        type: integer
+        format: int32
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      approvalRequestedBy:
+        type: string
+      approvalRequestedOn:
+        type: string
+      appRejBy:
+        type: string
+      appRejDate:
+        type: string
+      appRejRemark:
+        type: string
+      appRejStatus:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      blacklistReasons:
+        type: array
+        items:
+          type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - approvalRequestedBy
+    - approvalRequestedOn
+    - appRejBy
+    - appRejDate
+    - appRejRemark
+    - appRejStatus
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - blacklistReasons
+  findbystatus:
+    title: findbystatus
+    example:
+      id: 1806
+      syncTs: 2022-02-09T06:07:50.000+0000
+      version: 0
+      tenantId: AnRkr
+      identificationTypeId: 1
+      idTypeCode: abc
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2022-02-09T06:07:50.000+0000
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      approvalRequestedBy: yaka
+      approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+      appRejBy: null
+      appRejDate: null
+      appRejRemark: null
+      appRejStatus: null
+      status: ACTIVE
+      createdUser: yaka
+      createdDate: 2022-02-09T06:07:50.000+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      identificationTypeId:
+        type: integer
+        format: int32
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      approvalRequestedBy:
+        type: string
+      approvalRequestedOn:
+        type: string
+      appRejBy:
+        type: string
+      appRejDate:
+        type: string
+      appRejRemark:
+        type: string
+      appRejStatus:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - approvalRequestedBy
+    - approvalRequestedOn
+    - appRejBy
+    - appRejDate
+    - appRejRemark
+    - appRejStatus
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  findbyleadid:
+    title: findbyleadid
+    example:
+      id: 1806
+      syncTs: 2022-02-09T06:07:50.000+0000
+      version: 0
+      tenantId: AnRkr
+      identificationTypeId: 1
+      idTypeCode: abc
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2022-02-09T06:07:50.000+0000
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      approvalRequestedBy: yaka
+      approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+      appRejBy: null
+      appRejDate: null
+      appRejRemark: null
+      appRejStatus: null
+      status: ACTIVE
+      createdUser: yaka
+      createdDate: 2022-02-09T06:07:50.000+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      identificationTypeId:
+        type: integer
+        format: int32
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      approvalRequestedBy:
+        type: string
+      approvalRequestedOn:
+        type: string
+      appRejBy:
+        type: string
+      appRejDate:
+        type: string
+      appRejRemark:
+        type: string
+      appRejStatus:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - approvalRequestedBy
+    - approvalRequestedOn
+    - appRejBy
+    - appRejDate
+    - appRejRemark
+    - appRejStatus
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  findbycustomer:
+    title: findbycustomer
+    example:
+      id: 1806
+      syncTs: 2022-02-09T06:07:50.000+0000
+      version: 0
+      tenantId: AnRkr
+      identificationTypeId: 1
+      idTypeCode: abc
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2022-02-09T06:07:50.000+0000
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      approvalRequestedBy: yaka
+      approvalRequestedOn: 2022-02-09T06:07:50.000+0000
+      appRejBy: null
+      appRejDate: null
+      appRejRemark: null
+      appRejStatus: null
+      status: ACTIVE
+      createdUser: yaka
+      createdDate: 2022-02-09T06:07:50.000+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      identificationTypeId:
+        type: integer
+        format: int32
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      approvalRequestedBy:
+        type: string
+      approvalRequestedOn:
+        type: string
+      appRejBy:
+        type: string
+      appRejDate:
+        type: string
+      appRejRemark:
+        type: string
+      appRejStatus:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - approvalRequestedBy
+    - approvalRequestedOn
+    - appRejBy
+    - appRejDate
+    - appRejRemark
+    - appRejStatus
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  saverequest:
+    title: saverequest
+    example:
+      customerId: '19033'
+      leadId: '19031'
+      identificationTypeId: '37070'
+      idTypeCode: PRIMARY
+      idTypeDesc: FINANCIAL STATEMENT TYPE 02 UPD
+      idValue: '1248'
+      fullName: samith patel
+      blackListedStatus: ACTIVE
+      blackListedBy: '302'
+      blackListedDate: 2018-02-22
+      remarks: ''
+      approvalReason: Mihiri Wijerathne
+      reasonsList:
+      - reasonId: '124628'
+        reasonCode: R009
+        status: ACTIVE
+    type: object
+    properties:
+      customerId:
+        type: string
+      leadId:
+        type: string
+      identificationTypeId:
+        type: string
+      idTypeCode:
+        type: string
+      idTypeDesc:
+        type: string
+      idValue:
+        type: string
+      fullName:
+        type: string
+      blackListedStatus:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      remarks:
+        type: string
+      approvalReason:
+        type: string
+      reasonsList:
+        type: array
+        items:
+          $ref: '#/definitions/ReasonsList'
+    required:
+    - customerId
+    - leadId
+    - identificationTypeId
+    - idTypeCode
+    - idTypeDesc
+    - idValue
+    - fullName
+    - blackListedStatus
+    - blackListedBy
+    - blackListedDate
+    - remarks
+    - approvalReason
+    - reasonsList
+  ReasonsList:
+    title: ReasonsList
+    example:
+      reasonId: '124628'
+      reasonCode: R009
+      status: ACTIVE
+    type: object
+    properties:
+      reasonId:
+        type: string
+      reasonCode:
+        type: string
+      status:
+        type: string
+    required:
+    - reasonId
+    - reasonCode
+    - status
+  save:
+    title: save
+    example:
+      messages: CREATED.
+      value: '1838'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  updaterequest:
+    title: updaterequest
+    example:
+      approvalReason: string
+      blackListedBy: string
+      blackListedDate: string
+      blackListedStatus: string
+      customerId: string
+      fullName: string
+      idTypeCode: string
+      idValue: string
+      identificationTypeId: string
+      leadId: string
+      reasonsList:
+      - id: string
+        reasonCode: string
+        reasonId: string
+        status: string
+        version: string
+      remarks: string
+      version: string
+    type: object
+    properties:
+      approvalReason:
+        type: string
+      blackListedBy:
+        type: string
+      blackListedDate:
+        type: string
+      blackListedStatus:
+        type: string
+      customerId:
+        type: string
+      fullName:
+        type: string
+      idTypeCode:
+        type: string
+      idValue:
+        type: string
+      identificationTypeId:
+        type: string
+      leadId:
+        type: string
+      reasonsList:
+        type: array
+        items:
+          $ref: '#/definitions/ReasonsList1'
+      remarks:
+        type: string
+      version:
+        type: string
+    required:
+    - approvalReason
+    - blackListedBy
+    - blackListedDate
+    - blackListedStatus
+    - customerId
+    - fullName
+    - idTypeCode
+    - idValue
+    - identificationTypeId
+    - leadId
+    - reasonsList
+    - remarks
+    - version
+  ReasonsList1:
+    title: ReasonsList1
+    example:
+      id: string
+      reasonCode: string
+      reasonId: string
+      status: string
+      version: string
+    type: object
+    properties:
+      id:
+        type: string
+      reasonCode:
+        type: string
+      reasonId:
+        type: string
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - id
+    - reasonCode
+    - reasonId
+    - status
+    - version
+tags:
+- name: Misc
+  description: ''

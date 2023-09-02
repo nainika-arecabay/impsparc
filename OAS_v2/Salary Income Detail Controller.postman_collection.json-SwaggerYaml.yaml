@@ -1,0 +1,461 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Salary Income Detail Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/salary-income-details
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: Post
+      tags:
+      - Misc
+      operationId: Post
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/PostRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/Post'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '30337'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 12:27:28 GMT
+            Content-Length:
+              type: string
+              default: '39'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '194'
+  /AnRkr/31503:
+    put:
+      summary: PUT
+      tags:
+      - Misc
+      operationId: PUT
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/PUTREQUEST'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PUT'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+              value: '31503'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 12:28:13 GMT
+            Content-Length:
+              type: string
+              default: '34'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '109'
+  /AnRkr/31488:
+    get:
+      summary: GET by ID
+      tags:
+      - Misc
+      operationId: GETbyID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GETbyID'
+          examples:
+            application/json;charset=UTF-8:
+              id: 31488
+              syncTs: 2021-11-17T12:05:15.310+0000
+              version: 1
+              tenantId: AnRkr
+              employmentType: CURRENT
+              employerId: 1234
+              employerName: Saman Perera
+              experience: 7
+              designationId: 143
+              jobTypeId: 17569
+              sourceType: PRIMARY
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2021-11-17T10:32:29.494+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2021-11-17T12:05:15.310+0000
+              designation: SENIOR QA ENGINEER
+              jobType: Permanent
+              employerCode: EMP1
+              salaryIncomeDocuments: []
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 12:28:22 GMT
+            Content-Length:
+              type: string
+              default: '500'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"02fc8dcaca820c59b6a1cd3a6643fc316"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '53'
+definitions:
+  PostRequest:
+    title: PostRequest
+    example:
+      incomeSourceDetailsId: '30337'
+      salaryIncomeDetailsList:
+      - designationId: '143'
+        designationName: SENIOR QA ENGINEER
+        employerId: '1232'
+        employerName: Sakuni Awlis
+        employmentType: PAST
+        experience: '7'
+        jobTypeDesc: Permanent
+        jobTypeId: '17569'
+        sourceType: SECONDARY
+        status: ACTIVE
+    type: object
+    properties:
+      incomeSourceDetailsId:
+        type: string
+      salaryIncomeDetailsList:
+        type: array
+        items:
+          $ref: '#/definitions/SalaryIncomeDetailsList'
+    required:
+    - incomeSourceDetailsId
+    - salaryIncomeDetailsList
+  SalaryIncomeDetailsList:
+    title: SalaryIncomeDetailsList
+    example:
+      designationId: '143'
+      designationName: SENIOR QA ENGINEER
+      employerId: '1232'
+      employerName: Sakuni Awlis
+      employmentType: PAST
+      experience: '7'
+      jobTypeDesc: Permanent
+      jobTypeId: '17569'
+      sourceType: SECONDARY
+      status: ACTIVE
+    type: object
+    properties:
+      designationId:
+        type: string
+      designationName:
+        type: string
+      employerId:
+        type: string
+      employerName:
+        type: string
+      employmentType:
+        type: string
+      experience:
+        type: string
+      jobTypeDesc:
+        type: string
+      jobTypeId:
+        type: string
+      sourceType:
+        type: string
+      status:
+        type: string
+    required:
+    - designationId
+    - designationName
+    - employerId
+    - employerName
+    - employmentType
+    - experience
+    - jobTypeDesc
+    - jobTypeId
+    - sourceType
+    - status
+  Post:
+    title: Post
+    example:
+      messages: CREATED.
+      value: '30337'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  PUTREQUEST:
+    title: PUTREQUEST
+    example:
+      designationId: '147'
+      designationName: LOFC BOARD
+      employerId: '1232'
+      employerName: Sakuni Awlis
+      employmentType: CURRENT
+      experience: '10'
+      jobTypeDesc: Temporary
+      jobTypeId: '22626'
+      sourceType: SECONDARY
+      status: ACTIVE
+      version: '5'
+    type: object
+    properties:
+      designationId:
+        type: string
+      designationName:
+        type: string
+      employerId:
+        type: string
+      employerName:
+        type: string
+      employmentType:
+        type: string
+      experience:
+        type: string
+      jobTypeDesc:
+        type: string
+      jobTypeId:
+        type: string
+      sourceType:
+        type: string
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - designationId
+    - designationName
+    - employerId
+    - employerName
+    - employmentType
+    - experience
+    - jobTypeDesc
+    - jobTypeId
+    - sourceType
+    - status
+    - version
+  PUT:
+    title: PUT
+    example:
+      messages: OK.
+      value: '31503'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  GETbyID:
+    title: GETbyID
+    example:
+      id: 31488
+      syncTs: 2021-11-17T12:05:15.310+0000
+      version: 1
+      tenantId: AnRkr
+      employmentType: CURRENT
+      employerId: 1234
+      employerName: Saman Perera
+      experience: 7
+      designationId: 143
+      jobTypeId: 17569
+      sourceType: PRIMARY
+      status: ACTIVE
+      createdUser: Udeshika
+      createdDate: 2021-11-17T10:32:29.494+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2021-11-17T12:05:15.310+0000
+      designation: SENIOR QA ENGINEER
+      jobType: Permanent
+      employerCode: EMP1
+      salaryIncomeDocuments: []
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      employmentType:
+        type: string
+      employerId:
+        type: integer
+        format: int32
+      employerName:
+        type: string
+      experience:
+        type: integer
+        format: int32
+      designationId:
+        type: integer
+        format: int32
+      jobTypeId:
+        type: integer
+        format: int32
+      sourceType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      designation:
+        type: string
+      jobType:
+        type: string
+      employerCode:
+        type: string
+      salaryIncomeDocuments:
+        type: array
+        items:
+          type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - employmentType
+    - employerId
+    - employerName
+    - experience
+    - designationId
+    - jobTypeId
+    - sourceType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - designation
+    - jobType
+    - employerCode
+    - salaryIncomeDocuments
+tags:
+- name: Misc
+  description: ''

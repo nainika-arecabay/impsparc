@@ -1,0 +1,817 @@
+{
+    "description": "Imperva rules for API Specification Security Assessment",
+    "version": "2.0.0",
+    "rules":
+       [
+   
+       {"ruleid": "0001a",
+        "description": "Contact info not provided or incorrect.",
+        "score": 2,
+        "enabled": true,
+            "category": "API Spec-file Management",
+            "sub_category": "Missing information",
+        "rule": [
+                      {"identifier": "#->info->contact",
+                        "condition": "is-missing",
+                     "value": "True"}
+
+                     ],
+        "impact": "Provide contact information for the specification designer to help resolve issues."
+       },
+
+       {"ruleid": "0001b",
+        "description": "Contact info not provided or incorrect.",
+        "score": 2,
+        "enabled": true,
+            "category": "API Spec-file Management",
+            "sub_category": "Missing information",
+        "rule": [
+                      {"identifier": "#->info->contact->email",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Provide contact information for the specification designer to help resolve issues."
+       },
+
+       {"ruleid": "0001c",
+        "description": "Contact info not provided or incorrect.",
+        "score": 2,
+        "enabled": true,
+            "category": "API Spec-file Management",
+            "sub_category": "Missing information",
+        "rule": [
+                      {"identifier": "#->info->contact->email",
+                        "condition": "pattern-match",
+                     "value": "^(?![a-z0-9\\.]+@[a-z0-9]+\\.[a-z0-9]+)"}
+                     ],
+        "impact": "Provide contact information for the specification designer to help resolve issues."
+       },
+	   
+	   
+       {"ruleid": "0002a",
+        "description": "additionalProperties of type != \"array\" should not have \"items\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["nonarray-def-items"],
+        "rule": [
+                      {"identifier": "additionalProperties->type",
+                        "condition": "ne",
+                     "value": "array"},
+                      {"identifier": "additionalProperties->items",
+                        "condition": "is-missing",
+                     "value": "False"}
+                     ],
+        "impact": "A non-array object need not have items defined. This prevents developer confusion."
+       },
+   
+       {"ruleid": "0002b",
+        "description": "properties of type != \"array\" should not have \"items\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["nonarray-def-items"],
+        "rule": [
+                      {"identifier": "properties->*->type",
+                        "condition": "ne",
+                     "value": "array"},
+                      {"identifier": "properties->*->items",
+                        "condition": "is-missing",
+                     "value": "False"}
+                     ],
+        "impact": "A non-array object need not have items defined. This prevents developer confusion."
+       },
+   
+       {"ruleid": "0002c",
+        "description": "Schema of type != \"array\" should not have \"items\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["nonarray-def-items"],
+        "rule": [
+                      {"identifier": "schema->type",
+                        "condition": "ne",
+                     "value": "array"},
+                      {"identifier": "schema->items",
+                        "condition": "is-missing",
+                     "value": "False"}
+                     ],
+        "impact": "A non-array object need not have items defined. This prevents developer confusion."
+       },
+   
+       {"ruleid": "0002d",
+        "description": "Parameters of type != \"array\" should not have \"items\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["nonarray-def-items"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "ne",
+                     "value": "array"},
+                      {"identifier": "parameters->*->items",
+                        "condition": "is-missing",
+                     "value": "False"}
+                     ],
+        "impact": "A non-array object need not have items defined. This prevents developer confusion."
+       },
+   
+       {"ruleid": "0003a",
+        "description": "additionalProperties of type \"array\" should have \"items\" defined.",
+        "score": 4,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["array-undef-items"],
+        "rule": [
+                      {"identifier": "additionalProperties->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "additionalProperties->items",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Specification of items field sets the expectation of the type of elements expected in the API payload. This limits the attacker's ability to manipulate API parameters."
+       },
+   
+       {"ruleid": "0003b",
+        "description": "properties of type \"array\" should have \"items\" defined.",
+        "score": 4,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["array-undef-items"],
+        "rule": [
+                      {"identifier": "properties->*->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "properties->*->items",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Specification of items field sets the expectation of the type of elements expected in the API payload. This limits the attacker's ability to manipulate API parameters."
+       },
+   
+       {"ruleid": "0003c",
+        "description": "Schema of type \"array\" should have \"items\" defined.",
+        "score": 4,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["array-undef-items"],
+        "rule": [
+                      {"identifier": "schema->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "schema->items",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Specification of items field sets the expectation of the type of elements expected in the API payload. This limits the attacker's ability to manipulate API parameters."
+       },
+   
+       {"ruleid": "0003d",
+        "description": "Parameters of type \"array\" should have \"items\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "tags": ["array-undef-items"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "parameters->*->items",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Specification of items field sets the expectation of the type of elements expected in the API payload. This limits the attacker's ability to manipulate API parameters."
+       },
+   
+       {"ruleid": "0004a",
+        "description": "Response codes should be in 100-599.",
+        "score": 4,
+            "category": "API Lifecycle & Management",
+            "sub_category": "Response-specific Errors",
+        "rule": [
+                      {"identifier": "responses->*__key__",
+                        "condition": "ne",
+                     "value": "default"},
+                      {"identifier": "responses->*__key__",
+                        "condition": ">=",
+                     "value": "600"}
+                     ],
+        "impact": "A response code out of the 100-599 range may cause client applications to behave unexpectedly."
+       },
+   
+       {"ruleid": "0004b",
+        "description": "Response codes should be in 100-599.",
+        "score": 4,
+            "category": "API Lifecycle & Management",
+            "sub_category": "Response-specific Errors",
+        "rule": [
+                      {"identifier": "responses->*__key__",
+                        "condition": "ne",
+                     "value": "default"},
+                      {"identifier": "responses->*__key__",
+                        "condition": "<",
+                     "value": "100"}
+                     ],
+        "impact": "A response code out of the 100-599 range may cause client applications to behave unexpectedly."
+       },
+   
+       {"ruleid": "0005a",
+        "description": "String parameter \"pattern\" is unrestricted.",
+        "score": 5,
+            "category": "Data Type Definitions",
+            "sub_category": "Unrestricted Bounds",
+        "tags": ["string-unrestricted-input"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "parameters->*->pattern",
+                        "condition": "pattern-match",
+                     "value": "(\\*)"}
+                     ],
+        "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+       },
+   
+       {"ruleid": "0005b",
+        "description": "String item \"pattern\" is unrestricted.",
+        "score": 5,
+            "category": "Data Type Definitions",
+            "sub_category": "Unrestricted Bounds",
+        "tags": ["string-unrestricted-input"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "items->pattern",
+                        "condition": "pattern-match",
+                     "value": "(\\*)"}
+                     ],
+        "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+       },
+   
+       {"ruleid": "0006a",
+        "description": "Parameters of type \"string\" should have \"pattern\" defined.",
+        "score": 5,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["string-undef-bounds"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "parameters->*->pattern",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+       },
+   
+       {"ruleid": "0006b",
+        "description": "Items of type \"string\" should have \"pattern\" defined.",
+        "score": 5,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["string-undef-bounds"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "items->pattern",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+       },
+   
+       {"ruleid": "0007a",
+        "description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["string-undef-maxlength"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "parameters->*->maxLength",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+       },
+   
+       {"ruleid": "0007b",
+        "description": "Items of type \"string\" should have \"maxLength\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["string-undef-maxlength"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "string"},
+                      {"identifier": "items->maxLength",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+       },
+   
+       {"ruleid": "0008",
+        "description": "Items should have \"type\" defined.",
+        "score": 7,
+            "category": "Data Type Definitions",
+            "sub_category": "Type and Attribute mismatch",
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "An undefined data type for elements of an array allows the attacker to abuse the object and supply inputs causing application disruption."
+       },
+   
+       {"ruleid": "0009a",
+        "description": "additionalProperties of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "additionalProperties->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "additionalProperties->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0009b",
+        "description": "properties of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "properties->*->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "properties->*->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0009c",
+        "description": "Schema of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+        "enabled": true,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "schema->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "schema->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0009d",
+        "description": "Headers of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "headers->*->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "headers->*->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0009e",
+        "description": "Items of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "items->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0009f",
+        "description": "Parameters of type \"array\" should have \"maxItems\" defined.",
+        "score": 6,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["array-undef-maxitems"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "array"},
+                      {"identifier": "parameters->*->maxItems",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+       },
+   
+       {"ruleid": "0010a",
+        "description": "Parameters of type \"integer\" should have \"minimum\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-min"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "parameters->*->minimum",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+       },
+   
+       {"ruleid": "0010b",
+        "description": "Items of type \"integer\" should have \"minimum\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-min"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "items->minimum",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+       },
+   
+       {"ruleid": "0011a",
+        "description": "Parameters of type \"integer\" should have \"maximum\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-max"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "parameters->*->maximum",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+       },
+   
+       {"ruleid": "0011b",
+        "description": "Items of type \"integer\" should have \"maximum\" defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-max"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "items->maximum",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+       },
+   
+       {"ruleid": "0012a",
+        "description": "Parameters of type \"integer\" should have format defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-format"],
+        "rule": [
+                      {"identifier": "parameters->*->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "parameters->*->format",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Integer objects should specify the format (int32/int64) so that attacker supplied inputs do not result in application downtime."
+       },
+   
+       {"ruleid": "0012b",
+        "description": "Items of type \"integer\" should have format defined.",
+        "score": 4,
+            "category": "Data Type Definitions",
+            "sub_category": "Undefined Bounds",
+        "tags": ["integer-undef-format"],
+        "rule": [
+                      {"identifier": "items->type",
+                        "condition": "eq",
+                     "value": "integer"},
+                      {"identifier": "items->format",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ],
+        "impact": "Integer objects should specify the format (int32/int64) so that attacker supplied inputs do not result in application downtime."
+       },
+   
+       {"ruleid": "0013",
+        "description": "Invalid or insecure \"authorizationUrl\".",
+        "score": 6,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Invalid or Insecure URL",
+        "rule": [
+                      {"identifier": "securityDefinitions->*->type",
+                        "condition": "eq",
+                     "value": "oauth2"},
+                      {"identifier": "securityDefinitions->*->authorizationUrl",
+                        "condition": "pattern-match",
+                     "value": "^(?!https://)"}
+                     ],
+        "impact": "Absence of an authorization endpoint allows attacker to hijack the auth mechanism. Insecure communication with the auth endpoint can result in stolen credentials or token, resulting in rogue communication of the API with the attacker."
+       },
+   
+       {"ruleid": "0014",
+        "enabled": true,
+        "description": "Field \"produces\" should not be empty locally.",
+        "score": 6,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "operation->produces",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ],
+        "impact": "If the local produces field is empty, this nullifies the global behavior if specified in the specification. Also, absence of the produces field results in server responses lacking the Content-type field. Clients may either reject such server responses or crash on such an HTTP interaction."
+       },
+   
+       {"ruleid": "0015ref1",
+        "description": "Global \"produces\" field is missing or is empty.",
+        "enabled": false,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "#->produces",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ]
+       },
+
+       {"ruleid": "0015ref2",
+        "description": "Global \"produces\" field is missing or is empty.",
+        "enabled": false,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "#->produces",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ]
+       },
+   
+       {"ruleid": "0015",
+        "description": "Specify \"produces\" field for operations either globally or locally.",
+        "score": 6,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "operation->produces",
+                        "condition": "is-missing",
+                     "value": "True"},
+                      {"identifier": "__rule__0015ref1",
+                        "condition": "==",
+                     "value": "True"}
+                     ],
+       "impact": "Specification of the type of content returned by the API allows clients to behave in an expected fashion, resulting in minimal interruption."
+       },
+   
+       {"ruleid": "0016",
+        "description": "Field \"consumes\" for POST/PUT/PATCH operations, should not be empty locally.",
+        "score": 6,
+        "enabled": true,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "operation__key__",
+                        "condition": "pattern-match",
+                     "value": "put|post|patch"},
+                      {"identifier": "operation->consumes",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ],
+        "impact": "An absent consumes field allows the attacker to supply the application with arbitrary data. The input data may include injection attempts which either crash the application or compromise it, causing service disruption and/or further damage."
+       },
+   
+       {"ruleid": "0017ref1",
+        "description": "Global \"consumes\" field is missing or is empty.",
+        "enabled": false,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "#->consumes",
+                        "condition": "is-missing",
+                     "value": "True"}
+
+                     ]
+       },
+
+       {"ruleid": "0017ref2",
+        "description": "Global \"consumes\" field is missing or is empty.",
+        "enabled": false,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "#->consumes",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ]
+       },
+   	   
+       {"ruleid": "0017",
+        "description": "Specify \"consumes\" field for POST/PUT/PATCH operations, either globally or locally.",
+        "score": 6,
+            "category": "API Transport",
+            "sub_category": "Undefined Transport Mechanism",
+        "rule": [
+                      {"identifier": "operation__key__",
+                        "condition": "pattern-match",
+                     "value": "put|post|patch"},
+                      {"identifier": "operation->consumes",
+                        "condition": "is-missing",
+                     "value": "True"},
+                      {"identifier": "__rule__0017ref1",
+                        "condition": "==",
+                     "value": "True"}
+                     ],
+        "impact": "An absent consumes field allows the attacker to supply the application with arbitrary data. The input data may include injection attempts which either crash the application or compromise it, causing service disruption and/or further damage."
+       },
+   
+       {"ruleid": "0018",
+        "description": "Invalid or insecure token URL in security scheme.",
+        "score": 7,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Invalid or Insecure URL",
+        "rule": [
+                      {"identifier": "securityDefinitions->*->type",
+                        "condition": "eq",
+                     "value": "oauth2"},
+                      {"identifier": "securityDefinitions->*->tokenUrl",
+                        "condition": "pattern-match",
+                     "value": "^(?!https://)"}
+                     ],
+        "impact": "Absence of an authorization endpoint allows attacker to hijack the auth mechanism. Insecure communication with the auth endpoint can result in stolen credentials or token, resulting in rogue communication of the API with the attacker."
+       },
+   
+       {"ruleid": "0019a",
+        "description": "\"securityDefinitions\" field is not defined or is empty.",
+        "score": 9,
+        "enabled": true,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                      {"identifier": "#->securityDefinitions",
+                        "condition": "is-missing",
+                     "value": "True"},
+                     ],
+        "impact": "Absence of the security definitions implies that even if the security schemes have been specified, they cannot be applied without the scheme definition as captured in the securityDefintions field."
+         },
+
+       {"ruleid": "0019b",
+        "description": "\"securityDefinitions\" field is not defined or is empty.",
+        "score": 9,
+        "enabled": true,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                      {"identifier": "#->securityDefinitions",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ],
+        "impact": "Absence of the security definitions implies that even if the security schemes have been specified, they cannot be applied without the scheme definition as captured in the securityDefintions field."
+       },
+	   
+       {"ruleid": "0020",
+        "description": "Local \"security\" field is empty.",
+        "score": 9,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                      {"identifier": "operation->security",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ],
+        "impact": "Lack of the security field implies that no security schemes will be applied for the affected operations. Security schemes ensure authenticated and authorized access to APIs, lack of which may make the API vulnerable."
+         },
+   
+       {"ruleid": "0021ref1",
+        "description": "Global security field is missing, is empty, or contains an empty security requirement.",
+        "enabled": false,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                    {"identifier": "#->security",
+                        "condition": "is-missing",
+                     "value": "True"}
+                     ]
+       },
+
+       {"ruleid": "0021ref2",
+        "description": "Global security field is missing, is empty, or contains an empty security requirement.",
+        "enabled": false,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                    {"identifier": "#->security",
+                        "condition": "is-empty",
+                     "value": "True"},
+                     ]
+       },
+
+       {"ruleid": "0021ref3",
+        "description": "Global security field is missing, is empty, or contains an empty security requirement.",
+        "enabled": false,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                    {"identifier": "#->security->*",
+                        "condition": "is-empty",
+                     "value": "True"}
+                     ]
+       },
+	   
+       {"ruleid": "0021",
+        "description": "Local security field is missing. Also, the global security field is missing, is empty, or contains an empty security requirement.",
+        "score": 9,
+        "enabled": true,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                    {"identifier": "operation->security",
+                        "condition": "is-missing",
+                     "value": "True"},
+                    {"identifier": "__rule__0021ref1",
+                        "condition": "==",
+                     "value": "True"}
+                     ],
+        "impact": "Lack of the security field implies that no security schemes will be applied for the affected operations. Security schemes ensure authenticated and authorized access to APIs, lack of which may make the API vulnerable."
+       },
+   
+       {"ruleid": "0022",
+        "description": "Credentials should not be transported in cleartext. Use a secure scheme.",
+        "score": 7,
+            "category": "API Transport",
+            "sub_category": "Insecure Transport Mechanism",
+        "rule": [
+                      {"identifier": "schemes->*->*__key__",
+                        "condition": "ne",
+                     "value": "https"},
+                      {"identifier": "schemes->*->*__key__",
+                        "condition": "ne",
+                     "value": "wss"}
+                     ],
+        "impact": "Cleartext communication allows attackers to steal the credentials for further nefarious activities posing as a legitimate client."
+       },
+   
+       {"ruleid": "0023",
+        "description": "Security scope not in \"securityDefinitions\".",
+        "score": 7,
+            "category": "AuthN/AuthZ",
+            "sub_category": "Undefined Auth Information",
+        "rule": [
+                      {"identifier": "sps-sec-attr07",
+                        "condition": "embedded-run",
+                     "value": "dummy"}
+                     ],
+       "impact": "Use of undefined security scopes when implemented allows attackers to leverage such permissions and abuse them for privileged data manipulation or theft."
+       }
+       ]
+   }

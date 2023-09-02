@@ -1,0 +1,522 @@
+{
+ "file_name": "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml",
+ "files": {
+  "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml": {
+   "apis": {
+    "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml: All APIs (Global Definitions)": {
+     "violations": [
+      {
+       "v_ruleid": "0001b",
+       "v_description": "Contact info does not contain an email.",
+       "v_severity": "Low",
+       "v_score": 2,
+       "v_risk_ctg": "API Spec-file Management",
+       "v_risk_subctg": "Missing information",
+       "v_entity": {
+        "reference_path": "(#->info->contact->email is-missing True)[0]"
+       }
+      },
+      {
+       "v_ruleid": "0009b",
+       "v_description": "properties of type \"array\" should have \"maxItems\" defined.",
+       "v_severity": "High",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->definitions->AddRequest->properties->products->type eq array)[0] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[0]"
+       }
+      },
+      {
+       "v_ruleid": "0019b",
+       "v_description": "\"securityDefinitions\" field is not defined or is empty.",
+       "v_severity": "Critical",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(#->securityDefinitions is-empty True)[0]"
+       }
+      }
+     ]
+    },
+    "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+       "v_severity": "Medium",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->pattern is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+       "v_severity": "Medium",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->maxLength is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0021a",
+       "v_description": "Security field is missing and the global security field is also missing.",
+       "v_severity": "Critical",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->security is-missing True)[()] and (#->paths->/AnRkr->post->security is-missing True)[()]"
+       }
+      }
+     ]
+    },
+    "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr/187715": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+       "v_severity": "Medium",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->pattern is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+       "v_severity": "Medium",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->maxLength is-missing True)[()]"
+       }
+      }
+     ]
+    },
+    "OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr/sub-product-id/1998/module/LEMO": {
+     "violations": [
+      {
+       "v_ruleid": "0009c",
+       "v_description": "Schema of type \"array\" should have \"maxItems\" defined.",
+       "v_severity": "High",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->type eq array)[()] and (#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->maxItems is-missing True)[()]"
+       }
+      }
+     ]
+    },
+    "Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr": {
+     "meta": [],
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+       "v_severity": "Medium",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->pattern is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+       "v_severity": "Medium",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->maxLength is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0021a",
+       "v_description": "Security field is missing and the global security field is also missing.",
+       "v_severity": "Critical",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr->post->security is-missing True)[()] and (#->paths->/AnRkr->post->security is-missing True)[()]"
+       }
+      }
+     ]
+    },
+    "Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr/187715": {
+     "meta": [],
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+       "v_severity": "Medium",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->pattern is-missing True)[()]"
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+       "v_severity": "Medium",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->maxLength is-missing True)[()]"
+       }
+      }
+     ]
+    },
+    "Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml:/AnRkr/sub-product-id/1998/module/LEMO": {
+     "meta": [],
+     "violations": [
+      {
+       "v_ruleid": "0009c",
+       "v_description": "Schema of type \"array\" should have \"maxItems\" defined.",
+       "v_severity": "High",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->type eq array)[()] and (#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->maxItems is-missing True)[()]"
+       }
+      }
+     ]
+    }
+   },
+   "$refs": {
+    "#/definitions/AddRequest/properties/products": {
+     "violations": [
+      {
+       "v_ruleid": "0009b",
+       "v_description": "properties of type \"array\" should have \"maxItems\" defined.",
+       "v_severity": "High",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(#->definitions->AddRequest->properties->products->type eq array)[()] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[()]"
+       }
+      }
+     ]
+    }
+   },
+   "properties": {
+    "num_params": 4,
+    "num_apis": 3,
+    "status": "valid",
+    "score": 9,
+    "version": "1.0",
+    "num_evaluations": 20338
+   },
+   "req_method": {
+    "post": 1,
+    "put": 1,
+    "get": 1
+   },
+   "response_codes": {
+    "201": 2,
+    "200": 1
+   },
+   "data_types": {
+    "string": 2,
+    "object": 2
+   },
+   "violations": [
+    {
+     "v_ruleid": "0001b",
+     "v_description": "Contact info does not contain an email.",
+     "v_severity": "Low",
+     "v_score": 2,
+     "v_risk_ctg": "API Spec-file Management",
+     "v_risk_subctg": "Missing information",
+     "v_entity": {
+      "reference_path": "(#->info->contact->email is-missing True)[0]"
+     }
+    },
+    {
+     "v_ruleid": "0009b",
+     "v_description": "properties of type \"array\" should have \"maxItems\" defined.",
+     "v_severity": "High",
+     "v_score": 6,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->definitions->AddRequest->properties->products->type eq array)[0] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[0]"
+     }
+    },
+    {
+     "v_ruleid": "0019b",
+     "v_description": "\"securityDefinitions\" field is not defined or is empty.",
+     "v_severity": "Critical",
+     "v_score": 9,
+     "v_risk_ctg": "AuthN/AuthZ",
+     "v_risk_subctg": "Undefined Auth Information",
+     "v_entity": {
+      "reference_path": "(#->securityDefinitions is-empty True)[0]"
+     }
+    },
+    {
+     "v_ruleid": "0006a",
+     "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+     "v_severity": "Medium",
+     "v_score": 5,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->pattern is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0007a",
+     "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+     "v_severity": "Medium",
+     "v_score": 4,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->maxLength is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0021a",
+     "v_description": "Security field is missing and the global security field is also missing.",
+     "v_severity": "Critical",
+     "v_score": 9,
+     "v_risk_ctg": "AuthN/AuthZ",
+     "v_risk_subctg": "Undefined Auth Information",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr->post->security is-missing True)[()] and (#->paths->/AnRkr->post->security is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0006a",
+     "v_description": "Parameters of type \"string\" should have \"pattern\" defined.",
+     "v_severity": "Medium",
+     "v_score": 5,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->pattern is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0007a",
+     "v_description": "Parameters of type \"string\" should have \"maxLength\" defined.",
+     "v_severity": "Medium",
+     "v_score": 4,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->maxLength is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0009c",
+     "v_description": "Schema of type \"array\" should have \"maxItems\" defined.",
+     "v_severity": "High",
+     "v_score": 6,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->type eq array)[()] and (#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->maxItems is-missing True)[()]"
+     }
+    },
+    {
+     "v_ruleid": "0009b",
+     "v_description": "properties of type \"array\" should have \"maxItems\" defined.",
+     "v_severity": "High",
+     "v_score": 6,
+     "v_risk_ctg": "Data Type Definitions",
+     "v_risk_subctg": "Undefined Bounds",
+     "v_entity": {
+      "reference_path": "(#->definitions->AddRequest->properties->products->type eq array)[()] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[()]"
+     }
+    }
+   ]
+  }
+ },
+ "pdf": {
+  "page1": {
+   "sec4": {
+    "total_violations": 10,
+    "total_evaluations": 20338
+   },
+   "sec2": {
+    "2a": {
+     "Critical": 1,
+     "High": 0,
+     "Medium": 0,
+     "Low": 0,
+     "NoRisk": 0
+    },
+    "2b": {
+     "Critical": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 1,
+      "API Transport": 0
+     },
+     "High": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 1,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "Medium": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 1,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "Low": {
+      "API Spec-file Management": 1,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "NoRisk": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     }
+    }
+   },
+   "sec3": {
+    "3a": {
+     "Critical": 3,
+     "High": 2,
+     "Medium": 2,
+     "Low": 0,
+     "NoRisk": -4
+    },
+    "3b": {
+     "Critical": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 1,
+      "API Transport": 0
+     },
+     "High": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 1,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "Medium": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 2,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "Low": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     },
+     "NoRisk": {
+      "API Spec-file Management": 0,
+      "Data Type Definitions": 0,
+      "API Lifecycle & Management": 0,
+      "AuthN/AuthZ": 0,
+      "API Transport": 0
+     }
+    }
+   },
+   "sec1": {
+    "today": "Mon, August 28, 2023",
+    "file_name": "Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml",
+    "max_risk_score": 0,
+    "severity": 0,
+    "num_appsvcs": 1,
+    "total_apis": 3
+   }
+  },
+  "page2": {
+   "Critical (2)": {
+    "\"securityDefinitions\" field is not defined or is empty.": {
+     "Impact": "Absence of the security definitions implies that even if the security schemes have been specified, they cannot be applied without the scheme definition as captured in the securityDefintions field.",
+     "Count (1)": [
+      "Global\n\n{'reference_path': '(#->securityDefinitions is-empty True)[0]'}"
+     ]
+    },
+    "Security field is missing and the global security field is also missing.": {
+     "Impact": "Lack of the security field implies that no security schemes will be applied for the affected operations. Security schemes ensure authenticated and authorized access to APIs, lack of which may make the API vulnerable.",
+     "Count (1)": [
+      "/AnRkr\n\n{'reference_path': '(#->paths->/AnRkr->post->security is-missing True)[()] and (#->paths->/AnRkr->post->security is-missing True)[()]'}"
+     ]
+    }
+   },
+   "High (3)": {
+    "properties of type \"array\" should have \"maxItems\" defined.": {
+     "Impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach.",
+     "Count (2)": [
+      "Global\n\n{'reference_path': '(#->definitions->AddRequest->properties->products->type eq array)[0] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[0]'}",
+      "Global\n\n{'reference_path': '(#->definitions->AddRequest->properties->products->type eq array)[()] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[()]'}"
+     ]
+    },
+    "Schema of type \"array\" should have \"maxItems\" defined.": {
+     "Impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach.",
+     "Count (1)": [
+      "/AnRkr/sub-product-id/1998/module/LEMO\n\n{'reference_path': '(#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->type eq array)[()] and (#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->maxItems is-missing True)[()]'}"
+     ]
+    }
+   },
+   "Medium (4)": {
+    "Parameters of type \"string\" should have \"pattern\" defined.": {
+     "Impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation.",
+     "Count (2)": [
+      "/AnRkr\n\n{'reference_path': '(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->pattern is-missing True)[()]'}",
+      "/AnRkr/187715\n\n{'reference_path': '(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->pattern is-missing True)[()]'}"
+     ]
+    },
+    "Parameters of type \"string\" should have \"maxLength\" defined.": {
+     "Impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation.",
+     "Count (2)": [
+      "/AnRkr\n\n{'reference_path': '(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->maxLength is-missing True)[()]'}",
+      "/AnRkr/187715\n\n{'reference_path': '(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->maxLength is-missing True)[()]'}"
+     ]
+    }
+   },
+   "Low (1)": {
+    "Contact info does not contain an email.": {
+     "Impact": "Provide contact information for the specification designer to help resolve issues.",
+     "Count (1)": [
+      "Global\n\n{'reference_path': '(#->info->contact->email is-missing True)[0]'}"
+     ]
+    }
+   }
+  }
+ },
+ "num_appsvcs": 1,
+ "total_apis": 3,
+ "max_risk": 0,
+ "avg_risk": 0
+}

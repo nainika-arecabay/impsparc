@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/html.css" />
+    <title>Imperva - Open API Spec Evaluation Report</title>
+  </head>
+
+  <body onload="onDOMLoad()">
+    <!-- NEW SLIDE -->
+    <!-- TITLE -->
+    <div class="slide intro-slide">
+      <img class="branding" src="./assets/images/logo.png" />
+
+      <div class="intro-title">
+        <h1>Open API Spec Evaluation</h1>
+        <h3>API spec assessment for risks and compliance</h3>
+        <div class="intro-divider"></div>
+        <h6>August 28, 2023 22:37:30</h6>
+
+        <div class="row">
+          <div class="col-6">
+            <p class="customer">Prepared for: Name of the company</p>
+            <p>Prepared by: Imperva API Security Team</p>
+          </div>
+          <div class="col-6">
+            <p>Uploaded file name: OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml</p>
+            <p class="date">Creation Time: Jan 22, 2022, 14:56</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="intro-footer">
+        <p>
+          View Report
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- TABLE OF CONTENTS -->
+    <div class="slide table-slide">
+      <div class="title">
+        <div class="block"></div>
+        <h1>Table of Contents</h1>
+      </div>
+
+      <a class="table-link" href="#input-file-details">Input File Details</a>
+      <a class="table-link" href="#overall-design-issues"
+        >Overall Design Issues</a
+      >
+      <a class="table-link" href="#issue-categories-details"
+        >Issue categories details</a
+      >
+      <a class="table-link" href="#violation-details">Violation Details</a>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- INPUT FILE DETAILS -->
+    <div id="input-file-details" class="slide content-slide input-file-details">
+
+      <div class="slide-content">
+        <h1>Input File Details</h1>
+        <h3>Information about data found inside the zip file</h3>
+
+        <div class="statistics">
+          <p class="widget-title">
+            What did we find inside the uploaded zip file?
+          </p>
+          <div class="row">
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-file"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Files</p>
+                  <p class="stat-metric">1</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-file-code"></i>
+                </div>
+                <div>
+                  <p class="stat-label">APIs</p>
+                  <p class="stat-metric">3</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-folder-tree"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Parameters</p>
+                  <p class="stat-metric">4</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Data Types</p>
+                  <p class="stat-metric">2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-distribution">
+          <p class="widget-title">
+            How is content distributed inside your files?
+          </p>
+          <div class="row">
+            <div class="col-4">
+              <div id="distributionByMethodContainer" class="distribution-col">
+                <p class="distribution-category">By API Method</p>
+                <canvas id="distributionByMethod"></canvas>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="distribution-col">
+                <p class="distribution-category">By Parameter Type</p>
+                <canvas id="distributionByParamType"></canvas>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="distribution-col">
+                <p class="distribution-category">By API Response Code</p>
+                <canvas id="distributionByResponseCode"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- OVERALL DESIGN ISSUES -->
+    <div
+      id="overall-design-issues"
+      class="slide content-slide overall-design-issues"
+    >
+
+      <div class="slide-content">
+        <h1>Overall Design Issues</h1>
+        <h3>Information about design issues found in the uploaded file</h3>
+
+        <div class="row">
+          <div class="col-5">
+            <p class="widget-title">
+              What did we find inside the uploaded zip file?
+            </p>
+
+            <!-- CHECKS / ISSUES FOUND -->
+            <div class="issues-overview-col">
+              <div class="row">
+                <div class="col-6">
+                  <p class="issues-label">Total checkups performed</p>
+                  <p class="issues-metric">20338 </p>
+                </div>
+                <div class="col-6">
+                  <p class="issues-label">Issues found</p>
+                  
+                  
+                  
+                  
+                  <p class="issues-metric">
+                    10 <span class="percentage">(0.05%)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- ISSUE DISTRIBUTION BY SEVERITY -->
+              <p class="issues-label">Issues distribution by severity</p>
+
+              <div class="distribution-by-severity">
+                <div class="row critical-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag critical-shade">Critical</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar critical-bg"
+                          role="progressbar"
+                          
+                          style="width: 50.0%"
+                          
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">5</p>
+                  </div>
+                </div>
+                <div class="row major-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag major-shade">Major</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar major-bg"
+                          role="progressbar"
+                          
+                          style="width: 40.0%"
+                          
+                          aria-valuenow="50"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">4</p>
+                  </div>
+                </div>
+                <div class="row minor-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag minor-shade">Minor</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar minor-bg"
+                          role="progressbar"
+                          
+                          style="width: 10.0%"
+                          
+                          aria-valuenow="25"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">1</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FREQUENTLY OCCURING VIOLATIONS -->
+              <p class="issues-label">Most frequently occuring violation</p>
+
+              <div class="frequent-violations">
+                <div class="violation">
+                  <div>
+                    <p>
+                      properties of type "array" should have "maxItems" defined.
+                    </p>
+                    <p class="violation-metric">7  Violations</p>
+                  </div>
+                  <div class="violation-donut-container">
+                    <canvas
+                      id="violationMetric1"
+                      width="75"
+                      height="75"
+                    ></canvas>
+                    <p class="violation-donut-percentage">20%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-7 d-flex flex-column">
+            <p class="widget-title">What are the issue categories?</p>
+            <div class="issues-categories-col flex-fill">
+              <!-- API DESIGN SCORECARD TABLE -->
+
+              <p class="issues-label">API Design Scorecard</p>
+              <!-- todo -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Issue Category</th>
+                    <th scope="col">APIs Impacted</th>
+                    <th scope="col">Highest Severity</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <td>API Transport</td>
+                    <td>0</td>
+                    
+                    
+                      
+                    
+                    <td>
+                      
+                      <p>—</p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Authentication/Authorization</td>
+                    <td>2</td>
+                    
+                    
+                      
+                    
+                    <td>
+                      
+                      <p class="severity-tag critical-shade">3 critical</p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Data Type Definition</td>
+                    <td>2</td>
+                    
+                    
+                      
+                    
+                    <td>
+                      
+                      <p class="severity-tag critical-shade">0 critical</p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>API Life-cycle Management</td>
+                    <td>0</td>
+                    
+                    
+                      
+                    
+                    <td>
+                      
+                      <p>—</p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>API Spec-file Management</td>
+                    <td>1</td>
+                    
+                    
+                      
+                    
+                    <td>
+                      
+                      <p class="severity-tag minor-shade">1 minor</p>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="d-flex">
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square critical-bg"></div>
+                  <p>Critical</p>
+                </div>
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square major-bg"></div>
+                  <p>Major</p>
+                </div>
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square minor-bg"></div>
+                  <p>Minor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- ISSUE CATEGORIES DETAILS- API Transport Issues -->
+    <div
+      id="issue-categories-details"
+      class="slide content-slide issue-categories-details"
+    >
+
+      <div class="slide-content">
+        <h1>Issue Categories Details</h1>
+        <h3>Information about issue categories found inside the zip file</h3>
+
+        <p class="widget-title">What are the issue categories?</p>
+
+        <div class="table-tile">
+          <p class="table-heading">API Transport Design Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Transport Method Not Defined</p>
+                      <p class="issue-category-desc">
+                        The APIs that did not define the transport method at
+                        local or global level
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Clear Text HTTP</p>
+                      <p class="issue-category-desc">
+                        The APIs that are defined to be using clear text HTTP
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">Data Type Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Data Bounds Not Defined</p>
+                      <p class="issue-category-desc">
+                        The bounds for the data are not defined for various entities. E.g. Maximum string length or Maximum number of elements in an Array may not be defined
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>4</td>
+                  
+                  
+                  
+                  
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">0 Critical</p>
+                      <p class="severity-tag major-shade">2 Major</p>
+                      <p class="severity-tag minor-shade">0 Minor</p>
+                    </div>
+                  </td>
+                  
+                  <td>
+                    
+                    <p class="filename-text">OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml</p>
+                    
+                  </td>
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      
+                        <p>—</p>
+                      
+                    </div>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Non-restrictive Data Bounds</p>
+                      <p class="issue-category-desc">
+                        The bounds for data are not restrictive for various entities. E.g. a string might have been defined to be any pattern (*) rather than being restricted to alpha-numeric
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Type & Attribute Mismatch</p>
+                      <p class="issue-category-desc">
+                        Certain entities are of a particular type but mandarory attributes are missing. E.g. an entity of type Array does not have items defined
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Authentication & Authorization Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>No Auth Information Defined</p>
+                      <p class="issue-category-desc">
+                        The APIs that did not define any authorization information
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>2</td>
+                  
+                  
+                  
+                  
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">2 Critical</p>
+                      <p class="severity-tag major-shade">0 Major</p>
+                      <p class="severity-tag minor-shade">0 Minor</p>
+                    </div>
+                  </td>
+                  
+                  <td>
+                    
+                    <p class="filename-text">OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml </p>
+                    
+                  </td>
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      
+                        <p>—</p>
+                      
+                    </div>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Invalid or Insecure Auth URL</p>
+                      <p class="issue-category-desc">
+                        The APIs that are defined to be using an invalid or insecure auth URL
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Lifecycle and Management Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>No API Versioning</p>
+                      <p class="issue-category-desc">
+                        The APIs defined do not accomodate versioning. E.g. an API defined as /api/v1/employeeInfo allows for versioning. Absence of such API is not ideal for API lifecycle management
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>API Error Responses Not Defined</p>
+                      <p class="issue-category-desc">
+                        Certain entities are of a particular type but mandatory attributes are missing. E.g. an entity of type array does not have items defined
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>0</td>
+                  
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Spec-file Management Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Contact Information Missing</p>
+                      <p class="issue-category-desc">
+                        The contact information is missing from the API Specification files
+                      </p>
+                    </div>
+                  </td>
+                  
+                  <td>1</td>
+                  
+                  
+                  
+                  
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">0 Critical</p>
+                      <p class="severity-tag major-shade">0 Major</p>
+                      <p class="severity-tag minor-shade">1 Minor</p>
+                    </div>
+                  </td>
+                  
+                  <td>
+                    
+                    <p class="filename-text">OAS_v2/Approval Category Product map.postman_collection.json-SwaggerYaml (1).yaml</p>
+                    
+                  </td>
+                  
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      
+                        <p>—</p>
+                      
+                    </div>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- VIOLATION DETAILS -->
+    <div id="violation-details" class="slide content-slide violation-details">
+
+      <div class="slide-content">
+        <h1>Violation Details</h1>
+        <h3>Information about violations and locations in the spec.</h3>
+
+        
+        <div class="issues-container">
+          <h2 class="critical-shade">Critical Issues</h2>
+
+          <div class="issues-list critical-issues-list">
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">"securityDefinitions" field is not defined or is empty.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">1</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    Absence of the security definitions implies that even if the security schemes have been specified, they cannot be applied without the scheme definition as captured in the securityDefintions field.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Global</div>
+                      {'reference_path': '(#->securityDefinitions is-empty True)[0]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            <div class="issue-divider"></div>
+            
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">Security field is missing and the global security field is also missing.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">1</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    Lack of the security field implies that no security schemes will be applied for the affected operations. Security schemes ensure authenticated and authorized access to APIs, lack of which may make the API vulnerable.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr</div>
+                      {'reference_path': '(#->paths->/AnRkr->post->security is-missing True)[()] and (#->paths->/AnRkr->post->security is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            <div class="issue-divider"></div>
+            
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">properties of type "array" should have "maxItems" defined.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">2</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Global</div>
+                      {'reference_path': '(#->definitions->AddRequest->properties->products->type eq array)[0] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[0]'}
+                    </div>
+                  </li>
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Global</div>
+                      {'reference_path': '(#->definitions->AddRequest->properties->products->type eq array)[()] and (#->definitions->AddRequest->properties->products->maxItems is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            <div class="issue-divider"></div>
+            
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">Schema of type "array" should have "maxItems" defined.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">1</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr/sub-product-id/1998/module/LEMO</div>
+                      {'reference_path': '(#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->type eq array)[()] and (#->paths->/AnRkr/sub-product-id/1998/module/LEMO->get->responses->200->schema->maxItems is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div class="issues-container">
+          <h2 class="major-shade">Major Issues</h2>
+
+          <div class="issues-list major-issues-list">
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">Parameters of type "string" should have "pattern" defined.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">2</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr</div>
+                      {'reference_path': '(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->pattern is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr/187715</div>
+                      {'reference_path': '(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->pattern is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            <div class="issue-divider"></div>
+            
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">Parameters of type "string" should have "maxLength" defined.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">2</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr</div>
+                      {'reference_path': '(#->paths->/AnRkr->post->parameters->*->type eq string)[()] and (#->paths->/AnRkr->post->parameters->*->maxLength is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">/AnRkr/187715</div>
+                      {'reference_path': '(#->paths->/AnRkr/187715->put->parameters->*->type eq string)[()] and (#->paths->/AnRkr/187715->put->parameters->*->maxLength is-missing True)[()]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div class="issues-container">
+          <h2 class="minor-shade">Minor Issues</h2>
+
+          <div class="issues-list minor-issues-list">
+            
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">Contact info does not contain an email.</p>
+                </div>
+
+                
+                
+                
+                
+                
+                
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">1</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    Provide contact information for the specification designer to help resolve issues.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  
+                  
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Global</div>
+                      {'reference_path': '(#->info->contact->email is-missing True)[0]'}
+                    </div>
+                  </li>
+                  
+                </ol>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="slide-footer d-flex align-items-center bd-highlight mb-3">
+        <img class="branding" src="./assets/images/footer-logo.png" />
+        <p class="copyrights">@ Imperva Ltd. All rights reserved</p>
+        <p class="report-name">Imperva API Report</p>
+        <p class="date">Creation date: Jun 21, 2021, 16:23</p>
+        <p class="separator">|</p>
+        <p class="customer">For: Name of the Customer</p>
+      </div>
+    </div>
+
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="./assets/scripts/bootstrap.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="./assets/scripts/chart.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript">
+      const onDOMLoad = () => {
+        // Update the customer name in the footer
+        updateCustomerName("N/A");
+
+
+        updateCreationDate("August 28, 2023 22:37:30");
+
+        updateReportNameInFooter("Imperva API Report");
+
+        // Update bar chart for distribution by API method
+        const methodsDistributionData = {
+          labels: ['POST', 'PUT', 'GET'],
+          data: [1, 1, 1],
+        };
+
+        renderBarChart("distributionByMethod", "Methods", methodsDistributionData);
+
+        // Update bar chart for distribution by param type
+        const paramTypesDistributionData = {
+          labels: ['string', 'object'],
+          data: [2, 2],
+        };
+
+        renderBarChart(
+          "distributionByParamType",
+          "Param Types",
+          paramTypesDistributionData
+        );
+
+        // Update bar chart for distribution by param type
+        const responseCodesDistributionData = {
+          labels: ['201', '200'],
+          data: [2, 1],
+        };
+
+        renderBarChart(
+          "distributionByResponseCode",
+          "Response Codes",
+          responseCodesDistributionData
+        );
+
+        // Update circular progress bar charts under
+        // Frequently occuring violations
+        
+        renderCircularProgressBar("violationMetric1", 70.00);
+        
+      };
+
+      /**
+       * Function to render bar chart for Input File Details
+       */
+      const renderBarChart = (chartId, axisLabel, { labels, data }) => {
+        const canvas = document.getElementById(chartId);
+        canvas.width = canvas.parentNode.clientWidth;
+        canvas.height = canvas.parentNode.clientHeight;
+
+        const chart = new Chart(canvas, {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: axisLabel,
+                data: data,
+                barThickness: 30,
+                maxBarThickness: 30,
+                backgroundColor: ["#5081F2"],
+                borderColor: ["#5081F2"],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+            plugins: {
+              legend: false,
+              // tooltip: {
+              //   enabled: false,
+              // },
+            },
+          },
+        });
+      };
+
+      /**
+       * Function to render circular progress bar for
+       * Most Frequently Occuring Violations
+       */
+      const renderCircularProgressBar = (chartId, value) => {
+        const data = {
+          labels: ["Test"],
+          datasets: [
+            {
+              label: "My First Dataset",
+              data: [value, 100 - value],
+              backgroundColor: ["#285AE6", "#ACB9C5"],
+              borderWidth: 0,
+              hoverOffset: 4,
+            },
+          ],
+        };
+
+        const config = {
+          type: "doughnut",
+          data: data,
+          options: {
+            hover: { mode: null },
+            cutout: "75%",
+            plugins: {
+              legend: false,
+              tooltip: {
+                enabled: false,
+              },
+            },
+          },
+        };
+
+        const myChart = new Chart(document.getElementById(chartId), config);
+
+        const percentageTextElement = document.querySelector(
+          `#${chartId} + .violation-donut-percentage`
+        );
+
+        percentageTextElement.textContent = value + "%";
+      };
+
+      /**
+       * Function to update report name in the footer section
+       */
+      const updateReportNameInFooter = (reportName) => {
+        const elementsList = document.querySelectorAll(".report-name");
+
+        elementsList.forEach((element) => {
+          element.textContent = reportName;
+        });
+      };
+
+      /**
+       * Function to update customer name in the footer section
+       */
+      const updateCustomerName = (name) => {
+        const elementsList = document.querySelectorAll(".customer");
+
+        elementsList.forEach((element) => {
+          element.textContent = `For: ${name}`;
+        });
+      };
+
+      /**
+       * Function to update the creation date in the footer section
+       */
+      const updateCreationDate = (dateString) => {
+        const elementsList = document.querySelectorAll(".date");
+
+        elementsList.forEach((element) => {
+          element.textContent = `Creation date: ${dateString}`;
+        });
+      };
+
+    </script>
+  </body>
+</html>

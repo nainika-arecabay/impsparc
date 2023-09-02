@@ -1,0 +1,18 @@
+# Please refer to the documentation for more details
+
+# Use a zip of specs
+$ impsparc eval_risk -z orangebank.zip -i cv_rules.json -o /tmp/cvreport.json
+
+# Use a single spec
+$ impsparc eval_risk -s orangebank_user.json -i cv_rules.json -o /tmp/cvreport.json
+
+# Use custom rules as well
+$ impsparc eval_risk -s orangebank_user.json -o /tmp/cvreport.json -i cv_rules.json -r custom_rules.json
+# With CV rules disabled
+$ impsparc eval_risk -s orangebank_user.json -o /tmp/cvreport.json -r custom_rules.json
+
+# CICD capability
+$ impsparc eval_risk -s orangebank_user.json -o /tmp/cvreport.json -r custom_rules.json -c cicd.cfg
+
+# Show trending risk
+$ impsparc trend_risk orangebank_user_orig.json orangebank_user.json -i cv_rules.json -o /tmp/cvreport.json

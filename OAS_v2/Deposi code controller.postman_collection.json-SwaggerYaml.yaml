@@ -1,0 +1,1318 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Deposi code controller
+  contact: {}
+host: 132.145.228.83
+basePath: /comn-common/deposite-code
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: add
+      tags:
+      - Misc
+      operationId: add
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/addrequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /AnRkr/123:
+    get:
+      summary: getbyid
+      tags:
+      - Misc
+      operationId: getbyid
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/getbyid'
+          examples:
+            application/json;charset=UTF-8:
+              id: 6614394
+              syncTs: 2023-01-13T07:19:51.788+0000
+              version: 18
+              tenantId: AnRkr
+              code: DE01
+              name: Deposit test
+              description: teste
+              depositeType: EXTERNAL
+              category: CONVENTIONAL
+              accountType: DEPOSIT_ACCOUNT
+              status: ACTIVE
+              createdUser: sashika
+              createdDate: 2022-12-27T02:40:16.980+0000
+              modifiedUser: JaninduNa
+              modifiedDate: 2023-01-13T07:19:51.788+0000
+              accountNo: '1234567821111'
+              glAccountId: 25
+              glAccountCode: GL04
+              glSubAccountId: 278
+              glSubAccountCode: z5z6
+              bankId: 6
+              bankCode: '7010'
+              bankName: BANK OF CEYLON
+              bankBranchId: 3902
+              bankBranchCode: '448'
+              bankBranchName: ADDALACHCHENAI
+              comnBranchId: 2004
+              comnBrancCode: GAMP
+              comnBrancName: Gampaha
+              transactionChanneld: null
+              transactionChannelCode: null
+              transactionChannelName: null
+              transactionChannelDesc: null
+              currencyId: '712'
+              currencyCode: USD
+              currencyName: US Dollars
+              currencyNumeric: '840'
+              deptId: '1302'
+              deptCode: DEM
+              deptDesc: DEM
+          headers:
+            Date:
+              type: string
+              default: Fri, 21 Jul 2023 05:09:02 GMT
+            Content-Length:
+              type: string
+              default: '965'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0d66ccbc5aacc8d42b21e1a6c85abd163"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '12'
+  /AnRkr/all:
+    get:
+      summary: getall
+      tags:
+      - Misc
+      operationId: getall
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/getall'
+          headers:
+            Date:
+              type: string
+              default: Fri, 21 Jul 2023 05:08:41 GMT
+            Content-Length:
+              type: string
+              default: '53749'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"07cca95d3348582f579db41a272379c2f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '101'
+  /AnRkr/code/asdf:
+    get:
+      summary: getbycode
+      tags:
+      - Misc
+      operationId: getbycode
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/getbycode'
+          examples:
+            application/json;charset=UTF-8:
+              id: 13434394
+              syncTs: 2023-02-13T23:36:05.862+0000
+              version: 0
+              tenantId: AnRkr
+              code: asdf
+              name: Sashika
+              description: null
+              depositeType: INTERNAL
+              category: CONVENTIONAL
+              accountType: DEPOSIT_ACCOUNT
+              status: ACTIVE
+              createdUser: praween
+              createdDate: 2023-02-13T23:36:04.787+0000
+              modifiedUser: null
+              modifiedDate: null
+              accountNo: '1234323454'
+              glAccountId: null
+              glAccountCode: null
+              glSubAccountId: null
+              glSubAccountCode: null
+              bankId: 2
+              bankCode: '7463'
+              bankName: AMANA BANK LIMITED
+              bankBranchId: 3931
+              bankBranchCode: '015'
+              bankBranchName: AKKARAIPATTU
+              comnBranchId: 1297
+              comnBrancCode: ABCy
+              comnBrancName: Colombo
+              transactionChanneld: 4293
+              transactionChannelCode: ATMB
+              transactionChannelName: ATM Channel
+              transactionChannelDesc: For ATM channel
+              currencyId: '243'
+              currencyCode: ALL
+              currencyName: Albanian lek
+              currencyNumeric: '800'
+              deptId: '1374'
+              deptCode: ITD
+              deptDesc: INFORMATION TECH.
+          headers:
+            Date:
+              type: string
+              default: Fri, 21 Jul 2023 05:09:14 GMT
+            Content-Length:
+              type: string
+              default: '962'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"01706729dc2cfb26be736e254e9fa11e4"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '17'
+  /AnRkr/name/sas:
+    get:
+      summary: getbyname
+      tags:
+      - Misc
+      operationId: getbyname
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/getbyname'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 11614394
+              syncTs: 2023-01-23T06:08:19.442+0000
+              version: 0
+              tenantId: AnRkr
+              code: qwdg
+              name: sas
+              description: test
+              depositeType: INTERNAL
+              category: CONVENTIONAL
+              accountType: DEPOSIT_ACCOUNT
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-23T06:08:19.433+0000
+              modifiedUser: null
+              modifiedDate: null
+              accountNo: '1245'
+              glAccountId: 461
+              glAccountCode: TTTT
+              glSubAccountId: 276
+              glSubAccountCode: zzz5
+              bankId: 2
+              bankCode: '7463'
+              bankName: AMANA BANK LIMITED
+              bankBranchId: 3931
+              bankBranchCode: '015'
+              bankBranchName: AKKARAIPATTU
+              comnBranchId: 1297
+              comnBrancCode: ABCy
+              comnBrancName: Colombo
+              transactionChanneld: null
+              transactionChannelCode: null
+              transactionChannelName: null
+              transactionChannelDesc: null
+              currencyId: '2423'
+              currencyCode: AAA
+              currencyName: test
+              currencyNumeric: '456'
+              deptId: '2008'
+              deptCode: '11'
+              deptDesc: '11'
+          headers:
+            Date:
+              type: string
+              default: Fri, 21 Jul 2023 05:09:26 GMT
+            Content-Length:
+              type: string
+              default: '916'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"00ac2fa269c692f871c9ae14d6f222d15"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '19'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: getbystatus
+      tags:
+      - Misc
+      operationId: getbystatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/getbystatus'
+          headers:
+            Date:
+              type: string
+              default: Fri, 21 Jul 2023 05:11:34 GMT
+            Content-Length:
+              type: string
+              default: '52729'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0bf0a8ee8e16922af3d007efaac39703d"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '125'
+definitions:
+  addrequest:
+    title: addrequest
+    example:
+      accountNo: '123456789'
+      accountType: DEPOSIT_ACCOUNT
+      bankId: '6'
+      branchId: '4400'
+      category: CONVENTIONAL
+      code: DE03
+      currencyId: '712'
+      defaultFlag: YES
+      departmentId: '1'
+      depositeType: INTERNAL
+      description: ''
+      glAccountCode: ''
+      glAccountId: ''
+      glSubAccountCode: z5z6
+      glSubAccountId: 278
+      name: Deposi 1
+      organizationBranchId: '83'
+      status: ACTIVE
+      transactionChannelId: '481'
+    type: object
+    properties:
+      accountNo:
+        type: string
+      accountType:
+        type: string
+      bankId:
+        type: string
+      branchId:
+        type: string
+      category:
+        type: string
+      code:
+        type: string
+      currencyId:
+        type: string
+      defaultFlag:
+        type: string
+      departmentId:
+        type: string
+      depositeType:
+        type: string
+      description:
+        type: string
+      glAccountCode:
+        type: string
+      glAccountId:
+        type: string
+      glSubAccountCode:
+        type: string
+      glSubAccountId:
+        type: integer
+        format: int32
+      name:
+        type: string
+      organizationBranchId:
+        type: string
+      status:
+        type: string
+      transactionChannelId:
+        type: string
+    required:
+    - accountNo
+    - accountType
+    - bankId
+    - branchId
+    - category
+    - code
+    - currencyId
+    - defaultFlag
+    - departmentId
+    - depositeType
+    - description
+    - glAccountCode
+    - glAccountId
+    - glSubAccountCode
+    - glSubAccountId
+    - name
+    - organizationBranchId
+    - status
+    - transactionChannelId
+  getbyid:
+    title: getbyid
+    example:
+      id: 6614394
+      syncTs: 2023-01-13T07:19:51.788+0000
+      version: 18
+      tenantId: AnRkr
+      code: DE01
+      name: Deposit test
+      description: teste
+      depositeType: EXTERNAL
+      category: CONVENTIONAL
+      accountType: DEPOSIT_ACCOUNT
+      status: ACTIVE
+      createdUser: sashika
+      createdDate: 2022-12-27T02:40:16.980+0000
+      modifiedUser: JaninduNa
+      modifiedDate: 2023-01-13T07:19:51.788+0000
+      accountNo: '1234567821111'
+      glAccountId: 25
+      glAccountCode: GL04
+      glSubAccountId: 278
+      glSubAccountCode: z5z6
+      bankId: 6
+      bankCode: '7010'
+      bankName: BANK OF CEYLON
+      bankBranchId: 3902
+      bankBranchCode: '448'
+      bankBranchName: ADDALACHCHENAI
+      comnBranchId: 2004
+      comnBrancCode: GAMP
+      comnBrancName: Gampaha
+      transactionChanneld: null
+      transactionChannelCode: null
+      transactionChannelName: null
+      transactionChannelDesc: null
+      currencyId: '712'
+      currencyCode: USD
+      currencyName: US Dollars
+      currencyNumeric: '840'
+      deptId: '1302'
+      deptCode: DEM
+      deptDesc: DEM
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositeType:
+        type: string
+      category:
+        type: string
+      accountType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      accountNo:
+        type: string
+      glAccountId:
+        type: integer
+        format: int32
+      glAccountCode:
+        type: string
+      glSubAccountId:
+        type: integer
+        format: int32
+      glSubAccountCode:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      bankBranchName:
+        type: string
+      comnBranchId:
+        type: integer
+        format: int32
+      comnBrancCode:
+        type: string
+      comnBrancName:
+        type: string
+      transactionChanneld:
+        type: string
+      transactionChannelCode:
+        type: string
+      transactionChannelName:
+        type: string
+      transactionChannelDesc:
+        type: string
+      currencyId:
+        type: string
+      currencyCode:
+        type: string
+      currencyName:
+        type: string
+      currencyNumeric:
+        type: string
+      deptId:
+        type: string
+      deptCode:
+        type: string
+      deptDesc:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - depositeType
+    - category
+    - accountType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - accountNo
+    - glAccountId
+    - glAccountCode
+    - glSubAccountId
+    - glSubAccountCode
+    - bankId
+    - bankCode
+    - bankName
+    - bankBranchId
+    - bankBranchCode
+    - bankBranchName
+    - comnBranchId
+    - comnBrancCode
+    - comnBrancName
+    - transactionChanneld
+    - transactionChannelCode
+    - transactionChannelName
+    - transactionChannelDesc
+    - currencyId
+    - currencyCode
+    - currencyName
+    - currencyNumeric
+    - deptId
+    - deptCode
+    - deptDesc
+  getall:
+    title: getall
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositeType:
+        type: string
+      category:
+        type: string
+      accountType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      accountNo:
+        type: string
+      glAccountId: {}
+      glAccountCode:
+        type: string
+      glSubAccountId: {}
+      glSubAccountCode:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      bankBranchName:
+        type: string
+      comnBranchId:
+        type: integer
+        format: int32
+      comnBrancCode:
+        type: string
+      comnBrancName:
+        type: string
+      transactionChanneld: {}
+      transactionChannelCode:
+        type: string
+      transactionChannelName:
+        type: string
+      transactionChannelDesc:
+        type: string
+      currencyId:
+        type: string
+      currencyCode:
+        type: string
+      currencyName:
+        type: string
+      currencyNumeric:
+        type: string
+      deptId:
+        type: string
+      deptCode:
+        type: string
+      deptDesc:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - depositeType
+    - category
+    - accountType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - accountNo
+    - glAccountId
+    - glAccountCode
+    - glSubAccountId
+    - glSubAccountCode
+    - bankId
+    - bankCode
+    - bankName
+    - bankBranchId
+    - bankBranchCode
+    - bankBranchName
+    - comnBranchId
+    - comnBrancCode
+    - comnBrancName
+    - transactionChanneld
+    - transactionChannelCode
+    - transactionChannelName
+    - transactionChannelDesc
+    - currencyId
+    - currencyCode
+    - currencyName
+    - currencyNumeric
+    - deptId
+    - deptCode
+    - deptDesc
+  getbycode:
+    title: getbycode
+    example:
+      id: 13434394
+      syncTs: 2023-02-13T23:36:05.862+0000
+      version: 0
+      tenantId: AnRkr
+      code: asdf
+      name: Sashika
+      description: null
+      depositeType: INTERNAL
+      category: CONVENTIONAL
+      accountType: DEPOSIT_ACCOUNT
+      status: ACTIVE
+      createdUser: praween
+      createdDate: 2023-02-13T23:36:04.787+0000
+      modifiedUser: null
+      modifiedDate: null
+      accountNo: '1234323454'
+      glAccountId: null
+      glAccountCode: null
+      glSubAccountId: null
+      glSubAccountCode: null
+      bankId: 2
+      bankCode: '7463'
+      bankName: AMANA BANK LIMITED
+      bankBranchId: 3931
+      bankBranchCode: '015'
+      bankBranchName: AKKARAIPATTU
+      comnBranchId: 1297
+      comnBrancCode: ABCy
+      comnBrancName: Colombo
+      transactionChanneld: 4293
+      transactionChannelCode: ATMB
+      transactionChannelName: ATM Channel
+      transactionChannelDesc: For ATM channel
+      currencyId: '243'
+      currencyCode: ALL
+      currencyName: Albanian lek
+      currencyNumeric: '800'
+      deptId: '1374'
+      deptCode: ITD
+      deptDesc: INFORMATION TECH.
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositeType:
+        type: string
+      category:
+        type: string
+      accountType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      accountNo:
+        type: string
+      glAccountId:
+        type: string
+      glAccountCode:
+        type: string
+      glSubAccountId:
+        type: string
+      glSubAccountCode:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      bankBranchName:
+        type: string
+      comnBranchId:
+        type: integer
+        format: int32
+      comnBrancCode:
+        type: string
+      comnBrancName:
+        type: string
+      transactionChanneld:
+        type: integer
+        format: int32
+      transactionChannelCode:
+        type: string
+      transactionChannelName:
+        type: string
+      transactionChannelDesc:
+        type: string
+      currencyId:
+        type: string
+      currencyCode:
+        type: string
+      currencyName:
+        type: string
+      currencyNumeric:
+        type: string
+      deptId:
+        type: string
+      deptCode:
+        type: string
+      deptDesc:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - depositeType
+    - category
+    - accountType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - accountNo
+    - glAccountId
+    - glAccountCode
+    - glSubAccountId
+    - glSubAccountCode
+    - bankId
+    - bankCode
+    - bankName
+    - bankBranchId
+    - bankBranchCode
+    - bankBranchName
+    - comnBranchId
+    - comnBrancCode
+    - comnBrancName
+    - transactionChanneld
+    - transactionChannelCode
+    - transactionChannelName
+    - transactionChannelDesc
+    - currencyId
+    - currencyCode
+    - currencyName
+    - currencyNumeric
+    - deptId
+    - deptCode
+    - deptDesc
+  getbyname:
+    title: getbyname
+    example:
+      id: 11614394
+      syncTs: 2023-01-23T06:08:19.442+0000
+      version: 0
+      tenantId: AnRkr
+      code: qwdg
+      name: sas
+      description: test
+      depositeType: INTERNAL
+      category: CONVENTIONAL
+      accountType: DEPOSIT_ACCOUNT
+      status: ACTIVE
+      createdUser: sahan.peiris
+      createdDate: 2023-01-23T06:08:19.433+0000
+      modifiedUser: null
+      modifiedDate: null
+      accountNo: '1245'
+      glAccountId: 461
+      glAccountCode: TTTT
+      glSubAccountId: 276
+      glSubAccountCode: zzz5
+      bankId: 2
+      bankCode: '7463'
+      bankName: AMANA BANK LIMITED
+      bankBranchId: 3931
+      bankBranchCode: '015'
+      bankBranchName: AKKARAIPATTU
+      comnBranchId: 1297
+      comnBrancCode: ABCy
+      comnBrancName: Colombo
+      transactionChanneld: null
+      transactionChannelCode: null
+      transactionChannelName: null
+      transactionChannelDesc: null
+      currencyId: '2423'
+      currencyCode: AAA
+      currencyName: test
+      currencyNumeric: '456'
+      deptId: '2008'
+      deptCode: '11'
+      deptDesc: '11'
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositeType:
+        type: string
+      category:
+        type: string
+      accountType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      accountNo:
+        type: string
+      glAccountId:
+        type: integer
+        format: int32
+      glAccountCode:
+        type: string
+      glSubAccountId:
+        type: integer
+        format: int32
+      glSubAccountCode:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      bankBranchName:
+        type: string
+      comnBranchId:
+        type: integer
+        format: int32
+      comnBrancCode:
+        type: string
+      comnBrancName:
+        type: string
+      transactionChanneld:
+        type: string
+      transactionChannelCode:
+        type: string
+      transactionChannelName:
+        type: string
+      transactionChannelDesc:
+        type: string
+      currencyId:
+        type: string
+      currencyCode:
+        type: string
+      currencyName:
+        type: string
+      currencyNumeric:
+        type: string
+      deptId:
+        type: string
+      deptCode:
+        type: string
+      deptDesc:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - depositeType
+    - category
+    - accountType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - accountNo
+    - glAccountId
+    - glAccountCode
+    - glSubAccountId
+    - glSubAccountCode
+    - bankId
+    - bankCode
+    - bankName
+    - bankBranchId
+    - bankBranchCode
+    - bankBranchName
+    - comnBranchId
+    - comnBrancCode
+    - comnBrancName
+    - transactionChanneld
+    - transactionChannelCode
+    - transactionChannelName
+    - transactionChannelDesc
+    - currencyId
+    - currencyCode
+    - currencyName
+    - currencyNumeric
+    - deptId
+    - deptCode
+    - deptDesc
+  getbystatus:
+    title: getbystatus
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositeType:
+        type: string
+      category:
+        type: string
+      accountType:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      accountNo:
+        type: string
+      glAccountId: {}
+      glAccountCode:
+        type: string
+      glSubAccountId: {}
+      glSubAccountCode:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      bankBranchName:
+        type: string
+      comnBranchId:
+        type: integer
+        format: int32
+      comnBrancCode:
+        type: string
+      comnBrancName:
+        type: string
+      transactionChanneld: {}
+      transactionChannelCode:
+        type: string
+      transactionChannelName:
+        type: string
+      transactionChannelDesc:
+        type: string
+      currencyId:
+        type: string
+      currencyCode:
+        type: string
+      currencyName:
+        type: string
+      currencyNumeric:
+        type: string
+      deptId:
+        type: string
+      deptCode:
+        type: string
+      deptDesc:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - depositeType
+    - category
+    - accountType
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - accountNo
+    - glAccountId
+    - glAccountCode
+    - glSubAccountId
+    - glSubAccountCode
+    - bankId
+    - bankCode
+    - bankName
+    - bankBranchId
+    - bankBranchCode
+    - bankBranchName
+    - comnBranchId
+    - comnBrancCode
+    - comnBrancName
+    - transactionChanneld
+    - transactionChannelCode
+    - transactionChannelName
+    - transactionChannelDesc
+    - currencyId
+    - currencyCode
+    - currencyName
+    - currencyNumeric
+    - deptId
+    - deptCode
+    - deptDesc
+tags:
+- name: Misc
+  description: ''

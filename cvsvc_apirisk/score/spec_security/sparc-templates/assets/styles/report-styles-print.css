@@ -1,0 +1,18 @@
+
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif;
+    color: #062e44;
+    background-color: #fafbfd;
+    line-height: 128%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  ul, li {
+    list-style: disc outside none;
+  }
+}

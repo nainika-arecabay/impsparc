@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Helvetica", "Arial", "Roboto", sans-serif;
+  color: #062e44;
+  background-color: #fafbfd;
+  line-height: 128%;
+}
+
+h2,
+.text--h2 {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+h6,
+.text--h6 {
+  font-size: 12px;
+  line-height: 16px;
+}
+.text--small {
+  font-size: 9px;
+  line-height: 12px;
+}
+ul, li {
+  list-style: disc outside none;
+}

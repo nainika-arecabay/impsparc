@@ -1,0 +1,1647 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Disbursement details controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/disbursement-details
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr/2001:
+    get:
+      summary: search by ID
+      tags:
+      - Misc
+      operationId: searchbyID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/searchbyID'
+          examples:
+            application/json;charset=UTF-8:
+              id: null
+              syncTs: null
+              version: null
+              tenantId: null
+              sectorId: null
+              sectorName: null
+              subSectorId: null
+              subSectorName: null
+              purposeId: null
+              purposeDescription: null
+              approvedLoanAmount: null
+              totalDeductions: null
+              balanceDisbursementAmount: null
+              comments: null
+              leadInfoId: null
+              status: null
+              createdUser: null
+              createdDate: null
+              modifiedUser: null
+              modifiedDate: null
+              purposeName: null
+              disbursementDetailsPhases: []
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:42:37 GMT
+            Content-Length:
+              type: string
+              default: '431'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0e45cd05e93d1edcad6453ab388229084"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '56'
+  /AnRkr/lead-info-id/18818:
+    get:
+      summary: Search by lead-info-id
+      tags:
+      - Misc
+      operationId: Searchbylead-info-id
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Searchbylead-info-id'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888522
+              syncTs: 2023-07-20T13:36:14.390+0000
+              version: 0
+              tenantId: AnRkr
+              sectorId: 22920
+              sectorName: Sector-001
+              subSectorId: 44626
+              subSectorName: Sub sector 2
+              purposeId: 496632
+              purposeDescription: Sub sequent disbursement
+              approvedLoanAmount: 100000
+              totalDeductions: 0
+              balanceDisbursementAmount: 100000
+              comments: null
+              leadInfoId: 1888397
+              status: ACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-07-20T13:36:14.390+0000
+              modifiedUser: null
+              modifiedDate: null
+              purposeName: Sub sequent disbursement
+              disbursementDetailsPhases:
+              - id: 1888523
+                syncTs: 2023-07-20T13:36:14.548+0000
+                version: 0
+                tenantId: AnRkr
+                sequence: 1
+                commonListId: 1553367
+                amount: 100000
+                disbursementConditionId: 28741
+                disbursementConditionName: condition
+                status: ACTIVE
+                createdUser: acentura.testing
+                createdDate: 2023-07-20T13:36:14.548+0000
+                modifiedUser: null
+                modifiedDate: null
+                disbursementDetails:
+                - id: 1888524
+                  syncTs: 2023-07-20T13:36:14.574+0000
+                  version: 0
+                  tenantId: AnRkr
+                  scheduleNo: 0
+                  amount: 100000
+                  loanAmount: 100000
+                  payModeId: 1650149
+                  payModeCode: CASH
+                  payMethodId: 1650149
+                  payMethodCode: null
+                  payMethodName: Cash
+                  bankName: null
+                  bankBranchName: null
+                  bankId: 2141
+                  bankCode: Lending Bank
+                  disbursementConditionId: 28741
+                  disbursementConditionCode: BBBB
+                  disbursementConditionName: condition
+                  bankBranchId: null
+                  bankBranchCode: null
+                  payeeType: Customer
+                  status: ACTIVE
+                  payeeName: Sashika Himaruwan Jayalath
+                  account: null
+                  comments: null
+                  createdUser: acentura.testing
+                  createdDate: 2023-07-20T13:36:14.574+0000
+                  modifiedUser: null
+                  modifiedDate: null
+                  payeeRefCode: CUS000000015131
+                  phaseId: 1888523
+                headersId: 1888522
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:46:20 GMT
+            Content-Length:
+              type: string
+              default: '1716'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"06a0a38b189095f2544d46e2f876335bc"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '401'
+  /AnRkr/status/INACTIVE:
+    get:
+      summary: search by status
+      tags:
+      - Misc
+      operationId: searchbystatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/searchbystatus'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 796503
+              syncTs: 2022-12-14T07:33:08.893+0000
+              version: 0
+              tenantId: AnRkr
+              sectorId: 1
+              sectorName: sector name
+              subSectorId: 2
+              subSectorName: 'sub Sector 1 '
+              purposeId: 496632
+              purposeDescription: Sub sequent disbursement
+              approvedLoanAmount: 100000
+              totalDeductions: 1000
+              balanceDisbursementAmount: 99000
+              comments: null
+              leadInfoId: 184830
+              status: INACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-12-14T07:33:08.893+0000
+              modifiedUser: null
+              modifiedDate: null
+              purposeName: null
+              disbursementDetailsPhases:
+              - id: 796504
+                syncTs: 2022-12-14T07:33:08.920+0000
+                version: 0
+                tenantId: AnRkr
+                sequence: 1
+                commonListId: 496632
+                amount: 100000
+                disbursementConditionId: 4301
+                disbursementConditionName: Dis Vondition 1
+                status: ACTIVE
+                createdUser: tharuki.ariyapala
+                createdDate: 2022-12-14T07:33:08.920+0000
+                modifiedUser: null
+                modifiedDate: null
+                disbursementDetails:
+                - id: 796505
+                  syncTs: 2022-12-14T07:33:09.116+0000
+                  version: 0
+                  tenantId: AnRkr
+                  scheduleNo: 0
+                  amount: 100000
+                  loanAmount: 100000
+                  payModeId: 23250
+                  payModeCode: PAY2
+                  payMethodId: null
+                  payMethodCode: null
+                  payMethodName: null
+                  bankName: null
+                  bankBranchName: null
+                  bankId: 823
+                  bankCode: LOL4
+                  disbursementConditionId: 4301
+                  disbursementConditionCode: DIS1
+                  disbursementConditionName: null
+                  bankBranchId: 2144
+                  bankBranchCode: Lending Bank Branch
+                  payeeType: CUSTOMER
+                  status: ACTIVE
+                  payeeName: Tharuki Nethma Alvis
+                  account: jhyfgtrffgg
+                  comments: null
+                  createdUser: tharuki.ariyapala
+                  createdDate: 2022-12-14T07:33:09.116+0000
+                  modifiedUser: null
+                  modifiedDate: null
+                  payeeRefCode: PASU
+                  phaseId: 796504
+                headersId: 796503
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:47:31 GMT
+            Content-Length:
+              type: string
+              default: '1680'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0a982627745f8971c9ba4e9b02ec2e72a"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '62'
+  /AnRkr:
+    post:
+      summary: Create
+      tags:
+      - Misc
+      operationId: Create
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      consumes:
+      - application/json
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/Create'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888630'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:53:49 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '375'
+    put:
+      summary: update
+      tags:
+      - Misc
+      operationId: update
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/updaterequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/update'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888630'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:55:25 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '271'
+definitions:
+  searchbyID:
+    title: searchbyID
+    example:
+      id: null
+      syncTs: null
+      version: null
+      tenantId: null
+      sectorId: null
+      sectorName: null
+      subSectorId: null
+      subSectorName: null
+      purposeId: null
+      purposeDescription: null
+      approvedLoanAmount: null
+      totalDeductions: null
+      balanceDisbursementAmount: null
+      comments: null
+      leadInfoId: null
+      status: null
+      createdUser: null
+      createdDate: null
+      modifiedUser: null
+      modifiedDate: null
+      purposeName: null
+      disbursementDetailsPhases: []
+    type: object
+    properties:
+      id:
+        type: string
+      syncTs:
+        type: string
+      version:
+        type: string
+      tenantId:
+        type: string
+      sectorId:
+        type: string
+      sectorName:
+        type: string
+      subSectorId:
+        type: string
+      subSectorName:
+        type: string
+      purposeId:
+        type: string
+      purposeDescription:
+        type: string
+      approvedLoanAmount:
+        type: string
+      totalDeductions:
+        type: string
+      balanceDisbursementAmount:
+        type: string
+      comments:
+        type: string
+      leadInfoId:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      purposeName:
+        type: string
+      disbursementDetailsPhases:
+        type: array
+        items:
+          type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - sectorId
+    - sectorName
+    - subSectorId
+    - subSectorName
+    - purposeId
+    - purposeDescription
+    - approvedLoanAmount
+    - totalDeductions
+    - balanceDisbursementAmount
+    - comments
+    - leadInfoId
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - purposeName
+    - disbursementDetailsPhases
+  Searchbylead-info-id:
+    title: Searchbylead-info-id
+    example:
+      id: 1888522
+      syncTs: 2023-07-20T13:36:14.390+0000
+      version: 0
+      tenantId: AnRkr
+      sectorId: 22920
+      sectorName: Sector-001
+      subSectorId: 44626
+      subSectorName: Sub sector 2
+      purposeId: 496632
+      purposeDescription: Sub sequent disbursement
+      approvedLoanAmount: 100000
+      totalDeductions: 0
+      balanceDisbursementAmount: 100000
+      comments: null
+      leadInfoId: 1888397
+      status: ACTIVE
+      createdUser: acentura.testing
+      createdDate: 2023-07-20T13:36:14.390+0000
+      modifiedUser: null
+      modifiedDate: null
+      purposeName: Sub sequent disbursement
+      disbursementDetailsPhases:
+      - id: 1888523
+        syncTs: 2023-07-20T13:36:14.548+0000
+        version: 0
+        tenantId: AnRkr
+        sequence: 1
+        commonListId: 1553367
+        amount: 100000
+        disbursementConditionId: 28741
+        disbursementConditionName: condition
+        status: ACTIVE
+        createdUser: acentura.testing
+        createdDate: 2023-07-20T13:36:14.548+0000
+        modifiedUser: null
+        modifiedDate: null
+        disbursementDetails:
+        - id: 1888524
+          syncTs: 2023-07-20T13:36:14.574+0000
+          version: 0
+          tenantId: AnRkr
+          scheduleNo: 0
+          amount: 100000
+          loanAmount: 100000
+          payModeId: 1650149
+          payModeCode: CASH
+          payMethodId: 1650149
+          payMethodCode: null
+          payMethodName: Cash
+          bankName: null
+          bankBranchName: null
+          bankId: 2141
+          bankCode: Lending Bank
+          disbursementConditionId: 28741
+          disbursementConditionCode: BBBB
+          disbursementConditionName: condition
+          bankBranchId: null
+          bankBranchCode: null
+          payeeType: Customer
+          status: ACTIVE
+          payeeName: Sashika Himaruwan Jayalath
+          account: null
+          comments: null
+          createdUser: acentura.testing
+          createdDate: 2023-07-20T13:36:14.574+0000
+          modifiedUser: null
+          modifiedDate: null
+          payeeRefCode: CUS000000015131
+          phaseId: 1888523
+        headersId: 1888522
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      sectorId:
+        type: integer
+        format: int32
+      sectorName:
+        type: string
+      subSectorId:
+        type: integer
+        format: int32
+      subSectorName:
+        type: string
+      purposeId:
+        type: integer
+        format: int32
+      purposeDescription:
+        type: string
+      approvedLoanAmount:
+        type: integer
+        format: int32
+      totalDeductions:
+        type: integer
+        format: int32
+      balanceDisbursementAmount:
+        type: integer
+        format: int32
+      comments:
+        type: string
+      leadInfoId:
+        type: integer
+        format: int32
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      purposeName:
+        type: string
+      disbursementDetailsPhases:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetailsPhase'
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - sectorId
+    - sectorName
+    - subSectorId
+    - subSectorName
+    - purposeId
+    - purposeDescription
+    - approvedLoanAmount
+    - totalDeductions
+    - balanceDisbursementAmount
+    - comments
+    - leadInfoId
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - purposeName
+    - disbursementDetailsPhases
+  DisbursementDetailsPhase:
+    title: DisbursementDetailsPhase
+    example:
+      id: 1888523
+      syncTs: 2023-07-20T13:36:14.548+0000
+      version: 0
+      tenantId: AnRkr
+      sequence: 1
+      commonListId: 1553367
+      amount: 100000
+      disbursementConditionId: 28741
+      disbursementConditionName: condition
+      status: ACTIVE
+      createdUser: acentura.testing
+      createdDate: 2023-07-20T13:36:14.548+0000
+      modifiedUser: null
+      modifiedDate: null
+      disbursementDetails:
+      - id: 1888524
+        syncTs: 2023-07-20T13:36:14.574+0000
+        version: 0
+        tenantId: AnRkr
+        scheduleNo: 0
+        amount: 100000
+        loanAmount: 100000
+        payModeId: 1650149
+        payModeCode: CASH
+        payMethodId: 1650149
+        payMethodCode: null
+        payMethodName: Cash
+        bankName: null
+        bankBranchName: null
+        bankId: 2141
+        bankCode: Lending Bank
+        disbursementConditionId: 28741
+        disbursementConditionCode: BBBB
+        disbursementConditionName: condition
+        bankBranchId: null
+        bankBranchCode: null
+        payeeType: Customer
+        status: ACTIVE
+        payeeName: Sashika Himaruwan Jayalath
+        account: null
+        comments: null
+        createdUser: acentura.testing
+        createdDate: 2023-07-20T13:36:14.574+0000
+        modifiedUser: null
+        modifiedDate: null
+        payeeRefCode: CUS000000015131
+        phaseId: 1888523
+      headersId: 1888522
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      sequence:
+        type: integer
+        format: int32
+      commonListId:
+        type: integer
+        format: int32
+      amount:
+        type: integer
+        format: int32
+      disbursementConditionId:
+        type: integer
+        format: int32
+      disbursementConditionName:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      disbursementDetails:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetail'
+      headersId:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - sequence
+    - commonListId
+    - amount
+    - disbursementConditionId
+    - disbursementConditionName
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - disbursementDetails
+    - headersId
+  DisbursementDetail:
+    title: DisbursementDetail
+    example:
+      id: 1888524
+      syncTs: 2023-07-20T13:36:14.574+0000
+      version: 0
+      tenantId: AnRkr
+      scheduleNo: 0
+      amount: 100000
+      loanAmount: 100000
+      payModeId: 1650149
+      payModeCode: CASH
+      payMethodId: 1650149
+      payMethodCode: null
+      payMethodName: Cash
+      bankName: null
+      bankBranchName: null
+      bankId: 2141
+      bankCode: Lending Bank
+      disbursementConditionId: 28741
+      disbursementConditionCode: BBBB
+      disbursementConditionName: condition
+      bankBranchId: null
+      bankBranchCode: null
+      payeeType: Customer
+      status: ACTIVE
+      payeeName: Sashika Himaruwan Jayalath
+      account: null
+      comments: null
+      createdUser: acentura.testing
+      createdDate: 2023-07-20T13:36:14.574+0000
+      modifiedUser: null
+      modifiedDate: null
+      payeeRefCode: CUS000000015131
+      phaseId: 1888523
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      scheduleNo:
+        type: integer
+        format: int32
+      amount:
+        type: integer
+        format: int32
+      loanAmount:
+        type: integer
+        format: int32
+      payModeId:
+        type: integer
+        format: int32
+      payModeCode:
+        type: string
+      payMethodId:
+        type: integer
+        format: int32
+      payMethodCode:
+        type: string
+      payMethodName:
+        type: string
+      bankName:
+        type: string
+      bankBranchName:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      disbursementConditionId:
+        type: integer
+        format: int32
+      disbursementConditionCode:
+        type: string
+      disbursementConditionName:
+        type: string
+      bankBranchId:
+        type: string
+      bankBranchCode:
+        type: string
+      payeeType:
+        type: string
+      status:
+        type: string
+      payeeName:
+        type: string
+      account:
+        type: string
+      comments:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      payeeRefCode:
+        type: string
+      phaseId:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - scheduleNo
+    - amount
+    - loanAmount
+    - payModeId
+    - payModeCode
+    - payMethodId
+    - payMethodCode
+    - payMethodName
+    - bankName
+    - bankBranchName
+    - bankId
+    - bankCode
+    - disbursementConditionId
+    - disbursementConditionCode
+    - disbursementConditionName
+    - bankBranchId
+    - bankBranchCode
+    - payeeType
+    - status
+    - payeeName
+    - account
+    - comments
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - payeeRefCode
+    - phaseId
+  searchbystatus:
+    title: searchbystatus
+    example:
+      id: 796503
+      syncTs: 2022-12-14T07:33:08.893+0000
+      version: 0
+      tenantId: AnRkr
+      sectorId: 1
+      sectorName: sector name
+      subSectorId: 2
+      subSectorName: 'sub Sector 1 '
+      purposeId: 496632
+      purposeDescription: Sub sequent disbursement
+      approvedLoanAmount: 100000
+      totalDeductions: 1000
+      balanceDisbursementAmount: 99000
+      comments: null
+      leadInfoId: 184830
+      status: INACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2022-12-14T07:33:08.893+0000
+      modifiedUser: null
+      modifiedDate: null
+      purposeName: null
+      disbursementDetailsPhases:
+      - id: 796504
+        syncTs: 2022-12-14T07:33:08.920+0000
+        version: 0
+        tenantId: AnRkr
+        sequence: 1
+        commonListId: 496632
+        amount: 100000
+        disbursementConditionId: 4301
+        disbursementConditionName: Dis Vondition 1
+        status: ACTIVE
+        createdUser: tharuki.ariyapala
+        createdDate: 2022-12-14T07:33:08.920+0000
+        modifiedUser: null
+        modifiedDate: null
+        disbursementDetails:
+        - id: 796505
+          syncTs: 2022-12-14T07:33:09.116+0000
+          version: 0
+          tenantId: AnRkr
+          scheduleNo: 0
+          amount: 100000
+          loanAmount: 100000
+          payModeId: 23250
+          payModeCode: PAY2
+          payMethodId: null
+          payMethodCode: null
+          payMethodName: null
+          bankName: null
+          bankBranchName: null
+          bankId: 823
+          bankCode: LOL4
+          disbursementConditionId: 4301
+          disbursementConditionCode: DIS1
+          disbursementConditionName: null
+          bankBranchId: 2144
+          bankBranchCode: Lending Bank Branch
+          payeeType: CUSTOMER
+          status: ACTIVE
+          payeeName: Tharuki Nethma Alvis
+          account: jhyfgtrffgg
+          comments: null
+          createdUser: tharuki.ariyapala
+          createdDate: 2022-12-14T07:33:09.116+0000
+          modifiedUser: null
+          modifiedDate: null
+          payeeRefCode: PASU
+          phaseId: 796504
+        headersId: 796503
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      sectorId:
+        type: integer
+        format: int32
+      sectorName:
+        type: string
+      subSectorId:
+        type: integer
+        format: int32
+      subSectorName:
+        type: string
+      purposeId:
+        type: integer
+        format: int32
+      purposeDescription:
+        type: string
+      approvedLoanAmount:
+        type: integer
+        format: int32
+      totalDeductions:
+        type: integer
+        format: int32
+      balanceDisbursementAmount:
+        type: integer
+        format: int32
+      comments:
+        type: string
+      leadInfoId:
+        type: integer
+        format: int32
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      purposeName:
+        type: string
+      disbursementDetailsPhases:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetailsPhase1'
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - sectorId
+    - sectorName
+    - subSectorId
+    - subSectorName
+    - purposeId
+    - purposeDescription
+    - approvedLoanAmount
+    - totalDeductions
+    - balanceDisbursementAmount
+    - comments
+    - leadInfoId
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - purposeName
+    - disbursementDetailsPhases
+  DisbursementDetailsPhase1:
+    title: DisbursementDetailsPhase1
+    example:
+      id: 796504
+      syncTs: 2022-12-14T07:33:08.920+0000
+      version: 0
+      tenantId: AnRkr
+      sequence: 1
+      commonListId: 496632
+      amount: 100000
+      disbursementConditionId: 4301
+      disbursementConditionName: Dis Vondition 1
+      status: ACTIVE
+      createdUser: tharuki.ariyapala
+      createdDate: 2022-12-14T07:33:08.920+0000
+      modifiedUser: null
+      modifiedDate: null
+      disbursementDetails:
+      - id: 796505
+        syncTs: 2022-12-14T07:33:09.116+0000
+        version: 0
+        tenantId: AnRkr
+        scheduleNo: 0
+        amount: 100000
+        loanAmount: 100000
+        payModeId: 23250
+        payModeCode: PAY2
+        payMethodId: null
+        payMethodCode: null
+        payMethodName: null
+        bankName: null
+        bankBranchName: null
+        bankId: 823
+        bankCode: LOL4
+        disbursementConditionId: 4301
+        disbursementConditionCode: DIS1
+        disbursementConditionName: null
+        bankBranchId: 2144
+        bankBranchCode: Lending Bank Branch
+        payeeType: CUSTOMER
+        status: ACTIVE
+        payeeName: Tharuki Nethma Alvis
+        account: jhyfgtrffgg
+        comments: null
+        createdUser: tharuki.ariyapala
+        createdDate: 2022-12-14T07:33:09.116+0000
+        modifiedUser: null
+        modifiedDate: null
+        payeeRefCode: PASU
+        phaseId: 796504
+      headersId: 796503
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      sequence:
+        type: integer
+        format: int32
+      commonListId:
+        type: integer
+        format: int32
+      amount:
+        type: integer
+        format: int32
+      disbursementConditionId:
+        type: integer
+        format: int32
+      disbursementConditionName:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      disbursementDetails:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetail1'
+      headersId:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - sequence
+    - commonListId
+    - amount
+    - disbursementConditionId
+    - disbursementConditionName
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - disbursementDetails
+    - headersId
+  DisbursementDetail1:
+    title: DisbursementDetail1
+    example:
+      id: 796505
+      syncTs: 2022-12-14T07:33:09.116+0000
+      version: 0
+      tenantId: AnRkr
+      scheduleNo: 0
+      amount: 100000
+      loanAmount: 100000
+      payModeId: 23250
+      payModeCode: PAY2
+      payMethodId: null
+      payMethodCode: null
+      payMethodName: null
+      bankName: null
+      bankBranchName: null
+      bankId: 823
+      bankCode: LOL4
+      disbursementConditionId: 4301
+      disbursementConditionCode: DIS1
+      disbursementConditionName: null
+      bankBranchId: 2144
+      bankBranchCode: Lending Bank Branch
+      payeeType: CUSTOMER
+      status: ACTIVE
+      payeeName: Tharuki Nethma Alvis
+      account: jhyfgtrffgg
+      comments: null
+      createdUser: tharuki.ariyapala
+      createdDate: 2022-12-14T07:33:09.116+0000
+      modifiedUser: null
+      modifiedDate: null
+      payeeRefCode: PASU
+      phaseId: 796504
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      scheduleNo:
+        type: integer
+        format: int32
+      amount:
+        type: integer
+        format: int32
+      loanAmount:
+        type: integer
+        format: int32
+      payModeId:
+        type: integer
+        format: int32
+      payModeCode:
+        type: string
+      payMethodId:
+        type: string
+      payMethodCode:
+        type: string
+      payMethodName:
+        type: string
+      bankName:
+        type: string
+      bankBranchName:
+        type: string
+      bankId:
+        type: integer
+        format: int32
+      bankCode:
+        type: string
+      disbursementConditionId:
+        type: integer
+        format: int32
+      disbursementConditionCode:
+        type: string
+      disbursementConditionName:
+        type: string
+      bankBranchId:
+        type: integer
+        format: int32
+      bankBranchCode:
+        type: string
+      payeeType:
+        type: string
+      status:
+        type: string
+      payeeName:
+        type: string
+      account:
+        type: string
+      comments:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      payeeRefCode:
+        type: string
+      phaseId:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - scheduleNo
+    - amount
+    - loanAmount
+    - payModeId
+    - payModeCode
+    - payMethodId
+    - payMethodCode
+    - payMethodName
+    - bankName
+    - bankBranchName
+    - bankId
+    - bankCode
+    - disbursementConditionId
+    - disbursementConditionCode
+    - disbursementConditionName
+    - bankBranchId
+    - bankBranchCode
+    - payeeType
+    - status
+    - payeeName
+    - account
+    - comments
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - payeeRefCode
+    - phaseId
+  CreateRequest:
+    title: CreateRequest
+    example:
+      customerId: '24659'
+      loanAmount: '5000000.00'
+      deductions: '50000.00'
+      balanceDisAmount: '450000.00'
+      disbursementDetails:
+      - id: null
+        version: null
+        status: ACTIVE
+        leadInfoId: '24657'
+        amount: '500.00'
+        payMethodId: '23250'
+        payMethodName: Payment 2
+        comments: comment-UD
+        account: '123432675'
+        bankId: '823'
+        bankCode: LOL4
+        bankBranchId: '1520'
+        bankBranchCode: ABCD
+        payeeType: OTHER
+        payeeName: dilhan
+        disbursementConditionId: '4301'
+        disbursementConditionName: Dis Vondition 1
+    type: object
+    properties:
+      customerId:
+        type: string
+      loanAmount:
+        type: string
+      deductions:
+        type: string
+      balanceDisAmount:
+        type: string
+      disbursementDetails:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetail2'
+    required:
+    - customerId
+    - loanAmount
+    - deductions
+    - balanceDisAmount
+    - disbursementDetails
+  DisbursementDetail2:
+    title: DisbursementDetail2
+    example:
+      id: null
+      version: null
+      status: ACTIVE
+      leadInfoId: '24657'
+      amount: '500.00'
+      payMethodId: '23250'
+      payMethodName: Payment 2
+      comments: comment-UD
+      account: '123432675'
+      bankId: '823'
+      bankCode: LOL4
+      bankBranchId: '1520'
+      bankBranchCode: ABCD
+      payeeType: OTHER
+      payeeName: dilhan
+      disbursementConditionId: '4301'
+      disbursementConditionName: Dis Vondition 1
+    type: object
+    properties:
+      id:
+        type: string
+      version:
+        type: string
+      status:
+        type: string
+      leadInfoId:
+        type: string
+      amount:
+        type: string
+      payMethodId:
+        type: string
+      payMethodName:
+        type: string
+      comments:
+        type: string
+      account:
+        type: string
+      bankId:
+        type: string
+      bankCode:
+        type: string
+      bankBranchId:
+        type: string
+      bankBranchCode:
+        type: string
+      payeeType:
+        type: string
+      payeeName:
+        type: string
+      disbursementConditionId:
+        type: string
+      disbursementConditionName:
+        type: string
+    required:
+    - id
+    - version
+    - status
+    - leadInfoId
+    - amount
+    - payMethodId
+    - payMethodName
+    - comments
+    - account
+    - bankId
+    - bankCode
+    - bankBranchId
+    - bankBranchCode
+    - payeeType
+    - payeeName
+    - disbursementConditionId
+    - disbursementConditionName
+  Create:
+    title: Create
+    example:
+      messages: CREATED.
+      value: '1888630'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  updaterequest:
+    title: updaterequest
+    example:
+      customerId: '24659'
+      loanAmount: '7000000.00'
+      deductions: '50000.00'
+      balanceDisAmount: '450000.00'
+      disbursementDetails:
+      - id: 180816
+        version: 8
+        status: ACTIVE
+        leadInfoId: '24657'
+        amount: '500.00'
+        payMethodId: '23253'
+        payMethodName: Payement5
+        comments: comment-UD- update
+        account: '66677896'
+        bankId: '1263'
+        bankCode: LOL5
+        bankBranchId: '1801'
+        bankBranchCode: ll12
+        payeeType: OTHER
+        payeeName: Madushani update
+        disbursementConditionId: '28741'
+        disbursementConditionName: condition1
+    type: object
+    properties:
+      customerId:
+        type: string
+      loanAmount:
+        type: string
+      deductions:
+        type: string
+      balanceDisAmount:
+        type: string
+      disbursementDetails:
+        type: array
+        items:
+          $ref: '#/definitions/DisbursementDetail3'
+    required:
+    - customerId
+    - loanAmount
+    - deductions
+    - balanceDisAmount
+    - disbursementDetails
+  DisbursementDetail3:
+    title: DisbursementDetail3
+    example:
+      id: 180816
+      version: 8
+      status: ACTIVE
+      leadInfoId: '24657'
+      amount: '500.00'
+      payMethodId: '23253'
+      payMethodName: Payement5
+      comments: comment-UD- update
+      account: '66677896'
+      bankId: '1263'
+      bankCode: LOL5
+      bankBranchId: '1801'
+      bankBranchCode: ll12
+      payeeType: OTHER
+      payeeName: Madushani update
+      disbursementConditionId: '28741'
+      disbursementConditionName: condition1
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      version:
+        type: integer
+        format: int32
+      status:
+        type: string
+      leadInfoId:
+        type: string
+      amount:
+        type: string
+      payMethodId:
+        type: string
+      payMethodName:
+        type: string
+      comments:
+        type: string
+      account:
+        type: string
+      bankId:
+        type: string
+      bankCode:
+        type: string
+      bankBranchId:
+        type: string
+      bankBranchCode:
+        type: string
+      payeeType:
+        type: string
+      payeeName:
+        type: string
+      disbursementConditionId:
+        type: string
+      disbursementConditionName:
+        type: string
+    required:
+    - id
+    - version
+    - status
+    - leadInfoId
+    - amount
+    - payMethodId
+    - payMethodName
+    - comments
+    - account
+    - bankId
+    - bankCode
+    - bankBranchId
+    - bankBranchCode
+    - payeeType
+    - payeeName
+    - disbursementConditionId
+    - disbursementConditionName
+  update:
+    title: update
+    example:
+      messages: CREATED.
+      value: '1888630'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+tags:
+- name: Misc
+  description: ''

@@ -1,0 +1,5885 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Policy Service
+  description: Policy Service Process API
+  contact: {}
+host: 127.0.0.1:8080
+basePath: /
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /fund/search:
+    post:
+      description: Find fund by query criteria
+      summary: findFundsByCriteria
+      tags:
+      - Fund
+      operationId: findFundsByCriteria
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/QueryRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/FundResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/FundResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/FundResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/FundResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/FundResponse'
+          headers: {}
+  /fund/{id}/factSheet:
+    get:
+      description: Get factSheet details of the fund
+      summary: getFundFactSheet
+      tags:
+      - Fund
+      operationId: getFundFactSheet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: Id of fund
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+  /fund/compare:
+    get:
+      description: Compare Funds
+      summary: compareFunds
+      tags:
+      - Fund
+      operationId: compareFunds
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: funds
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        description: funds to compare
+      - name: fromDate
+        in: query
+        required: false
+        type: string
+        description: ''
+      - name: toDate
+        in: query
+        required: false
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/FundPriceResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/FundPriceResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/FundPriceResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/FundPriceResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/FundPriceResponse'
+          headers: {}
+  /vision/ocr:
+    post:
+      description: OCR Document search
+      summary: findOCRDocument
+      tags:
+      - Policies
+      operationId: findOCRDocument
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Document'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/OCRDocumentResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/OCRDocumentResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/OCRDocumentResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/OCRDocumentResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/OCRDocumentResponse'
+          headers: {}
+  /policy/{policyNo}/payPremium:
+    post:
+      description: Pay policy Premium
+      summary: payPolicyPremium
+      tags:
+      - Policies
+      operationId: payPolicyPremium
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Number of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Payment'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+  /policy/{id}/forfeit:
+    post:
+      description: Forfeit policy
+      summary: forfeitPolicy
+      tags:
+      - Policies
+      operationId: forfeitPolicy
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: Id of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/ForfeitRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ForfeitResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ForfeitResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ForfeitResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ForfeitResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ForfeitResponse'
+          headers: {}
+  /policy/{id}/cancel:
+    post:
+      description: Cancel policy
+      summary: cancelPolicyById
+      tags:
+      - Policies
+      operationId: cancelPolicyById
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: Id of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CancelPolicyRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CancelPolicyResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CancelPolicyResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CancelPolicyResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CancelPolicyResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CancelPolicyResponse'
+          headers: {}
+  /policy/{id}/bankAccount:
+    get:
+      description: Get policy bank account
+      summary: getPolicyBankAccount
+      tags:
+      - Policies
+      operationId: getPolicyBankAccount
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: id of the policy
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/BankAccountResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/BankAccountResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BankAccountResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/BankAccountResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/BankAccountResponse'
+          headers: {}
+    post:
+      description: Update bank account of policy
+      summary: updatePolicyBankAccount
+      tags:
+      - Policies
+      operationId: updatePolicyBankAccount
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: id of policy to update
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/BankAccount'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policy/multiplePayment:
+    post:
+      description: Pay Premium for multiple policies
+      summary: payMultiplePolicyPremium
+      tags:
+      - Policies
+      operationId: payMultiplePolicyPremium
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Payment'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+  /policies/{policyNo}/payment-transactions:
+    post:
+      description: Create transaction record
+      summary: createPaymentTransaction
+      tags:
+      - Policies
+      operationId: createPaymentTransaction
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Number of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreatePaymentTransactionRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CreatePaymentTransactionResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CreatePaymentTransactionResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CreatePaymentTransactionResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CreatePaymentTransactionResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CreatePaymentTransactionResponse'
+          headers: {}
+  /policies/{policyNo}/payment-signatures:
+    post:
+      description: generate payment signature
+      summary: generatePaymentSignature
+      tags:
+      - Policies
+      operationId: generatePaymentSignature
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Number of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/GeneratePaymentSignatureRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentSignatureResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentSignatureResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentSignatureResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentSignatureResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentSignatureResponse'
+          headers: {}
+  /policies/{policyNo}/payment-callback:
+    post:
+      description: payment acknowledgement callback
+      summary: paymentCallback
+      tags:
+      - Policies
+      operationId: paymentCallback
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Number of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/PaymentCallback'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+  /policies/{policyId}/{resource}/verify-authentication:
+    post:
+      description: verify authentication for changing policy contacts
+      summary: verifyAuthentication
+      tags:
+      - Policies
+      operationId: verifyAuthentication
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: policy id
+      - name: resource
+        in: path
+        required: true
+        type: string
+        description: resource name
+      - name: PRU_TENANT
+        in: header
+        required: false
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/AuthenticationCheckParam'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/WorkflowEventResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/{resource}/request-authentication:
+    post:
+      description: request authentication for changing policy contacts
+      summary: requestAuthentication
+      tags:
+      - Policies
+      operationId: requestAuthentication
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: policy id
+      - name: resource
+        in: path
+        required: true
+        type: string
+        description: resource name
+      - name: PRU_TENANT
+        in: header
+        required: false
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/AuthenticationRequestParam'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/WorkflowEventResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/transactionhistory:
+    post:
+      description: Get transaction history based on query criteria
+      summary: getTransactionHistory
+      tags:
+      - Policies
+      operationId: getTransactionHistory
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: policyNo
+        in: query
+        required: true
+        type: string
+        description: policy number
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/QueryRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+          headers: {}
+  /policies/{policyId}/payment-term:
+    get:
+      description: Get policy payment term
+      summary: getPolicyPaymentTerm
+      tags:
+      - Policies
+      operationId: getPolicyPaymentTerm
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Id of the policy
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentTermResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentTermResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentTermResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentTermResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentTermResponse'
+          headers: {}
+    post:
+      description: update payment term policy
+      summary: updatePolicyPaymentTerm
+      tags:
+      - Policies
+      operationId: updatePolicyPaymentTerm
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Id of policy to update
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/PaymentTerm'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/dispatch-address:
+    get:
+      description: Get policy dispatch address
+      summary: getPolicyDispatchAddress
+      tags:
+      - Policies
+      operationId: getPolicyDispatchAddress
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Id of the policy
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+    post:
+      description: Update dispatch address of policy
+      summary: updatePolicyDispatchAddress
+      tags:
+      - Policies
+      operationId: updatePolicyDispatchAddress
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Id of policy to update
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/DispatchAddressUpdateRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/beneficiaries:
+    post:
+      description: update beneficiaries for a Policy
+      summary: updatePolicyBeneficiaries
+      tags:
+      - Policies
+      operationId: updatePolicyBeneficiaries
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: id of the policy
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/BeneficiaryRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policy/{policyNo}/premiumDue:
+    get:
+      description: Get premium due of policy
+      summary: getPremiumDue
+      tags:
+      - Policies
+      operationId: getPremiumDue
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Policy number
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PremiumDueResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PremiumDueResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PremiumDueResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PremiumDueResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PremiumDueResponse'
+          headers: {}
+  /policies/{policyNo}:
+    get:
+      description: Search policy by policy number
+      summary: searchByPolicyNo
+      tags:
+      - Policies
+      operationId: searchByPolicyNo
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyNo
+        in: path
+        required: true
+        type: string
+        description: Policy number
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/fund-holdings:
+    get:
+      description: Search investments by policyNo
+      summary: getInvestments
+      tags:
+      - Policies
+      operationId: getInvestments
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Policy id
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/FundHoldingsResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/finance-values:
+    get:
+      description: Get all finance values of the policy
+      summary: getFinanceValue
+      tags:
+      - Policies
+      operationId: getFinanceValue
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: policyNo
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/FinanceValueResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/documents/{docId}:
+    get:
+      description: Find document by Id
+      summary: getDocumentById
+      tags:
+      - Policies
+      operationId: getDocumentById
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: policy id
+      - name: docId
+        in: path
+        required: true
+        type: string
+        description: Id of document to return
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/documents:
+    get:
+      description: Get all policy documents
+      summary: getAllPolicyDocuments
+      tags:
+      - Policies
+      operationId: getAllPolicyDocuments
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: Id of the policy
+      - name: types
+        in: query
+        required: false
+        type: string
+        description: comma separated document types
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DocumentsResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /policies/{policyId}/details:
+    get:
+      description: Get all details of the policy by given policy id
+      summary: getPolicyDetailsById
+      tags:
+      - Policies
+      operationId: getPolicyDetailsById
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: policyId
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PolicyDetailResponse'
+          headers: {}
+  /policies/documents/{docId}:
+    get:
+      description: Find document by Id
+      summary: getDocumentByIds
+      tags:
+      - Policies
+      operationId: getDocumentByIds
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: docId
+        in: path
+        required: true
+        type: string
+        description: Id of document to return
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DocumentDetailResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customer/{id}/policy/multiplePayment:
+    get:
+      description: Get premium for multiple policies
+      summary: getMultiplePolicyPremium
+      tags:
+      - Policies
+      operationId: getMultiplePolicyPremium
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/PaymentResponse'
+          headers: {}
+  /products/{id}/compute/{key}:
+    post:
+      description: Stateful compute rules of this product
+      summary: computeByKey
+      tags:
+      - Products
+      operationId: computeByKey
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: Id of product
+      - name: key
+        in: path
+        required: true
+        type: string
+        description: compute key for product
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/ProductCompute'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ProductComputeResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /v2/customers/{customerId}/external-customers/verify-otp:
+    post:
+      description: trigger otp verification by policyNo
+      summary: policyLinkageVerifyOTPV2
+      tags:
+      - Customers
+      operationId: policyLinkageVerifyOTPV2
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: customerId
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/CustomerLinkageOTPVerification'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageOTPResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /v2/customers/{customerId}/external-customers/send-otp:
+    post:
+      description: trigger send otp by policyNo
+      summary: policyLinkageSendOTPV2
+      tags:
+      - Customers
+      operationId: policyLinkageSendOTPV2
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: customerId
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/CustomerLinkageOTPRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageOTPResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /v2/customers/{customerId}/external-customers/init:
+    post:
+      description: init customer and external-customer linkage
+      summary: policyLinkageInitV2
+      tags:
+      - Customers
+      operationId: policyLinkageInitV2
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: customerId
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/PolicyLinkageInitInfo'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageInitResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/external-customers/verify-otp:
+    post:
+      description: trigger otp verification by policyNo
+      summary: policyLinkageVerifyOTP
+      tags:
+      - Customers
+      operationId: policyLinkageVerifyOTP
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/OTPVerificationInfo'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/external-customers/send-otp:
+    post:
+      description: trigger send otp by policyNo
+      summary: policyLinkageSendOTP
+      tags:
+      - Customers
+      operationId: policyLinkageSendOTP
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/PolicyLinkageInfo'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/external-customers/init:
+    post:
+      description: init customer and external-customer linkage
+      summary: policyLinkageInit
+      tags:
+      - Customers
+      operationId: policyLinkageInit
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customer id
+      - name: PRU-TENANT
+        in: header
+        required: false
+        type: string
+        description: country code
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/PolicyLinkageInfo'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CustomerLinkageResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/contacts/request-verification:
+    post:
+      description: request verification for changing policy contacts
+      summary: requestVerification
+      tags:
+      - Customers
+      operationId: requestVerification
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customerId, can pass me
+      - name: PRU_TENANT
+        in: header
+        required: false
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/VerificationRequestParam'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/WorkflowEventResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/contacts/check-verification:
+    post:
+      description: request verification for changing policy contacts
+      summary: checkVerification
+      tags:
+      - Customers
+      operationId: checkVerification
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customerId
+      - name: PRU_TENANT
+        in: header
+        required: false
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/VerificationCheckParam'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/WorkflowEventResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/contacts:
+    post:
+      description: update policy contacts
+      summary: updatePolicyContacts
+      tags:
+      - Customers
+      operationId: updatePolicyContacts
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customerId
+      - name: PRU_TENANT
+        in: header
+        required: false
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/ContactUpdateParam'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/address/{key}:
+    get:
+      description: Get selected customer address
+      summary: getCustomerAddress
+      tags:
+      - Customers
+      operationId: getCustomerAddress
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: key
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/AddressResponse'
+          headers: {}
+    post:
+      description: Update customer address
+      summary: updateCustomerAddress
+      tags:
+      - Customers
+      operationId: updateCustomerAddress
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: Id of customer to update
+      - name: key
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CustomerAddressUpdateRequest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/policies:
+    get:
+      description: Get all policies of customer
+      summary: getCustomerPolicies
+      tags:
+      - Customers
+      operationId: getCustomerPolicies
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: customer id, the value can be "me" which represents the customer self
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/PolicyResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonResponse'
+          headers: {}
+  /customers/{id}/addresses:
+    get:
+      description: Get selected customer addresses
+      summary: getCustomerAddresses
+      tags:
+      - Customers
+      operationId: getCustomerAddresses
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: PRU-TENANT
+        in: header
+        required: true
+        type: string
+        description: country code
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AddressesResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddressesResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/AddressesResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/AddressesResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/AddressesResponse'
+          headers: {}
+  /bank/search:
+    post:
+      description: Find bank by query criteria
+      summary: findBanksByCriteria
+      tags:
+      - Banks
+      operationId: findBanksByCriteria
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Query'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/BanksResponse'
+          headers: {}
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/BanksResponse'
+          headers: {}
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BanksResponse'
+          headers: {}
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/BanksResponse'
+          headers: {}
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/BanksResponse'
+          headers: {}
+definitions:
+  OCRDocument:
+    title: OCRDocument
+    type: object
+    properties:
+      id:
+        type: string
+  OCRDocumentResponse:
+    title: OCRDocumentResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/OCRDocument'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  ResponseStatus:
+    title: ResponseStatus
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+  Document:
+    title: Document
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      name:
+        type: string
+      filename:
+        type: string
+      contentType:
+        type: string
+      content:
+        type: string
+      category:
+        type: string
+      subCategory:
+        type: string
+      publishedDate:
+        type: string
+  CustomerLinkageOTPResponse:
+    title: CustomerLinkageOTPResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/OTPResponseBody'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  OTPResponseBody:
+    title: OTPResponseBody
+    type: object
+    properties:
+      workflowId:
+        type: string
+      mobile:
+        type: string
+  CommonResponse:
+    title: CommonResponse
+    type: object
+    properties:
+      body:
+        type: object
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  CustomerLinkageOTPVerification:
+    title: CustomerLinkageOTPVerification
+    type: object
+    properties:
+      workflowId:
+        type: string
+      verificationCode:
+        type: string
+    required:
+    - verificationCode
+  CustomerLinkageOTPRequest:
+    title: CustomerLinkageOTPRequest
+    type: object
+    properties:
+      workflowId:
+        type: string
+      policyId:
+        type: string
+    required:
+    - policyId
+  CustomerContactWrap:
+    title: CustomerContactWrap
+    type: object
+    properties:
+      policyId:
+        type: string
+      mobile:
+        type: string
+      policySource:
+        type: string
+  CustomerLinkageInitBody:
+    title: CustomerLinkageInitBody
+    type: object
+    properties:
+      workflowId:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/CustomerContactWrap'
+  CustomerLinkageInitResponse:
+    title: CustomerLinkageInitResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/CustomerLinkageInitBody'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PolicyLinkageInitInfo:
+    title: PolicyLinkageInitInfo
+    type: object
+    properties:
+      linkageMethod:
+        type: string
+      value:
+        type: string
+    required:
+    - linkageMethod
+    - value
+  Audit:
+    title: Audit
+    type: object
+    properties:
+      createTime:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      updateTime:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      createdBy:
+        description: Name or IP of the calling client or the interface initiating the request
+        type: string
+      updatedBy:
+        description: Name or IP of the calling client or the interface initiating the request
+        type: string
+  AuditDetail:
+    title: AuditDetail
+    type: object
+    properties:
+      createTime:
+        type: string
+      updateTime:
+        type: string
+  Product:
+    title: Product
+    description: Reference to product record
+    type: object
+    properties:
+      id:
+        type: string
+      code:
+        description: A unique code of a product
+        type: string
+      shortName:
+        type: string
+      fullName:
+        description: Name of product
+        type: string
+      desc:
+        description: Description of product
+        type: string
+      version:
+        description: Version no of same type of product
+        type: string
+      effectiveFrom:
+        description: Start data of product
+        example: '2017-07-21'
+        type: string
+      effectiveTo:
+        description: Close date of product
+        example: '2017-07-21'
+        type: string
+      category:
+        description: "Category of product. Example: 'ULIP', 'NON-ULIP', 'ULIP-PRUSAVER etc"
+        type: string
+      attributes:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/ProductAttribute'
+      tables:
+        type: array
+        items:
+          type: object
+      status:
+        description: Status of the product. Eg. 'Active', 'Inactive'
+        type: string
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+  ProductAttribute:
+    title: ProductAttribute
+    type: object
+    properties:
+      name:
+        type: string
+      dataType:
+        type: string
+      value:
+        type: object
+      behaviours:
+        type: array
+        items:
+          $ref: '#/definitions/ProductBehaviour'
+  ProductBehaviour:
+    title: ProductBehaviour
+    type: object
+    properties:
+      transactionContextRef:
+        $ref: '#/definitions/TransactionContext'
+      display:
+        $ref: '#/definitions/ProductBehaviourDisplay'
+      allowedValues:
+        type: array
+        items:
+          $ref: '#/definitions/ProductBehaviourAllowedValuesInner'
+  ProductBehaviourAllowedValuesInner:
+    title: ProductBehaviourAllowedValuesInner
+    type: object
+    properties:
+      default:
+        type: boolean
+      displayValue:
+        type: string
+      displayIndex:
+        type: number
+        format: double
+      value:
+        type: string
+  ProductBehaviourDisplay:
+    title: ProductBehaviourDisplay
+    type: object
+    properties:
+      hidden:
+        type: boolean
+      displayIndex:
+        type: number
+        format: double
+      visibleInCatalog:
+        type: boolean
+      displayName:
+        type: string
+  ProductCompute:
+    title: ProductCompute
+    type: object
+    properties:
+      action:
+        type: string
+      transactionContext:
+        $ref: '#/definitions/TransactionContext'
+      event:
+        type: string
+      products:
+        description: Mandatory Attributes - For /product/{id}/compute/availability - code, components[0].attributes.birthDate, components[0].attributes.ktpId, components[0].attributes.email
+        type: array
+        items:
+          $ref: '#/definitions/Product'
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  ProductComputeResponse:
+    title: ProductComputeResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/ProductCompute'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  TransactionContext:
+    title: TransactionContext
+    type: object
+    properties:
+      id:
+        type: string
+      transaction:
+        description: Mandatory Attribute - For /product/{id}/compute/availability
+        type: string
+      transactionRole:
+        type: string
+      transactionChannel:
+        type: string
+  Address:
+    title: Address
+    type: object
+    properties:
+      line1:
+        type: string
+      line2:
+        type: string
+      line3:
+        type: string
+      line4:
+        type: string
+      line5:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      district:
+        type: string
+      subDistrict:
+        type: string
+      zipcode:
+        type: string
+      country:
+        type: string
+      countryCode:
+        type: string
+      landmark:
+        type: string
+      latitude:
+        type: number
+        format: double
+      longitude:
+        type: number
+        format: double
+  Agent:
+    title: Agent
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      clientId:
+        description: A unique no of a customer
+        type: string
+      type:
+        description: Class of customer Individual or corporate
+        type: string
+      status:
+        description: Status of the Customer
+        type: string
+      externalIds:
+        description: Name of the document
+        type: object
+        additionalProperties:
+          type: string
+      contactDetails:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Contact'
+      addressDetails:
+        description: Address belonging to the customer used for policy related communication. Address is an object, identify by address type as key, comprising all relevant attributes of address.
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Address'
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+      code:
+        description: A unique no which is assigned to use as a company representative
+        type: string
+      channel:
+        description: Channel for which agent is working
+        type: string
+      licenceNo:
+        description: Official number to work as agent
+        type: string
+      licenceExpDate:
+        description: Data on which agent licence renewal due
+        example: '2017-07-21'
+        type: string
+      appointmentDate:
+        description: Date on which person hired as an agent
+        example: '2017-07-21'
+        type: string
+      terminationDate:
+        description: Date on which person release from company
+        example: '2017-07-21'
+        type: string
+      reportingTo:
+        description: Reference ID to superior
+        type: string
+      branch:
+        description: Agent branch name
+        type: string
+      office:
+        description: Agent branch location
+        type: string
+      zone:
+        description: Geographical location of the country
+        type: string
+      education:
+        description: Qualification of agent
+        type: string
+      qualifyingProducts:
+        description: Reference to product record
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Product'
+      supervisor:
+        $ref: '#/definitions/Agent'
+      teams:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Agent'
+      commissionClass:
+        description: Eligible for commission
+        type: string
+      trainings:
+        type: object
+        additionalProperties:
+          type: object
+  BankAccount:
+    title: BankAccount
+    description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+    example:
+      prop1:
+        id: string
+      prop2:
+        id: string
+      prop3:
+        id: string
+    type: object
+    properties:
+      bankName:
+        type: string
+      bankCode:
+        type: string
+      branchCode:
+        type: string
+      accountNo:
+        type: string
+      accountName:
+        type: string
+      accountType:
+        type: string
+      jointAccName:
+        type: string
+      currencyCode:
+        type: string
+      effectiveFrom:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      branchAddress:
+        $ref: '#/definitions/Address'
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  Beneficiary:
+    title: Beneficiary
+    type: object
+    properties:
+      id:
+        description: A unique identifier for Beneficiary records. It is made up of beneficiary number, country code and source system code.
+        type: string
+      customer:
+        $ref: '#/definitions/Customer'
+      startDate:
+        description: Nomination start date for claim benefit
+        example: '2017-07-21'
+        type: string
+      endDate:
+        description: Nomination end date for claim benefit
+        example: '2017-07-21'
+        type: string
+      relationshipType:
+        type: string
+      relationshipWith:
+        description: Relationship of beneficiary with 'LifeAssured', 'PolicyOwner'.
+        type: string
+      percentage:
+        description: Percent of beneift
+        type: number
+        format: double
+      status:
+        description: Status of Beneficiary
+        type: string
+      primary:
+        type: boolean
+      attributes:
+        type: object
+        additionalProperties:
+          type: object
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+  BillingDetail:
+    title: BillingDetail
+    type: object
+    properties:
+      id:
+        type: string
+      policy:
+        $ref: '#/definitions/Policy'
+      policyPayer:
+        $ref: '#/definitions/Customer'
+      policyOwner:
+        $ref: '#/definitions/Customer'
+      startDate:
+        example: '2017-07-21'
+        type: string
+      paymentOption:
+        $ref: '#/definitions/PaymentOption'
+      accountNo:
+        type: string
+      paymentMode:
+        type: string
+      billCycle:
+        type: string
+      paymentFreq:
+        type: string
+      autoDebit:
+        type: boolean
+      bankAccount:
+        type: object
+        allOf:
+        - $ref: '#/definitions/BankAccount'
+        - description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+          example:
+            prop1:
+              id: string
+            prop2:
+              id: string
+            prop3:
+              id: string
+      address:
+        $ref: '#/definitions/Address'
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  BillingInvoice:
+    title: BillingInvoice
+    type: object
+    properties:
+      id:
+        type: string
+      invoiceType:
+        $ref: '#/definitions/InvoiceType'
+      billingNo:
+        type: string
+      partnerInvoiceNo:
+        type: string
+      billingDetail:
+        $ref: '#/definitions/BillingDetail'
+      billAmount:
+        type: number
+        format: double
+      currency:
+        type: string
+      accountNo:
+        type: string
+      invoiceDate:
+        example: '2017-07-21'
+        type: string
+      dueDate:
+        example: '2017-07-21'
+        type: string
+      status:
+        $ref: '#/definitions/Status2'
+      policy:
+        $ref: '#/definitions/Policy'
+      basePremium:
+        description: This is the total premium amount due minus taxes.
+        type: number
+        format: double
+      paymentOption:
+        $ref: '#/definitions/PaymentOption'
+      taxComponents:
+        type: object
+        additionalProperties:
+          type: object
+      attributes:
+        type: object
+        additionalProperties:
+          type: object
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  Contact:
+    title: Contact
+    type: object
+    properties:
+      channel:
+        $ref: '#/definitions/Channel'
+      value:
+        type: string
+      countryCode:
+        type: string
+  ContactDetails:
+    title: ContactDetails
+    type: object
+    properties:
+      phone:
+        $ref: '#/definitions/Contact'
+      email:
+        $ref: '#/definitions/Contact'
+      home:
+        $ref: '#/definitions/Contact'
+  Customer:
+    title: Customer
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      clientId:
+        type: string
+      dateOfIncorporation:
+        example: '1970-01-01'
+        type: string
+      type:
+        description: Class of customer Individual or corporate
+        type: string
+      status:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Status'
+        - description: Status of the Customer
+      externalIds:
+        description: Name of the document
+        type: object
+        additionalProperties:
+          type: string
+      contactDetails:
+        $ref: '#/definitions/ContactDetails'
+      addressDetails:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Address'
+      preferences:
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/CustomerPreference'
+      bankAccounts:
+        description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/BankAccount'
+      relatesTo:
+        type: object
+        additionalProperties:
+          type: object
+      auditDetail:
+        $ref: '#/definitions/Audit'
+      workflows:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Workflow'
+      events:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+      documents:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+      avatar:
+        $ref: '#/definitions/CustomerAvatar'
+      employments:
+        description: List of Employments
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Employment'
+      tags:
+        type: array
+        items:
+          type: string
+      attributes:
+        type: object
+        additionalProperties:
+          type: string
+      firstName:
+        type: string
+      surName:
+        type: string
+      middleName:
+        type: string
+      dob:
+        type: string
+      sex:
+        type: string
+      maritalStatus:
+        type: string
+      nationality:
+        type: string
+      placeOfBirth:
+        type: string
+      salutation:
+        type: string
+      occupation:
+        $ref: '#/definitions/Occupation'
+  CustomerAvatar:
+    title: CustomerAvatar
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        $ref: '#/definitions/Type1'
+      mandatoryAttributes:
+        type: object
+        additionalProperties:
+          type: object
+      optionalAttributes:
+        type: object
+        additionalProperties:
+          type: object
+      dpImage:
+        type: string
+  CustomerPreference:
+    title: CustomerPreference
+    example:
+      prop1:
+        id: string
+      prop2:
+        id: string
+      prop3:
+        id: string
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/Type'
+      customType:
+        type: string
+      value:
+        type: object
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  CustomerRole:
+    title: CustomerRole
+    type: object
+    properties:
+      id:
+        type: string
+      customer:
+        $ref: '#/definitions/Customer'
+      role:
+        type: string
+  Employment:
+    title: Employment
+    description: List of Employments
+    example:
+      prop1:
+        id: string
+      prop2:
+        id: string
+      prop3:
+        id: string
+    type: object
+    properties:
+      id:
+        type: string
+      designation:
+        type: string
+      status:
+        type: string
+      natureOfBusiness:
+        type: string
+      organizationType:
+        type: string
+      dateOfJoining:
+        example: '2020-05-13'
+        type: string
+      dateOfTermination:
+        example: '2020-08-19'
+        type: string
+      employer:
+        $ref: '#/definitions/Party'
+  Event:
+    title: Event
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      severity:
+        type: string
+      priority:
+        type: string
+      message:
+        type: string
+      details:
+        type: string
+      tags:
+        type: array
+        items:
+          type: string
+      attributes:
+        type: object
+        additionalProperties:
+          type: object
+      source:
+        type: string
+      owner:
+        type: string
+      userAgent:
+        $ref: '#/definitions/UserAgent'
+      startDate:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      completionDate:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  LifeAssured:
+    title: LifeAssured
+    type: object
+    properties:
+      id:
+        type: string
+      customer:
+        $ref: '#/definitions/Customer'
+      isPrimary:
+        type: boolean
+  Occupation:
+    title: Occupation
+    type: object
+    properties:
+      code:
+        type: string
+      group:
+        type: string
+      desc:
+        type: string
+  Party:
+    title: Party
+    type: object
+    properties:
+      id:
+        description: A unique identifier for customer records. It is made up of client number, country code and source system code.
+        type: string
+      name:
+        type: string
+      clientId:
+        description: A unique no of a customer
+        type: string
+      dateOfIncorporation:
+        example: '1970-01-01'
+        type: string
+      type:
+        description: Class of customer Individual or corporate
+        type: string
+      status:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Status'
+        - description: Status of the Customer
+      externalIds:
+        description: Name of the document
+        type: object
+        additionalProperties:
+          type: string
+      contactDetails:
+        description: Contact detail belonging to the customer used for policy related communication. Contact detail is an object, it contains mobile, phone, internet etc as key and respective values.
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Contact'
+      addressDetails:
+        description: Address belonging to the customer used for policy related communication. Address is an object, identify by address type as key, comprising all relevant attributes of address.
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Address'
+      preferences:
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/CustomerPreference'
+      bankAccounts:
+        description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/BankAccount'
+      auditDetail:
+        $ref: '#/definitions/Audit'
+      workflows:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Workflow'
+      events:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+      documents:
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+      avatar:
+        $ref: '#/definitions/CustomerAvatar'
+      employments:
+        description: List of Employments
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Employment'
+      tags:
+        type: array
+        items:
+          type: string
+      attributes:
+        type: object
+        additionalProperties:
+          type: string
+  Payment:
+    title: Payment
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      txRef:
+        type: string
+      orderRef:
+        type: string
+      currency:
+        type: string
+      mode:
+        type: string
+      amount:
+        type: number
+        format: double
+      desc:
+        type: string
+      chequeNumber:
+        type: string
+      bankAccount:
+        type: object
+        allOf:
+        - $ref: '#/definitions/BankAccount'
+        - description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+          example:
+            prop1:
+              id: string
+            prop2:
+              id: string
+            prop3:
+              id: string
+      paymentDate:
+        example: '2017-07-21'
+        type: string
+      requestDate:
+        example: '2017-07-21'
+        type: string
+      approvalDate:
+        example: '2017-07-21'
+        type: string
+      invoice:
+        $ref: '#/definitions/BillingInvoice'
+      paymentMethod:
+        $ref: '#/definitions/PaymentMethod'
+      customer:
+        $ref: '#/definitions/Customer'
+      status:
+        type: string
+      paymentOption:
+        $ref: '#/definitions/PaymentOption'
+      isRecepit:
+        type: string
+      reversalRef:
+        type: string
+      attributes:
+        type: object
+        additionalProperties:
+          type: object
+      policy:
+        $ref: '#/definitions/Policy'
+  PaymentMethod:
+    title: PaymentMethod
+    type: object
+    properties:
+      PayMethodCode:
+        $ref: '#/definitions/PaymentMethodPayMethodCode'
+  PaymentMethodPayMethodCode:
+    title: PaymentMethodPayMethodCode
+    type: object
+    properties:
+      displayName:
+        type: string
+      pgCode:
+        type: string
+  PaymentOption:
+    title: PaymentOption
+    type: object
+    properties:
+      currency:
+        type: string
+      mode:
+        type: string
+      autoRenewal:
+        type: boolean
+      amount:
+        type: number
+        format: double
+      frequency:
+        type: string
+  PaymentResponse:
+    title: PaymentResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Payment'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  Policy:
+    title: Policy
+    type: object
+    properties:
+      id:
+        type: string
+      policyNo:
+        type: string
+      source:
+        type: string
+      clients:
+        type: array
+        items:
+          $ref: '#/definitions/Customer'
+      productOptions:
+        type: array
+        items:
+          $ref: '#/definitions/ProductOption'
+      paymentOption:
+        $ref: '#/definitions/PolicyPaymentOption'
+      inceptionDate:
+        type: string
+      endDate:
+        type: string
+      status:
+        type: string
+      premiumStatus:
+        type: string
+      lifeAssured:
+        type: array
+        items:
+          $ref: '#/definitions/LifeAssured'
+      beneficiaries:
+        type: array
+        items:
+          $ref: '#/definitions/Beneficiary'
+      servingAgents:
+        $ref: '#/definitions/PolicyServingAgents'
+      nextPremiumDue:
+        type: string
+      nextBillingDue:
+        type: string
+      customerRoles:
+        type: array
+        items:
+          $ref: '#/definitions/CustomerRole'
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+      sourceOfBusiness:
+        type: string
+      documents:
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+  PolicyPaymentOption:
+    title: PolicyPaymentOption
+    type: object
+    properties:
+      currency:
+        example: 'HKD'
+        type: string
+      mode:
+        type: string
+      frequency:
+        type: string
+  PolicyServingAgents:
+    title: PolicyServingAgents
+    type: object
+    properties:
+      agent:
+        $ref: '#/definitions/Agent'
+      percent:
+        type: number
+        format: double
+  PremiumLoading:
+    title: PremiumLoading
+    description: Extra loading of premium is captured
+    example:
+      prop1:
+        id: string
+      prop2:
+        id: string
+      prop3:
+        id: string
+    type: object
+    properties:
+      type:
+        description: Type of premium loading, represents reason for extra loading of premium on a product option or product component option.
+        type: string
+      adjustmentPercent:
+        description: Adjustment over and above loading
+        type: number
+        format: double
+      ageRate:
+        description: Loading ends at this age
+        type: number
+        format: double
+      flatMortalityPercentage:
+        description: Increase or decrease mortality percentage
+        type: number
+        format: double
+      loadPercentage:
+        description: Percentage of loading premium
+        type: number
+        format: double
+      loadingPremium:
+        description: Loading premium amount
+        type: number
+        format: double
+      subStandardLife:
+        type: string
+      rateAdjust:
+        description: Adjustment to premium rate
+        type: number
+        format: double
+      fromDate:
+        description: Extra loading of premium effective date
+        example: '2017-07-21'
+        type: string
+      toDate:
+        description: Extra loading of premium end date
+        example: '2017-07-21'
+        type: string
+  ProductComponent:
+    title: ProductComponent
+    type: object
+    properties:
+      id:
+        description: A unique identifier for coverage record. It is made up of coverage code and source system code.
+        type: string
+      name:
+        description: Name of coverage
+        type: string
+      code:
+        description: The code of component Mandatory Attribute - For /proposal
+        type: string
+      desc:
+        description: Description of coverage
+        type: string
+      status:
+        description: Status of the coverage. Eg. 'Active', 'Inactive'
+        type: string
+      category:
+        description: "Category of product component. Example: 'Health', 'Life', 'Investment'"
+        type: string
+      componentType:
+        description: "Type of product component. Example: 'ULIP', 'NON-ULIP', 'ULIP-PRUSAVER'"
+        type: string
+      isMedical:
+        description: Whether medical coverage or not
+        type: string
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+  ProductComponentOption:
+    title: ProductComponentOption
+    description: Reference to Rider Components which  are being taken along with Main coverage
+    type: object
+    properties:
+      id:
+        type: string
+      component:
+        $ref: '#/definitions/ProductComponent'
+      sumAssured:
+        type: number
+        format: double
+      premium:
+        description: This is the total amount which is being against the contract made between insurer and insured
+        type: number
+        format: double
+      premiumCessTerm:
+        description: Number of Years for which Premium needs to be Paid.
+        type: number
+        format: double
+      premiumCessDate:
+        description: After this date, Customer doesnt have to pay any Premium, but still Coverage will be Active
+        example: '2017-07-21'
+        type: string
+      riskCessDate:
+        description: This is the date, on which Coverage will get expired, after which there is no legal contract remains active.
+        example: '2017-07-21'
+        type: string
+      commencementDate:
+        description: Date on which Coverage becomes active for the first time
+        example: '2017-07-21'
+        type: string
+      riskCessTerm:
+        description: Number of Years for which Customer is covered.
+        type: number
+        format: double
+      installmentPremium:
+        description: This is installment amount, which is exclusive of Loading premium if any.
+        type: number
+        format: double
+      mortalityClass:
+        description: This is the Rating Class assigned by Insurer, which decides the Risk on insured Life.
+        type: string
+      loadingPremium:
+        description: This is Loading premium, which needs to be paid, if Insured comes under high risk category.
+        type: number
+        format: double
+      options:
+        type: object
+        additionalProperties:
+          type: string
+      lifeAssured:
+        $ref: '#/definitions/LifeAssured'
+      status:
+        description: Status of the Coverage. Eg. Inforce, Lapsed, etc
+        type: string
+      startDate:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      endDate:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      premiumStatus:
+        type: string
+      riderFlag:
+        type: string
+      auditDetails:
+        $ref: '#/definitions/AuditDetail'
+  ProductOption:
+    title: ProductOption
+    type: object
+    properties:
+      id:
+        description: A unique identifier for Main coverage records. It is made up of policy number, life no, coverage no,  country code and source system code.
+        type: string
+      product:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Product'
+        - description: Reference to product record
+      totalPremium:
+        description: This is the total amount which is being against the contract made between insurer and insured
+        type: number
+        format: double
+      totalSumAssured:
+        description: This is the Amount, which will be paid in case any unfortunate event happens
+        type: number
+        format: double
+      paymentFrequency:
+        type: object
+        allOf:
+        - $ref: '#/definitions/PaymentFrequency'
+        - description: This is the interval with which Customer has to pay the premium
+      benefitsTerms:
+        type: number
+        format: double
+      premiumTerm:
+        type: number
+        format: double
+      commencementDate:
+        description: Date on which Coverage becomes active for the first time
+        example: '2017-07-21'
+        type: string
+      loadingPremium:
+        description: This is Loading premium, which needs to be paid, if Insured comes under high risk category.
+        type: number
+        format: double
+      status:
+        description: Status of the Coverage. Eg. Inforce, Lapsed, etc
+        type: string
+      premiumCessDate:
+        description: After this date, Customer doesnt have to pay any Premium, but still Coverage will be Active
+        example: '2017-07-21'
+        type: string
+      premiumCessTerm:
+        description: Number of Years for which Premium needs to be Paid.
+        type: number
+        format: double
+      riskCessDate:
+        description: This is the date, on which Coverage will get expired, after which there is no legal contract remains active.
+        example: '2017-07-21'
+        type: string
+      riskCessTerm:
+        description: Number of Years for which Customer is covered.
+        type: number
+        format: double
+      installmentPremium:
+        description: This is installment amount, which is exclusive of Loading premium if any.
+        type: number
+        format: double
+      mortalityClass:
+        description: This is the Rating Class assigned by Insurer, which decides the Risk on insured Life.
+        type: string
+      topUpFlag:
+        description: Flag will denote the coverage type,if this is being taken as the topup on existing Coverage.
+        type: string
+      subStandardLife:
+        description: This is the flag, which denotes if insured falls under risk Category or not
+        type: string
+      lifeAssured:
+        $ref: '#/definitions/LifeAssured'
+      options:
+        type: object
+        additionalProperties:
+          type: string
+      productComponent:
+        $ref: '#/definitions/ProductOptionProductComponent'
+      productComponentOptions:
+        description: Reference to Rider Components which  are being taken along with Main coverage
+        example:
+        - id: string
+        type: array
+        items:
+          $ref: '#/definitions/ProductComponentOption'
+      extraLoadingDetail:
+        description: Extra loading of premium is captured
+        example:
+          prop1:
+            id: string
+          prop2:
+            id: string
+          prop3:
+            id: string
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/PremiumLoading'
+      policy:
+        $ref: '#/definitions/Policy'
+      surrenderValue:
+        description: Actual amount paid out to customer upon surrender of a policy broken down for base plan and top-ups.
+        type: number
+        format: double
+      surrenderAdjustment:
+        description: Any adjustment made over or below the calculated surrender value.
+        type: number
+        format: double
+      premiumStatus:
+        type: string
+      auditDetails:
+        $ref: '#/definitions/Audit'
+  ProductOptionProductComponent:
+    title: ProductOptionProductComponent
+    type: object
+    properties:
+      id:
+        description: A unique identifier for coverage record. It is made up of coverage code and source system code.
+        type: string
+      name:
+        description: Name of coverage
+        type: string
+      code:
+        description: The code of component Mandatory Attribute - For /proposal
+        type: string
+      desc:
+        description: Description of coverage
+        type: string
+      status:
+        description: Status of the coverage. Eg. 'Active', 'Inactive'
+        type: string
+      category:
+        description: "Category of product component. Example: 'Health', 'Life', 'Investment'"
+        type: string
+      componentType:
+        description: "Type of product component. Example: 'ULIP', 'NON-ULIP', 'ULIP-PRUSAVER'"
+        type: string
+      isMedical:
+        description: Whether medical coverage or not
+        type: string
+      auditDetail:
+        $ref: '#/definitions/AuditDetail'
+  UserAgent:
+    title: UserAgent
+    type: object
+    properties:
+      appVersion:
+        type: string
+      isEmulator:
+        type: boolean
+      os:
+        type: string
+      appName:
+        type: string
+      advId:
+        type: string
+      model:
+        type: string
+      source:
+        type: string
+      medium:
+        $ref: '#/definitions/Medium'
+      tests:
+        description: JSON string containing tests & variants
+        type: string
+      appBundle:
+        type: string
+      utmSource:
+        type: string
+      utmMedium:
+        type: string
+      utmCampaign:
+        type: string
+      deviceId:
+        type: string
+      ipAddress:
+        type: string
+      brand:
+        type: string
+      region:
+        type: string
+      advertiseId:
+        type: string
+      osVer:
+        type: string
+  Workflow:
+    title: Workflow
+    type: object
+    properties:
+      workflowId:
+        type: string
+  ForfeitResponse:
+    title: ForfeitResponse
+    type: object
+    properties:
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      body:
+        $ref: '#/definitions/ForfeitResponseBody'
+  ForfeitResponseBody:
+    title: ForfeitResponseBody
+    type: object
+    properties:
+      surrenderAmount:
+        type: number
+        format: double
+      workflowId:
+        type: string
+  Forfeit:
+    title: Forfeit
+    type: object
+    properties:
+      id:
+        type: string
+      reason:
+        type: string
+      payment:
+        $ref: '#/definitions/Payment'
+  ForfeitRequest:
+    title: ForfeitRequest
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Forfeit'
+      event:
+        type: string
+      workflowId:
+        type: string
+  CancelPolicyResponse:
+    title: CancelPolicyResponse
+    type: object
+    properties:
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      body:
+        $ref: '#/definitions/CancelPolicyResponseAllOfBody'
+  CancelPolicyResponseAllOfBody:
+    title: CancelPolicyResponseAllOfBody
+    type: object
+    properties:
+      refundAmount:
+        type: number
+        format: double
+      workflowId:
+        type: string
+  CancelPolicyRequest:
+    title: CancelPolicyRequest
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/CancelRequest'
+      event:
+        type: string
+      workflowId:
+        type: string
+  CancelRequest:
+    title: CancelRequest
+    type: object
+    properties:
+      reasons:
+        type: array
+        items:
+          $ref: '#/definitions/CancelRequestReasonsInner'
+      documents:
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+      cancelDate:
+        description: cancel date of policy
+        type: string
+      employeeTerminateDate:
+        description: employee terminate date for group policy
+        type: string
+      policyNo:
+        type: string
+      depositAccount:
+        type: object
+        allOf:
+        - $ref: '#/definitions/BankAccount'
+        - description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+          example:
+            prop1:
+              id: string
+            prop2:
+              id: string
+            prop3:
+              id: string
+      resolution:
+        type: string
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  CancelRequestReasonsInner:
+    title: CancelRequestReasonsInner
+    type: object
+    properties:
+      type:
+        type: string
+      reason:
+        type: string
+      desc:
+        type: string
+      code:
+        type: string
+  CreatePaymentTransactionResponse:
+    title: CreatePaymentTransactionResponse
+    type: object
+    properties:
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      body:
+        $ref: '#/definitions/CreatePaymentTransactionResponseAllOfBody'
+  CreatePaymentTransactionResponseAllOfBody:
+    title: CreatePaymentTransactionResponseAllOfBody
+    type: object
+    properties:
+      id:
+        type: string
+  AdditionalCharge:
+    title: AdditionalCharge
+    type: object
+    properties:
+      type:
+        type: string
+      description:
+        type: string
+      amount:
+        type: string
+      taxAmount:
+        type: string
+  AutoDebit:
+    title: AutoDebit
+    type: object
+    properties:
+      paymentFrequency:
+        type: string
+      endDate:
+        type: string
+  CallbackMetadata:
+    title: CallbackMetadata
+    type: object
+    properties:
+      acknowledgement:
+        $ref: '#/definitions/PostHookMetadata'
+      redirection:
+        $ref: '#/definitions/PostHookMetadata'
+  CallbackPayload:
+    title: CallbackPayload
+    type: object
+    properties:
+      name:
+        type: string
+      value:
+        type: string
+      in:
+        type: string
+  ConnectivityDetails:
+    title: ConnectivityDetails
+    type: object
+    properties:
+      type:
+        type: string
+      url:
+        type: string
+      topic:
+        type: string
+  CreatePaymentTransactionRequest:
+    title: CreatePaymentTransactionRequest
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/TransactionRequest'
+  PaymentClient:
+    title: PaymentClient
+    type: object
+    properties:
+      paymentSource:
+        type: string
+  PaymentOrder:
+    title: PaymentOrder
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      orderItems:
+        type: array
+        items:
+          $ref: '#/definitions/PaymentOrderItem'
+  PaymentOrderItem:
+    title: PaymentOrderItem
+    type: object
+    properties:
+      orderItemId:
+        type: string
+      type:
+        type: string
+      serviceCode:
+        type: string
+      name:
+        type: string
+      price:
+        type: string
+      taxAmount:
+        type: string
+      additionalCharges:
+        type: array
+        items:
+          $ref: '#/definitions/AdditionalCharge'
+      product:
+        $ref: '#/definitions/PaymentProduct'
+      autoDebit:
+        $ref: '#/definitions/AutoDebit'
+      signature:
+        type: string
+  PaymentProduct:
+    title: PaymentProduct
+    type: object
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+  PostHookMetadata:
+    title: PostHookMetadata
+    type: object
+    properties:
+      name:
+        type: string
+      connectivity:
+        $ref: '#/definitions/ConnectivityDetails'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/CallbackPayload'
+  TransactionRequest:
+    title: TransactionRequest
+    type: object
+    properties:
+      client:
+        $ref: '#/definitions/PaymentClient'
+      order:
+        $ref: '#/definitions/PaymentOrder'
+      currency:
+        type: string
+      signature:
+        type: string
+      userPreferences:
+        $ref: '#/definitions/UserPreferences'
+      callbackMetadata:
+        $ref: '#/definitions/CallbackMetadata'
+  UserPreferences:
+    title: UserPreferences
+    type: object
+    properties:
+      language:
+        type: string
+  PaymentSignatureResponse:
+    title: PaymentSignatureResponse
+    type: object
+    properties:
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      body:
+        $ref: '#/definitions/CreatePaymentTransactionResponseAllOfBody'
+  GeneratePaymentSignatureRequest:
+    title: GeneratePaymentSignatureRequest
+    type: object
+    properties:
+      body:
+        type: string
+  PaymentCallback:
+    title: PaymentCallback
+    type: object
+    properties:
+      referenceNo:
+        type: string
+      orderRef:
+        type: string
+      parentTransactionRef:
+        type: string
+      userJourneyType:
+        type: string
+      amount:
+        type: number
+        format: double
+      currency:
+        type: string
+      pgCode:
+        type: string
+      transactionType:
+        type: string
+      transactionDate:
+        type: string
+      customerId:
+        type: string
+      status:
+        type: string
+      attrs:
+        type: object
+        additionalProperties:
+          type: string
+      transactionObjectId:
+        type: number
+        format: double
+      searchAllDocuments:
+        type: boolean
+      paymentChannel:
+        type: string
+      paymentMethod:
+        type: string
+      pgTransactionId:
+        type: string
+      approvalCode:
+        type: string
+      signature:
+        type: string
+  WorkflowEventResponse:
+    title: WorkflowEventResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Workflow'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  AuthenticationCheckParam:
+    title: AuthenticationCheckParam
+    type: object
+    properties:
+      authenticationCode:
+        type: string
+      workflowId:
+        type: string
+  AuthenticationRequestParam:
+    title: AuthenticationRequestParam
+    type: object
+    properties:
+      authenticationChannel:
+        $ref: '#/definitions/AuthenticationChannel'
+      source:
+        $ref: '#/definitions/Source'
+  TransactionDetail:
+    title: TransactionDetail
+    type: object
+    properties:
+      id:
+        type: string
+      referenceNo:
+        type: string
+      orderRef:
+        type: string
+      parentTransactionRef:
+        description: This is parent transaction  Id
+        type: string
+      type:
+        type: string
+      amount:
+        type: number
+        format: double
+      currency:
+        type: string
+      paymentMode:
+        type: string
+      detail:
+        type: string
+      transactionType:
+        type: string
+      transactionDate:
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      effectiveDate:
+        description: Actual date from when change is effective
+        example: '2017-07-21T17:32:28Z'
+        type: string
+      policy:
+        $ref: '#/definitions/Policy'
+      customer:
+        $ref: '#/definitions/Customer'
+      attributes:
+        type: object
+        additionalProperties:
+          type: object
+      status:
+        type: string
+  TransactionResponse:
+    title: TransactionResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/TransactionDetail'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  AnyValue:
+    title: AnyValue
+    type: object
+    properties:
+      value:
+        type: object
+  FilterExpression:
+    title: FilterExpression
+    type: object
+    properties:
+      simpleExpression:
+        $ref: '#/definitions/SimpleExpression'
+      logicalExpression:
+        $ref: '#/definitions/LogicalExpression'
+  LogicalExpression:
+    title: LogicalExpression
+    type: object
+    properties:
+      expressions:
+        type: array
+        items:
+          $ref: '#/definitions/FilterExpression'
+      op:
+        $ref: '#/definitions/Op'
+  Query:
+    title: Query
+    type: object
+    properties:
+      projs:
+        type: array
+        items:
+          type: string
+      filter:
+        $ref: '#/definitions/FilterExpression'
+      limit:
+        type: integer
+        format: int32
+      orderBy:
+        type: array
+        items:
+          $ref: '#/definitions/QueryOrderByInner'
+  QueryOrderByInner:
+    title: QueryOrderByInner
+    type: object
+    properties:
+      prop:
+        type: string
+      order:
+        $ref: '#/definitions/Order'
+  QueryRequest:
+    title: QueryRequest
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Query'
+  SimpleExpression:
+    title: SimpleExpression
+    type: object
+    properties:
+      lhs:
+        type: array
+        items:
+          type: string
+      op:
+        type: string
+      value:
+        $ref: '#/definitions/AnyValue'
+  BankDraft:
+    title: BankDraft
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/Type2'
+      effectiveDate:
+        example: '2020-07-21'
+        type: string
+      number:
+        type: string
+      bankCode:
+        type: string
+      mandate:
+        $ref: '#/definitions/Document'
+      bankAccounts:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/BankAccount'
+  Card:
+    title: Card
+    type: object
+    properties:
+      cardNo:
+        type: string
+      expiry:
+        type: string
+      name:
+        type: string
+      cvv:
+        type: string
+      acctNo:
+        type: string
+      issuer:
+        type: string
+      acctType:
+        $ref: '#/definitions/AcctType'
+      token:
+        type: string
+      type:
+        $ref: '#/definitions/Type3'
+      otherType:
+        type: string
+  PaymentTerm:
+    title: PaymentTerm
+    type: object
+    properties:
+      default:
+        type: boolean
+      paymentOption:
+        $ref: '#/definitions/PaymentOption'
+      bankAccount:
+        type: object
+        allOf:
+        - $ref: '#/definitions/BankAccount'
+        - description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+          example:
+            prop1:
+              id: string
+            prop2:
+              id: string
+            prop3:
+              id: string
+      cards:
+        $ref: '#/definitions/Card'
+      bankDraft:
+        $ref: '#/definitions/BankDraft'
+      policy:
+        $ref: '#/definitions/Policy'
+      tokenRef:
+        type: string
+      pgCode:
+        type: string
+  DispatchAddressUpdateRequest:
+    title: DispatchAddressUpdateRequest
+    type: object
+    properties:
+      address:
+        $ref: '#/definitions/Address'
+      updateCustomerResidentialAddress:
+        type: boolean
+      customerId:
+        type: string
+    required:
+    - address
+  BeneficiaryRequest:
+    title: BeneficiaryRequest
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/Beneficiary'
+  Fund:
+    title: Fund
+    type: object
+    properties:
+      id:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      type:
+        $ref: '#/definitions/Type4'
+      unitPrice:
+        type: number
+        format: double
+      unitPriceDate:
+        example: '2017-07-21'
+        type: string
+      value:
+        $ref: '#/definitions/FundValue'
+  FundResponse:
+    title: FundResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/Fund'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  FundValue:
+    title: FundValue
+    type: object
+    properties:
+      value:
+        type: string
+      asset:
+        type: string
+      currency:
+        type: string
+      date:
+        example: '2017-07-21'
+        type: string
+  CustomerContactDetailWrap:
+    title: CustomerContactDetailWrap
+    type: object
+    properties:
+      customerContactDetail:
+        $ref: '#/definitions/ContactDetails'
+  CustomerLinkageResponse:
+    title: CustomerLinkageResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/CustomerContactDetailWrap'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  OTPVerificationInfo:
+    title: OTPVerificationInfo
+    type: object
+    properties:
+      policyNo:
+        type: string
+      verificationCode:
+        type: string
+    required:
+    - policyNo
+  PolicyLinkageInfo:
+    title: PolicyLinkageInfo
+    type: object
+    properties:
+      policyNo:
+        type: string
+    required:
+    - policyNo
+  VerificationRequestParam:
+    title: VerificationRequestParam
+    type: object
+    properties:
+      contactChannel:
+        $ref: '#/definitions/ContactChannel'
+      receiver:
+        type: string
+      countryCode:
+        type: string
+      workflowId:
+        type: string
+      policyId:
+        type: string
+      resource:
+        $ref: '#/definitions/Resource'
+  VerificationCheckParam:
+    title: VerificationCheckParam
+    type: object
+    properties:
+      verificationCode:
+        type: string
+      workflowId:
+        type: string
+      policyId:
+        type: string
+      resource:
+        $ref: '#/definitions/Resource'
+  ContactUpdateParam:
+    title: ContactUpdateParam
+    type: object
+    properties:
+      email:
+        type: string
+      mobile:
+        type: string
+      countryCode:
+        type: string
+      workflowId:
+        type: string
+      policyId:
+        type: string
+      contactChannel:
+        $ref: '#/definitions/ContactChannel'
+  CustomerAddressUpdateRequest:
+    title: CustomerAddressUpdateRequest
+    type: object
+    properties:
+      address:
+        $ref: '#/definitions/Address'
+      updateDispatchAddress:
+        type: boolean
+      policyId:
+        type: string
+    required:
+    - address
+  Bank:
+    title: Bank
+    type: object
+    properties:
+      id:
+        description: Record identifier
+        type: string
+      code:
+        description: Bank Code
+        type: string
+      name:
+        description: name of the bank
+        type: string
+      address:
+        $ref: '#/definitions/Address'
+      contactDetails:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Contact'
+  BanksResponse:
+    title: BanksResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/Bank'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PayPremiumOption:
+    title: PayPremiumOption
+    type: object
+    properties:
+      startDate:
+        type: string
+      endDate:
+        type: string
+      amount:
+        type: number
+        format: double
+      numCycles:
+        type: number
+        format: double
+  PremiumDue:
+    title: PremiumDue
+    type: object
+    properties:
+      policyNo:
+        type: string
+      paymentFrequency:
+        type: string
+      lastPaymentDate:
+        type: string
+      paidToDate:
+        type: string
+      amtPaid:
+        type: number
+        format: double
+      suspenseAmt:
+        type: number
+        format: double
+      policyDepositAccount:
+        type: number
+        format: double
+      amtDueAPL:
+        type: number
+        format: double
+      aplInterest:
+        type: number
+        format: double
+      amtDue:
+        type: number
+        format: double
+      currency:
+        type: string
+      dueDate:
+        example: '2019-07-21T17:32:28Z'
+        type: string
+      advancePaymentOptions:
+        type: array
+        items:
+          $ref: '#/definitions/PayPremiumOption'
+      regularPaymentOptions:
+        type: array
+        items:
+          $ref: '#/definitions/PayPremiumOption'
+      requiredDocuments:
+        type: object
+        additionalProperties:
+          type: string
+  PremiumDueResponse:
+    title: PremiumDueResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/PremiumDue'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  BankAccountResponse:
+    title: BankAccountResponse
+    type: object
+    properties:
+      body:
+        type: object
+        allOf:
+        - $ref: '#/definitions/BankAccount'
+        - description: List of bank a/c belonging to the customer used for policy related payment and receipts. Each bank account is an object, identify by account no as key, comprising all relevant attributes of bank account.
+          example:
+            prop1:
+              id: string
+            prop2:
+              id: string
+            prop3:
+              id: string
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PolicyDetailResponse:
+    title: PolicyDetailResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Policy'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PaymentTermResponse:
+    title: PaymentTermResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/PaymentTerm'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  FundHoldingsResponse:
+    title: FundHoldingsResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/PolicyFundHolding'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PolicyFundHolding:
+    title: PolicyFundHolding
+    type: object
+    properties:
+      id:
+        type: string
+      fund:
+        $ref: '#/definitions/Fund'
+      productComponentOption:
+        type: object
+        allOf:
+        - $ref: '#/definitions/ProductComponentOption'
+        - description: Reference to Rider Components which  are being taken along with Main coverage
+      fundPercentage:
+        type: number
+        format: double
+      isTopUp:
+        type: boolean
+      value:
+        type: string
+      units:
+        type: number
+        format: double
+  FinanceValue:
+    title: FinanceValue
+    type: object
+    properties:
+      id:
+        type: string
+      customer:
+        $ref: '#/definitions/Customer'
+      type:
+        type: string
+      name:
+        type: string
+      date:
+        example: '2017-07-21'
+        type: string
+      amount:
+        type: number
+        format: double
+      policy:
+        $ref: '#/definitions/Policy'
+      auditDetail:
+        $ref: '#/definitions/Audit'
+  FinanceValueResponse:
+    title: FinanceValueResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/FinanceValue'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  DocumentDetailResponse:
+    title: DocumentDetailResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Document'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  DocumentsResponse:
+    title: DocumentsResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  AddressResponse:
+    title: AddressResponse
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Address'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  FundPrice:
+    title: FundPrice
+    type: object
+    properties:
+      id:
+        type: string
+      fund:
+        $ref: '#/definitions/Fund'
+      unitPrice:
+        type: number
+        format: double
+      effectiveDate:
+        example: '2017-07-21'
+        type: string
+  FundPriceResponse:
+    title: FundPriceResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/FundPrice'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  PolicyResponse:
+    title: PolicyResponse
+    type: object
+    properties:
+      body:
+        type: array
+        items:
+          $ref: '#/definitions/Policy'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  AddressesResponse:
+    title: AddressesResponse
+    type: object
+    properties:
+      body:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/Address'
+      msgId:
+        type: string
+        format: uuid
+      source:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+      correlationId:
+        type: string
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+      workflowId:
+        type: string
+      status:
+        $ref: '#/definitions/ResponseStatus'
+      txId:
+        type: string
+      timestamp:
+        description: '```Managed by Platform for internal usage```'
+        type: string
+  AcctType:
+    title: AcctType
+    type: string
+    enum:
+    - credit
+    - debit
+  AuthenticationChannel:
+    title: AuthenticationChannel
+    type: string
+    enum:
+    - mobile
+    - email
+  Channel:
+    title: Channel
+    type: string
+    enum:
+    - EMAIL
+    - MOBILE
+    - PHONE
+  ContactChannel:
+    title: ContactChannel
+    type: string
+    enum:
+    - email
+    - mobile
+  InvoiceType:
+    title: InvoiceType
+    type: string
+    enum:
+    - BILLING
+    - COLLECTIONINVOICE
+  Medium:
+    title: Medium
+    type: string
+    enum:
+    - APP
+    - WEBVIEW
+    - SDK
+    - PARTNER_API
+    - RESTRICTED_APP
+    - RESTRICTED_WEBVIEW
+  Op:
+    title: Op
+    type: string
+    enum:
+    - and
+    - or
+    - not
+  Order:
+    title: Order
+    type: string
+    enum:
+    - asc
+    - desc
+  PaymentFrequency:
+    title: PaymentFrequency
+    description: This is the interval with which Customer has to pay the premium
+    type: string
+    enum:
+    - yearly
+    - monthly
+    - quaterly
+    - semiannual
+  Resource:
+    title: Resource
+    type: string
+    enum:
+    - contacts
+  Source:
+    title: Source
+    type: string
+    enum:
+    - WEB_APPLICATION
+    - MOBILE_APPLICATION
+  Status:
+    title: Status
+    description: Status of the Customer
+    type: string
+    enum:
+    - active
+    - inactive
+    - marked_for_deletion
+    - guest
+  Status2:
+    title: Status2
+    type: string
+    enum:
+    - created
+    - closed
+    - cancelled
+    - due
+  Type:
+    title: Type
+    type: string
+    enum:
+    - billingAddress
+    - preferredLanguage
+    - height
+    - weight
+    - distance
+    - preferredCommChn
+    - custom
+  Type1:
+    title: Type1
+    type: string
+    enum:
+    - FACEDP
+    - MAKEBABY
+  Type2:
+    title: Type2
+    type: string
+    enum:
+    - CHEQUE
+    - DEMANDDRAFT
+  Type3:
+    title: Type3
+    type: string
+    enum:
+    - MasterCard
+    - Visa
+    - Amex
+    - Other
+  Type4:
+    title: Type4
+    type: string
+    enum:
+    - open_ended
+    - close_ended
+    - exchange_traded
+    - unit_investment
+    - tabarru
+security: []
+tags:
+- name: Fund
+  description: the Fund API
+- name: Policies
+  description: the Policies API
+- name: Products
+  description: the Products API
+- name: Customers
+  description: the Customers API
+- name: Banks
+  description: the Banks API

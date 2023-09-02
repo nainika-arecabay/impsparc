@@ -1,0 +1,2061 @@
+<html data-ember-extension="1" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Imperva API Risk Audit Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS -->
+    <link
+      href="./assets/styles/bootstrap-grid.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/styles/helper-classes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/styles/chart-styles.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/styles/template-styles.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/styles/template-text-styles.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/styles/template-styles-print.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- end CSS //-->
+
+    <!-- scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- end scripts //-->
+  </head>
+  <body class="page">
+    <div class="page__wrapper">
+      <header class="page__header page__header--risk-report">
+        <div class="col-md-9">
+          <h1>OpenAPI Spec Evaluation</h1>
+          <div class="text--small">
+            Created by: Imperva on {{created_time}}
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="report--type text--16px page__header--text">
+            API Spec Assessment for Risk &amp; Compliance
+          </div>
+          <div class="pt-1 text--small">Secure API Design Scorecard</div>
+        </div>
+      </header>
+      <!-- // end header -->
+
+      <div class="clearfix page__sub-head pt-1 pb-1">
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-md-8 pr-0 aligned--right">
+          <ul class="list--inline">
+            <li class="mr-3">
+              <strong>Severity Levels</strong>
+            </li>
+            <li class="mr-4">
+              <div class="severity__badge severity-background-p1"></div>
+              Critical
+            </li>
+            <li class="mr-4">
+              <div class="severity__badge severity-background-p2"></div>
+              High
+            </li>
+            <li class="mr-4">
+              <div class="severity__badge severity-background-p3"></div>
+              Medium
+            </li>
+            <li class="mr-4">
+              <div class="severity__badge severity-background-p4"></div>
+              Low
+            </li>
+            <li class="mr-1">
+              <div class="severity__badge severity-background-p5"></div>
+              No Risk
+            </li>
+          </ul>
+        </div>
+        <!-- // end legend -->
+      </div>
+      <!-- // end sub-head -->
+
+      <div class="container-fluid">
+        <!-- row1 with 2 columns -->
+        <div class="row mt-4" id="row1">
+          <div class="col-md-7 pl-0" id="left_column">
+            <h4 class="heading page__wrapper--heading">Input File Insights</h4>
+
+            <div class="card card--bordered text--center clearfix">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <h2>{{num_of_files}}</h2>
+                    <div class="text--h5">File</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <h2>{{num_of_apis}}</h2>
+                    <div class="text--h5">APIs</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <h2>{{num_of_params}}</h2>
+                    <div class="text--h5">Parameters</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <h2>{{num_of_data_types}}</h2>
+                    <div class="text--h5">Data Types</div>
+                  </div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row text--h6 display--print">
+                <div class="col-md-12">
+                  <div class="text--center rel pt-2">
+                    <canvas
+                      id="responseMethodChart"
+                      height="125"
+                      style="margin-top: 0px; text-align: left"
+                    ></canvas>
+
+                    <script>
+                      var ctx = document.getElementById("responseMethodChart");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        showTooltips: false,
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{req_method_list}},
+                          datasets: [
+                            {
+                              label: "API Response Codes",
+                              data: {{req_method_count}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+                        options: {
+                          cutout: "62%",
+                          showAllTooltips: false,
+                          responsive: false,
+                          maintainAspectRatio: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: true,
+                              position: "right",
+                              labels: {
+                                boxWidth: 10,
+                                boxHeight: 10,
+                              },
+                            },
+
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+                  </div>
+                  <div class="text--small aligned--center text--600 mt-2">
+                    Distribution by API Method
+                  </div>
+                </div>
+              </div>
+              <div class="row text--h6 display--print">
+                <div class="col-md-12">
+                  <div class="text--center rel pt-4">
+                    <canvas
+                      id="paramDataTypeChart"
+                      height="125"
+                      style="
+                        margin-top: 0px;
+                        padding-left: 0 !important;
+                        text-align: left;
+                      "
+                    ></canvas>
+                    <script>
+                      var ctx = document.getElementById("paramDataTypeChart");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{data_types}},
+                          datasets: [
+                            {
+                              label: "API Response Method",
+                              data: {{data_type_counts}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#4D2EA3",
+                                "#C8D600",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+                        options: {
+                          cutout: "62%",
+                          responsive: false,
+                          maintainAspectRatio: false,
+                          showAllTooltips: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: true,
+                              position: "right",
+                              radius: 5,
+                              labels: {
+                                boxWidth: 10,
+                                boxHeight: 10,
+                              },
+                            },
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+                  </div>
+                  <div class="text--small text--600 aligned--center mt-2">
+                    Distribution by Parameter Data Type
+                  </div>
+                </div>
+              </div>
+              <div class="row text--h6 display--print">
+                <div class="col-md-12">
+                  <div class="text--center rel pt-4">
+                    <canvas
+                      id="responseCodeChart"
+                      height="125"
+                      style="margin-top: 0px; text-align: left"
+                    ></canvas>
+                    <script>
+                      var ctx = document.getElementById("responseCodeChart");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{response_codes}},
+                          datasets: [
+                            {
+                              label: "API Response Method",
+                              data: {{r_codes_count}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#4D2EA3",
+                                "#C8D600",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+
+                        options: {
+                          cutout: "62%",
+                          responsive: false,
+                          maintainAspectRatio: false,
+                          showAllTooltips: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: true,
+                              position: "right",
+                              radius: 5,
+                              labels: {
+                                boxWidth: 10,
+                                boxHeight: 10,
+                              },
+                            },
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+                  </div>
+                  <div class="text--small text--600 aligned--center mt-2">
+                    Distribution by API Response Code
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- legacy format -->
+                <div class="row text--h6 display--web">
+                  <div class="col-md-4"> 
+                    <div class="text--center rel pt-4">
+                      <canvas 
+                        id="responseMethodChart-web" 
+                        width="150" 
+                        height="150" 
+                        style="margin-top: 0px;"
+                      ></canvas>
+                      <script>
+                      var ctx = document.getElementById("responseMethodChart-web");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        showTooltips: false,
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{req_method_list}},
+                          datasets: [
+                            {
+                              label: "API Response Codes",
+                              data: {{req_method_count}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+                        options: {
+                          cutout: "62%",
+                          showAllTooltips: false,
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: false,
+                            },
+
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+                    </div>
+                    <div class="text--small aligned--center  text--600 mt-2">
+                      Distribution by API Method
+                    </div>
+
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text--center rel pt-4">
+                      <canvas 
+                        id="paramDataTypeChart-web" 
+                        width="150" 
+                        height="150" 
+                        style="margin-top: 0px;"
+                      ></canvas>
+                      <script>
+                      var ctx = document.getElementById("paramDataTypeChart-web");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{data_types}},
+                          datasets: [
+                            {
+                              label: "API Response Method",
+                              data: {{data_type_counts}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#4D2EA3",
+                                "#C8D600",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+                        options: {
+                          cutout: "62%",
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          showAllTooltips: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: false,
+                            },
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+
+                    </div>
+                    <div class="text--small text--600 aligned--center mt-2">
+                      Distribution by Parameter Data Type
+                    </div>
+                  </div>
+
+                  <div class="col-md-4"> 
+                    <div class="text--center rel pt-4">
+                      <canvas 
+                        id="responseCodeChart-web" 
+                        width="150" 
+                        height="150" 
+                        style="margin-top: 0px;"
+                      ></canvas>
+                      <script>
+                      var ctx = document.getElementById("responseCodeChart-web");
+                      var myChart = new Chart(ctx, {
+                        type: "doughnut",
+                        layout: {
+                          textAlign: "left",
+                          horizontalAlign: "left",
+                        },
+                        data: {
+                          labels: {{response_codes}},
+                          datasets: [
+                            {
+                              label: "API Response Method",
+                              data: {{r_codes_count}},
+                              backgroundColor: [
+                                "#00D6E6",
+                                "#4D2EA3",
+                                "#C8D600",
+                                "#00CEC1",
+                                "#E01B50",
+                                "#7733FF",
+                              ],
+                            },
+                          ],
+                        },
+
+                        options: {
+                          cutout: "62%",
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          showAllTooltips: false,
+                          horizontalAlign: "left",
+                          textAlign: "left",
+                          layout: {
+                            horizontalAlign: "left",
+                            textAlign: "left",
+                          },
+
+                          plugins: {
+                            legend: {
+                              display: false,
+                            },
+                            scales: {
+                              yAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                              xAxes: [
+                                {
+                                  display: false,
+                                },
+                              ],
+                            },
+                          },
+                        },
+                      });
+                    </script>
+
+                    </div>
+                    <div class="text--small text--600 aligned--center mt-2">
+                      Distribution by API Response Code
+                    </div>
+                  </div>
+                </div>
+                <!-- // end pie-chart row -->
+
+                <div class="mt-4">
+                  
+                </div>
+
+              <!-- end legacy format -->
+              <!-- // end pie-chart row -->
+            </div>
+            <!-- // end card -->
+          </div>
+          <!-- // end left column -->
+
+          <div class="col-md-5 pr-0" id="right_column">
+            <h4 class="heading page__wrapper--heading --scorecard">
+              API Design Scorecard
+            </h4>
+            <div class="card card--bordered text--center clearfix">
+              <div class="row text--h3">
+                <div class="col-md-6">
+                  <div class="text--small text--600 mt-2">Category</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--small text--600 mt-2">Design Issues</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--small text--600 mt-2">Highest Severity</div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              {% set sev_mapping = {"Critical": "p1", "High": "p2", "Medium": "p3", "Low": "p4"} %}
+              <div class="row mt-4 aligned--center">
+                <div class="col-md-6">
+                  <div class="text--h6 mt-2 aligned--left">API Transport</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{issue_insights.get('API Transport', {}).get('api_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+                <div class="col-md-3">
+                  {% set highest_sev = violations.get('API Transport', {}).get('highest_sev', '') %}
+                  {% if highest_sev|length %}
+                    {% set pri=sev_mapping.get(highest_sev, '') %}
+                  {% else %}
+                    {% set pri='' %}
+                  {% endif %}
+                  <div
+                    class="card card__card--nested card--bordered severity-background-{{pri}}" >
+                    <span class="text--h2">{{violations.get('API Transport', {}).get('highest_sev_api_count', '-')}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-4 aligned--center">
+                <div class="col-md-6">
+                  <div class="text--h6 mt-2 aligned--left">
+                    Authentication/ Authorization
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2"> {{issue_insights.get('AuthN/AuthZ', {}).get('api_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+                <div class="col-md-3">
+                  {% set highest_sev = violations.get('AuthN/AuthZ', {}).get('highest_sev', '') %}
+                  {% if highest_sev|length %}
+                    {% set pri=sev_mapping.get(highest_sev, '') %}
+                  {% else %}
+                    {% set pri='' %}
+                  {% endif %}
+                  <div
+                    class="card card__card--nested card--bordered severity-background-{{pri}}" >
+                    <span class="text--h2">{{violations.get('AuthN/AuthZ', {}).get('highest_sev_api_count', '-')}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-4 aligned--center">
+                <div class="col-md-6">
+                  <div class="text--h6 mt-2 aligned--left">
+                    Data type Definition
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{issue_insights.get('Data Type Definitions', {}).get('param_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">Params</span>
+                </div>
+                <div class="col-md-3">
+                  {% set highest_sev = violations.get('Data Type Definitions', {}).get('highest_sev', '') %}
+                  {% if highest_sev|length %}
+                    {% set pri=sev_mapping.get(highest_sev, '') %}
+                  {% else %}
+                    {% set pri='' %}
+                  {% endif %}
+                  <div
+                    class="card card__card--nested card--bordered severity-background-{{pri}}"
+                  >
+                    <span class="text--h2">{{violations.get('Data Type Definitions', {}).get('highest_sev_param_count', 0)}}</span>
+                  </div>
+                  <span class="text--small">Params</span>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-4 aligned--center">
+                <div class="col-md-6">
+                  <div class="text--h6 mt-2 aligned--left">
+                    API Life-cycle Management
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{issue_insights.get('API Lifecycle & Management', {}).get('api_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+                <div class="col-md-3">
+                  {% set highest_sev = violations.get('API Lifecycle & Management', {}).get('highest_sev', '') %}
+                  {% if highest_sev|length %}
+                    {% set pri=sev_mapping.get(highest_sev, '') %}
+                  {% else %}
+                    {% set pri='' %}
+                  {% endif %}
+                  <div
+                    class="card card__card--nested card--bordered severity-background-{{pri}}"
+                  >
+                    <span class="text--h2">{{violations.get('API Lifecycle & Management', {}).get('highest_sev_api_count', '-')}}</span>
+                  </div>
+                  <span class="text--small">APIs</span>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-4 aligned--center">
+                <div class="col-md-6">
+                  <div class="text--h6 mt-2 aligned--left">
+                    API Spec-file Management
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{issue_insights.get('API Spec-file Management', {}).get('file_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">Files</span>
+                </div>
+                <div class="col-md-3">
+                  {% set highest_sev = violations.get('API Spec-file Management', {}).get('highest_sev', '') %}
+                  {% if highest_sev|length %}
+                    {% set pri=sev_mapping.get(highest_sev, '') %}
+                  {% else %}
+                    {% set pri='' %}
+                  {% endif %}
+                  <div
+                    class="
+                      card card__card--nested card--bordered
+                      severity-background-p4
+                    "
+                  >
+                    <span class="text--h2">{{issue_insights.get('API Spec-file Management', {}).get('file_list', '')|length}}</span>
+                  </div>
+                  <span class="text--small">Files</span>
+                </div>
+              </div>
+
+              <!-- // end row -->
+            </div>
+            <!-- // end card -->
+          </div>
+          <!-- // end right_col -->
+        </div>
+        <!-- // end row -->
+        <!-- additional row -->
+        <!--
+              design issues
+              total performed: 824
+              checkes passed: 775
+              chesk failed: 49 {High: 10, Medium: 38, Low: 1}
+
+              Most frequently occurring violation: per Sandeeps file
+              22 | [0006a] Parameters of type "string" should have "pattern" defined.
+
+        -->
+
+        <div class="row footer row__page-break">
+            <div class="logo"></div>
+       </div>
+        <!-- row1 with 1 column -->
+
+        <div class="row mt-4 template-parent-row" id="row-design-issue-insights">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading">
+              Overall Design Issue Insights
+            </h4>
+            <div class="card card--bordered">
+              <div class="row mt-2 text--h6 aligned--left">
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                  <span></span>
+                </div>
+                <div class="col-md-4 aligned--center">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-6">&nbsp;</div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--center">
+                <div class="col-md-2 text--h3">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2"
+                      >&nbsp;<br />{{num_of_evaluations}} <br />&nbsp;<br
+                    /></span>
+                  </div>
+                  <span class="text--small text--600"
+                    >Total design checks performed</span
+                  >
+                </div>
+
+                <div class="col-md-4 text--h6">
+                    <div class="text--center rel" style="max-height: 150px;">
+                      <style>
+                        #issueSeverityChart { max-height: 125px!important; }
+                      </style>
+                      <canvas 
+                          id="issueSeverityChart" 
+                          height="125" 
+                          style="margin-top: 0px; padding-left: 0!important; text-align: left;"
+                        ></canvas>
+                        <script>
+                          var ctx = document.getElementById('issueSeverityChart');
+                          var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            layout: {    
+                              textAlign: 'left',
+                              horizontalAlign: 'left',
+                            },
+                            data: {
+                              labels: ['Critical', 'High', 'Medium', 'Low'],
+                              datasets: [{
+                                label: 'Issue Severity',
+                                  data: [{{violations.get('risk_siv_counts', {}).get('critical', 0)}}, {{violations.get('risk_siv_counts', {}).get('high', 0)}}, {{violations.get('risk_siv_counts', {}).get('medium', 0)}}, {{violations.get('risk_siv_counts', {}).get('low', 0)}}],
+                                backgroundColor: [
+                                  '#d64223',
+                                  '#ff7700',
+                                  '#f4a739',
+                                  '#f9cf7f',
+                                ],
+                              }]
+                            },
+                            options: {
+                              cutout: '62%',
+                              responsive: false,
+                              maintainAspectRatio: false,
+                              showAllTooltips: false,
+                              horizontalAlign: 'left',
+                              textAlign: 'left',
+                              layout: {
+                                horizontalAlign: 'left',
+                                textAlign: 'left',
+                              },
+
+                              plugins: {
+                                legend: {
+                                  display: true,
+                                  position: 'bottom',
+                                  radius: 5,
+                                  labels: {
+                                    boxWidth: 10,
+                                    boxHeight: 10,
+                                  },
+                                },
+                                scales: {
+                                  yAxes: [{
+                                    display: false,
+                                    
+                                  }],
+                                  xAxes: [{
+                                    display: false
+                                  }]
+                                },
+                              }
+                            }
+                          });
+                        </script>
+                      </div>
+                    
+                    <div class="text--small aligned--center text--600 mt-2">
+                      Distribution by Issue Severity
+                    </div>
+
+                  </div>
+                <div class="col-md-1 aligned--left">&nbsp;</div>
+                <div class="col-md-5 aligned--left">
+                  <h4 class="text--500 mt-2">
+                    Most frequently occurring violation
+                  </h4>
+                  <span
+                    >{{violations.get('description')}} -
+                    <b>{{violations.get('most_occ_cat_count', 0)}} violations</b
+                    >.</span
+                  >
+                </div>
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+
+        <div class="row mt-4 template-parent-row" id="row-apitransport-design-issue-insights>
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading">
+              API Transport Design Issues
+            </h4>
+            <div class="card card--bordered">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-1">
+                  <div class="text--h6 text--600 mt-2">APIs</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">
+                    Severity Distribution
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--h6 text--600 mt-2">Files</div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              {% set tran_not_defined = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('apis', {}) | length %}
+              {% set insecure_not_defined = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('apis', {}) | length %}
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Transport Method Not Defined</h4>
+                  <span
+                    >The APIs that did not define the transport method at local
+                    or global level.</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{tran_not_defined}}</span>
+                  </div>
+                </div>
+                {% if tran_not_defined == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('files', {}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+                {% endif %}
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Clear Text HTTP</h4>
+                  <span
+                    >The APIs that are defined to be using clear text HTTP
+                  </span>
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{insecure_not_defined}}</span>
+                  </div>
+                </div>
+                {% if insecure_not_defined == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+                {% endif %}
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+        <!-- // end row -->
+
+        <div class="row footer row__page-break">
+          <div class="logo"></div>
+        </div>
+        <!-- row1 with 1 column -->
+        <!-- removing Transport Design and AUth sections-->
+        {% set undefined_auth = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('apis', {}) | length %}
+        {% set invalid_url = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('apis', {}) | length %}
+        <div class="row mt-4 template-parent-row" id="row-apiauth-design-issue-insights">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading">
+              API Authentication &amp; Authorization Design Issues
+            </h4>
+            <div class="card card--bordered">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-1">
+                  <div class="text--h6 text--600 mt-2">APIs</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">
+                    Severity Distribution
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--h6 text--600 mt-2">Files</div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">No Auth Information Defined</h4>
+                  <span
+                    >The APIs that did not define any authorization
+                    information</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{undefined_auth}}</span>
+                  </div>
+                </div>
+                {% if undefined_auth == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Invalid or Insecure Auth URL</h4>
+                  <span
+                    >The APIs that are defined to be using an invalid or
+                    insecure auth URL.</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{invalid_url}}</span>
+                  </div>
+                </div>
+                {% if invalid_url == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+                {% endif %}
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+        <!-- // end row -->
+
+        <div class="row footer row__page-break">
+            <div class="logo"></div>
+        </div>
+        <!-- row1 with 1 column -->
+        <!-- removing Transport Design and AUth sections-->
+
+        <!-- row1 with 1 column -->
+
+        <div class="row mt-4 template-parent-row" id="row-data-issues">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading --scorecard">
+              Data Type Issues
+            </h4>
+            <div class="card card--bordered">
+              {% set undefined_bounds = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('apis', {}) | length %}
+              {% set unrestricted_bounds = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('apis', {}) | length %}
+              {% set type_mismatch = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('apis', {}) | length %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-1">
+                  <div class="text--h6 text--600 mt-2">APIs</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">
+                    Severity Distribution
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--h6 text--600 mt-2">Files</div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Data Bounds Not Defined</h4>
+                  <span
+                    >The bounds for the data are not defined for various
+                    entities. E.g. Maximum string length or Maximum number of
+                    elements in an Array may not be defined.
+                  </span>
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{undefined_bounds}}</span>
+                  </div>
+                </div>
+                {% if undefined_bounds == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('critical_params', '')|length %}
+                {% set high = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('high_params', '')|length%}
+                {% set medium = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('medium_params', '')|length %}
+                {% set low = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('low_params', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-4 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Non-restrictive Data Bounds</h4>
+                  <span
+                    >The bounds for data are not restrictive for various
+                    entities. E.g. a string might have been defined to be any
+                    pattern (*) rather than being restricted to alpha-numeric.
+                  </span>
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{unrestricted_bounds}}</span>
+                  </div>
+                </div>
+                {% if unrestricted_bounds == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('critical_params', '')|length %}
+                {% set high = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('high_params', '')|length %}
+                {% set medium = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('medium_params', '')|length %}
+                {% set low = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('low_params', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Type &amp; Attribute Mismatch</h4>
+                  <span
+                    >Certain entities are of a particular type but mandarory
+                    attributes are missing. E.g. an entity of type Array does
+                    not have items defined.
+                  </span>
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{type_mismatch}}</span>
+                  </div>
+                </div>
+                {% if type_mismatch == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('critical_params', '')|length %}
+                {% set high = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('high_params', '')|length%}
+                {% set medium = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('medium_params', '')|length %}
+                {% set low = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('low_params', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">Params</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('files', {}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+        <!-- // end row -->
+
+        <!-- row1 with 1 column -->
+
+        <div class="row mt-4 template-parent-row" id="row-lifecycle-mgmt">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading">
+              API Lifecycle and Management
+            </h4>
+            <div class="card card--bordered">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-1">
+                  <div class="text--h6 text--600 mt-2">APIs</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">
+                    Severity Distribution
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--h6 text--600 mt-2">Files</div>
+                </div>
+              </div>
+              <!-- // end row -->
+
+              {% set response_errors = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('apis', {}) | length %}
+              {% set missing_info = issue_insights.get('API Lifecycle & Management', {}).get('Missing information', {}).get('apis', {}) | length %}
+              {% set no_version = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('apis', {}) | length %}
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">No API Versioning</h4>
+                  <span
+                    >The APIs defined do not accomodate versioning. E.g. an API
+                    defined as /api/v1/employeeInfo allows for versioning.
+                    Absence of such API is not ideal for API lifecycle
+                    management.</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{no_version}}</span>
+                  </div>
+                </div>
+                {% if no_version == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">
+                    API Error Responses Not Defined
+                  </h4>
+                  <span
+                    >Certain entities are of a particular type but mandatory
+                    attributes are missing. E.g. an entity of type array does
+                    not have items defined.</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{response_errors}}</span>
+                  </div>
+                </div>
+                {% if response_errors == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('critical_apis', '')|length %}
+                {% set high = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('high_apis', '')|length%}
+                {% set medium = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('medium_apis', '')|length %}
+                {% set low = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('low_apis', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">APIs</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('files',{}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4 template-parent-row" id="row-spec-file-mgmt">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading --scorecard">
+              API Spec-file Management
+            </h4>
+            <div class="card card--bordered">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text--h6 text--600 mt-2">&nbsp;</div>
+                </div>
+                <div class="col-md-1">
+                  <div class="text--h6 text--600 mt-2">Files</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="text--h6 text--600 mt-2">
+                    Severity Distribution
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="text--h6 text--600 mt-2">Names</div>
+                </div>
+              </div>
+              <!-- // end row -->
+              {% set missing_info = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('files', {}) | length %}
+              <div class="row mt-2 aligned--left">
+                <div class="col-md-6">
+                  <h4 class="text--500 mt-2">Contact Information Missing</h4>
+                  <span
+                    >The contact information is missing from the API
+                    Specification files.</span
+                  >
+                </div>
+                <div class="col-md-1">
+                  <div class="card card__card--nested card--bordered">
+                    <span class="text--h2">{{missing_info}}</span>
+                  </div>
+                </div>
+                {% if missing_info == 0 %}
+                <div class="col-md-5">
+                  <div class="card__custom-block card__custom-block--congrats">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        Kudos to you and your team!
+                        <p class="text--small">No issues found</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                {% set critical = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('critical_files', '')|length %}
+                {% set high = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('high_files', '')|length%}
+                {% set medium = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('medium_files', '')|length %}
+                {% set low = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('low_files', '')|length %}
+                <div class="col-md-2">
+                  <ul class="list--inline mt-1">
+                    {% if critical > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p1">
+                        <div>{{critical}}</div>
+                      </div>
+                      <span class="text--small">Files</span>
+                    </li>
+                    {% endif %} {% if high > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p2">
+                        <span>{{high}}</span>
+                      </div>
+                      <span class="text--small">Files</span>
+                    </li>
+                    {% endif %} {% if medium > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{medium}}</span>
+                      </div>
+                      <span class="text--small">Files</span>
+                    </li>
+                    {% endif %} {% if low > 0 %}
+                    <li class="aligned--center">
+                      <div class="card__tile severity-border-p3">
+                        <span>{{low}}</span>
+                      </div>
+                      <span class="text--small">Files</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <!-- new -->
+                  <ul class="card__files-list--wrap mb-4">
+                    {% set files=issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('files', {}) %}
+                    {% set count = namespace(value=0) %}
+                    {% for file in files if count.value < 3 %}
+                    {% set count.value = count.value + 1 %}
+                    <li>
+                      <span> {{file}} </span>
+                    </li>
+                    {% endfor %} {% if count.value >= 3 %}
+                    <li>
+                      <span>.....</span>
+                    </li>
+                    {% endif %}
+                  </ul>
+                  <!-- end new -->
+                </div>
+
+                {% endif %}
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row footer row__page-break">
+            <div class="logo"></div>
+        </div>
+
+        <div class="row mt-4 template-parent-row" id="row-custom-compliance">
+          <div class="col-md-12 pl-0 pr-0">
+            <h4 class="heading page__wrapper--heading">
+              Custom Compliance Rules
+            </h4>
+            <div class="card card--bordered">
+              <div class="row mt-2 aligned--left">
+                <!--                   <div class="col-md-2"> 
+                    <h4 class="text--500 mt-2">
+                      
+                    </h4>
+                    <span></span>
+                  </div>
+ --><!--                   <div class="col-md-1"> 
+                    <div class="card card__card--nested card--bordered">
+                      <span class="text--h2">1</span>
+                    </div>
+                  </div>
+ -->
+                <div class="col-md-12">
+                  <div class="card__custom-block card__custom-block--info">
+                    <div class="card__custom-block-text">
+                      <div class="text--congrats text--600">
+                        No custom rules and checks performed.
+                        <p class="text--small">
+                          Did you know you can define your own custom compliance
+                          rules to check your specification?<br />
+                          Refer to Imperva documentation on how to do it
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- // end row -->
+            </div>
+          </div>
+        </div>
+        <!-- // end container -->
+      </div>
+
+      <footer class="row__page-break">
+        <div class="logo"></div>
+      </footer>
+
+      {% if violation_details | length > 0 %}
+      <table class="table--parent-table" id="parent-table">
+        <tbody>
+          <tr>
+            <td>
+              <h2>Violation Details:</h2>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- begin output -->
+              <table>
+                <tbody>
+                  {% for sev, sev_val in violation_details.items() %}
+                  <tr class="row--severity-level">
+                    <td style="background-color: #f2f5f7">
+                      <ul>
+                        <li>
+                          <strong>{{sev}}</strong>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  {% for key, val in sev_val.items() %}
+                  <tr>
+                    <td class="cell--padded-right">
+                      <ul class="list--level1">
+                        <li>
+                          <span class="underline">Type:</span>
+                          <em>{{key}}</em>
+                          <ul class="list--level2">
+                            <li>
+                              <span class="underline">Impact: </span>
+                              {{val.get('Impact', '')}}
+                            </li>
+                            <li>
+                              {% set req_key = namespace(value='') %}
+                              {% for k,v in val.items() %}
+                              {% set req_key.value = k | replace("Impact", " ") %}
+                              {% endfor %}
+                              <span class="underline">{{req_key.value}}: </span>
+                              <br />
+                              <table class="table__bordered--violation-details">
+                                <tbody>
+                                  {% for api in val.get(req_key.value, [])%} {% set split_list = api.split('\n\n') %}
+                                  <tr>
+                                    <td>
+                                      <strong>{{split_list[0]}}</strong>
+                                      <p>{{split_list[1]}}</p>
+                                    </td>
+                                  </tr>
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endfor %} {% endfor %}
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer>
+        <div class="logo"></div>
+      </footer>
+      {% endif %}
+    </div>
+    <!-- // end .report_wrapper -->
+  </body>
+</html>

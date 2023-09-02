@@ -1,0 +1,1913 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Exception approval group type controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/exception-approval-group-type
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: create
+      tags:
+      - Misc
+      operationId: create
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/createrequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/create'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888634'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:10:33 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '60'
+  /AnRkr/39413:
+    put:
+      summary: Update
+      tags:
+      - Misc
+      operationId: Update
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdateRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Update'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+              value: '39413'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:11:02 GMT
+            Content-Length:
+              type: string
+              default: '34'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '116'
+    get:
+      summary: Search by ID
+      tags:
+      - Misc
+      operationId: SearchbyID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchbyID'
+          examples:
+            application/json;charset=UTF-8:
+              id: 39413
+              syncTs: 2023-07-20T15:11:02.115+0000
+              version: 7
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 141706
+              exceptionApprovalGroupCode: AAAA
+              status: INACTIVE
+              createdUser: Udeshika
+              createdDate: 2021-12-13T01:17:50.830+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2023-07-20T15:11:02.115+0000
+              exceptionTypesId: 20695
+              exceptionTypesName: Exception Type8
+              exceptionTypesCode: ET08
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:11:12 GMT
+            Content-Length:
+              type: string
+              default: '407'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0d9d6e93367ae1376631840198a9f73e8"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '14'
+  /AnRkr/all:
+    get:
+      summary: Search all
+      tags:
+      - Misc
+      operationId: Searchall
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/Searchall'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 150853
+              syncTs: 2022-07-08T06:58:34.428+0000
+              version: 13
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-24T04:14:52.130+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-07-08T06:58:34.428+0000
+              exceptionTypesId: 20681
+              exceptionTypesName: Exception Type1-UD
+              exceptionTypesCode: ET01
+            - id: 150858
+              syncTs: 2022-02-24T10:03:55.490+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20648
+              exceptionApprovalGroupCode: EA05
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-24T05:33:17.403+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-24T10:03:55.490+0000
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 215010
+              syncTs: 2022-05-20T06:15:35.631+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:35.631+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166072
+              exceptionTypesName: Updated
+              exceptionTypesCode: UOUO
+            - id: 215011
+              syncTs: 2022-05-20T06:15:39.890+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:39.890+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20728
+              exceptionTypesName: Exception Type204
+              exceptionTypesCode: ET2D
+            - id: 215012
+              syncTs: 2022-05-20T06:15:50.505+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:50.505+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 145805
+              exceptionTypesName: Test
+              exceptionTypesCode: AAAS
+            - id: 252123
+              syncTs: 2022-07-28T11:16:41.006+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 180819
+              exceptionApprovalGroupCode: EPT4
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-07-28T11:16:41.006+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 252124
+              syncTs: 2022-07-28T11:16:49.655+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 180819
+              exceptionApprovalGroupCode: EPT4
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-07-28T11:16:49.655+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 255041
+              syncTs: 2022-08-04T11:15:00.244+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-04T11:15:00.244+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 255040
+              exceptionTypesName: DasType
+              exceptionTypesCode: DAS1
+            - id: 341989
+              syncTs: 2022-10-19T12:00:09.055+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 22466
+              exceptionApprovalGroupCode: EA21
+              status: ACTIVE
+              createdUser: DilanthaM
+              createdDate: 2022-10-19T12:00:09.055+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20681
+              exceptionTypesName: Exception Type1-UD
+              exceptionTypesCode: ET01
+            - id: 1660274
+              syncTs: 2023-05-19T07:57:22.006+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1660273
+              exceptionApprovalGroupCode: EAGP
+              status: INACTIVE
+              createdUser: acentura.testing
+              createdDate: 2023-05-04T03:43:02.852+0000
+              modifiedUser: NipunKa
+              modifiedDate: 2023-05-19T07:57:22.006+0000
+              exceptionTypesId: 1660268
+              exceptionTypesName: Credit Appraisal EX1
+              exceptionTypesCode: EXU1
+            - id: 198908
+              syncTs: 2022-04-28T07:50:18.048+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 169976
+              exceptionApprovalGroupCode: QAQ3
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:50:18.048+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 169836
+              syncTs: 2022-03-09T05:32:41.218+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-09T05:32:41.217+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166055
+              exceptionTypesName: 'test 1 '
+              exceptionTypesCode: RTYU
+            - id: 100001
+              syncTs: 2022-03-23T12:45:30.484+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20645
+              exceptionApprovalGroupCode: EA02
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2022-03-23T12:45:48.522+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166072
+              exceptionTypesName: Updated
+              exceptionTypesCode: UOUO
+            - id: 235002
+              syncTs: 2022-06-14T08:37:37.141+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T08:37:37.141+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 234959
+              exceptionTypesName: Old Vehicle
+              exceptionTypesCode: OLDV
+            - id: 237727
+              syncTs: 2022-06-17T07:29:47.839+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:47.839+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 256765
+              syncTs: 2023-02-14T08:31:22.209+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-10T09:00:38.924+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-14T08:31:22.209+0000
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 256766
+              syncTs: 2022-08-10T09:01:19.803+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 200197
+              exceptionApprovalGroupCode: OPPL
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-10T09:01:17.159+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-08-10T09:01:19.803+0000
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 39413
+              syncTs: 2023-07-20T15:11:02.115+0000
+              version: 7
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 141706
+              exceptionApprovalGroupCode: AAAA
+              status: INACTIVE
+              createdUser: Udeshika
+              createdDate: 2021-12-13T01:17:50.830+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2023-07-20T15:11:02.115+0000
+              exceptionTypesId: 20695
+              exceptionTypesName: Exception Type8
+              exceptionTypesCode: ET08
+            - id: 39414
+              syncTs: 2021-12-13T01:25:26.464+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20646
+              exceptionApprovalGroupCode: EA03
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2021-12-13T01:25:26.464+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20728
+              exceptionTypesName: Exception Type204
+              exceptionTypesCode: ET2D
+            - id: 198888
+              syncTs: 2022-04-28T07:31:41.691+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:31:41.691+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 198909
+              syncTs: 2022-04-28T07:51:23.367+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:23.366+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 198910
+              syncTs: 2022-04-28T07:51:26.678+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:26.678+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 231088
+              syncTs: 2022-06-10T05:33:08.411+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 231087
+              exceptionApprovalGroupCode: '9999'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-10T05:33:08.411+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166055
+              exceptionTypesName: 'test 1 '
+              exceptionTypesCode: RTYU
+            - id: 231089
+              syncTs: 2022-06-10T05:33:13.454+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 231087
+              exceptionApprovalGroupCode: '9999'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-10T05:33:13.454+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 341988
+              syncTs: 2022-10-19T19:11:39.066+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20648
+              exceptionApprovalGroupCode: EA05
+              status: INACTIVE
+              createdUser: DilanthaM
+              createdDate: 2022-10-19T11:59:07.067+0000
+              modifiedUser: DilanthaM
+              modifiedDate: 2022-10-19T19:11:39.066+0000
+              exceptionTypesId: 20681
+              exceptionTypesName: Exception Type1-UD
+              exceptionTypesCode: ET01
+            - id: 1313148
+              syncTs: 2023-02-08T06:41:20.475+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1313145
+              exceptionApprovalGroupCode: EX13
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T06:41:20.475+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20727
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET24
+            - id: 237726
+              syncTs: 2022-06-17T07:29:40.730+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:40.729+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20730
+              exceptionTypesName: Exception Type2aaaaa0
+              exceptionTypesCode: ET27
+            - id: 169942
+              syncTs: 2022-03-09T10:08:36.668+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-09T10:08:36.668+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 179710
+              exceptionTypesName: Exception type UD5
+              exceptionTypesCode: ASDF
+            - id: 251589
+              syncTs: 2022-07-27T16:16:06.149+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251588
+              exceptionApprovalGroupCode: '0001'
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:14:59.854+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:16:06.149+0000
+              exceptionTypesId: 251587
+              exceptionTypesName: Special Interest Rate
+              exceptionTypesCode: INTS
+            - id: 1313147
+              syncTs: 2023-02-08T06:41:11.724+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1313145
+              exceptionApprovalGroupCode: EX13
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T06:41:11.724+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20696
+              exceptionTypesName: Exception Type9
+              exceptionTypesCode: ET09
+            - id: 251598
+              syncTs: 2022-07-27T16:29:22.795+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:23:38.142+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:29:22.795+0000
+              exceptionTypesId: 251587
+              exceptionTypesName: Special Interest Rate
+              exceptionTypesCode: INTS
+            - id: 251599
+              syncTs: 2022-07-27T16:29:46.868+0000
+              version: 2
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:23:48.085+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:29:46.868+0000
+              exceptionTypesId: 251391
+              exceptionTypesName: Interest Rate
+              exceptionTypesCode: SPIN
+            - id: 251600
+              syncTs: 2022-08-10T09:00:43.414+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: INACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:23:58.059+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-08-10T09:00:43.414+0000
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 1888634
+              syncTs: 2023-07-20T15:10:33.375+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 22466
+              exceptionApprovalGroupCode: EA21
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2023-07-20T15:10:33.375+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 1660268
+              exceptionTypesName: Credit Appraisal EX1
+              exceptionTypesCode: EXU1
+            - id: 150843
+              syncTs: 2022-02-24T08:33:48.283+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-24T03:56:06.126+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-24T08:33:48.283+0000
+              exceptionTypesId: 22463
+              exceptionTypesName: Exception Type31
+              exceptionTypesCode: ET31
+            - id: 238733
+              syncTs: 2022-06-20T08:05:29.775+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-20T08:05:29.775+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20694
+              exceptionTypesName: Exception Type7
+              exceptionTypesCode: ET07
+            - id: 240786
+              syncTs: 2022-06-27T06:35:05.605+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-27T06:35:05.605+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20692
+              exceptionTypesName: Exception Type5
+              exceptionTypesCode: ET05
+            - id: 261885
+              syncTs: 2022-08-21T04:50:58.929+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-08-21T04:50:58.929+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 180438
+              exceptionTypesName: TEST
+              exceptionTypesCode: QWER
+            - id: 1319310
+              syncTs: 2023-02-14T08:30:56.300+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-14T08:30:56.300+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 22463
+              exceptionTypesName: Exception Type31
+              exceptionTypesCode: ET31
+            - id: 1530223
+              syncTs: 2023-03-10T04:18:08.217+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1530216
+              exceptionApprovalGroupCode: EX25
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:18:08.217+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 1530222
+              exceptionTypesName: Exception 2v
+              exceptionTypesCode: ASDE
+            - id: 1531366
+              syncTs: 2023-03-26T15:07:07.144+0000
+              version: 2
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1531364
+              exceptionApprovalGroupCode: ASED
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T09:21:45.862+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-26T15:07:07.144+0000
+              exceptionTypesId: 1530244
+              exceptionTypesName: Exception 3v
+              exceptionTypesCode: ASDP
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:11:27 GMT
+            Content-Length:
+              type: string
+              default: '15734'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"081e04f61209837f887b80ffc54683baf"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '99'
+  /AnRkr/exception-approval-group/20644:
+    get:
+      summary: search apy exception approval group ID
+      tags:
+      - Misc
+      operationId: searchapyexceptionapprovalgroupID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/searchapyexceptionapprovalgroupID'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 150853
+              syncTs: 2022-07-08T06:58:34.428+0000
+              version: 13
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-24T04:14:52.130+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-07-08T06:58:34.428+0000
+              exceptionTypesId: 20681
+              exceptionTypesName: Exception Type1-UD
+              exceptionTypesCode: ET01
+            - id: 215010
+              syncTs: 2022-05-20T06:15:35.631+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:35.631+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166072
+              exceptionTypesName: Updated
+              exceptionTypesCode: UOUO
+            - id: 215011
+              syncTs: 2022-05-20T06:15:39.890+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:39.890+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20728
+              exceptionTypesName: Exception Type204
+              exceptionTypesCode: ET2D
+            - id: 215012
+              syncTs: 2022-05-20T06:15:50.505+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:50.505+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 145805
+              exceptionTypesName: Test
+              exceptionTypesCode: AAAS
+            - id: 255041
+              syncTs: 2022-08-04T11:15:00.244+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-04T11:15:00.244+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 255040
+              exceptionTypesName: DasType
+              exceptionTypesCode: DAS1
+            - id: 169836
+              syncTs: 2022-03-09T05:32:41.218+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-09T05:32:41.217+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166055
+              exceptionTypesName: 'test 1 '
+              exceptionTypesCode: RTYU
+            - id: 235002
+              syncTs: 2022-06-14T08:37:37.141+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T08:37:37.141+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 234959
+              exceptionTypesName: Old Vehicle
+              exceptionTypesCode: OLDV
+            - id: 237727
+              syncTs: 2022-06-17T07:29:47.839+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:47.839+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 198888
+              syncTs: 2022-04-28T07:31:41.691+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:31:41.691+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 198909
+              syncTs: 2022-04-28T07:51:23.367+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:23.366+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 198910
+              syncTs: 2022-04-28T07:51:26.678+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:26.678+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 237726
+              syncTs: 2022-06-17T07:29:40.730+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:40.729+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20730
+              exceptionTypesName: Exception Type2aaaaa0
+              exceptionTypesCode: ET27
+            - id: 169942
+              syncTs: 2022-03-09T10:08:36.668+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-09T10:08:36.668+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 179710
+              exceptionTypesName: Exception type UD5
+              exceptionTypesCode: ASDF
+            - id: 150843
+              syncTs: 2022-02-24T08:33:48.283+0000
+              version: 1
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-02-24T03:56:06.126+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-02-24T08:33:48.283+0000
+              exceptionTypesId: 22463
+              exceptionTypesName: Exception Type31
+              exceptionTypesCode: ET31
+            - id: 238733
+              syncTs: 2022-06-20T08:05:29.775+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-20T08:05:29.775+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20694
+              exceptionTypesName: Exception Type7
+              exceptionTypesCode: ET07
+            - id: 240786
+              syncTs: 2022-06-27T06:35:05.605+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-27T06:35:05.605+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20692
+              exceptionTypesName: Exception Type5
+              exceptionTypesCode: ET05
+            - id: 261885
+              syncTs: 2022-08-21T04:50:58.929+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-08-21T04:50:58.929+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 180438
+              exceptionTypesName: TEST
+              exceptionTypesCode: QWER
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:11:38 GMT
+            Content-Length:
+              type: string
+              default: '6347'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"083a42f7b169c5f0d8dda66936a9a9f94"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '35'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: search by status
+      tags:
+      - Misc
+      operationId: searchbystatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/searchbystatus'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 215010
+              syncTs: 2022-05-20T06:15:35.631+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:35.631+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166072
+              exceptionTypesName: Updated
+              exceptionTypesCode: UOUO
+            - id: 215011
+              syncTs: 2022-05-20T06:15:39.890+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:39.890+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20728
+              exceptionTypesName: Exception Type204
+              exceptionTypesCode: ET2D
+            - id: 215012
+              syncTs: 2022-05-20T06:15:50.505+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-20T06:15:50.505+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 145805
+              exceptionTypesName: Test
+              exceptionTypesCode: AAAS
+            - id: 252123
+              syncTs: 2022-07-28T11:16:41.006+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 180819
+              exceptionApprovalGroupCode: EPT4
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-07-28T11:16:41.006+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 252124
+              syncTs: 2022-07-28T11:16:49.655+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 180819
+              exceptionApprovalGroupCode: EPT4
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-07-28T11:16:49.655+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 255041
+              syncTs: 2022-08-04T11:15:00.244+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-08-04T11:15:00.244+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 255040
+              exceptionTypesName: DasType
+              exceptionTypesCode: DAS1
+            - id: 341989
+              syncTs: 2022-10-19T12:00:09.055+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 22466
+              exceptionApprovalGroupCode: EA21
+              status: ACTIVE
+              createdUser: DilanthaM
+              createdDate: 2022-10-19T12:00:09.055+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20681
+              exceptionTypesName: Exception Type1-UD
+              exceptionTypesCode: ET01
+            - id: 198908
+              syncTs: 2022-04-28T07:50:18.048+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 169976
+              exceptionApprovalGroupCode: QAQ3
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:50:18.048+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 100001
+              syncTs: 2022-03-23T12:45:30.484+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20645
+              exceptionApprovalGroupCode: EA02
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2022-03-23T12:45:48.522+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166072
+              exceptionTypesName: Updated
+              exceptionTypesCode: UOUO
+            - id: 235002
+              syncTs: 2022-06-14T08:37:37.141+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T08:37:37.141+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 234959
+              exceptionTypesName: Old Vehicle
+              exceptionTypesCode: OLDV
+            - id: 237727
+              syncTs: 2022-06-17T07:29:47.839+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:47.839+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 39414
+              syncTs: 2021-12-13T01:25:26.464+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20646
+              exceptionApprovalGroupCode: EA03
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2021-12-13T01:25:26.464+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20728
+              exceptionTypesName: Exception Type204
+              exceptionTypesCode: ET2D
+            - id: 198888
+              syncTs: 2022-04-28T07:31:41.691+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:31:41.691+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166071
+              exceptionTypesName: UP2
+              exceptionTypesCode: UPOI
+            - id: 198909
+              syncTs: 2022-04-28T07:51:23.367+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:23.366+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20724
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: YUIP
+            - id: 198910
+              syncTs: 2022-04-28T07:51:26.678+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-04-28T07:51:26.678+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20726
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET23
+            - id: 231088
+              syncTs: 2022-06-10T05:33:08.411+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 231087
+              exceptionApprovalGroupCode: '9999'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-10T05:33:08.411+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166055
+              exceptionTypesName: 'test 1 '
+              exceptionTypesCode: RTYU
+            - id: 231089
+              syncTs: 2022-06-10T05:33:13.454+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 231087
+              exceptionApprovalGroupCode: '9999'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-10T05:33:13.454+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 166073
+              exceptionTypesName: 'test '
+              exceptionTypesCode: WWWW
+            - id: 1313148
+              syncTs: 2023-02-08T06:41:20.475+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1313145
+              exceptionApprovalGroupCode: EX13
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T06:41:20.475+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20727
+              exceptionTypesName: Exception Type20
+              exceptionTypesCode: ET24
+            - id: 237726
+              syncTs: 2022-06-17T07:29:40.730+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-17T07:29:40.729+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20730
+              exceptionTypesName: Exception Type2aaaaa0
+              exceptionTypesCode: ET27
+            - id: 169942
+              syncTs: 2022-03-09T10:08:36.668+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-09T10:08:36.668+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 179710
+              exceptionTypesName: Exception type UD5
+              exceptionTypesCode: ASDF
+            - id: 1313147
+              syncTs: 2023-02-08T06:41:11.724+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1313145
+              exceptionApprovalGroupCode: EX13
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T06:41:11.724+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20696
+              exceptionTypesName: Exception Type9
+              exceptionTypesCode: ET09
+            - id: 251599
+              syncTs: 2022-07-27T16:29:46.868+0000
+              version: 2
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-07-27T16:23:48.085+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-07-27T16:29:46.868+0000
+              exceptionTypesId: 251391
+              exceptionTypesName: Interest Rate
+              exceptionTypesCode: SPIN
+            - id: 1888634
+              syncTs: 2023-07-20T15:10:33.375+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 22466
+              exceptionApprovalGroupCode: EA21
+              status: ACTIVE
+              createdUser: Udeshika
+              createdDate: 2023-07-20T15:10:33.375+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 1660268
+              exceptionTypesName: Credit Appraisal EX1
+              exceptionTypesCode: EXU1
+            - id: 238733
+              syncTs: 2022-06-20T08:05:29.775+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-20T08:05:29.775+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20694
+              exceptionTypesName: Exception Type7
+              exceptionTypesCode: ET07
+            - id: 240786
+              syncTs: 2022-06-27T06:35:05.605+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-06-27T06:35:05.605+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 20692
+              exceptionTypesName: Exception Type5
+              exceptionTypesCode: ET05
+            - id: 261885
+              syncTs: 2022-08-21T04:50:58.929+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 20644
+              exceptionApprovalGroupCode: EA33
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-08-21T04:50:58.929+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 180438
+              exceptionTypesName: TEST
+              exceptionTypesCode: QWER
+            - id: 1319310
+              syncTs: 2023-02-14T08:30:56.300+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 251594
+              exceptionApprovalGroupCode: '0002'
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-14T08:30:56.300+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 22463
+              exceptionTypesName: Exception Type31
+              exceptionTypesCode: ET31
+            - id: 1530223
+              syncTs: 2023-03-10T04:18:08.217+0000
+              version: 0
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1530216
+              exceptionApprovalGroupCode: EX25
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T04:18:08.217+0000
+              modifiedUser: null
+              modifiedDate: null
+              exceptionTypesId: 1530222
+              exceptionTypesName: Exception 2v
+              exceptionTypesCode: ASDE
+            - id: 1531366
+              syncTs: 2023-03-26T15:07:07.144+0000
+              version: 2
+              tenantId: AnRkr
+              exceptionApprovalGroupId: 1531364
+              exceptionApprovalGroupCode: ASED
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-03-10T09:21:45.862+0000
+              modifiedUser: bhagyaa
+              modifiedDate: 2023-03-26T15:07:07.144+0000
+              exceptionTypesId: 1530244
+              exceptionTypesName: Exception 3v
+              exceptionTypesCode: ASDP
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:11:51 GMT
+            Content-Length:
+              type: string
+              default: '10872'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0920b83b0527626a86c1b16ac36703f99"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '74'
+definitions:
+  createrequest:
+    title: createrequest
+    example:
+      exceptionApprovalGroupId: '22466'
+      exceptionTypeId: '20681'
+      exceptionTypeName: Exception Type1
+      status: ACTIVE
+    type: object
+    properties:
+      exceptionApprovalGroupId:
+        type: string
+      exceptionTypeId:
+        type: string
+      exceptionTypeName:
+        type: string
+      status:
+        type: string
+    required:
+    - exceptionApprovalGroupId
+    - exceptionTypeId
+    - exceptionTypeName
+    - status
+  create:
+    title: create
+    example:
+      messages: CREATED.
+      value: '1888634'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  UpdateRequest:
+    title: UpdateRequest
+    example:
+      status: INACTIVE
+      version: '4'
+    type: object
+    properties:
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - status
+    - version
+  Update:
+    title: Update
+    example:
+      messages: OK.
+      value: '39413'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  SearchbyID:
+    title: SearchbyID
+    example:
+      id: 39413
+      syncTs: 2023-07-20T15:11:02.115+0000
+      version: 7
+      tenantId: AnRkr
+      exceptionApprovalGroupId: 141706
+      exceptionApprovalGroupCode: AAAA
+      status: INACTIVE
+      createdUser: Udeshika
+      createdDate: 2021-12-13T01:17:50.830+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2023-07-20T15:11:02.115+0000
+      exceptionTypesId: 20695
+      exceptionTypesName: Exception Type8
+      exceptionTypesCode: ET08
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      exceptionApprovalGroupId:
+        type: integer
+        format: int32
+      exceptionApprovalGroupCode:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      exceptionTypesId:
+        type: integer
+        format: int32
+      exceptionTypesName:
+        type: string
+      exceptionTypesCode:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - exceptionApprovalGroupId
+    - exceptionApprovalGroupCode
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - exceptionTypesId
+    - exceptionTypesName
+    - exceptionTypesCode
+  Searchall:
+    title: Searchall
+    example:
+      id: 150853
+      syncTs: 2022-07-08T06:58:34.428+0000
+      version: 13
+      tenantId: AnRkr
+      exceptionApprovalGroupId: 20644
+      exceptionApprovalGroupCode: EA33
+      status: INACTIVE
+      createdUser: lahiru
+      createdDate: 2022-02-24T04:14:52.130+0000
+      modifiedUser: lahiru
+      modifiedDate: 2022-07-08T06:58:34.428+0000
+      exceptionTypesId: 20681
+      exceptionTypesName: Exception Type1-UD
+      exceptionTypesCode: ET01
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      exceptionApprovalGroupId:
+        type: integer
+        format: int32
+      exceptionApprovalGroupCode:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      exceptionTypesId:
+        type: integer
+        format: int32
+      exceptionTypesName:
+        type: string
+      exceptionTypesCode:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - exceptionApprovalGroupId
+    - exceptionApprovalGroupCode
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - exceptionTypesId
+    - exceptionTypesName
+    - exceptionTypesCode
+  searchapyexceptionapprovalgroupID:
+    title: searchapyexceptionapprovalgroupID
+    example:
+      id: 150853
+      syncTs: 2022-07-08T06:58:34.428+0000
+      version: 13
+      tenantId: AnRkr
+      exceptionApprovalGroupId: 20644
+      exceptionApprovalGroupCode: EA33
+      status: INACTIVE
+      createdUser: lahiru
+      createdDate: 2022-02-24T04:14:52.130+0000
+      modifiedUser: lahiru
+      modifiedDate: 2022-07-08T06:58:34.428+0000
+      exceptionTypesId: 20681
+      exceptionTypesName: Exception Type1-UD
+      exceptionTypesCode: ET01
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      exceptionApprovalGroupId:
+        type: integer
+        format: int32
+      exceptionApprovalGroupCode:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      exceptionTypesId:
+        type: integer
+        format: int32
+      exceptionTypesName:
+        type: string
+      exceptionTypesCode:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - exceptionApprovalGroupId
+    - exceptionApprovalGroupCode
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - exceptionTypesId
+    - exceptionTypesName
+    - exceptionTypesCode
+  searchbystatus:
+    title: searchbystatus
+    example:
+      id: 215010
+      syncTs: 2022-05-20T06:15:35.631+0000
+      version: 0
+      tenantId: AnRkr
+      exceptionApprovalGroupId: 20644
+      exceptionApprovalGroupCode: EA33
+      status: ACTIVE
+      createdUser: lahiru
+      createdDate: 2022-05-20T06:15:35.631+0000
+      modifiedUser: null
+      modifiedDate: null
+      exceptionTypesId: 166072
+      exceptionTypesName: Updated
+      exceptionTypesCode: UOUO
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      exceptionApprovalGroupId:
+        type: integer
+        format: int32
+      exceptionApprovalGroupCode:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      exceptionTypesId:
+        type: integer
+        format: int32
+      exceptionTypesName:
+        type: string
+      exceptionTypesCode:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - exceptionApprovalGroupId
+    - exceptionApprovalGroupCode
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - exceptionTypesId
+    - exceptionTypesName
+    - exceptionTypesCode
+tags:
+- name: Misc
+  description: ''

@@ -1,0 +1,1040 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: DA Group Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/delegation-authority-groups
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: AddDelegationAuthorityGroups
+      tags:
+      - Misc
+      operationId: AddDelegationAuthorityGroups
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AddDelegationAuthorityGroupsRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/AddDelegationAuthorityGroups'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888655'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:40:15 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '157'
+  /AnRkr/1888655:
+    get:
+      summary: GetDelegationAuthorityGroupsById
+      tags:
+      - Misc
+      operationId: GetDelegationAuthorityGroupsById
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888655
+              syncTs: 2023-07-20T15:40:15.404+0000
+              version: 0
+              tenantId: AnRkr
+              code: GFHJ
+              name: Delegation T1
+              description: Test ft
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 2
+              daOrder: 11
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:40:15.404+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:41:43 GMT
+            Content-Length:
+              type: string
+              default: '325'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"01c3959fe65582984f72bce20e68d4085"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '18'
+    put:
+      summary: UpdateDelegationAuthorityGroups
+      tags:
+      - Misc
+      operationId: UpdateDelegationAuthorityGroups
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdateDelegationAuthorityGroupsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UpdateDelegationAuthorityGroups'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:52:49 GMT
+            Content-Length:
+              type: string
+              default: '18'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '40'
+  /AnRkr/all:
+    get:
+      summary: GetAllDelegationAuthorityGroups
+      tags:
+      - Misc
+      operationId: GetAllDelegationAuthorityGroups
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 25500
+              syncTs: 2022-03-15T12:12:56.762+0000
+              version: 0
+              tenantId: AnRkr
+              code: DACG
+              name: DA Group 1
+              description: DA Comment grp 1
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 5
+              daOrder: 1
+              createdUser: Prageeth
+              createdDate: 2022-03-15T12:12:51.120+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888655
+              syncTs: 2023-07-20T15:40:15.404+0000
+              version: 0
+              tenantId: AnRkr
+              code: GFHJ
+              name: Delegation T1
+              description: Test ft
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 2
+              daOrder: 11
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:40:15.404+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:42:30 GMT
+            Content-Length:
+              type: string
+              default: '647'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"02a7c5c3d0f022ee703bb9ac7f2754a7f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '19'
+  /AnRkr/code/GFHJ:
+    get:
+      summary: GetDelegationAuthorityGroupsByCode
+      tags:
+      - Misc
+      operationId: GetDelegationAuthorityGroupsByCode
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1888655
+              syncTs: 2023-07-20T15:40:15.404+0000
+              version: 0
+              tenantId: AnRkr
+              code: GFHJ
+              name: Delegation T1
+              description: Test ft
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 2
+              daOrder: 11
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:40:15.404+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:43:33 GMT
+            Content-Length:
+              type: string
+              default: '325'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"01c3959fe65582984f72bce20e68d4085"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '18'
+  /AnRkr/name/DA Group 1:
+    get:
+      summary: GetDelegationAuthorityGroupsByName
+      tags:
+      - Misc
+      operationId: GetDelegationAuthorityGroupsByName
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 25500
+              syncTs: 2022-03-15T12:12:56.762+0000
+              version: 0
+              tenantId: AnRkr
+              code: DACG
+              name: DA Group 1
+              description: DA Comment grp 1
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 5
+              daOrder: 1
+              createdUser: Prageeth
+              createdDate: 2022-03-15T12:12:51.120+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:44:31 GMT
+            Content-Length:
+              type: string
+              default: '321'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0db700cee637ec52f5f2757189da7f8bd"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '21'
+  /AnRkr/search:
+    get:
+      summary: SearchDelegationAuthorityGroup
+      tags:
+      - Misc
+      operationId: SearchDelegationAuthorityGroup
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: code
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchDelegationAuthorityGroup'
+          examples:
+            application/json;charset=UTF-8:
+              content:
+              - id: 25500
+                syncTs: 2022-03-15T12:12:56.762+0000
+                version: 0
+                tenantId: AnRkr
+                code: DACG
+                name: DA Group 1
+                description: DA Comment grp 1
+                status: ACTIVE
+                noOfMinUsersToBeApproved: 5
+                daOrder: 1
+                createdUser: Prageeth
+                createdDate: 2022-03-15T12:12:51.120+0000
+                modifiedUser: null
+                modifiedDate: null
+              pageable:
+                sort:
+                  sorted: false
+                  unsorted: true
+                  empty: true
+                pageSize: 10
+                pageNumber: 0
+                offset: 0
+                unpaged: false
+                paged: true
+              totalPages: 1
+              totalElements: 1
+              last: true
+              first: true
+              sort:
+                sorted: false
+                unsorted: true
+                empty: true
+              numberOfElements: 1
+              size: 10
+              number: 0
+              empty: false
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:46:02 GMT
+            Content-Length:
+              type: string
+              default: '635'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"05f1f96d77d940cb034c665dda1394d9b"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '176'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: GetDelegationAuthorityGroupsByStatus
+      tags:
+      - Misc
+      operationId: GetDelegationAuthorityGroupsByStatus
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/NewRequest'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 25500
+              syncTs: 2022-03-15T12:12:56.762+0000
+              version: 0
+              tenantId: AnRkr
+              code: DACG
+              name: DA Group 1
+              description: DA Comment grp 1
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 5
+              daOrder: 1
+              createdUser: Prageeth
+              createdDate: 2022-03-15T12:12:51.120+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888655
+              syncTs: 2023-07-20T15:40:15.404+0000
+              version: 0
+              tenantId: AnRkr
+              code: GFHJ
+              name: Delegation T1
+              description: Test ft
+              status: ACTIVE
+              noOfMinUsersToBeApproved: 2
+              daOrder: 11
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-07-20T15:40:15.404+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 15:48:01 GMT
+            Content-Length:
+              type: string
+              default: '647'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"02a7c5c3d0f022ee703bb9ac7f2754a7f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '16'
+definitions:
+  AddDelegationAuthorityGroupsRequest:
+    title: AddDelegationAuthorityGroupsRequest
+    example:
+      code: GFHJ
+      description: Test ft
+      name: Delegation T1
+      noOfMinUsersToBeApproved: '2'
+      order: '11'
+      status: ACTIVE
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      noOfMinUsersToBeApproved:
+        type: string
+      order:
+        type: string
+      status:
+        type: string
+    required:
+    - code
+    - description
+    - name
+    - noOfMinUsersToBeApproved
+    - order
+    - status
+  AddDelegationAuthorityGroups:
+    title: AddDelegationAuthorityGroups
+    example:
+      messages: CREATED.
+      value: '1888655'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  NewRequest:
+    title: NewRequest
+    example:
+      id: 1888655
+      syncTs: 2023-07-20T15:40:15.404+0000
+      version: 0
+      tenantId: AnRkr
+      code: GFHJ
+      name: Delegation T1
+      description: Test ft
+      status: ACTIVE
+      noOfMinUsersToBeApproved: 2
+      daOrder: 11
+      createdUser: tharuki.ariyapala
+      createdDate: 2023-07-20T15:40:15.404+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      noOfMinUsersToBeApproved:
+        type: integer
+        format: int32
+      daOrder:
+        type: integer
+        format: int32
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - noOfMinUsersToBeApproved
+    - daOrder
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  SearchDelegationAuthorityGroup:
+    title: SearchDelegationAuthorityGroup
+    example:
+      content:
+      - id: 25500
+        syncTs: 2022-03-15T12:12:56.762+0000
+        version: 0
+        tenantId: AnRkr
+        code: DACG
+        name: DA Group 1
+        description: DA Comment grp 1
+        status: ACTIVE
+        noOfMinUsersToBeApproved: 5
+        daOrder: 1
+        createdUser: Prageeth
+        createdDate: 2022-03-15T12:12:51.120+0000
+        modifiedUser: null
+        modifiedDate: null
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        unpaged: false
+        paged: true
+      totalPages: 1
+      totalElements: 1
+      last: true
+      first: true
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      last:
+        type: boolean
+      first:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - totalPages
+    - totalElements
+    - last
+    - first
+    - sort
+    - numberOfElements
+    - size
+    - number
+    - empty
+  Content:
+    title: Content
+    example:
+      id: 25500
+      syncTs: 2022-03-15T12:12:56.762+0000
+      version: 0
+      tenantId: AnRkr
+      code: DACG
+      name: DA Group 1
+      description: DA Comment grp 1
+      status: ACTIVE
+      noOfMinUsersToBeApproved: 5
+      daOrder: 1
+      createdUser: Prageeth
+      createdDate: 2022-03-15T12:12:51.120+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      noOfMinUsersToBeApproved:
+        type: integer
+        format: int32
+      daOrder:
+        type: integer
+        format: int32
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - noOfMinUsersToBeApproved
+    - daOrder
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  Pageable:
+    title: Pageable
+    example:
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      pageSize: 10
+      pageNumber: 0
+      offset: 0
+      unpaged: false
+      paged: true
+    type: object
+    properties:
+      sort:
+        $ref: '#/definitions/Sort'
+      pageSize:
+        type: integer
+        format: int32
+      pageNumber:
+        type: integer
+        format: int32
+      offset:
+        type: integer
+        format: int32
+      unpaged:
+        type: boolean
+      paged:
+        type: boolean
+    required:
+    - sort
+    - pageSize
+    - pageNumber
+    - offset
+    - unpaged
+    - paged
+  Sort:
+    title: Sort
+    example:
+      sorted: false
+      unsorted: true
+      empty: true
+    type: object
+    properties:
+      sorted:
+        type: boolean
+      unsorted:
+        type: boolean
+      empty:
+        type: boolean
+    required:
+    - sorted
+    - unsorted
+    - empty
+  http://132.145.228.83/lending-origination/delegation-authority-groups/AnRkr/search?name=DAGroup1:
+    title: http://132.145.228.83/lending-origination/delegation-authority-groups/AnRkr/search?name=DAGroup1
+    example:
+      content:
+      - id: 25500
+        syncTs: 2022-03-15T12:12:56.762+0000
+        version: 0
+        tenantId: AnRkr
+        code: DACG
+        name: DA Group 1
+        description: DA Comment grp 1
+        status: ACTIVE
+        noOfMinUsersToBeApproved: 5
+        daOrder: 1
+        createdUser: Prageeth
+        createdDate: 2022-03-15T12:12:51.120+0000
+        modifiedUser: null
+        modifiedDate: null
+      pageable:
+        sort:
+          sorted: false
+          unsorted: true
+          empty: true
+        pageSize: 10
+        pageNumber: 0
+        offset: 0
+        unpaged: false
+        paged: true
+      totalPages: 1
+      totalElements: 1
+      last: true
+      first: true
+      sort:
+        sorted: false
+        unsorted: true
+        empty: true
+      numberOfElements: 1
+      size: 10
+      number: 0
+      empty: false
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+      pageable:
+        $ref: '#/definitions/Pageable'
+      totalPages:
+        type: integer
+        format: int32
+      totalElements:
+        type: integer
+        format: int32
+      last:
+        type: boolean
+      first:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      numberOfElements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      number:
+        type: integer
+        format: int32
+      empty:
+        type: boolean
+    required:
+    - content
+    - pageable
+    - totalPages
+    - totalElements
+    - last
+    - first
+    - sort
+    - numberOfElements
+    - size
+    - number
+    - empty
+  UpdateDelegationAuthorityGroupsRequest:
+    title: UpdateDelegationAuthorityGroupsRequest
+    example:
+      code: GFHJ
+      description: Test ft
+      name: Delegation T2
+      noOfMinUsersToBeApproved: '2'
+      order: '11'
+      status: INACTIVE
+      version: 0
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      noOfMinUsersToBeApproved:
+        type: string
+      order:
+        type: string
+      status:
+        type: string
+      version:
+        type: integer
+        format: int32
+    required:
+    - code
+    - description
+    - name
+    - noOfMinUsersToBeApproved
+    - order
+    - status
+    - version
+  UpdateDelegationAuthorityGroups:
+    title: UpdateDelegationAuthorityGroups
+    example:
+      messages: OK.
+    type: object
+    properties:
+      messages:
+        type: string
+    required:
+    - messages
+tags:
+- name: Misc
+  description: ''

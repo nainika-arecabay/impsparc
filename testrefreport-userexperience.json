@@ -1,0 +1,3699 @@
+{
+ "file_name": "testspecs/policy-sales-user-experience.json",
+ "files": {
+  "testspecs/policy-sales-user-experience.json": {
+   "apis": {
+    "testspecs/policy-sales-user-experience.json: All APIs (Global Definitions)": {
+     "violations": [
+      {
+       "v_ruleid": "0001a",
+       "v_description": "Contact information seems to be missing. To fix: please consider adding the specification owner contact.",
+       "v_score": 2,
+       "v_risk_ctg": "API Spec-file Management",
+       "v_risk_subctg": "Missing information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7,
+         7
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0012a",
+       "v_description": "The securitySchemes field is empty or missing. To fix: please add securitySchemes definition.",
+       "v_score": 7,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         9326,
+         9326
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/rule/calculation": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         31,
+         31
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         40,
+         40
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         61,
+         61
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         31,
+         31
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         40,
+         40
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         61,
+         61
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         85,
+         85
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/resources/parameters/keyValue/protected": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         103,
+         103
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         112,
+         112
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         133,
+         133
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         103,
+         103
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         112,
+         112
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         133,
+         133
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         157,
+         157
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/resources/{lbu}/{key}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         175,
+         175
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         184,
+         184
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         193,
+         193
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         202,
+         202
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         212,
+         212
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         175,
+         175
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         184,
+         184
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         193,
+         193
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         202,
+         202
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         212,
+         212
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/products/{id}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         254,
+         254
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         263,
+         263
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         271,
+         271
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         281,
+         281
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         254,
+         254
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         263,
+         263
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         271,
+         271
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         281,
+         281
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/products/{id}/compute": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         323,
+         323
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         332,
+         332
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         353,
+         353
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         323,
+         323
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         332,
+         332
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         353,
+         353
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/products/{id}/compute/{key}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         403,
+         403
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         412,
+         412
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         421,
+         421
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         442,
+         442
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         403,
+         403
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         412,
+         412
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         421,
+         421
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         442,
+         442
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/products/{id}/lookup/{key}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         484,
+         484
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         493,
+         493
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         502,
+         502
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         512,
+         512
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         484,
+         484
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         493,
+         493
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         502,
+         502
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         512,
+         512
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/policies/search": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         617,
+         617
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         617,
+         617
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/{customerId}/document": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         667,
+         667
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         688,
+         688
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         667,
+         667
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         688,
+         688
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/{customerId}/terms/conditions": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         738,
+         738
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         759,
+         759
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         738,
+         738
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         759,
+         759
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/{customerId}/terms/conditions/{key}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         809,
+         809
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         818,
+         818
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         828,
+         828
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         809,
+         809
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         818,
+         818
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         828,
+         828
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/otps/verifications": {
+     "violations": [
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         905,
+         905
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/otps/verifications/check": {
+     "violations": [
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         950,
+         950
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/configs/parameters/{key}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         968,
+         968
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         977,
+         977
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         998,
+         998
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         968,
+         968
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         977,
+         977
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         998,
+         998
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/configs/parameters/keyValue/protected": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1049,
+         1049
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1058,
+         1058
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1068,
+         1068
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1049,
+         1049
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1058,
+         1058
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1068,
+         1068
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1092,
+         1092
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/ocrs/{countryName}": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1110,
+         1110
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1135,
+         1135
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1110,
+         1110
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1135,
+         1135
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/pru-leads/contact": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1187,
+         1187
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1187,
+         1187
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/pru-mall/contact": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1239,
+         1239
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1239,
+         1239
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/customers/pru-mall/application": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1291,
+         1291
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1291,
+         1291
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/otps/dpas/verifications": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1343,
+         1343
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1343,
+         1343
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1367,
+         1367
+        ]
+       }
+      }
+     ]
+    },
+    "testspecs/policy-sales-user-experience.json:/otps/dpas/verifications/check": {
+     "violations": [
+      {
+       "v_ruleid": "0006c",
+       "v_description": "The schema element of type \"string\" does not have its \"pattern\" defined. To fix: please add a pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1395,
+         1395
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007c",
+       "v_description": "The schema element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1395,
+         1395
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0014a",
+       "v_description": "Local security field is missing. Also, the global security field is missing. To fix: please add a security definition to this element or add a global security definition.",
+       "v_score": 9,
+       "v_risk_ctg": "AuthN/AuthZ",
+       "v_risk_subctg": "Undefined Auth Information",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1419,
+         1419
+        ]
+       }
+      }
+     ]
+    }
+   },
+   "$refs": {
+    "#/components/schemas/Proposal/properties/declarations/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3653,
+         3653
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3653,
+         3653
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Query/properties/projs/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3435,
+         3435
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3435,
+         3435
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Document/properties/tags/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4656,
+         4656
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4656,
+         4656
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Document/properties/parts/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0009a",
+       "v_description": "The additionalProperties element of type \"integer\" does not have \"minimum\" defined. To fix: please add minimum definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4670,
+         4670
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0010a",
+       "v_description": "The additionalProperties element of type \"integer\" does not have \"maximum\" defined. To fix: please add maximum definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4670,
+         4670
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/ProductOption/properties/options/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4224,
+         4224
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4224,
+         4224
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4224,
+         4224
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4224,
+         4224
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/ProductComponentOption/properties/options/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6543,
+         6543
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/AnswerOption/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         9175,
+         9175
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         9175,
+         9175
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         9175,
+         9175
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         9175,
+         9175
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Label/properties/instructions/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1819,
+         1819
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1819,
+         1819
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Label/properties/urls/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1825,
+         1825
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1825,
+         1825
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/InsuredObject/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1743,
+         1743
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1743,
+         1743
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/LangTranslation/properties/fields/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1538,
+         1538
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         1538,
+         1538
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/CustomerLifestyle/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6033,
+         6033
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6033,
+         6033
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6033,
+         6033
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6033,
+         6033
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/CustomerLifestyle/properties/allergies/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6025,
+         6025
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6025,
+         6025
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6025,
+         6025
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6025,
+         6025
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/CustomerLifestyle/properties/otherActivities/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6059,
+         6059
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6059,
+         6059
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6059,
+         6059
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6059,
+         6059
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/CustomerComplaint/properties/notes/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6137,
+         6137
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6137,
+         6137
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6137,
+         6137
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6137,
+         6137
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/SimpleExpression/properties/lhs/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3501,
+         3501
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         3501,
+         3501
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/ExternalPolicy/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4522,
+         4522
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4522,
+         4522
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/AssessmentGroup/properties/latestAssessments/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4754,
+         4754
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4754,
+         4754
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4754,
+         4754
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4754,
+         4754
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/AssessmentGroup/properties/categories/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4733,
+         4733
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4733,
+         4733
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4733,
+         4733
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4733,
+         4733
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Party/properties/externalIds/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4838,
+         4838
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4838,
+         4838
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Party/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4982,
+         4982
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4982,
+         4982
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Party/properties/tags/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4977,
+         4977
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4977,
+         4977
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Party/properties/relatesTo/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0008b",
+       "v_description": "The additionalProperties element of type \"array\" does not have \"maxItems\" defined. To fix: please add maxIterms definition.",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         4911,
+         4911
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Claim/properties/notes/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         5735,
+         5735
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         5735,
+         5735
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Message/properties/toAddresses/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6163,
+         6163
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6163,
+         6163
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Message/properties/customerIds/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6169,
+         6169
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6169,
+         6169
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Message/properties/channels/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6173,
+         6173
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6173,
+         6173
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Message/properties/schedule/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6228,
+         6228
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6228,
+         6228
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Group/properties/tags/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6308,
+         6308
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6308,
+         6308
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupActivity/properties/activityCriteria/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7998,
+         7998
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7998,
+         7998
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7998,
+         7998
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7998,
+         7998
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupDefinition/properties/criteria/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8141,
+         8141
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8141,
+         8141
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8141,
+         8141
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8141,
+         8141
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupDefinition/properties/screenRedirection/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8147,
+         8147
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8147,
+         8147
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8147,
+         8147
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8147,
+         8147
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupDefinition/properties/tags/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8153,
+         8153
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8153,
+         8153
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8153,
+         8153
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8153,
+         8153
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupDefinition/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8159,
+         8159
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8159,
+         8159
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8159,
+         8159
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8159,
+         8159
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/GroupPost/properties/recommendations/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0008b",
+       "v_description": "The additionalProperties element of type \"array\" does not have \"maxItems\" defined. To fix: please add maxIterms definition.",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8221,
+         8221
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0008b",
+       "v_description": "The additionalProperties element of type \"array\" does not have \"maxItems\" defined. To fix: please add maxIterms definition.",
+       "v_score": 6,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8221,
+         8221
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Wallet/properties/cryptokeys/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         5866,
+         5866
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         5866,
+         5866
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/VideoOverlay/properties/actionable/properties/params/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6900,
+         6900
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6900,
+         6900
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Assessment/properties/categories/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6947,
+         6947
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         6947,
+         6947
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/AssessmentResult/properties/contents/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8418,
+         8418
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8418,
+         8418
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8418,
+         8418
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8418,
+         8418
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Event/properties/tags/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7181,
+         7181
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7181,
+         7181
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Admission/properties/outpatientDate/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7468,
+         7468
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7468,
+         7468
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Hospital/properties/capabilities/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7533,
+         7533
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7533,
+         7533
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Hospital/properties/specialities/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7539,
+         7539
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7539,
+         7539
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Hospital/properties/associatedTPA/items": {
+     "violations": [
+      {
+       "v_ruleid": "0008a",
+       "v_description": "Items does not have \"type\" defined. To fix: please add type definition.",
+       "v_score": 7,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Type and Attribute mismatch",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7543,
+         7543
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Hospital/properties/doctors/items": {
+     "violations": [
+      {
+       "v_ruleid": "0008a",
+       "v_description": "Items does not have \"type\" defined. To fix: please add type definition.",
+       "v_score": 7,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Type and Attribute mismatch",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7558,
+         7558
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Doctor/allOf/*/properties/specialities/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7588,
+         7588
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7588,
+         7588
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Doctor/allOf/*/properties/consultModes/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7612,
+         7612
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7612,
+         7612
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/DoctorAvailability/properties/consultMode/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8540,
+         8540
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8540,
+         8540
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8540,
+         8540
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8540,
+         8540
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/DoctorAvailability/properties/dates/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8558,
+         8558
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8558,
+         8558
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8558,
+         8558
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8558,
+         8558
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/Experience/allOf/*/properties/transactions/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7719,
+         7719
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7719,
+         7719
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/KYC/properties/items/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7858,
+         7858
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7858,
+         7858
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/MedicalIllness/properties/attributes/additionalProperties": {
+     "violations": [
+      {
+       "v_ruleid": "0006a",
+       "v_description": "The additionalProperties of type \"string\" does not have a \"pattern\" defined. To fix: please add string pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7826,
+         7826
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007a",
+       "v_description": "The additionalProperties element of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         7826,
+         7826
+        ]
+       }
+      }
+     ]
+    },
+    "#/components/schemas/AppointmentTime/properties/timeslots/items": {
+     "violations": [
+      {
+       "v_ruleid": "0006d",
+       "v_description": "Items of type \"string\" does not have \"pattern\" defined. To fix: please add pattern definition.",
+       "v_score": 5,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8857,
+         8857
+        ]
+       }
+      },
+      {
+       "v_ruleid": "0007d",
+       "v_description": "Iterms of type \"string\" does not have \"maxLength\" defined. To fix: please add maxLength definition.",
+       "v_score": 4,
+       "v_risk_ctg": "Data Type Definitions",
+       "v_risk_subctg": "Undefined Bounds",
+       "v_entity": {
+        "reference_path": "(TBD: implement in MatchSet a serializeMatch function to report the detail path and value match)",
+        "element_line_num": [
+         8857,
+         8857
+        ]
+       }
+      }
+     ]
+    }
+   }
+  }
+ }
+}

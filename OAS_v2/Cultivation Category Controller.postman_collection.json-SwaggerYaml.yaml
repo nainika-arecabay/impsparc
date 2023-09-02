@@ -1,0 +1,1844 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Cultivation Category Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/cultivation-category
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: CREATE_OK
+      tags:
+      - Cultivation Category Copy
+      operationId: CREATE_OK
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CREATE_OK_REQUEST'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/CREATE_OK'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888624'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:13 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '258'
+  /AnRkr/23206:
+    get:
+      summary: GETBYID
+      tags:
+      - Cultivation Category Copy
+      operationId: GETBYID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GETBYID'
+          examples:
+            application/json;charset=UTF-8:
+              id: 23206
+              syncTs: 2021-10-28T19:23:11.802+0000
+              version: 3
+              tenantId: AnRkr
+              code: CL06
+              name: Cultivation Category Name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:13.078+0000
+              modifiedUser: Dasuni
+              modifiedDate: 2021-10-28T19:23:11.802+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:22 GMT
+            Content-Length:
+              type: string
+              default: '307'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"04ed2017319cdaa4d5991997a49142a1f"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '17'
+  /AnRkr/all:
+    get:
+      summary: GETALL
+      tags:
+      - Cultivation Category Copy
+      operationId: GETALL
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/GETALL'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 20351
+              syncTs: 2022-12-23T03:32:05.587+0000
+              version: 3
+              tenantId: AnRkr
+              code: CU11
+              name: Cultivation Category 11
+              description: Cultivation Category 11
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T10:21:56.124+0000
+              modifiedUser: shanpragee
+              modifiedDate: 2022-12-23T03:32:05.587+0000
+            - id: 23192
+              syncTs: 2022-03-09T11:11:09.232+0000
+              version: 1
+              tenantId: AnRkr
+              code: CL04
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T10:32:11.252+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:11:09.232+0000
+            - id: 160357
+              syncTs: 2022-03-10T06:22:56.290+0000
+              version: 2
+              tenantId: AnRkr
+              code: COD7
+              name: Cinnamon
+              description: 'Cinnamon Cultivation '
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T12:45:32.255+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-10T06:22:56.290+0000
+            - id: 160419
+              syncTs: 2022-11-04T04:15:21.534+0000
+              version: 4
+              tenantId: AnRkr
+              code: COD8
+              name: cult qq category
+              description: updated desc
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T13:47:35.861+0000
+              modifiedUser: pradeepr
+              modifiedDate: 2022-11-04T04:15:21.534+0000
+            - id: 176149
+              syncTs: 2022-03-15T05:28:22.081+0000
+              version: 0
+              tenantId: AnRkr
+              code: TYUI
+              name: aa
+              description: aa
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-15T05:28:22.080+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 200349
+              syncTs: 2022-05-02T06:34:50.513+0000
+              version: 0
+              tenantId: AnRkr
+              code: TYTY
+              name: tyty
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-02T06:34:50.512+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 200350
+              syncTs: 2022-11-14T11:09:44.275+0000
+              version: 2
+              tenantId: AnRkr
+              code: TYUY
+              name: ehrei
+              description: upe
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-05-02T06:35:08.653+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2022-11-14T11:09:44.275+0000
+            - id: 235213
+              syncTs: 2022-06-14T11:27:53.385+0000
+              version: 0
+              tenantId: AnRkr
+              code: AGRI
+              name: Agriculture
+              description: null
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-06-14T11:27:53.385+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 250854
+              syncTs: 2022-07-25T05:27:21.289+0000
+              version: 1
+              tenantId: AnRkr
+              code: WWWW
+              name: Test Aletter
+              description: null
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-25T05:26:48.142+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-07-25T05:27:21.289+0000
+            - id: 1018427
+              syncTs: 2023-01-16T11:54:10.969+0000
+              version: 0
+              tenantId: AnRkr
+              code: NIPU
+              name: 'Nipuni Witharanage '
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-16T11:54:10.968+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1278096
+              syncTs: 2023-01-31T06:43:28.472+0000
+              version: 0
+              tenantId: AnRkr
+              code: CULB
+              name: Cultivation cat 3
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T06:43:28.472+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1634404
+              syncTs: 2023-04-18T07:29:58.103+0000
+              version: 0
+              tenantId: AnRkr
+              code: VCVB
+              name: Cult 1
+              description: Ts
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2023-04-18T07:29:58.103+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20302
+              syncTs: 2021-10-08T07:22:01.884+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL1
+              name: Cultivation Category 1
+              description: Cultivation Category 1
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-08T07:22:01.884+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20304
+              syncTs: 2021-10-08T07:40:11.651+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL2
+              name: Cultivation Category 2
+              description: Cultivation Category 2
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-08T07:40:11.651+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20339
+              syncTs: 2021-10-11T05:36:56.005+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL7
+              name: Cultivation Category 7
+              description: Cultivation Category 7
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T05:36:56.005+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23206
+              syncTs: 2021-10-28T19:23:11.802+0000
+              version: 3
+              tenantId: AnRkr
+              code: CL06
+              name: Cultivation Category Name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:13.078+0000
+              modifiedUser: Dasuni
+              modifiedDate: 2021-10-28T19:23:11.802+0000
+            - id: 160005
+              syncTs: 2022-03-01T10:58:16.612+0000
+              version: 0
+              tenantId: AnRkr
+              code: CU05
+              name: string nameTest
+              description: string test
+              status: ACTIVE
+              createdUser: Sashika
+              createdDate: 2022-03-01T10:58:16.612+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 160296
+              syncTs: 2022-03-09T11:14:10.799+0000
+              version: 5
+              tenantId: AnRkr
+              code: COD5
+              name: Test Cultivation 1
+              description: Cultivation category description 1
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T12:14:37.076+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:14:10.799+0000
+            - id: 160297
+              syncTs: 2022-03-09T11:37:21.045+0000
+              version: 1
+              tenantId: AnRkr
+              code: COD6
+              name: Rubber
+              description: Rubber Cultivation
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T12:27:49.591+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:37:21.045+0000
+            - id: 184391
+              syncTs: 2022-03-31T05:44:07.709+0000
+              version: 0
+              tenantId: AnRkr
+              code: CN06
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-31T05:44:07.709+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 250853
+              syncTs: 2022-07-25T05:26:04.273+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAA1
+              name: Test Aletter
+              description: null
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-25T05:26:04.273+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1278089
+              syncTs: 2023-01-31T06:40:29.248+0000
+              version: 0
+              tenantId: AnRkr
+              code: CULN
+              name: Cultivation cat 2
+              description: null
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T06:40:29.248+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20341
+              syncTs: 2021-10-11T06:31:45.414+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL8
+              name: Cultivation Category 8
+              description: Cultivation Category 8
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T06:31:45.413+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23188
+              syncTs: 2021-10-28T09:44:00.926+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL02
+              name: Cultivation Category Name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T09:44:00.919+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23189
+              syncTs: 2022-03-31T05:46:51.728+0000
+              version: 5
+              tenantId: AnRkr
+              code: CL33
+              name: Cultivation Category Name123
+              description: Cultivation Category Description123
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T10:20:45.389+0000
+              modifiedUser: Dasuni
+              modifiedDate: 2022-03-31T05:46:51.728+0000
+            - id: 170944
+              syncTs: 2022-03-10T06:24:43.291+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT3
+              name: Paddy
+              description: Paddy Cultivation
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T06:24:43.291+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 176147
+              syncTs: 2022-03-15T05:27:27.853+0000
+              version: 0
+              tenantId: AnRkr
+              code: ABCD
+              name: abcd
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-15T05:27:27.853+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 215981
+              syncTs: 2022-05-24T02:59:13.780+0000
+              version: 0
+              tenantId: AnRkr
+              code: CCT4
+              name: Cultivation Category - T4
+              description: Testing
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-05-24T02:59:13.780+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 241515
+              syncTs: 2022-06-29T09:44:02.903+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT5
+              name: Soy Bean
+              description: testng
+              status: ACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-29T09:44:02.903+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496897
+              syncTs: 2022-11-03T08:45:08.801+0000
+              version: 0
+              tenantId: AnRkr
+              code: CY78
+              name: new cultivation 0078
+              description: null
+              status: ACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:45:08.801+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496966
+              syncTs: 2023-02-08T07:10:50.353+0000
+              version: 1
+              tenantId: AnRkr
+              code: CY79
+              name: new cultivation 0078
+              description: test update
+              status: ACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T09:07:13.823+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-08T07:10:50.353+0000
+            - id: 1278088
+              syncTs: 2023-01-31T06:40:00.068+0000
+              version: 1
+              tenantId: AnRkr
+              code: CULM
+              name: Cultivation cat 1
+              description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T06:39:27.957+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-31T06:40:00.068+0000
+            - id: 1398802
+              syncTs: 2023-03-07T07:19:46.429+0000
+              version: 0
+              tenantId: AnRkr
+              code: '8907'
+              name: uijko
+              description: null
+              status: ACTIVE
+              createdUser: banchanaw
+              createdDate: 2023-03-07T07:19:46.429+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20324
+              syncTs: 2021-10-08T11:01:49.596+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL3
+              name: Cultivation Category 3
+              description: Cultivation Category 3
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-08T11:01:49.596+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20327
+              syncTs: 2021-10-08T12:40:38.730+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL4
+              name: Cultivation Category 4
+              description: Cultivation Category 4
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-08T12:40:38.730+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20342
+              syncTs: 2021-10-11T06:33:35.549+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL9
+              name: Cultivation Category 9
+              description: Cultivation Category 9
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T06:33:35.549+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20346
+              syncTs: 2021-10-11T07:56:12.329+0000
+              version: 0
+              tenantId: AnRkr
+              code: CU10
+              name: Cultivation Category 10
+              description: Cultivation Category 10
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T07:56:12.329+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23159
+              syncTs: 2021-10-28T04:50:56.167+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL01
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T04:50:56.167+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23205
+              syncTs: 2021-10-28T17:54:10.066+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL05
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:10.065+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 169909
+              syncTs: 2022-03-09T09:09:54.434+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT4
+              name: Tea
+              description: Tea Cultivation
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-09T09:09:54.434+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 169910
+              syncTs: 2022-03-09T09:19:35.868+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT1
+              name: Coconut
+              description: null
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-09T09:19:35.867+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 174604
+              syncTs: 2022-03-14T10:19:01.737+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAD
+              name: test4
+              description: null
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:19:01.737+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496775
+              syncTs: 2022-11-03T08:00:08.719+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU2
+              name: New cultivation cat
+              description: Test cultivation category description
+              status: ACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:00:08.719+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496827
+              syncTs: 2022-11-03T08:24:42.090+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU3
+              name: New cultivation cat 2
+              description: Test cultivation category description
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:24:42.090+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496831
+              syncTs: 2022-11-03T08:25:30.432+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU4
+              name: New cultivation cat 2
+              description: Test @#!$@$@cultivation category description
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:25:30.432+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496832
+              syncTs: 2022-11-03T08:25:54.850+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU5
+              name: New cultivation cat 2
+              description: null
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:25:54.850+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 497204
+              syncTs: 2022-11-03T12:27:00.087+0000
+              version: 0
+              tenantId: AnRkr
+              code: CY80
+              name: new cultivation 0090
+              description: test description
+              status: ACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T12:27:00.087+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1634510
+              syncTs: 2023-04-18T08:55:04.455+0000
+              version: 0
+              tenantId: AnRkr
+              code: KKJJ
+              name: Cultivation cat 8
+              description: null
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-04-18T08:55:04.455+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1677968
+              syncTs: 2023-05-12T11:19:10.230+0000
+              version: 0
+              tenantId: AnRkr
+              code: CCD1
+              name: CCD1
+              description: CCD1 test
+              status: ACTIVE
+              createdUser: DilanthaM
+              createdDate: 2023-05-12T11:19:10.230+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888624
+              syncTs: 2023-07-20T14:35:13.291+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL08
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2023-07-20T14:35:13.291+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20335
+              syncTs: 2021-10-11T05:12:14.826+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL5
+              name: Cultivation Category 5
+              description: Cultivation Category 5
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T05:12:14.825+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20338
+              syncTs: 2021-10-11T05:36:26.115+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUL6
+              name: Cultivation Category 6
+              description: Cultivation Category 6
+              status: ACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T05:36:26.115+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 145763
+              syncTs: 2022-02-23T06:32:05.406+0000
+              version: 2
+              tenantId: AnRkr
+              code: AAAS
+              name: Test
+              description: Test
+              status: ACTIVE
+              createdUser: SewwandiH
+              createdDate: 2022-02-11T04:37:06.529+0000
+              modifiedUser: SewwandiH
+              modifiedDate: 2022-02-23T06:32:05.406+0000
+            - id: 158755
+              syncTs: 2022-03-01T06:53:52.404+0000
+              version: 0
+              tenantId: AnRkr
+              code: COD2
+              name: string name
+              description: string description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T06:53:52.404+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 158777
+              syncTs: 2022-03-01T07:05:17.065+0000
+              version: 0
+              tenantId: AnRkr
+              code: COD3
+              name: string name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T07:05:17.065+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 158798
+              syncTs: 2022-03-01T07:12:23.305+0000
+              version: 0
+              tenantId: AnRkr
+              code: COD4
+              name: string name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T07:12:23.305+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 160944
+              syncTs: 2022-03-10T06:13:55.425+0000
+              version: 1
+              tenantId: AnRkr
+              code: COD9
+              name: Tharuki
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-02T04:00:37.682+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-10T06:13:55.425+0000
+            - id: 170706
+              syncTs: 2022-06-29T09:46:17.635+0000
+              version: 1
+              tenantId: AnRkr
+              code: CUT2
+              name: Beans
+              description: Beans Cultivation
+              status: ACTIVE
+              createdUser: tharuki.ariyapala
+              createdDate: 2022-03-10T04:10:00.042+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-06-29T09:46:17.635+0000
+            - id: 172454
+              syncTs: 2022-03-12T00:05:44.219+0000
+              version: 1
+              tenantId: AnRkr
+              code: CC99
+              name: Tea
+              description: Test
+              status: ACTIVE
+              createdUser: NelkaSi
+              createdDate: 2022-03-12T00:02:40.301+0000
+              modifiedUser: NelkaSi
+              modifiedDate: 2022-03-12T00:05:44.219+0000
+            - id: 174596
+              syncTs: 2022-03-14T10:17:00.178+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAA
+              name: test1
+              description: des1
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:17:00.178+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 174597
+              syncTs: 2022-03-14T10:17:36.695+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAB
+              name: test2
+              description: null
+              status: ACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:17:36.695+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 174603
+              syncTs: 2022-03-14T10:18:10.658+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAC
+              name: test3
+              description: des
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:18:10.658+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 241516
+              syncTs: 2022-06-29T09:45:07.743+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT6
+              name: Cultivation Category - T6
+              description: testing
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-29T09:45:07.743+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 302340
+              syncTs: 2022-09-30T11:39:06.567+0000
+              version: 0
+              tenantId: AnRkr
+              code: QWRF
+              name: 11//
+              description: test///----
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2022-09-30T11:39:06.567+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1313651
+              syncTs: 2023-02-08T09:45:27.414+0000
+              version: 1
+              tenantId: AnRkr
+              code: CULH
+              name: Cultivation cat 2 - 02
+              description: Description 02
+              status: ACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T09:45:09.452+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-08T09:45:27.414+0000
+            - id: 1881482
+              syncTs: 2023-07-18T03:42:24.757+0000
+              version: 1
+              tenantId: AnRkr
+              code: QAWE
+              name: testing
+              description: testinguuuuu
+              status: ACTIVE
+              createdUser: MilanCha
+              createdDate: 2023-07-18T03:35:09.004+0000
+              modifiedUser: MilanCha
+              modifiedDate: 2023-07-18T03:42:24.757+0000
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:29 GMT
+            Content-Length:
+              type: string
+              default: '19644'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"086b3610644944688020d2f4307dfc221"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '20'
+  /AnRkr/code/CL01:
+    get:
+      summary: GETBYCODE
+      tags:
+      - Cultivation Category Copy
+      operationId: GETBYCODE
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GETBYCODE'
+          examples:
+            application/json;charset=UTF-8:
+              id: 23159
+              syncTs: 2021-10-28T04:50:56.167+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL01
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T04:50:56.167+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:37 GMT
+            Content-Length:
+              type: string
+              default: '307'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"044acc313bde9f109ee17bb1eec088e46"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '15'
+  /AnRkr/name/Cultivation Category Name:
+    get:
+      summary: GETBYNAME
+      tags:
+      - Cultivation Category Copy
+      operationId: GETBYNAME
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/GETBYNAME'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 23192
+              syncTs: 2022-03-09T11:11:09.232+0000
+              version: 1
+              tenantId: AnRkr
+              code: CL04
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T10:32:11.252+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:11:09.232+0000
+            - id: 23206
+              syncTs: 2021-10-28T19:23:11.802+0000
+              version: 3
+              tenantId: AnRkr
+              code: CL06
+              name: Cultivation Category Name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:13.078+0000
+              modifiedUser: Dasuni
+              modifiedDate: 2021-10-28T19:23:11.802+0000
+            - id: 184391
+              syncTs: 2022-03-31T05:44:07.709+0000
+              version: 0
+              tenantId: AnRkr
+              code: CN06
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-31T05:44:07.709+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23188
+              syncTs: 2021-10-28T09:44:00.926+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL02
+              name: Cultivation Category Name
+              description: null
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T09:44:00.919+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23189
+              syncTs: 2022-03-31T05:46:51.728+0000
+              version: 5
+              tenantId: AnRkr
+              code: CL33
+              name: Cultivation Category Name123
+              description: Cultivation Category Description123
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T10:20:45.389+0000
+              modifiedUser: Dasuni
+              modifiedDate: 2022-03-31T05:46:51.728+0000
+            - id: 23159
+              syncTs: 2021-10-28T04:50:56.167+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL01
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: ACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T04:50:56.167+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23205
+              syncTs: 2021-10-28T17:54:10.066+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL05
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:10.065+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888624
+              syncTs: 2023-07-20T14:35:13.291+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL08
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2023-07-20T14:35:13.291+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:45 GMT
+            Content-Length:
+              type: string
+              default: '2521'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0d6b78b4e7c16fa5f07624dbec2bf3078"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '17'
+  /AnRkr/status/INACTIVE:
+    get:
+      summary: GETBYSTATUS
+      tags:
+      - Cultivation Category Copy
+      operationId: GETBYSTATUS
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/GETBYSTATUS'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 250854
+              syncTs: 2022-07-25T05:27:21.289+0000
+              version: 1
+              tenantId: AnRkr
+              code: WWWW
+              name: Test Aletter
+              description: null
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-07-25T05:26:48.142+0000
+              modifiedUser: DasunW
+              modifiedDate: 2022-07-25T05:27:21.289+0000
+            - id: 1278096
+              syncTs: 2023-01-31T06:43:28.472+0000
+              version: 0
+              tenantId: AnRkr
+              code: CULB
+              name: Cultivation cat 3
+              description: null
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-01-31T06:43:28.472+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 160296
+              syncTs: 2022-03-09T11:14:10.799+0000
+              version: 5
+              tenantId: AnRkr
+              code: COD5
+              name: Test Cultivation 1
+              description: Cultivation category description 1
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T12:14:37.076+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:14:10.799+0000
+            - id: 160297
+              syncTs: 2022-03-09T11:37:21.045+0000
+              version: 1
+              tenantId: AnRkr
+              code: COD6
+              name: Rubber
+              description: Rubber Cultivation
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-01T12:27:49.591+0000
+              modifiedUser: tharuki.ariyapala
+              modifiedDate: 2022-03-09T11:37:21.045+0000
+            - id: 184391
+              syncTs: 2022-03-31T05:44:07.709+0000
+              version: 0
+              tenantId: AnRkr
+              code: CN06
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2022-03-31T05:44:07.709+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 20346
+              syncTs: 2021-10-11T07:56:12.329+0000
+              version: 0
+              tenantId: AnRkr
+              code: CU10
+              name: Cultivation Category 10
+              description: Cultivation Category 10
+              status: INACTIVE
+              createdUser: Rukshan
+              createdDate: 2021-10-11T07:56:12.329+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 23205
+              syncTs: 2021-10-28T17:54:10.066+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL05
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2021-10-28T17:54:10.065+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 174604
+              syncTs: 2022-03-14T10:19:01.737+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAD
+              name: test4
+              description: null
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:19:01.737+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496827
+              syncTs: 2022-11-03T08:24:42.090+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU3
+              name: New cultivation cat 2
+              description: Test cultivation category description
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:24:42.090+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496831
+              syncTs: 2022-11-03T08:25:30.432+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU4
+              name: New cultivation cat 2
+              description: Test @#!$@$@cultivation category description
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:25:30.432+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 496832
+              syncTs: 2022-11-03T08:25:54.850+0000
+              version: 0
+              tenantId: AnRkr
+              code: CLU5
+              name: New cultivation cat 2
+              description: null
+              status: INACTIVE
+              createdUser: pradeepr
+              createdDate: 2022-11-03T08:25:54.850+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 1888624
+              syncTs: 2023-07-20T14:35:13.291+0000
+              version: 0
+              tenantId: AnRkr
+              code: CL08
+              name: Cultivation Category Name
+              description: Cultivation Category Description
+              status: INACTIVE
+              createdUser: Dasuni
+              createdDate: 2023-07-20T14:35:13.291+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 174603
+              syncTs: 2022-03-14T10:18:10.658+0000
+              version: 0
+              tenantId: AnRkr
+              code: AAAC
+              name: test3
+              description: des
+              status: INACTIVE
+              createdUser: lahiru
+              createdDate: 2022-03-14T10:18:10.658+0000
+              modifiedUser: null
+              modifiedDate: null
+            - id: 241516
+              syncTs: 2022-06-29T09:45:07.743+0000
+              version: 0
+              tenantId: AnRkr
+              code: CUT6
+              name: Cultivation Category - T6
+              description: testing
+              status: INACTIVE
+              createdUser: DasunW
+              createdDate: 2022-06-29T09:45:07.743+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:35:52 GMT
+            Content-Length:
+              type: string
+              default: '4201'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"03b276ae662777870cbd18f932c6c7013"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '21'
+  /AnRkr/23189:
+    put:
+      summary: UPDATE-OK
+      tags:
+      - Cultivation Category Copy
+      operationId: UPDATE-OK
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UPDATE-OK-REQUEST'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UPDATE-OK'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+              value: '23189'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:36:12 GMT
+            Content-Length:
+              type: string
+              default: '34'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '14'
+definitions:
+  CREATE_OK_REQUEST:
+    title: CREATE_OK_REQUEST
+    example:
+      code: CL06
+      name: Cultivation Category Name
+      description: Cultivation Category Description
+      status: INACTIVE
+    type: object
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+    required:
+    - code
+    - name
+    - description
+    - status
+  CREATE_OK:
+    title: CREATE_OK
+    example:
+      messages: CREATED.
+      value: '1888624'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  GETBYID:
+    title: GETBYID
+    example:
+      id: 23206
+      syncTs: 2021-10-28T19:23:11.802+0000
+      version: 3
+      tenantId: AnRkr
+      code: CL06
+      name: Cultivation Category Name
+      description: null
+      status: ACTIVE
+      createdUser: Dasuni
+      createdDate: 2021-10-28T17:54:13.078+0000
+      modifiedUser: Dasuni
+      modifiedDate: 2021-10-28T19:23:11.802+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  GETALL:
+    title: GETALL
+    example:
+      id: 20351
+      syncTs: 2022-12-23T03:32:05.587+0000
+      version: 3
+      tenantId: AnRkr
+      code: CU11
+      name: Cultivation Category 11
+      description: Cultivation Category 11
+      status: ACTIVE
+      createdUser: Rukshan
+      createdDate: 2021-10-11T10:21:56.124+0000
+      modifiedUser: shanpragee
+      modifiedDate: 2022-12-23T03:32:05.587+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  GETBYCODE:
+    title: GETBYCODE
+    example:
+      id: 23159
+      syncTs: 2021-10-28T04:50:56.167+0000
+      version: 0
+      tenantId: AnRkr
+      code: CL01
+      name: Cultivation Category Name
+      description: Cultivation Category Description
+      status: ACTIVE
+      createdUser: Dasuni
+      createdDate: 2021-10-28T04:50:56.167+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  GETBYNAME:
+    title: GETBYNAME
+    example:
+      id: 23192
+      syncTs: 2022-03-09T11:11:09.232+0000
+      version: 1
+      tenantId: AnRkr
+      code: CL04
+      name: Cultivation Category Name
+      description: Cultivation Category Description
+      status: ACTIVE
+      createdUser: Dasuni
+      createdDate: 2021-10-28T10:32:11.252+0000
+      modifiedUser: tharuki.ariyapala
+      modifiedDate: 2022-03-09T11:11:09.232+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  GETBYSTATUS:
+    title: GETBYSTATUS
+    example:
+      id: 250854
+      syncTs: 2022-07-25T05:27:21.289+0000
+      version: 1
+      tenantId: AnRkr
+      code: WWWW
+      name: Test Aletter
+      description: null
+      status: INACTIVE
+      createdUser: DasunW
+      createdDate: 2022-07-25T05:26:48.142+0000
+      modifiedUser: DasunW
+      modifiedDate: 2022-07-25T05:27:21.289+0000
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  UPDATE-OK-REQUEST:
+    title: UPDATE-OK-REQUEST
+    example:
+      code: CL33
+      name: Cultivation Category Name123
+      description: Cultivation Category Description123
+      status: ACTIVE
+      id: '23189'
+      version: '3'
+    type: object
+    properties:
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      id:
+        type: string
+      version:
+        type: string
+    required:
+    - code
+    - name
+    - description
+    - status
+    - id
+    - version
+  UPDATE-OK:
+    title: UPDATE-OK
+    example:
+      messages: OK.
+      value: '23189'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+tags:
+- name: Cultivation Category Copy

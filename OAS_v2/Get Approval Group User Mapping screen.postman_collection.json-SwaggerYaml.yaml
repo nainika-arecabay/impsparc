@@ -1,0 +1,814 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Get Approval Group User Mapping screen
+  contact: {}
+host: 132.145.228.83
+basePath: /
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /lending-origination/approval-group-user-mapping-details/AnRkr/approvalCategoryId/1330450:
+    get:
+      summary: Get by approval group Id
+      tags:
+      - Misc
+      operationId: GetbyapprovalgroupId
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/GetbyapprovalgroupId'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1330452
+              syncTs: 2023-02-22T08:23:36.508+0000
+              version: 0
+              tenantId: AnRkr
+              userProfileId: 2737
+              userId: sahan.peiris
+              endDate: null
+              effectiveDate: null
+              approvalGroupId: 1330450
+              approvalGroupCode: TRW1
+              approvalGroupName: CATE 123
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-02-22T08:23:36.508+0000
+              modifiedUser: null
+              modifiedDate: null
+              username: Sahan Peiris
+            - id: 1330453
+              syncTs: 2023-02-22T08:23:43.037+0000
+              version: 0
+              tenantId: AnRkr
+              userProfileId: 3929
+              userId: thiloshana.gamage
+              endDate: null
+              effectiveDate: null
+              approvalGroupId: 1330450
+              approvalGroupCode: TRW1
+              approvalGroupName: CATE 123
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-02-22T08:23:43.037+0000
+              modifiedUser: null
+              modifiedDate: null
+              username: thiloshana gamage
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:04:49 GMT
+            Content-Length:
+              type: string
+              default: '839'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0f7b9f13aabb1308fdcf00d10287377a7"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '140'
+  /lending-origination/approval-group-user-mapping-details/AnRkr:
+    post:
+      summary: addUserMappingDetails
+      tags:
+      - Misc
+      operationId: addUserMappingDetails
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      consumes:
+      - application/json
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/addUserMappingDetailsRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/addUserMappingDetails'
+          examples:
+            application/json;charset=UTF-8:
+              messages: CREATED.
+              value: '1888610'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:11:09 GMT
+            Content-Length:
+              type: string
+              default: '41'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '113'
+  /comn-common/employer/AnRkr/1234:
+    get:
+      summary: getEmployerById
+      tags:
+      - Misc
+      operationId: getEmployerById
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/getEmployerById'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1234
+              syncTs: null
+              version: 0
+              code: EMP1
+              name: Saman Perera
+              description: Employer description 1
+              tenantId: AnRkr
+              status: ACTIVE
+              createdUser: udeshika
+              createdDate: 2021-11-17T16:01:44.215+0000
+              modifiedUser: null
+              modifiedDate: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:21:49 GMT
+            Content-Length:
+              type: string
+              default: '259'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"017cc0f0a0512f3bff9ff19cec6b939fd"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '7'
+  /lending-origination/approval-group/AnRkr/1330450:
+    get:
+      summary: getApprovalById
+      tags:
+      - Misc
+      operationId: getApprovalById
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/getApprovalById'
+          examples:
+            application/json;charset=UTF-8:
+              id: 1330450
+              syncTs: 2023-02-22T08:23:13.107+0000
+              version: 0
+              tenantId: AnRkr
+              code: TRW1
+              name: CATE 123
+              description: test
+              minimumApprovals: 6
+              status: ACTIVE
+              createdUser: thiloshana.gamage
+              createdDate: 2023-02-22T08:23:13.107+0000
+              modifiedUser: null
+              modifiedDate: null
+              approvalGroupVariableList:
+              - id: 1330451
+                syncTs: 2023-02-22T08:23:13.138+0000
+                version: 0
+                tenantId: AnRkr
+                code: LAMT
+                value: value
+                fromDate: null
+                toDate: null
+                fromAmount: null
+                toAmount: null
+                eqaulString: '100'
+                status: ACTIVE
+                createdUser: thiloshana.gamage
+                createdDate: 2023-02-22T08:23:13.138+0000
+                modifiedUser: null
+                modifiedDate: null
+                approvalCategoryVariableId: 1329926
+              approvalGroupPreConditionsList: null
+              approvalCategoryDetailsId: 298999
+              approvalCategoryDetailsCode: QWEQ
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:22:19 GMT
+            Content-Length:
+              type: string
+              default: '810'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0aa12f93f5e0b9034dcc384a0f4306d73"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '49'
+  /lending-origination/approval-group-user-mapping-details/AnRkr/1888610:
+    put:
+      summary: updateUserMappingDetails
+      tags:
+      - Misc
+      operationId: updateUserMappingDetails
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      consumes:
+      - application/json
+      parameters:
+      - name: accept
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/updateUserMappingDetailsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/updateUserMappingDetails'
+          examples:
+            application/json;charset=UTF-8:
+              messages: OK.
+              value: '1888610'
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 14:21:32 GMT
+            Content-Length:
+              type: string
+              default: '36'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '107'
+definitions:
+  GetbyapprovalgroupId:
+    title: GetbyapprovalgroupId
+    example:
+      id: 1330452
+      syncTs: 2023-02-22T08:23:36.508+0000
+      version: 0
+      tenantId: AnRkr
+      userProfileId: 2737
+      userId: sahan.peiris
+      endDate: null
+      effectiveDate: null
+      approvalGroupId: 1330450
+      approvalGroupCode: TRW1
+      approvalGroupName: CATE 123
+      status: ACTIVE
+      createdUser: thiloshana.gamage
+      createdDate: 2023-02-22T08:23:36.508+0000
+      modifiedUser: null
+      modifiedDate: null
+      username: Sahan Peiris
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      userProfileId:
+        type: integer
+        format: int32
+      userId:
+        type: string
+      endDate:
+        type: string
+      effectiveDate:
+        type: string
+      approvalGroupId:
+        type: integer
+        format: int32
+      approvalGroupCode:
+        type: string
+      approvalGroupName:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      username:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - userProfileId
+    - userId
+    - endDate
+    - effectiveDate
+    - approvalGroupId
+    - approvalGroupCode
+    - approvalGroupName
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - username
+  addUserMappingDetailsRequest:
+    title: addUserMappingDetailsRequest
+    example:
+      approvalGroupId: '1330450'
+      name: Charana Amarasekara
+      status: ACTIVE
+      userId: charana
+      userProfileId: 1817
+    type: object
+    properties:
+      approvalGroupId:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      userId:
+        type: string
+      userProfileId:
+        type: integer
+        format: int32
+    required:
+    - approvalGroupId
+    - name
+    - status
+    - userId
+    - userProfileId
+  addUserMappingDetails:
+    title: addUserMappingDetails
+    example:
+      messages: CREATED.
+      value: '1888610'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  getEmployerById:
+    title: getEmployerById
+    example:
+      id: 1234
+      syncTs: null
+      version: 0
+      code: EMP1
+      name: Saman Perera
+      description: Employer description 1
+      tenantId: AnRkr
+      status: ACTIVE
+      createdUser: udeshika
+      createdDate: 2021-11-17T16:01:44.215+0000
+      modifiedUser: null
+      modifiedDate: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      tenantId:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - code
+    - name
+    - description
+    - tenantId
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+  getApprovalById:
+    title: getApprovalById
+    example:
+      id: 1330450
+      syncTs: 2023-02-22T08:23:13.107+0000
+      version: 0
+      tenantId: AnRkr
+      code: TRW1
+      name: CATE 123
+      description: test
+      minimumApprovals: 6
+      status: ACTIVE
+      createdUser: thiloshana.gamage
+      createdDate: 2023-02-22T08:23:13.107+0000
+      modifiedUser: null
+      modifiedDate: null
+      approvalGroupVariableList:
+      - id: 1330451
+        syncTs: 2023-02-22T08:23:13.138+0000
+        version: 0
+        tenantId: AnRkr
+        code: LAMT
+        value: value
+        fromDate: null
+        toDate: null
+        fromAmount: null
+        toAmount: null
+        eqaulString: '100'
+        status: ACTIVE
+        createdUser: thiloshana.gamage
+        createdDate: 2023-02-22T08:23:13.138+0000
+        modifiedUser: null
+        modifiedDate: null
+        approvalCategoryVariableId: 1329926
+      approvalGroupPreConditionsList: null
+      approvalCategoryDetailsId: 298999
+      approvalCategoryDetailsCode: QWEQ
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      minimumApprovals:
+        type: integer
+        format: int32
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      approvalGroupVariableList:
+        type: array
+        items:
+          $ref: '#/definitions/ApprovalGroupVariableList'
+      approvalGroupPreConditionsList:
+        type: string
+      approvalCategoryDetailsId:
+        type: integer
+        format: int32
+      approvalCategoryDetailsCode:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - name
+    - description
+    - minimumApprovals
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - approvalGroupVariableList
+    - approvalGroupPreConditionsList
+    - approvalCategoryDetailsId
+    - approvalCategoryDetailsCode
+  ApprovalGroupVariableList:
+    title: ApprovalGroupVariableList
+    example:
+      id: 1330451
+      syncTs: 2023-02-22T08:23:13.138+0000
+      version: 0
+      tenantId: AnRkr
+      code: LAMT
+      value: value
+      fromDate: null
+      toDate: null
+      fromAmount: null
+      toAmount: null
+      eqaulString: '100'
+      status: ACTIVE
+      createdUser: thiloshana.gamage
+      createdDate: 2023-02-22T08:23:13.138+0000
+      modifiedUser: null
+      modifiedDate: null
+      approvalCategoryVariableId: 1329926
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      code:
+        type: string
+      value:
+        type: string
+      fromDate:
+        type: string
+      toDate:
+        type: string
+      fromAmount:
+        type: string
+      toAmount:
+        type: string
+      eqaulString:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      approvalCategoryVariableId:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - code
+    - value
+    - fromDate
+    - toDate
+    - fromAmount
+    - toAmount
+    - eqaulString
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - approvalCategoryVariableId
+  updateUserMappingDetailsRequest:
+    title: updateUserMappingDetailsRequest
+    example:
+      approvalGroupId: '1330450'
+      name: Charana Amarasekara
+      status: INACTIVE
+      userId: charana
+      userProfileId: 1817
+      version: '0'
+    type: object
+    properties:
+      approvalGroupId:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      userId:
+        type: string
+      userProfileId:
+        type: integer
+        format: int32
+      version:
+        type: string
+    required:
+    - approvalGroupId
+    - name
+    - status
+    - userId
+    - userProfileId
+    - version
+  updateUserMappingDetails:
+    title: updateUserMappingDetails
+    example:
+      messages: OK.
+      value: '1888610'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+tags:
+- name: Misc
+  description: ''

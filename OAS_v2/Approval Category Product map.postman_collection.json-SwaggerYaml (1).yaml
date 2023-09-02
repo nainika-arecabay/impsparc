@@ -1,0 +1,535 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Approval Category Product map
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/approval-category-product-map
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr:
+    post:
+      summary: Add
+      tags:
+      - Misc
+      operationId: Add
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AddRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/success'
+          examples:
+            application/json;charset=UTF-8:
+              id: 2182
+              syncTs: 2022-03-01T17:06:24.614+0000
+              version: 0
+              tenantId: AnRkr
+              groupCreditExposure: 1000
+              individualCreditExposure: 1200
+              creditScore: 100
+              overallCreditRisk: 300
+              note: dev note
+              comment: Dev test
+              status: CREATED
+              createdUser: Achini
+              createdDate: 2022-03-01T17:06:24.612+0000
+              modifiedUser: Achini
+              modifiedDate: 2022-03-01T17:06:24.614+0000
+              dscr: 200
+          headers:
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '405'
+            Date:
+              type: string
+              default: Tue, 01 Mar 2022 17:06:26 GMT
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '90'
+  /AnRkr/187715:
+    put:
+      summary: Update
+      tags:
+      - Misc
+      operationId: Update
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdateRequest'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/success'
+          examples:
+            application/json;charset=UTF-8:
+              id: 2182
+              syncTs: 2022-03-01T17:06:24.614+0000
+              version: 0
+              tenantId: AnRkr
+              groupCreditExposure: 1000
+              individualCreditExposure: 1200
+              creditScore: 100
+              overallCreditRisk: 300
+              note: dev note
+              comment: Dev test
+              status: CREATED
+              createdUser: Achini
+              createdDate: 2022-03-01T17:06:24.612+0000
+              modifiedUser: Achini
+              modifiedDate: 2022-03-01T17:06:24.614+0000
+              dscr: 200
+          headers:
+            X-Content-Type-Options:
+              type: string
+              default: nosniff
+            X-XSS-Protection:
+              type: string
+              default: 1; mode=block
+            Cache-Control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              type: string
+              default: no-cache
+            Expires:
+              type: string
+              default: '0'
+            X-Frame-Options:
+              type: string
+              default: DENY
+            Content-Length:
+              type: string
+              default: '405'
+            Date:
+              type: string
+              default: Tue, 01 Mar 2022 17:06:26 GMT
+  /AnRkr/sub-product-id/1998/module/LEMO:
+    get:
+      summary: get By sub product and module
+      tags:
+      - Misc
+      operationId: getBysubproductandmodule
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/getBysubproductandmodule'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 1533363
+              syncTs: 2023-05-02T06:31:32.286+0000
+              version: 2
+              approvalCategoryDetailsId: 1533345
+              approvalCategoryDetailsCode: DDD1
+              productId: 1995
+              productName: Product1
+              productCode: PRD1
+              subProductId: 1998
+              subProductCode: SUB1
+              tenantId: AnRkr
+              status: INACTIVE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-13T04:05:05.202+0000
+              modifiedUser: thiloshana.gamage
+              modifiedDate: 2023-05-02T06:31:32.286+0000
+              module: LEMO
+              subProductName: null
+              approvalCategoryDetailsName: Test New Cate-DDDD-up
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 13:00:09 GMT
+            Content-Length:
+              type: string
+              default: '534'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"032f1692f44fd85d14e4c81302c174c79"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '20'
+definitions:
+  AddRequest:
+    title: AddRequest
+    example:
+      approvalCategoryDetailId: '184709'
+      approvalCategoryDetailCode: BBBB
+      products:
+      - module: CUMO
+        productCode: NICA
+        productDesc: Product 1
+        productId: '137'
+        productName: Cabbage Savings
+        subProductId: '140'
+        status: ACTIVE
+      status: ACTIVE
+    type: object
+    properties:
+      approvalCategoryDetailId:
+        type: string
+      approvalCategoryDetailCode:
+        type: string
+      products:
+        type: array
+        items:
+          $ref: '#/definitions/Product'
+      status:
+        type: string
+    required:
+    - approvalCategoryDetailId
+    - approvalCategoryDetailCode
+    - products
+    - status
+  Product:
+    title: Product
+    example:
+      module: CUMO
+      productCode: NICA
+      productDesc: Product 1
+      productId: '137'
+      productName: Cabbage Savings
+      subProductId: '140'
+      status: ACTIVE
+    type: object
+    properties:
+      module:
+        type: string
+      productCode:
+        type: string
+      productDesc:
+        type: string
+      productId:
+        type: string
+      productName:
+        type: string
+      subProductId:
+        type: string
+      status:
+        type: string
+    required:
+    - module
+    - productCode
+    - productDesc
+    - productId
+    - productName
+    - subProductId
+    - status
+  success:
+    title: success
+    example:
+      id: 2182
+      syncTs: 2022-03-01T17:06:24.614+0000
+      version: 0
+      tenantId: AnRkr
+      groupCreditExposure: 1000
+      individualCreditExposure: 1200
+      creditScore: 100
+      overallCreditRisk: 300
+      note: dev note
+      comment: Dev test
+      status: CREATED
+      createdUser: Achini
+      createdDate: 2022-03-01T17:06:24.612+0000
+      modifiedUser: Achini
+      modifiedDate: 2022-03-01T17:06:24.614+0000
+      dscr: 200
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      groupCreditExposure:
+        type: integer
+        format: int32
+      individualCreditExposure:
+        type: integer
+        format: int32
+      creditScore:
+        type: integer
+        format: int32
+      overallCreditRisk:
+        type: integer
+        format: int32
+      note:
+        type: string
+      comment:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      dscr:
+        type: integer
+        format: int32
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - groupCreditExposure
+    - individualCreditExposure
+    - creditScore
+    - overallCreditRisk
+    - note
+    - comment
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - dscr
+  Add:
+    title: Add
+    example:
+      messages: CREATED.
+      value: '1888336'
+    type: object
+    properties:
+      messages:
+        type: string
+      value:
+        type: string
+    required:
+    - messages
+    - value
+  UpdateRequest:
+    title: UpdateRequest
+    example:
+      id: ''
+      productCode: PRD2
+      productDesc: Product 2
+      productId: '18743'
+      productName: Pname1211
+      subProductId: '39488'
+      status: ACTIVE
+      version: '0'
+    type: object
+    properties:
+      id:
+        type: string
+      productCode:
+        type: string
+      productDesc:
+        type: string
+      productId:
+        type: string
+      productName:
+        type: string
+      subProductId:
+        type: string
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - id
+    - productCode
+    - productDesc
+    - productId
+    - productName
+    - subProductId
+    - status
+    - version
+  getBysubproductandmodule:
+    title: getBysubproductandmodule
+    example:
+      id: 1533363
+      syncTs: 2023-05-02T06:31:32.286+0000
+      version: 2
+      approvalCategoryDetailsId: 1533345
+      approvalCategoryDetailsCode: DDD1
+      productId: 1995
+      productName: Product1
+      productCode: PRD1
+      subProductId: 1998
+      subProductCode: SUB1
+      tenantId: AnRkr
+      status: INACTIVE
+      createdUser: sahan.peiris
+      createdDate: 2023-03-13T04:05:05.202+0000
+      modifiedUser: thiloshana.gamage
+      modifiedDate: 2023-05-02T06:31:32.286+0000
+      module: LEMO
+      subProductName: null
+      approvalCategoryDetailsName: Test New Cate-DDDD-up
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      approvalCategoryDetailsId:
+        type: integer
+        format: int32
+      approvalCategoryDetailsCode:
+        type: string
+      productId:
+        type: integer
+        format: int32
+      productName:
+        type: string
+      productCode:
+        type: string
+      subProductId:
+        type: integer
+        format: int32
+      subProductCode:
+        type: string
+      tenantId:
+        type: string
+      status:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      module:
+        type: string
+      subProductName:
+        type: string
+      approvalCategoryDetailsName:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - approvalCategoryDetailsId
+    - approvalCategoryDetailsCode
+    - productId
+    - productName
+    - productCode
+    - subProductId
+    - subProductCode
+    - tenantId
+    - status
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - module
+    - subProductName
+    - approvalCategoryDetailsName
+tags:
+- name: Misc
+  description: ''

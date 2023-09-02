@@ -1,0 +1,214 @@
+li {
+  margin: 2px 0 6px;
+}
+ul li ul,
+ul li ul li,
+ul.list--level2, 
+ul.list--level2 li{
+  list-style: circle outside none;
+}
+ul li ul li ul,
+ul li ul li ul li,
+ul.list--level3,
+ul.list--level3 li {
+  list-style: square outside none;
+}
+
+table.table--parent-table:nth-child(1) table tr td {
+  background-color: #ffffff;
+}
+
+table p {
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+table.table--parent-table,
+table.table--parent-table tr,
+table.table--parent-table tr td {
+  border: 0;
+  vertical-align: middle;
+  padding: 4px 5px;
+}
+table.table--parent-table {
+  margin: 0px auto;
+}
+table.table__bordered--violation-details,
+table.table__bordered--violation-details tr,
+table.table__bordered--violation-details tr td {
+  width: 85%;
+  max-width: 85%;
+}
+table.table__bordered--violation-details {          
+  margin-top: 6px;
+}
+table.table__bordered--violation-details tr td {
+  border-bottom: 1px solid #d3dce3;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  /*margin-bottom: 12px;*/
+  padding: 16px 8px 0 0;
+}
+
+table.table__bordered--violation-details tr:nth-child(1) td {
+  padding-top: 4px;
+}
+
+table tr.row--severity-level {
+  background-color: #f2f5f7;
+}
+
+table tr.row--severity-level td {
+  background-color: #f2f5f7;
+  border-bottom: 2px solid #d3dce3; /*657685*/
+  font-weight: 500;
+  font-size: 130%;
+}
+
+table,
+table p {
+  word-wrap: anywhere;
+}
+
+table td.cell--padded-right {
+  padding-right: 15%;
+}
+
+/* -- helper classes -- */
+.list--level1 {
+  padding-left: 80px;
+}
+.list--level2,
+.list--level3 {
+  padding-left: 40px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+.pdf_header {
+  background-color: #003057;
+  height: 68px;
+  color:#ffffff;
+  padding: 12px 24px;
+}
+.row--pdf-summary {
+  height: 40px;
+  padding: 6px 24px;
+  border-bottom: 1px solid #d3dce3;
+  line-height: 14px;
+  font-size: 10px;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  font-size: 10px;
+}
+
+.row--pdf-summary ul li {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  padding: 2px 12px;
+}
+
+.row--pdf-summary ul li:after {
+  content:'';
+  display: block;
+  width: 1px;
+  height: 24px;
+  top: 0px;
+  right: -1px;
+  position: absolute;
+  background-color: #d3dce3;
+
+}
+
+@media print {
+  li {
+    margin: 2px 0 6px;
+  }
+  ul li ul,
+  ul li ul li,
+  ul.list--level2, 
+  ul.list--level2 li{
+    list-style: circle outside none;
+  }
+  ul li ul li ul,
+  ul li ul li ul li,
+  ul.list--level3,
+  ul.list--level3 li {
+    list-style: square outside none;
+  }
+
+  table.table--parent-table:nth-child(1) table tr td {
+    background-color: #ffffff;
+  }
+
+  table p {
+    margin-top: 4px;
+  }
+
+  table.table--parent-table,
+  table.table--parent-table tr,
+  table.table--parent-table tr td {
+    border: 0;
+    vertical-align: middle;
+    padding: 4px 5px;
+  }
+  table.table--parent-table {
+    width: 90%;
+    margin: 30px auto;
+  }
+  table.table__bordered--violation-details,
+  table.table__bordered--violation-details tr,
+  table.table__bordered--violation-details tr td {
+    width: 85%;
+    max-width: 85%;
+  }
+  table.table__bordered--violation-details {          
+    margin-top: 6px;
+  }
+  table.table__bordered--violation-details tr td {
+    border-bottom: 1px solid #d3dce3;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    /*margin-bottom: 12px;*/
+    padding: 16px 8px 0 0;
+  }
+
+  table.table__bordered--violation-details tr:nth-child(1) td {
+    padding-top: 4px;
+  }
+
+  table tr.row--severity-level {
+    background-color: #f2f5f7;
+  }
+
+  table tr.row--severity-level td {
+    background-color: #f2f5f7;
+    border-bottom: 2px solid #d3dce3; /*657685*/
+    font-weight: 500;
+    font-size: 130%;
+  }
+
+  table,
+  table p {
+    word-wrap: anywhere;
+  }
+
+  table td.cell--padded-right {
+    padding-right: 15%;
+  }
+
+  /* -- helper classes -- */
+  .list--level1 {
+    padding-left: 80px;
+  }
+  .list--level2,
+  .list--level3 {
+    padding-left: 40px;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+}

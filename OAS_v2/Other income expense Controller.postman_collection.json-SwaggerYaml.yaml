@@ -1,0 +1,3143 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Other income expense Controller
+  contact: {}
+host: 132.145.228.83
+basePath: /lending-origination/other-income-expenses
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /AnRkr/42249:
+    put:
+      summary: update
+      tags:
+      - Misc
+      operationId: update
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/updaterequest'
+      responses:
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/update1'
+          examples:
+            application/json;charset=UTF-8:
+              messages: Record not found.
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:30:32 GMT
+            Content-Length:
+              type: string
+              default: '32'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '36'
+    get:
+      summary: ID
+      tags:
+      - Misc
+      operationId: ID
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ID'
+          examples:
+            application/json;charset=UTF-8:
+              id: 42249
+              syncTs: 2022-02-21T08:24:46.056+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: Udeshika
+              createdDate: 2021-12-21T02:37:38.492+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-02-21T08:24:46.056+0000
+              incomeTypeName: null
+              expenseTypeName: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:19:26 GMT
+            Content-Length:
+              type: string
+              default: '468'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"07ec716cd165489d859cc4105d8bcf271"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '12'
+  /AnRkr:
+    post:
+      summary: create
+      tags:
+      - Misc
+      operationId: create
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - name: Username
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/createrequest'
+      responses:
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/create1'
+          examples:
+            application/json;charset=UTF-8:
+              incomeTypeId: Invalid value.
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:32:32 GMT
+            Content-Length:
+              type: string
+              default: '33'
+            Connection:
+              type: string
+              default: keep-alive
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '13'
+  /AnRkr/all:
+    get:
+      summary: all
+      tags:
+      - Misc
+      operationId: all
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/all'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 164518
+              syncTs: 2022-03-03T13:50:10.118+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 70000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: description update
+              createdUser: Udeshika
+              createdDate: 2022-03-03T11:18:44.250+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-03-03T13:50:10.119+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1021520
+              syncTs: 2023-02-10T05:33:28.630+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 10000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: o
+              createdUser: sahan.peiris
+              createdDate: 2023-01-17T05:54:24.745+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:28.630+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1021521
+              syncTs: 2023-02-08T04:41:27.587+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 5000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: e
+              createdUser: sahan.peiris
+              createdDate: 2023-01-17T05:54:59.528+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-08T04:41:27.587+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1152690
+              syncTs: 2023-01-25T04:24:27.076+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: de
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:24:27.076+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: '1234'
+              expenseTypeName: null
+            - id: 1152692
+              syncTs: 2023-01-25T06:12:26.986+0000
+              version: 2
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 780000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '6'
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:25:59.784+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-25T06:12:26.986+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1152693
+              syncTs: 2023-01-25T06:12:36.215+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 290000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: de
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:26:19.599+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-25T06:12:36.215+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1314573
+              syncTs: 2023-02-10T05:33:31.482+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 40000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T14:07:30.838+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:31.482+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317259
+              syncTs: 2023-02-10T05:34:38.721+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 5
+              frequencyCode: ANNUALLY
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:29:47.871+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:34:38.721+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317275
+              syncTs: 2023-02-10T05:31:49.353+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 5
+              frequencyCode: ANNUALLY
+              amount: 11
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:31:49.353+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317276
+              syncTs: 2023-02-10T05:34:10.088+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 11
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:32:03.448+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:34:10.088+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1401047
+              syncTs: 2023-03-08T05:28:18.485+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test QA
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:27:36.815+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-08T05:28:18.485+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 59015
+              syncTs: 2022-01-07T05:19:18.142+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-07T05:19:18.143+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 148297
+              syncTs: 2022-02-21T08:53:56.596+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-02-21T08:53:56.596+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 224535
+              syncTs: 2022-06-02T07:40:26.821+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: dilhan
+              createdDate: 2022-06-01T16:44:06.989+0000
+              modifiedUser: dilhan
+              modifiedDate: 2022-06-02T07:40:26.821+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324150
+              syncTs: 2022-11-03T05:29:09.405+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:53:11.444+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:29:09.405+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324151
+              syncTs: 2022-10-17T12:54:29.252+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:54:29.252+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324152
+              syncTs: 2022-11-11T13:16:54.158+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test3
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:56:29.605+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:16:54.158+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324153
+              syncTs: 2022-11-03T05:28:57.575+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test3
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:56:54.131+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:28:57.576+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 344534
+              syncTs: 2022-10-24T12:57:53.204+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-10-24T12:57:53.204+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496343
+              syncTs: 2022-11-03T05:22:33.926+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-02T22:16:30.446+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:22:33.926+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 496344
+              syncTs: 2022-11-03T05:27:45.893+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-02T22:16:41.369+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:27:45.894+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 497066
+              syncTs: 2022-11-03T10:40:03.526+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 1001
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1 update1
+              createdUser: lahiru
+              createdDate: 2022-11-03T10:38:41.629+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T10:40:03.526+0000
+              incomeTypeName: Test DASK
+              expenseTypeName: null
+            - id: 497070
+              syncTs: 2022-11-03T10:39:59.226+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-03T10:39:59.226+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Test DASK
+              expenseTypeName: null
+            - id: 511790
+              syncTs: 2022-11-15T05:00:31.040+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-15T05:00:31.040+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 511791
+              syncTs: 2022-11-15T05:01:07.831+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 251
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-15T05:00:50.779+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-15T05:01:07.831+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1313979
+              syncTs: 2023-02-08T12:31:29.747+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T12:31:29.747+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Interest Income
+              expenseTypeName: null
+            - id: 1317278
+              syncTs: 2023-02-10T05:33:34.634+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 11
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:32:38.701+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:34.634+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317282
+              syncTs: 2023-02-10T05:34:32.538+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:32.538+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317283
+              syncTs: 2023-02-10T05:34:46.717+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:46.717+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317285
+              syncTs: 2023-02-10T05:35:11.953+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:35:11.953+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317286
+              syncTs: 2023-02-10T05:37:05.646+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '3'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:37:05.646+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317287
+              syncTs: 2023-02-10T05:37:32.374+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:37:32.374+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317324
+              syncTs: 2023-02-10T06:10:02.043+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 666
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T06:10:02.043+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317814
+              syncTs: 2023-02-10T12:10:23.268+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: des
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T12:10:23.268+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1318080
+              syncTs: 2023-02-13T06:48:22.591+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 5
+              frequencyCode: ANNUALLY
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:22.591+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1318081
+              syncTs: 2023-02-13T06:48:40.696+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '4'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:40.696+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1401052
+              syncTs: 2023-03-08T05:28:04.061+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 6
+              currencyId: 2214394
+              currencyCode: SRI
+              currencyCodeNumeric: '455'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:28:04.061+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1401053
+              syncTs: 2023-03-08T05:29:27.233+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: QWE
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:28:46.449+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-08T05:29:27.233+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1401068
+              syncTs: 2023-03-08T05:29:15.385+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 3
+              currencyId: 712
+              currencyCode: USD
+              currencyCodeNumeric: '840'
+              status: ACTIVE
+              description: Key
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:29:15.385+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157909
+              syncTs: 2022-03-01T03:39:36.220+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 5000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:39:36.220+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 343699
+              syncTs: 2022-11-11T13:15:29.365+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-10-21T14:16:52.996+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:15:29.365+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 492653
+              syncTs: 2022-11-03T05:29:16.970+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test10
+              createdUser: lahiru
+              createdDate: 2022-10-31T04:55:29.165+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:29:16.970+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496743
+              syncTs: 2022-11-11T13:15:43.609+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1003
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T07:19:13.052+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:15:43.609+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1317261
+              syncTs: 2023-02-10T05:33:37.400+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 22
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:30:03.842+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:37.400+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317277
+              syncTs: 2023-02-10T05:33:39.783+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 304
+              frequencyCode: QUARTELLY
+              amount: 11
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:32:18.915+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:39.783+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317279
+              syncTs: 2023-02-10T05:33:42.166+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 6
+              frequencyCode: BYANNUALLY
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:32:55.672+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:42.166+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317280
+              syncTs: 2023-02-10T05:33:55.050+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:33:55.050+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317281
+              syncTs: 2023-02-10T05:34:18.575+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:18.575+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317284
+              syncTs: 2023-02-10T05:34:59.297+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:59.297+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 42249
+              syncTs: 2022-02-21T08:24:46.056+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: Udeshika
+              createdDate: 2021-12-21T02:37:38.492+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-02-21T08:24:46.056+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42252
+              syncTs: 2021-12-21T03:55:54.398+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:55:54.398+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42254
+              syncTs: 2021-12-21T03:56:03.014+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:03.014+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 115052
+              syncTs: 2022-01-12T02:31:37.232+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-12T02:31:37.232+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496550
+              syncTs: 2022-11-03T05:46:05.479+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:34:56.965+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:46:05.479+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496570
+              syncTs: 2022-11-03T05:44:25.813+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:44:25.813+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496571
+              syncTs: 2022-11-03T05:55:52.984+0000
+              version: 2
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 50
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:47:17.946+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-03T05:55:52.984+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496614
+              syncTs: 2022-11-03T05:50:35.625+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 200
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:50:35.625+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496774
+              syncTs: 2022-11-03T07:40:58.928+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T07:40:58.928+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 511792
+              syncTs: 2022-11-15T05:01:10.939+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: hbfdsb
+              createdUser: lahiru
+              createdDate: 2022-11-15T05:01:02.721+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-15T05:01:10.939+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1193875
+              syncTs: 2023-02-10T05:33:44.612+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 100000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: INACTIVE
+              description: desc
+              createdUser: sahan.peiris
+              createdDate: 2023-01-30T02:53:55.239+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-02-10T05:33:44.612+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1313980
+              syncTs: 2023-02-08T12:31:52.483+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 4
+              currencyId: 713
+              currencyCode: INR
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T12:31:52.483+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1318079
+              syncTs: 2023-02-13T06:48:06.643+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:06.643+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 42250
+              syncTs: 2021-12-21T03:05:29.617+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:05:29.617+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42251
+              syncTs: 2021-12-21T08:41:34.129+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 650000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 2
+              createdUser: Udeshika
+              createdDate: 2021-12-21T08:41:27.258+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42253
+              syncTs: 2021-12-21T03:56:01.767+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:01.767+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157908
+              syncTs: 2022-03-01T03:38:22.279+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 2000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:38:22.279+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496742
+              syncTs: 2022-11-03T12:49:01.634+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T12:49:01.634+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:19:39 GMT
+            Content-Length:
+              type: string
+              default: '28898'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0f33cbf16c4b61401ac192965a54e3775"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '135'
+  /AnRkr/other-income-details/20567:
+    get:
+      summary: other income details
+      tags:
+      - Misc
+      operationId: otherincomedetails
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/otherincomedetail'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 164518
+              syncTs: 2022-03-03T13:50:10.118+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 70000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: description update
+              createdUser: Udeshika
+              createdDate: 2022-03-03T11:18:44.250+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-03-03T13:50:10.119+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 59015
+              syncTs: 2022-01-07T05:19:18.142+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-07T05:19:18.143+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 148297
+              syncTs: 2022-02-21T08:53:56.596+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-02-21T08:53:56.596+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 224535
+              syncTs: 2022-06-02T07:40:26.821+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: dilhan
+              createdDate: 2022-06-01T16:44:06.989+0000
+              modifiedUser: dilhan
+              modifiedDate: 2022-06-02T07:40:26.821+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157909
+              syncTs: 2022-03-01T03:39:36.220+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 5000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:39:36.220+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42249
+              syncTs: 2022-02-21T08:24:46.056+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: Udeshika
+              createdDate: 2021-12-21T02:37:38.492+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-02-21T08:24:46.056+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42252
+              syncTs: 2021-12-21T03:55:54.398+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:55:54.398+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42254
+              syncTs: 2021-12-21T03:56:03.014+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:03.014+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 115052
+              syncTs: 2022-01-12T02:31:37.232+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-12T02:31:37.232+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42250
+              syncTs: 2021-12-21T03:05:29.617+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:05:29.617+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42251
+              syncTs: 2021-12-21T08:41:34.129+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 650000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 2
+              createdUser: Udeshika
+              createdDate: 2021-12-21T08:41:27.258+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42253
+              syncTs: 2021-12-21T03:56:01.767+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:01.767+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157908
+              syncTs: 2022-03-01T03:38:22.279+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 2000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:38:22.279+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:19:52 GMT
+            Content-Length:
+              type: string
+              default: '5635'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0800442c36f952a7d1a22f7971b2a2d73"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '25'
+  /AnRkr/status/ACTIVE:
+    get:
+      summary: status
+      tags:
+      - Misc
+      operationId: status
+      deprecated: false
+      produces:
+      - application/json;charset=UTF-8
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            default: ''
+            items:
+              $ref: '#/definitions/status'
+          examples:
+            application/json;charset=UTF-8:
+            - id: 164518
+              syncTs: 2022-03-03T13:50:10.118+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 70000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: description update
+              createdUser: Udeshika
+              createdDate: 2022-03-03T11:18:44.250+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-03-03T13:50:10.119+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1152690
+              syncTs: 2023-01-25T04:24:27.076+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: de
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:24:27.076+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: '1234'
+              expenseTypeName: null
+            - id: 1152692
+              syncTs: 2023-01-25T06:12:26.986+0000
+              version: 2
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 780000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '6'
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:25:59.784+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-25T06:12:26.986+0000
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1152693
+              syncTs: 2023-01-25T06:12:36.215+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 290000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: de
+              createdUser: sahan.peiris
+              createdDate: 2023-01-25T04:26:19.599+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-01-25T06:12:36.215+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317275
+              syncTs: 2023-02-10T05:31:49.353+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 5
+              frequencyCode: ANNUALLY
+              amount: 11
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:31:49.353+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1401047
+              syncTs: 2023-03-08T05:28:18.485+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test QA
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:27:36.815+0000
+              modifiedUser: sahan.peiris
+              modifiedDate: 2023-03-08T05:28:18.485+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 59015
+              syncTs: 2022-01-07T05:19:18.142+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-07T05:19:18.143+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 148297
+              syncTs: 2022-02-21T08:53:56.596+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-02-21T08:53:56.596+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 224535
+              syncTs: 2022-06-02T07:40:26.821+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: dilhan
+              createdDate: 2022-06-01T16:44:06.989+0000
+              modifiedUser: dilhan
+              modifiedDate: 2022-06-02T07:40:26.821+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324151
+              syncTs: 2022-10-17T12:54:29.252+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:54:29.252+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 324152
+              syncTs: 2022-11-11T13:16:54.158+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 543
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test3
+              createdUser: lahiru
+              createdDate: 2022-10-17T12:56:29.605+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:16:54.158+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 344534
+              syncTs: 2022-10-24T12:57:53.204+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-10-24T12:57:53.204+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 497070
+              syncTs: 2022-11-03T10:39:59.226+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-03T10:39:59.226+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Test DASK
+              expenseTypeName: null
+            - id: 511790
+              syncTs: 2022-11-15T05:00:31.040+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-15T05:00:31.040+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 511791
+              syncTs: 2022-11-15T05:01:07.831+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 251
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-15T05:00:50.779+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-15T05:01:07.831+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1313979
+              syncTs: 2023-02-08T12:31:29.747+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T12:31:29.747+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Interest Income
+              expenseTypeName: null
+            - id: 1317282
+              syncTs: 2023-02-10T05:34:32.538+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:32.538+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317283
+              syncTs: 2023-02-10T05:34:46.717+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:46.717+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317285
+              syncTs: 2023-02-10T05:35:11.953+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:35:11.953+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317286
+              syncTs: 2023-02-10T05:37:05.646+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '3'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:37:05.646+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317287
+              syncTs: 2023-02-10T05:37:32.374+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:37:32.374+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317324
+              syncTs: 2023-02-10T06:10:02.043+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 666
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T06:10:02.043+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317814
+              syncTs: 2023-02-10T12:10:23.268+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: des
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T12:10:23.268+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1318080
+              syncTs: 2023-02-13T06:48:22.591+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 5
+              frequencyCode: ANNUALLY
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:22.591+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1318081
+              syncTs: 2023-02-13T06:48:40.696+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 4
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '4'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:40.696+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1401052
+              syncTs: 2023-03-08T05:28:04.061+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 6
+              currencyId: 2214394
+              currencyCode: SRI
+              currencyCodeNumeric: '455'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:28:04.061+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1401068
+              syncTs: 2023-03-08T05:29:15.385+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 3
+              currencyId: 712
+              currencyCode: USD
+              currencyCodeNumeric: '840'
+              status: ACTIVE
+              description: Key
+              createdUser: sahan.peiris
+              createdDate: 2023-03-08T05:29:15.385+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157909
+              syncTs: 2022-03-01T03:39:36.220+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 5000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:39:36.220+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 343699
+              syncTs: 2022-11-11T13:15:29.365+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-10-21T14:16:52.996+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:15:29.365+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 496743
+              syncTs: 2022-11-11T13:15:43.609+0000
+              version: 1
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1003
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T07:19:13.052+0000
+              modifiedUser: lahiru
+              modifiedDate: 2022-11-11T13:15:43.609+0000
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1317280
+              syncTs: 2023-02-10T05:33:55.050+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 1
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '1'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:33:55.050+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 1317281
+              syncTs: 2023-02-10T05:34:18.575+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:18.575+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1317284
+              syncTs: 2023-02-10T05:34:59.297+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 2
+              frequencyCode: WEEKLY
+              amount: 2
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: '2'
+              createdUser: sahan.peiris
+              createdDate: 2023-02-10T05:34:59.297+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: Other Income type category - TC2
+              expenseTypeName: null
+            - id: 42249
+              syncTs: 2022-02-21T08:24:46.056+0000
+              version: 3
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 1050000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1 update 123
+              createdUser: Udeshika
+              createdDate: 2021-12-21T02:37:38.492+0000
+              modifiedUser: Udeshika
+              modifiedDate: 2022-02-21T08:24:46.056+0000
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42252
+              syncTs: 2021-12-21T03:55:54.398+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:55:54.398+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42254
+              syncTs: 2021-12-21T03:56:03.014+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:03.014+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 115052
+              syncTs: 2022-01-12T02:31:37.232+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2022-01-12T02:31:37.232+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496570
+              syncTs: 2022-11-03T05:44:25.813+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:44:25.813+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496614
+              syncTs: 2022-11-03T05:50:35.625+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 200
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test2
+              createdUser: lahiru
+              createdDate: 2022-11-03T05:50:35.625+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496774
+              syncTs: 2022-11-03T07:40:58.928+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T07:40:58.928+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 1313980
+              syncTs: 2023-02-08T12:31:52.483+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 4
+              frequencyCode: AE12
+              amount: 4
+              currencyId: 713
+              currencyCode: INR
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test
+              createdUser: sahan.peiris
+              createdDate: 2023-02-08T12:31:52.483+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 1318079
+              syncTs: 2023-02-13T06:48:06.643+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 3
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: d
+              createdUser: sahan.peiris
+              createdDate: 2023-02-13T06:48:06.643+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+            - id: 42250
+              syncTs: 2021-12-21T03:05:29.617+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:05:29.617+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42251
+              syncTs: 2021-12-21T08:41:34.129+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 650000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 2
+              createdUser: Udeshika
+              createdDate: 2021-12-21T08:41:27.258+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 42253
+              syncTs: 2021-12-21T03:56:01.767+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 302
+              frequencyCode: AB12
+              amount: 500000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Other Income expenses desc 1
+              createdUser: Udeshika
+              createdDate: 2021-12-21T03:56:01.767+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 157908
+              syncTs: 2022-03-01T03:38:22.279+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 303
+              frequencyCode: AE12
+              amount: 2000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Income expense details desc 1
+              createdUser: Udeshika
+              createdDate: 2022-03-01T03:38:22.279+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: null
+              expenseTypeName: null
+            - id: 496742
+              syncTs: 2022-11-03T12:49:01.634+0000
+              version: 0
+              tenantId: AnRkr
+              frequencyId: 1
+              frequencyCode: DAILY
+              amount: 1000
+              currencyId: 722
+              currencyCode: UUU
+              currencyCodeNumeric: '144'
+              status: ACTIVE
+              description: Test1
+              createdUser: praween
+              createdDate: 2022-11-03T12:49:01.634+0000
+              modifiedUser: null
+              modifiedDate: null
+              incomeTypeName: other Income Category 2
+              expenseTypeName: null
+          headers:
+            Date:
+              type: string
+              default: Thu, 20 Jul 2023 16:20:08 GMT
+            Content-Length:
+              type: string
+              default: '19908'
+            Connection:
+              type: string
+              default: keep-alive
+            etag:
+              type: string
+              default: '"0dfff2b34e0acc4960d093963557c4361"'
+            x-content-type-options:
+              type: string
+              default: nosniff
+            x-xss-protection:
+              type: string
+              default: 1; mode=block
+            cache-control:
+              type: string
+              default: no-cache, no-store, max-age=0, must-revalidate
+            pragma:
+              type: string
+              default: no-cache
+            expires:
+              type: string
+              default: '0'
+            x-frame-options:
+              type: string
+              default: DENY
+            x-envoy-upstream-service-time:
+              type: string
+              default: '26'
+definitions:
+  updaterequest:
+    title: updaterequest
+    example:
+      amount: '1050000.00'
+      currencyCode: UUU
+      currencyId: '722'
+      description: Other Income expenses desc 1 update 123
+      expenseTypeId: ''
+      expenseTypeName: ''
+      frequencyCode: AE12
+      frequencyId: '303'
+      incomeTypeId: '22728'
+      incomeTypeName: IT03_name
+      status: ACTIVE
+      version: '2'
+    type: object
+    properties:
+      amount:
+        type: string
+      currencyCode:
+        type: string
+      currencyId:
+        type: string
+      description:
+        type: string
+      expenseTypeId:
+        type: string
+      expenseTypeName:
+        type: string
+      frequencyCode:
+        type: string
+      frequencyId:
+        type: string
+      incomeTypeId:
+        type: string
+      incomeTypeName:
+        type: string
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - amount
+    - currencyCode
+    - currencyId
+    - description
+    - expenseTypeId
+    - expenseTypeName
+    - frequencyCode
+    - frequencyId
+    - incomeTypeId
+    - incomeTypeName
+    - status
+    - version
+  update1:
+    title: update1
+    example:
+      messages: Record not found.
+    type: object
+    properties:
+      messages:
+        type: string
+    required:
+    - messages
+  createrequest:
+    title: createrequest
+    example:
+      otherIncomeDetailsId: '20567'
+      otherIncomeExpenses:
+      - amount: '500000.00'
+        currencyCode: UUU
+        currencyId: '722'
+        description: Other Income expenses desc 1
+        expenseTypeId: '20843'
+        expenseTypeName: Expense Type 12
+        frequencyCode: AB12
+        frequencyId: '302'
+        incomeTypeId: ''
+        incomeTypeName: ''
+        status: ACTIVE
+        version: ''
+    type: object
+    properties:
+      otherIncomeDetailsId:
+        type: string
+      otherIncomeExpenses:
+        type: array
+        items:
+          $ref: '#/definitions/OtherIncomeExpense'
+    required:
+    - otherIncomeDetailsId
+    - otherIncomeExpenses
+  OtherIncomeExpense:
+    title: OtherIncomeExpense
+    example:
+      amount: '500000.00'
+      currencyCode: UUU
+      currencyId: '722'
+      description: Other Income expenses desc 1
+      expenseTypeId: '20843'
+      expenseTypeName: Expense Type 12
+      frequencyCode: AB12
+      frequencyId: '302'
+      incomeTypeId: ''
+      incomeTypeName: ''
+      status: ACTIVE
+      version: ''
+    type: object
+    properties:
+      amount:
+        type: string
+      currencyCode:
+        type: string
+      currencyId:
+        type: string
+      description:
+        type: string
+      expenseTypeId:
+        type: string
+      expenseTypeName:
+        type: string
+      frequencyCode:
+        type: string
+      frequencyId:
+        type: string
+      incomeTypeId:
+        type: string
+      incomeTypeName:
+        type: string
+      status:
+        type: string
+      version:
+        type: string
+    required:
+    - amount
+    - currencyCode
+    - currencyId
+    - description
+    - expenseTypeId
+    - expenseTypeName
+    - frequencyCode
+    - frequencyId
+    - incomeTypeId
+    - incomeTypeName
+    - status
+    - version
+  create1:
+    title: create1
+    example:
+      incomeTypeId: Invalid value.
+    type: object
+    properties:
+      incomeTypeId:
+        type: string
+    required:
+    - incomeTypeId
+  ID:
+    title: ID
+    example:
+      id: 42249
+      syncTs: 2022-02-21T08:24:46.056+0000
+      version: 3
+      tenantId: AnRkr
+      frequencyId: 303
+      frequencyCode: AE12
+      amount: 1050000
+      currencyId: 722
+      currencyCode: UUU
+      currencyCodeNumeric: '144'
+      status: ACTIVE
+      description: Other Income expenses desc 1 update 123
+      createdUser: Udeshika
+      createdDate: 2021-12-21T02:37:38.492+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2022-02-21T08:24:46.056+0000
+      incomeTypeName: null
+      expenseTypeName: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      frequencyId:
+        type: integer
+        format: int32
+      frequencyCode:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      currencyId:
+        type: integer
+        format: int32
+      currencyCode:
+        type: string
+      currencyCodeNumeric:
+        type: string
+      status:
+        type: string
+      description:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      incomeTypeName:
+        type: string
+      expenseTypeName:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - frequencyId
+    - frequencyCode
+    - amount
+    - currencyId
+    - currencyCode
+    - currencyCodeNumeric
+    - status
+    - description
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - incomeTypeName
+    - expenseTypeName
+  all:
+    title: all
+    example:
+      id: 164518
+      syncTs: 2022-03-03T13:50:10.118+0000
+      version: 3
+      tenantId: AnRkr
+      frequencyId: 302
+      frequencyCode: AB12
+      amount: 70000
+      currencyId: 722
+      currencyCode: UUU
+      currencyCodeNumeric: '144'
+      status: ACTIVE
+      description: description update
+      createdUser: Udeshika
+      createdDate: 2022-03-03T11:18:44.250+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2022-03-03T13:50:10.119+0000
+      incomeTypeName: null
+      expenseTypeName: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      frequencyId:
+        type: integer
+        format: int32
+      frequencyCode:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      currencyId:
+        type: integer
+        format: int32
+      currencyCode:
+        type: string
+      currencyCodeNumeric:
+        type: string
+      status:
+        type: string
+      description:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      incomeTypeName:
+        type: string
+      expenseTypeName:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - frequencyId
+    - frequencyCode
+    - amount
+    - currencyId
+    - currencyCode
+    - currencyCodeNumeric
+    - status
+    - description
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - incomeTypeName
+    - expenseTypeName
+  otherincomedetail:
+    title: otherincomedetail
+    example:
+      id: 164518
+      syncTs: 2022-03-03T13:50:10.118+0000
+      version: 3
+      tenantId: AnRkr
+      frequencyId: 302
+      frequencyCode: AB12
+      amount: 70000
+      currencyId: 722
+      currencyCode: UUU
+      currencyCodeNumeric: '144'
+      status: ACTIVE
+      description: description update
+      createdUser: Udeshika
+      createdDate: 2022-03-03T11:18:44.250+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2022-03-03T13:50:10.119+0000
+      incomeTypeName: null
+      expenseTypeName: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      frequencyId:
+        type: integer
+        format: int32
+      frequencyCode:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      currencyId:
+        type: integer
+        format: int32
+      currencyCode:
+        type: string
+      currencyCodeNumeric:
+        type: string
+      status:
+        type: string
+      description:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      incomeTypeName:
+        type: string
+      expenseTypeName:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - frequencyId
+    - frequencyCode
+    - amount
+    - currencyId
+    - currencyCode
+    - currencyCodeNumeric
+    - status
+    - description
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - incomeTypeName
+    - expenseTypeName
+  status:
+    title: status
+    example:
+      id: 164518
+      syncTs: 2022-03-03T13:50:10.118+0000
+      version: 3
+      tenantId: AnRkr
+      frequencyId: 302
+      frequencyCode: AB12
+      amount: 70000
+      currencyId: 722
+      currencyCode: UUU
+      currencyCodeNumeric: '144'
+      status: ACTIVE
+      description: description update
+      createdUser: Udeshika
+      createdDate: 2022-03-03T11:18:44.250+0000
+      modifiedUser: Udeshika
+      modifiedDate: 2022-03-03T13:50:10.119+0000
+      incomeTypeName: null
+      expenseTypeName: null
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      syncTs:
+        type: string
+      version:
+        type: integer
+        format: int32
+      tenantId:
+        type: string
+      frequencyId:
+        type: integer
+        format: int32
+      frequencyCode:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      currencyId:
+        type: integer
+        format: int32
+      currencyCode:
+        type: string
+      currencyCodeNumeric:
+        type: string
+      status:
+        type: string
+      description:
+        type: string
+      createdUser:
+        type: string
+      createdDate:
+        type: string
+      modifiedUser:
+        type: string
+      modifiedDate:
+        type: string
+      incomeTypeName:
+        type: string
+      expenseTypeName:
+        type: string
+    required:
+    - id
+    - syncTs
+    - version
+    - tenantId
+    - frequencyId
+    - frequencyCode
+    - amount
+    - currencyId
+    - currencyCode
+    - currencyCodeNumeric
+    - status
+    - description
+    - createdUser
+    - createdDate
+    - modifiedUser
+    - modifiedDate
+    - incomeTypeName
+    - expenseTypeName
+tags:
+- name: Misc
+  description: ''

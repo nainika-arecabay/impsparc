@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/html.css" />
+    <title>Imperva - Open API Spec Evaluation Report</title>
+  </head>
+
+  <body onload="onDOMLoad()">
+    <!-- NEW SLIDE -->
+    <!-- TITLE -->
+    <div class="slide intro-slide">
+      <img class="branding" src="./assets/images/logo.png" />
+
+      <div class="intro-title">
+        <h1>Open API Spec Evaluation</h1>
+        <h3>API spec assessment for risks and compliance</h3>
+        <div class="intro-divider"></div>
+        <h6>{{ created_time }}</h6>
+
+        <div class="row">
+          <div class="col-6">
+            <p class="customer">Prepared for: Name of the company</p>
+            <p>Prepared by: Imperva API Security Team</p>
+          </div>
+          <div class="col-6">
+            <p>Uploaded file name: {{ file_name }}</p>
+            <p class="date">Creation Time: Jan 22, 2022, 14:56</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="intro-footer">
+        <p>
+          View Report
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- TABLE OF CONTENTS -->
+    <div class="slide table-slide">
+      <div class="title">
+        <div class="block"></div>
+        <h1>Table of Contents</h1>
+      </div>
+
+      <a class="table-link" href="#input-file-details">Input File Details</a>
+      <a class="table-link" href="#overall-design-issues"
+        >Overall Design Issues</a
+      >
+      <a class="table-link" href="#issue-categories-details"
+        >Issue categories details</a
+      >
+      <a class="table-link" href="#violation-details">Violation Details</a>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- INPUT FILE DETAILS -->
+    <div id="input-file-details" class="slide content-slide input-file-details">
+
+      <div class="slide-content">
+        <h1>Input File Details</h1>
+        <h3>Information about data found inside the zip file</h3>
+
+        <div class="statistics">
+          <p class="widget-title">
+            What did we find inside the uploaded zip file?
+          </p>
+          <div class="row">
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-file"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Files</p>
+                  <p class="stat-metric">{{ num_of_files }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-file-code"></i>
+                </div>
+                <div>
+                  <p class="stat-label">APIs</p>
+                  <p class="stat-metric">{{ num_of_apis }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-folder-tree"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Parameters</p>
+                  <p class="stat-metric">{{ num_of_params }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="statistic-col">
+                <div class="icon-container">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div>
+                  <p class="stat-label">Data Types</p>
+                  <p class="stat-metric">{{ num_of_data_types }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-distribution">
+          <p class="widget-title">
+            How is content distributed inside your files?
+          </p>
+          <div class="row">
+            <div class="col-4">
+              <div id="distributionByMethodContainer" class="distribution-col">
+                <p class="distribution-category">By API Method</p>
+                <canvas id="distributionByMethod"></canvas>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="distribution-col">
+                <p class="distribution-category">By Parameter Type</p>
+                <canvas id="distributionByParamType"></canvas>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="distribution-col">
+                <p class="distribution-category">By API Response Code</p>
+                <canvas id="distributionByResponseCode"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- OVERALL DESIGN ISSUES -->
+    <div
+      id="overall-design-issues"
+      class="slide content-slide overall-design-issues"
+    >
+
+      <div class="slide-content">
+        <h1>Overall Design Issues</h1>
+        <h3>Information about design issues found in the uploaded file</h3>
+
+        <div class="row">
+          <div class="col-5">
+            <p class="widget-title">
+              What did we find inside the uploaded zip file?
+            </p>
+
+            <!-- CHECKS / ISSUES FOUND -->
+            <div class="issues-overview-col">
+              <div class="row">
+                <div class="col-6">
+                  <p class="issues-label">Total checkups performed</p>
+                  <p class="issues-metric">{{ num_of_evaluations }} </p>
+                </div>
+                <div class="col-6">
+                  <p class="issues-label">Issues found</p>
+                  {% set critical_issue_count = violations.get('risk_siv_counts', {}).get('critical', 0) + violations.get('risk_siv_counts', {}).get('high', 0)%}
+                  {% set major_issue_count = violations.get('risk_siv_counts', {}).get('medium', 0) %}
+                  {% set minor_issue_count = violations.get('risk_siv_counts', {}).get('low', 0) %}
+                  {% set total_issue_count = critical_issue_count + major_issue_count + minor_issue_count %}
+                  <p class="issues-metric">
+                    {{ total_issue_count }} <span class="percentage">({{ '%0.2f' % (total_issue_count / num_of_evaluations * 100) | float }}%)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- ISSUE DISTRIBUTION BY SEVERITY -->
+              <p class="issues-label">Issues distribution by severity</p>
+
+              <div class="distribution-by-severity">
+                <div class="row critical-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag critical-shade">Critical</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar critical-bg"
+                          role="progressbar"
+                          {% if total_issue_count == 0 %}
+                          style="width: 0%"
+                          {% else %}
+                          style="width: {{ (critical_issue_count / total_issue_count) * 100 }}%"
+                          {% endif %}
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">{{ critical_issue_count }}</p>
+                  </div>
+                </div>
+                <div class="row major-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag major-shade">Major</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar major-bg"
+                          role="progressbar"
+                          {% if total_issue_count == 0 %}
+                          style="width: 0%"
+                          {% else %}
+                          style="width: {{ (major_issue_count / total_issue_count) * 100 }}%"
+                          {% endif %}
+                          aria-valuenow="50"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">{{ major_issue_count }}</p>
+                  </div>
+                </div>
+                <div class="row minor-severity-row">
+                  <div class="col-2">
+                    <p class="severity-tag minor-shade">Minor</p>
+                  </div>
+                  <div class="col-8">
+                    <div class="progress-container">
+                      <div class="progress">
+                        <!-- todo -->
+                        <div
+                          class="progress-bar minor-bg"
+                          role="progressbar"
+                          {% if total_issue_count == 0 %}
+                          style="width: 0%"
+                          {% else %}
+                          style="width: {{ (minor_issue_count / total_issue_count) * 100 }}%"
+                          {% endif %}
+                          aria-valuenow="25"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <p class="severity-value">{{ minor_issue_count }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FREQUENTLY OCCURING VIOLATIONS -->
+              <p class="issues-label">Most frequently occuring violation</p>
+
+              <div class="frequent-violations">
+                <div class="violation">
+                  <div>
+                    <p>
+                      {{violations.get('description')}}
+                    </p>
+                    <p class="violation-metric">{{violations.get('most_occ_cat_count', 0)}}  Violations</p>
+                  </div>
+                  <div class="violation-donut-container">
+                    <canvas
+                      id="violationMetric1"
+                      width="75"
+                      height="75"
+                    ></canvas>
+                    <p class="violation-donut-percentage">20%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-7 d-flex flex-column">
+            <p class="widget-title">What are the issue categories?</p>
+            <div class="issues-categories-col flex-fill">
+              <!-- API DESIGN SCORECARD TABLE -->
+
+              <p class="issues-label">API Design Scorecard</p>
+              <!-- todo -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Issue Category</th>
+                    <th scope="col">APIs Impacted</th>
+                    <th scope="col">Highest Severity</th>
+                  </tr>
+                </thead>
+                {% set sev_mapping = {"Critical": "critical", "High": "critical", "Medium": "major", "Low": "minor"} %}
+                <tbody>
+                  <tr>
+                    <td>API Transport</td>
+                    <td>{{ issue_insights.get('API Transport', {}).get('api_list', '') | length }}</td>
+                    {% set highest_sev = violations.get('API Transport', {}).get('highest_sev', '') %}
+                    {% if highest_sev|length %}
+                      {% set pri = sev_mapping.get(highest_sev, '') %}
+                    {% else %}
+                      {% set pri = '' %}
+                    {% endif %}
+                    <td>
+                      {% if 'highest_sev_api_count' in violations.get('API Transport', {}) %}
+                      <p class="severity-tag {{ pri }}-shade"> {{ violations.get('API Transport', {}).get('highest_sev_api_count', '-') }} {{ pri }}</p>
+                      {% else %}
+                      <p>—</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Authentication/Authorization</td>
+                    <td>{{ issue_insights.get('AuthN/AuthZ', {}).get('api_list', '') | length }}</td>
+                    {% set highest_sev = violations.get('AuthN/AuthZ', {}).get('highest_sev', '') %}
+                    {% if highest_sev | length %}
+                      {% set pri = sev_mapping.get(highest_sev, '') %}
+                    {% else %}
+                      {% set pri = '' %}
+                    {% endif %}
+                    <td>
+                      {% if 'highest_sev_api_count' in violations.get('AuthN/AuthZ', {}) %}
+                      <p class="severity-tag {{ pri }}-shade">{{ violations.get('AuthN/AuthZ', {}).get('highest_sev_api_count', '-') }} {{ pri }}</p>
+                      {% else %}
+                      <p>—</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Data Type Definition</td>
+                    <td>{{ issue_insights.get('Data Type Definitions', {}).get('param_list', '') | length }}</td>
+                    {% set highest_sev = violations.get('Data Type Definitions', {}).get('highest_sev', '') %}
+                    {% if highest_sev | length %}
+                      {% set pri = sev_mapping.get(highest_sev, '') %}
+                    {% else %}
+                      {% set pri = '' %}
+                    {% endif %}
+                    <td>
+                      {% if 'highest_sev_param_count' in violations.get('Data Type Definitions', {}) %}
+                      <p class="severity-tag {{ pri }}-shade">{{violations.get('Data Type Definitions', {}).get('highest_sev_param_count', 0)}} {{ pri }}</p>
+                      {% else %}
+                      <p>—</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>API Life-cycle Management</td>
+                    <td>{{ issue_insights.get('API Lifecycle & Management', {}).get('api_list', '') | length }}</td>
+                    {% set highest_sev = violations.get('API Lifecycle & Management', {}).get('highest_sev', '') %}
+                    {% if highest_sev|length %}
+                      {% set pri=sev_mapping.get(highest_sev, '') %}
+                    {% else %}
+                      {% set pri='' %}
+                    {% endif %}
+                    <td>
+                      {% if 'highest_sev_api_count' in violations.get('API Lifecycle & Management', {}) %}
+                      <p class="severity-tag {{ pri }}-shade">{{violations.get('API Lifecycle & Management', {}).get('highest_sev_api_count', '-')}} {{ pri }}</p>
+                      {% else %}
+                      <p>—</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>API Spec-file Management</td>
+                    <td>{{issue_insights.get('API Spec-file Management', {}).get('file_list', '')|length}}</td>
+                    {% set highest_sev = violations.get('API Spec-file Management', {}).get('highest_sev', '') %}
+                    {% if highest_sev|length %}
+                      {% set pri=sev_mapping.get(highest_sev, '') %}
+                    {% else %}
+                      {% set pri='' %}
+                    {% endif %}
+                    <td>
+                      {% if 'file_list' in issue_insights.get('API Spec-file Management', {}) %}
+                      <p class="severity-tag {{ pri }}-shade">{{issue_insights.get('API Spec-file Management', {}).get('file_list', '') | length}} {{ pri }}</p>
+                      {% else %}
+                      <p>—</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="d-flex">
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square critical-bg"></div>
+                  <p>Critical</p>
+                </div>
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square major-bg"></div>
+                  <p>Major</p>
+                </div>
+                <div class="legend-container d-flex align-items-center">
+                  <div class="legend-square minor-bg"></div>
+                  <p>Minor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- ISSUE CATEGORIES DETAILS- API Transport Issues -->
+    <div
+      id="issue-categories-details"
+      class="slide content-slide issue-categories-details"
+    >
+
+      <div class="slide-content">
+        <h1>Issue Categories Details</h1>
+        <h3>Information about issue categories found inside the zip file</h3>
+
+        <p class="widget-title">What are the issue categories?</p>
+
+        <div class="table-tile">
+          <p class="table-heading">API Transport Design Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Transport Method Not Defined</p>
+                      <p class="issue-category-desc">
+                        The APIs that did not define the transport method at
+                        local or global level
+                      </p>
+                    </div>
+                  </td>
+                  {% set tran_not_defined = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('apis', {}) | length %}
+                  <td>{{tran_not_defined}}</td>
+                  {% if tran_not_defined == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('critical_apis', '') | length %}
+                  {% set high = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('high_apis', '') | length%}
+                  {% set medium = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('medium_apis', '') | length %}
+                  {% set low = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('low_apis', '') | length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('files', {}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('API Transport', {}).get('Undefined Transport Mechanism', {}).get('tags', {}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Clear Text HTTP</p>
+                      <p class="issue-category-desc">
+                        The APIs that are defined to be using clear text HTTP
+                      </p>
+                    </div>
+                  </td>
+                  {% set insecure_not_defined = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('apis', {}) | length %}
+                  <td>{{ insecure_not_defined }}</td>
+                  {% if insecure_not_defined == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('critical_apis', '')|length %}
+                  {% set high = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('high_apis', '')|length%}
+                  {% set medium = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('medium_apis', '')|length %}
+                  {% set low = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('low_apis', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('files', {}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('API Transport', {}).get('Insecure Transport Mechanism', {}).get('tags', {}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">Data Type Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Data Bounds Not Defined</p>
+                      <p class="issue-category-desc">
+                        The bounds for the data are not defined for various entities. E.g. Maximum string length or Maximum number of elements in an Array may not be defined
+                      </p>
+                    </div>
+                  </td>
+                  {% set undefined_bounds = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('apis', {}) | length %}
+                  <td>{{undefined_bounds}}</td>
+                  {% if undefined_bounds == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('critical_params', '')|length %}
+                  {% set high = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('high_params', '')|length%}
+                  {% set medium = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('medium_params', '')|length %}
+                  {% set low = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('low_params', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high}} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('Data Type Definitions', {}).get('Undefined Bounds', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Non-restrictive Data Bounds</p>
+                      <p class="issue-category-desc">
+                        The bounds for data are not restrictive for various entities. E.g. a string might have been defined to be any pattern (*) rather than being restricted to alpha-numeric
+                      </p>
+                    </div>
+                  </td>
+                  {% set unrestricted_bounds = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('apis', {}) | length %}
+                  <td>{{unrestricted_bounds}}</td>
+                  {% if unrestricted_bounds == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('critical_params', '')|length %}
+                  {% set high = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('high_params', '')|length %}
+                  {% set medium = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('medium_params', '')|length %}
+                  {% set low = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('low_params', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('Data Type Definitions', {}).get('Unrestricted Bounds', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Type & Attribute Mismatch</p>
+                      <p class="issue-category-desc">
+                        Certain entities are of a particular type but mandarory attributes are missing. E.g. an entity of type Array does not have items defined
+                      </p>
+                    </div>
+                  </td>
+                  {% set type_mismatch = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('apis', {}) | length %}
+                  <td>{{type_mismatch}}</td>
+                  {% if type_mismatch == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('critical_params', '')|length %}
+                  {% set high = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('high_params', '')|length%}
+                  {% set medium = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('medium_params', '')|length %}
+                  {% set low = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('low_params', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('files', {}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('Data Type Definitions', {}).get('Type and Attribute mismatch', {}).get('tags', {}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Authentication & Authorization Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>No Auth Information Defined</p>
+                      <p class="issue-category-desc">
+                        The APIs that did not define any authorization information
+                      </p>
+                    </div>
+                  </td>
+                  {% set undefined_auth = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('apis', {}) | length %}
+                  <td>{{undefined_auth}}</td>
+                  {% if undefined_auth == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('critical_apis', '')|length %}
+                  {% set high = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('high_apis', '')|length%}
+                  {% set medium = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('medium_apis', '')|length %}
+                  {% set low = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('low_apis', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }} </p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('AuthN/AuthZ', {}).get('Undefined Auth Information', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Invalid or Insecure Auth URL</p>
+                      <p class="issue-category-desc">
+                        The APIs that are defined to be using an invalid or insecure auth URL
+                      </p>
+                    </div>
+                  </td>
+                  {% set invalid_url = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('apis', {}) | length %}
+                  <td>{{invalid_url}}</td>
+                  {% if invalid_url == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('critical_apis', '')|length %}
+                  {% set high = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('high_apis', '')|length%}
+                  {% set medium = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('medium_apis', '')|length %}
+                  {% set low = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('low_apis', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{ file }}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('AuthN/AuthZ', {}).get('Invalid or Insecure URL', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Lifecycle and Management Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>No API Versioning</p>
+                      <p class="issue-category-desc">
+                        The APIs defined do not accomodate versioning. E.g. an API defined as /api/v1/employeeInfo allows for versioning. Absence of such API is not ideal for API lifecycle management
+                      </p>
+                    </div>
+                  </td>
+                  {% set no_version = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('apis', {}) | length %}
+                  <td>{{no_version}}</td>
+                  {% if no_version == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('critical_apis', '')|length %}
+                  {% set high = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('high_apis', '')|length%}
+                  {% set medium = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('medium_apis', '')|length %}
+                  {% set low = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('low_apis', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{file}}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('API Lifecycle & Management', {}).get('No API Versioning', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>API Error Responses Not Defined</p>
+                      <p class="issue-category-desc">
+                        Certain entities are of a particular type but mandatory attributes are missing. E.g. an entity of type array does not have items defined
+                      </p>
+                    </div>
+                  </td>
+                  {% set response_errors = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('apis', {}) | length %}
+                  <td>{{response_errors}}</td>
+                  {% if response_errors == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('critical_apis', '')|length %}
+                  {% set high = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('high_apis', '')|length%}
+                  {% set medium = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('medium_apis', '')|length %}
+                  {% set low = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('low_apis', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('files',{}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{file}}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('API Lifecycle & Management', {}).get('Response-specific Errors', {}).get('tags',{}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-tile">
+          <p class="table-heading">API Spec-file Management Issues</p>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Issue Category</th>
+                  <th scope="col">APIs with Issue</th>
+                  <th scope="col">Severity Distribution</th>
+                  <th scope="col">Files</th>
+                  <th scope="col">Data Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <p>Contact Information Missing</p>
+                      <p class="issue-category-desc">
+                        The contact information is missing from the API Specification files
+                      </p>
+                    </div>
+                  </td>
+                  {% set missing_info = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('files', {}) | length %}
+                  <td>{{missing_info}}</td>
+                  {% if missing_info == 0 %}
+                  <td colspan="3">
+                    <p class="kudos-banner"><b>No Issues found!</b> Kudos to you and your team!</p>
+                  </td>
+                  {% else %}
+                  {% set critical = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('critical_files', '')|length %}
+                  {% set high = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('high_files', '')|length%}
+                  {% set medium = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('medium_files', '')|length %}
+                  {% set low = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('low_files', '')|length %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      <p class="severity-tag critical-shade">{{ critical + high }} Critical</p>
+                      <p class="severity-tag major-shade">{{ medium }} Major</p>
+                      <p class="severity-tag minor-shade">{{ low }} Minor</p>
+                    </div>
+                  </td>
+                  {% set files   = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('files', {}) %}
+                  <td>
+                    {% for file in files %}
+                    <p class="filename-text">{{file}}</p>
+                    {% endfor %}
+                  </td>
+                  {% set tags = issue_insights.get('API Spec-file Management', {}).get('Missing information', {}).get('tags', {}) %}
+                  <td>
+                    <div class="tags-list d-flex flex-wrap">
+                      {% if tags %}
+                        {% for tag in tags %}
+                        <p class="severity-tag">{{ tag }}</p>
+                        {% endfor %}
+                      {% else %}
+                        <p>—</p>
+                      {% endif %}
+                    </div>
+                  </td>
+                  {% endif %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NEW SLIDE -->
+    <!-- VIOLATION DETAILS -->
+    <div id="violation-details" class="slide content-slide violation-details">
+
+      <div class="slide-content">
+        <h1>Violation Details</h1>
+        <h3>Information about violations and locations in the spec.</h3>
+
+        {% for sev, sev_val in violation_details.items() %}
+        <div class="issues-container">
+          <h2 class="{{ sev | lower }}-shade">{{ sev }} Issues</h2>
+
+          <div class="issues-list {{ sev | lower }}-issues-list">
+            {% for key, val in sev_val.items() %}
+            <div class="row">
+              <div class="col-6">
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Type</p>
+                  <p class="violation-metric">{{ key }}</p>
+                </div>
+
+                {% set req_key = namespace(value='') %}
+                {% for k,v in val.items() %}
+                {% set req_key.value = k | replace("Impact", " ") %}
+                {% endfor %}
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Issues</p>
+                  <p class="violation-metric">{{ val.get(req_key.value, []) | length }}</p>
+                </div>
+
+                <div class="violation-label-metric-container">
+                  <p class="violation-label">Impact</p>
+                  <p class="violation-desc">
+                    {{val.get('Impact', '')}}
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  {% for api in val.get(req_key.value, [])%}
+                  {% set split_list = api.split('\n\n') %}
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">{{split_list[0]}}</div>
+                      {{split_list[1]}}
+                    </div>
+                  </li>
+                  {% endfor %}
+                </ol>
+              </div>
+            </div>
+            {% if not loop.last %}
+            <div class="issue-divider"></div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="slide-footer d-flex align-items-center bd-highlight mb-3">
+        <img class="branding" src="./assets/images/footer-logo.png" />
+        <p class="copyrights">@ Imperva Ltd. All rights reserved</p>
+        <p class="report-name">Imperva API Report</p>
+        <p class="date">Creation date: Jun 21, 2021, 16:23</p>
+        <p class="separator">|</p>
+        <p class="customer">For: Name of the Customer</p>
+      </div>
+    </div>
+
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="./assets/scripts/bootstrap.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="./assets/scripts/chart.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript">
+      const onDOMLoad = () => {
+        // Update the customer name in the footer
+        updateCustomerName("{{ customer_name }}");
+
+
+        updateCreationDate("{{ created_time }}");
+
+        updateReportNameInFooter("Imperva API Report");
+
+        // Update bar chart for distribution by API method
+        const methodsDistributionData = {
+          labels: {{ req_method_list }},
+          data: {{ req_method_count }},
+        };
+
+        renderBarChart("distributionByMethod", "Methods", methodsDistributionData);
+
+        // Update bar chart for distribution by param type
+        const paramTypesDistributionData = {
+          labels: {{ data_types }},
+          data: {{ data_type_counts }},
+        };
+
+        renderBarChart(
+          "distributionByParamType",
+          "Param Types",
+          paramTypesDistributionData
+        );
+
+        // Update bar chart for distribution by param type
+        const responseCodesDistributionData = {
+          labels: {{ response_codes }},
+          data: {{ r_codes_count }},
+        };
+
+        renderBarChart(
+          "distributionByResponseCode",
+          "Response Codes",
+          responseCodesDistributionData
+        );
+
+        // Update circular progress bar charts under
+        // Frequently occuring violations
+        {% if total_issue_count == 0 %}
+        renderCircularProgressBar("violationMetric1", {{ '%0.2f' % 0 | float }});
+        {% else %}
+        renderCircularProgressBar("violationMetric1", {{ '%0.2f' % (violations.get('most_occ_cat_count', 0) / total_issue_count * 100) | float }});
+        {% endif %}
+      };
+
+      /**
+       * Function to render bar chart for Input File Details
+       */
+      const renderBarChart = (chartId, axisLabel, { labels, data }) => {
+        const canvas = document.getElementById(chartId);
+        canvas.width = canvas.parentNode.clientWidth;
+        canvas.height = canvas.parentNode.clientHeight;
+
+        const chart = new Chart(canvas, {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: axisLabel,
+                data: data,
+                barThickness: 30,
+                maxBarThickness: 30,
+                backgroundColor: ["#5081F2"],
+                borderColor: ["#5081F2"],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+            plugins: {
+              legend: false,
+              // tooltip: {
+              //   enabled: false,
+              // },
+            },
+          },
+        });
+      };
+
+      /**
+       * Function to render circular progress bar for
+       * Most Frequently Occuring Violations
+       */
+      const renderCircularProgressBar = (chartId, value) => {
+        const data = {
+          labels: ["Test"],
+          datasets: [
+            {
+              label: "My First Dataset",
+              data: [value, 100 - value],
+              backgroundColor: ["#285AE6", "#ACB9C5"],
+              borderWidth: 0,
+              hoverOffset: 4,
+            },
+          ],
+        };
+
+        const config = {
+          type: "doughnut",
+          data: data,
+          options: {
+            hover: { mode: null },
+            cutout: "75%",
+            plugins: {
+              legend: false,
+              tooltip: {
+                enabled: false,
+              },
+            },
+          },
+        };
+
+        const myChart = new Chart(document.getElementById(chartId), config);
+
+        const percentageTextElement = document.querySelector(
+          `#${chartId} + .violation-donut-percentage`
+        );
+
+        percentageTextElement.textContent = value + "%";
+      };
+
+      /**
+       * Function to update report name in the footer section
+       */
+      const updateReportNameInFooter = (reportName) => {
+        const elementsList = document.querySelectorAll(".report-name");
+
+        elementsList.forEach((element) => {
+          element.textContent = reportName;
+        });
+      };
+
+      /**
+       * Function to update customer name in the footer section
+       */
+      const updateCustomerName = (name) => {
+        const elementsList = document.querySelectorAll(".customer");
+
+        elementsList.forEach((element) => {
+          element.textContent = `For: ${name}`;
+        });
+      };
+
+      /**
+       * Function to update the creation date in the footer section
+       */
+      const updateCreationDate = (dateString) => {
+        const elementsList = document.querySelectorAll(".date");
+
+        elementsList.forEach((element) => {
+          element.textContent = `Creation date: ${dateString}`;
+        });
+      };
+
+    </script>
+  </body>
+</html>

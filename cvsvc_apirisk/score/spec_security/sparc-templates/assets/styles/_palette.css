@@ -1,0 +1,22 @@
+
+:root {
+  --cardinal: #af272f;
+  --navy: #003866;
+  --ice-blue: #fafbfc;
+  --mint-blue: #f5f8fa;
+  --alice-blue: #f2f5f7;
+  --pattens-blue: #ebf6ff;
+  --tasman: #d3dce3;
+  --slate-grey: #4a708f;
+  --nordic: #02233d;
+  --black: #000000;
+  --navy-light: #1d5bbf;  
+  --critical: #d64223;
+  --high : #ff7700;
+  --medium : #f4a739;
+  --low : #f9cf7f;
+  --no-risk: #cdcdcd;
+  --green-ok: #55ad07;
+  --primary-blue: #3f51b5;
+}
+

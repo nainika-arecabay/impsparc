@@ -1,0 +1,837 @@
+{
+ "description": "Imperva rules for APISpARC (OpenAPI v3)",
+ "version": "1.0.2",
+ "rules":
+    [
+	{"ruleid": "0001",
+	 "description": "Contact info not provided or incorrect.",
+	 "score": 2,
+	 "enabled": true,
+         "category": "API Spec-file Management",
+         "sub_category": "Missing information",
+	 "rule": [
+	   			{"identifier": "#->info->contact",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"or",
+	   			{"identifier": "#->info->contact->email",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"or",
+	   			{"identifier": "#->info->contact->email",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "^(?![a-z0-9\\.]+@[a-z0-9]+\\.[a-z0-9]+)"}
+   	      	 ],
+	 "impact": "Provide contact information for the specification designer to help resolve issues."
+	},
+
+	{"ruleid": "0002a",
+	 "description": "additionalProperties of type != \"array\" should not have \"items\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["nonarray-def-items"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "ne",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "additionalProperties->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "False"}
+   	      	 ]
+	},
+
+	{"ruleid": "0002b",
+	 "description": "properties of type != \"array\" should not have \"items\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["nonarray-def-items"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "ne",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "properties->*->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "False"}
+   	      	 ]
+	},
+
+	{"ruleid": "0002c",
+	 "description": "Schema of type != \"array\" should not have \"items\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["nonarray-def-items"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "ne",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "schema->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "False"}
+   	      	 ]
+	},
+
+	{"ruleid": "0003a",
+	 "description": "additionalProperties of type \"array\" should have \"items\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["array-undef-items"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "additionalProperties->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0003b",
+	 "description": "properties of type \"array\" should have \"items\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["array-undef-items"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "properties->*->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0003c",
+	 "description": "Schema of type \"array\" should have \"items\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "tags": ["array-undef-items"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "schema->items",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0004a",
+	 "description": "Response codes should be in 100-599.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "API Lifecycle & Management",
+         "sub_category": "Response-specific Errors",
+	 "rule": [
+	   			{"identifier": "responses->*__key__",
+	   		 	 "condition": "ne",
+			 	 "value": "default"},
+			"and",
+	   			{"identifier": "responses->*__key__",
+	   		 	 "condition": ">=",
+			 	 "value": "600"}
+   	      	 ]
+	},
+
+	{"ruleid": "0004b",
+	 "description": "Response codes should be in 100-599.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "API Lifecycle & Management",
+         "sub_category": "Response-specific Errors",
+	 "rule": [
+	   			{"identifier": "responses->*__key__",
+	   		 	 "condition": "ne",
+			 	 "value": "default"},
+			"and",
+	   			{"identifier": "responses->*__key__",
+	   		 	 "condition": "<",
+			 	 "value": "100"}
+   	      	 ]
+	},
+
+	{"ruleid": "0005a",
+	 "description": "additionalProperties of type \"string\" has an unrestricted \"pattern\".",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Unrestricted Bounds",
+	 "tags": ["string-unrestricted-input"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "additionalProperties->pattern",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "(\\*)"}
+   	      	 ],
+	 "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+	},
+
+	{"ruleid": "0005b",
+	 "description": "properties of type \"string\" has an unrestricted \"pattern\".",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Unrestricted Bounds",
+	 "tags": ["string-unrestricted-input"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "properties->*->pattern",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "(\\*)"}
+   	      	 ],
+	 "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+	},
+
+	{"ruleid": "0005c",
+	 "description": "Schema of type \"string\" has an unrestricted \"pattern\".",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Unrestricted Bounds",
+	 "tags": ["string-unrestricted-input"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "schema->pattern",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "(\\*)"}
+   	      	 ],
+	 "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+	},
+
+	{"ruleid": "0005d",
+	 "description": "String item \"pattern\" is unrestricted.",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Unrestricted Bounds",
+	 "tags": ["string-unrestricted-input"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "items->pattern",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "(\\*)"}
+   	      	 ],
+	 "impact": "An unrestricted input to the string object encourages injection attempts which could lead to privileged access granted to the attacker."
+	},
+
+	{"ruleid": "0006a",
+	 "description": "additionalProperties of type \"string\" should have \"pattern\" defined.",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-bounds"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "additionalProperties->pattern",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+	},
+
+	{"ruleid": "0006b",
+	 "description": "properties of type \"string\" should have \"pattern\" defined.",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-bounds"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "properties->*->pattern",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+	},
+
+	{"ruleid": "0006c",
+	 "description": "Schema of type \"string\" should have \"pattern\" defined.",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-bounds"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "schema->pattern",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+	},
+
+	{"ruleid": "0006d",
+	 "description": "Items of type \"string\" should have \"pattern\" defined.",
+	 "score": 5,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-bounds"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "items->pattern",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "Absence of the pattern field allows an attacker to send arbitrary inputs for the affected object. This can result in application exploitation leading to either the application crashing (Denial of Service), remote access or privilege escalation."
+	},
+
+	{"ruleid": "0007a",
+	 "description": "additionalProperties of type \"string\" should have \"maxLength\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-maxlength"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "additionalProperties->maxLength",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+	},
+
+	{"ruleid": "0007b",
+	 "description": "properties of type \"string\" should have \"maxLength\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-maxlength"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "properties->*->maxLength",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+	},
+
+	{"ruleid": "0007c",
+	 "description": "Schema of type \"string\" should have \"maxLength\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-maxlength"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "schema->maxLength",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+	},
+
+	{"ruleid": "0007d",
+	 "description": "Items of type \"string\" should have \"maxLength\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["string-undef-maxlength"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "string"},
+			"and",
+	   			{"identifier": "items->maxLength",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maximum length of the input string is absent, the affected data object and the API endpoint can be flooded with arbitrary length messages allowing sophisticated application exploitation."
+	},
+
+	{"ruleid": "0008a",
+	 "description": "Items should have \"type\" defined.",
+	 "score": 7,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Type and Attribute mismatch",
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0008b",
+	 "description": "additionalProperties of type \"array\" should have \"maxItems\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["array-undef-maxitems"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "additionalProperties->maxItems",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+	},
+
+	{"ruleid": "0008c",
+	 "description": "properties of type \"array\" should have \"maxItems\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["array-undef-maxitems"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "properties->*->maxItems",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+	},
+
+	{"ruleid": "0008d",
+	 "description": "Schema of type \"array\" should have \"maxItems\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["array-undef-maxitems"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "schema->maxItems",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+	},
+
+	{"ruleid": "0008e",
+	 "description": "Items of type \"array\" should have \"maxItems\" defined.",
+	 "score": 6,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["array-undef-maxitems"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "array"},
+			"and",
+	   			{"identifier": "items->maxItems",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If maxItems field is absent, this allows the attacker to siphon unlimited records, typical in a data breach."
+	},
+
+	{"ruleid": "0009a",
+	 "description": "additionalProperties of type \"integer\" should have \"minimum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-min"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "additionalProperties->minimum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0009b",
+	 "description": "properties of type \"integer\" should have \"minimum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-min"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "properties->*->minimum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0009c",
+	 "description": "Schema of type \"integer\" should have \"minimum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-min"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "schema->minimum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0009d",
+	 "description": "Items of type \"integer\" should have \"minimum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-min"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "items->minimum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0010a",
+	 "description": "additionalProperties of type \"integer\" should have \"maximum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-max"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "additionalProperties->maximum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0010b",
+	 "description": "properties of type \"integer\" should have \"maximum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-max"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "properties->*->maximum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0010c",
+	 "description": "Schema of type \"integer\" should have \"maximum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-max"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "schema->maximum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0010d",
+	 "description": "Items of type \"integer\" should have \"maximum\" defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-max"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "items->maximum",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "If items and parameters of data type integer do not have a minimum/maximum defined, the client can abuse such parameters to cause integer overflow/underflow, which in some cases may crash the application resulting in a Denial of Service."
+	},
+
+	{"ruleid": "0011a",
+	 "description": "additionalProperties of type \"integer\" should have format defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-format"],
+	 "rule": [
+	   			{"identifier": "additionalProperties->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "additionalProperties->format",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0011b",
+	 "description": "properties of type \"integer\" should have format defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-format"],
+	 "rule": [
+	   			{"identifier": "properties->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "properties->*->format",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0011c",
+	 "description": "Schema of type \"integer\" should have format defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-format"],
+	 "rule": [
+	   			{"identifier": "schema->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "schema->format",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0011d",
+	 "description": "Items of type \"integer\" should have format defined.",
+	 "score": 4,
+	 "enabled": true,
+         "category": "Data Type Definitions",
+         "sub_category": "Undefined Bounds",
+	 "tags": ["integer-undef-format"],
+	 "rule": [
+	   			{"identifier": "items->type",
+	   		 	 "condition": "eq",
+			 	 "value": "integer"},
+			"and",
+	   			{"identifier": "items->format",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0012",
+	 "description": "SecuritySchemes field is empty",
+	 "score": 7,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+	   			{"identifier": "#->components->securitySchemes",
+	   		 	 "condition": "is-empty",
+			 	 "value": "True"}
+   	      	 ]
+  	},
+
+	{"ruleid": "0013",
+	 "description": "Local \"security\" field is empty.",
+	 "score": 9,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+	   			{"identifier": "operation->security",
+	   		 	 "condition": "is-empty",
+			 	 "value": "True"}
+   	      	 ],
+	 "impact": "Lack of the security field implies that no security schemes will be applied for the affected operations. Security schemes ensure authenticated and authorized access to APIs, lack of which may make the API vulnerable."
+  	},
+
+	{"ruleid": "0014ref1",
+	 "description": "Global security field is missing, is empty, or contains an empty security requirement.",
+	 "enabled": false,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+		 		{"identifier": "#->security",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"or",
+		 		{"identifier": "#->security",
+	   		 	 "condition": "is-empty",
+			 	 "value": "True"},
+			"or",
+		 		{"identifier": "#->security->*",
+	   		 	 "condition": "is-empty",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0014",
+	 "description": "Local security field is missing. Also, the global security field is missing, is empty, or contains an empty security requirement.",
+	 "score": 9,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+		 		{"identifier": "operation->security",
+	   		 	 "condition": "is-missing",
+			 	 "value": "True"},
+			"and",
+		 		{"identifier": "__rule__0014ref1",
+	   		 	 "condition": "==",
+			 	 "value": "True"}
+   	      	 ]
+	},
+
+	{"ruleid": "0015",
+	 "description": "Invalid or insecure \"authorizationUrl\".",
+	 "score": 6,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Invalid or Insecure URL",
+	 "rule": [
+	   			{"identifier": "securitySchemes->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "oauth2"},
+			"and",
+	   			{"identifier": "securitySchemes->*->flows->*->authorizationUrl",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "^(?!https://)"}
+   	      	 ]
+	},
+
+	{"ruleid": "0016",
+	 "description": "Invalid or insecure token URL in security scheme.",
+	 "score": 7,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Invalid or Insecure URL",
+	 "rule": [
+	   			{"identifier": "securitySchemes->*->type",
+	   		 	 "condition": "eq",
+			 	 "value": "oauth2"},
+			"and",
+	   			{"identifier": "securitySchemes->*->flows->*->tokenUrl",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "^(?!https://)"}
+   	      	 ]
+	},
+
+	{"ruleid": "0017",
+	 "description": "Credentials should not be transported in cleartext. Use a secure scheme.",
+	 "score": 7,
+	 "enabled": true,
+         "category": "API Transport",
+         "sub_category": "Insecure Transport Mechanism",
+	 "rule": [
+	   			{"identifier": "servers->*->url",
+	   		 	 "condition": "pattern-match",
+			 	 "value": "^(?!https://)"}
+   	      	 ],
+	 "impact": "Cleartext communication allows attackers to steal the credentials for further nefarious activities posing as a legitimate client."
+	},
+
+	{"ruleid": "0018",
+	 "description": "Security scope not in \"securityDefinitions\".",
+	 "score": 7,
+	 "enabled": true,
+         "category": "AuthN/AuthZ",
+         "sub_category": "Undefined Auth Information",
+	 "rule": [
+	   			{"identifier": "sps-sec-attr07",
+	   		 	 "condition": "embedded-run",
+			 	 "value": "dummy"}
+   	      	 ]
+	}
+
+    ]
+}
